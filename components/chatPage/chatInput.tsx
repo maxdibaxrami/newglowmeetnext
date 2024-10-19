@@ -16,13 +16,13 @@ const ChatInput = () => {
       <Textarea
       variant="bordered"
       placeholder="Enter your message"
+      className="w-full"
       minRows={1}
       endContent={
         <button className="focus:outline-none" type="button" onClick={toggleVisibility} aria-label="toggle password visibility">
             <SendIcon />
         </button>
       }
-      className="max-w-xs"
     />
 
     </div>

@@ -8,7 +8,7 @@ const ChatInput = () => {
   const toggleVisibility = () => setIsVisible(!isVisible);
 
   return (
-    <div style={{flexGrow:1,height:"10vh"}} className="flex items-center mt-2 justify-between">
+    <div style={{flexGrow:1,height:"10vh"}} className="flex items-center mt-2 px-2 justify-between">
         <Button className="mr-1" isIconOnly color="primary" aria-label="Take a photo">
             <PhotoIcon />
         </Button>

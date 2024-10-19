@@ -5,9 +5,7 @@ import ChatDetailMenu from "./chatDetailMenu";
 import Link from 'next/link'
 
 const ChatProfileSection = () => {
-    return <div style={{flexGrow:1}} className="flex w-full py-2 justify-between items-center	">
-
-      
+    return <div style={{flexGrow:1,height:"10vh"}} className="flex w-full py-2 justify-between items-center"> 
             <div className="flex gap-2 items-center">
             <Link  href="/">
                 <Button className="mr-2" isIconOnly color="default" aria-label="Like">
@@ -20,8 +18,6 @@ const ChatProfileSection = () => {
                 </div>
             </div>
             <div>
-        
-
              <ChatDetailMenu/>
                 
             </div>

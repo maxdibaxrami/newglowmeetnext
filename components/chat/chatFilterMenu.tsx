@@ -1,5 +1,6 @@
 import {Dropdown, Link, DropdownTrigger, DropdownMenu, DropdownItem, Button} from "@nextui-org/react";
 import { FilterButton } from "../icons/chatIcon";
+import {NewIcon, Favorite} from '../icons/chatIcon'
 const ChatFiltermenu =() => {
   return (
     <Dropdown backdrop="blur">
@@ -9,12 +10,8 @@ const ChatFiltermenu =() => {
         </Button> 
       </DropdownTrigger>
       <DropdownMenu variant="faded" aria-label="Static Actions">
-        <DropdownItem key="new">New file</DropdownItem>
-        <DropdownItem key="copy">Copy link</DropdownItem>
-        <DropdownItem key="edit">Edit file</DropdownItem>
-        <DropdownItem key="delete" className="text-danger" color="danger">
-          Delete file
-        </DropdownItem>
+        <DropdownItem startContent={<NewIcon />}  key="new">New</DropdownItem>
+        <DropdownItem startContent={<Favorite status={false} />} key="Favorite">Favorite</DropdownItem>
       </DropdownMenu>
     </Dropdown>
   );

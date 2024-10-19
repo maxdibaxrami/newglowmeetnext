@@ -5,7 +5,9 @@ import ChatFiltermenu from './chatFilterMenu'
 
 const ChatPage = () => {
     return <div className='w-full h-full'>
-
+        <div className="flex justify-between py-2 items-center">
+                <span className="text-large">Matches</span>
+        </div>
         <MatchList/>
         <div className="flex justify-between py-2 items-center">
             <span className="text-large">Chat</span>

@@ -28,3 +28,10 @@
     left: 50%;
     border-radius: 16px;
 }
+
+.chat-m:first-child {
+    margin-top: 4rem;
+}
+.chat-m:last-child {
+    margin-bottom: 4rem;
+}

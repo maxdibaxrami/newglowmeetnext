@@ -9,24 +9,26 @@ const ChatProfileSection = () => {
         <Navbar className="absolute top-0" disableAnimation>
     <NavbarContent justify="start">
         <NavbarItem className="lg:flex">
-    
                 <Link  href="/">
                     <Button className="mr-2" isIconOnly color="default" aria-label="Like">
                         <BackMenu />
                     </Button> 
                 </Link>
+
+                
             </NavbarItem>
-        </NavbarContent>
-    <NavbarContent className="sm:flex gap-4" justify="center">
-    <NavbarItem className="lg:flex flex items-center">
+
+            <NavbarItem className="lg:flex flex items-center">
     
-    <Avatar className="mr-2" color="primary" isBordered radius="sm" src="https://i.pravatar.cc/150?u=a04258a2462d826712d" />
+    <Avatar className="mr-2" color="default" isBordered radius="sm" src="https://i.pravatar.cc/150?u=a04258a2462d826712d" />
                     <div className="flex flex-col ml-2">
                         <span className="text-large bold">{"mahdi barami"}</span>
+                        <span style={{color:"#22c55e"}} className="text-small bold">{"Online"}</span>
+
                     </div>
                     </NavbarItem>
-    
-    </NavbarContent>
+
+        </NavbarContent>
     <NavbarContent justify="end">
       <NavbarItem className="lg:flex">
         <ChatDetailMenu/>

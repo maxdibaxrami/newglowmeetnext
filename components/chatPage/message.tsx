@@ -86,7 +86,7 @@ const MessageSection = () => {
   return (
     <div style={{maxHeight:"100vh"}} className="message-container w-full flex flex-col border-small px-1 rounded-small border-default-200 dark:border-default-100">
       {messages.map((msg, index) => (
-        <div key={index} className={`chat-${msg.type} flex flex-col`}>
+        <div key={index} className={`chat-${msg.type} chat-m flex flex-col`}>
           <div className={`chat-bubble chat-${msg.type}`}>
             <p>{msg.text}</p>
             {msg.img && <img src={msg.img} alt="conversation" className="chat-image" />}

@@ -10,7 +10,7 @@ const BottomMenu = ({onChangeMenu}) => {
     useEffect(()=> onChangeMenu(selected),[selected])
 
   return (
-    <div style={{height:'80px'}} className="flex w-full flex-col fixed bottom-0 items-center justify-center ">
+    <div style={{height:'80px'}} className="flex w-full flex-col fixed bottom-0 items-center justify-center menu-background">
       <Tabs
        size="lg" 
        aria-label="Options" 

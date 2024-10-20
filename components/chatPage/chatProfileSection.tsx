@@ -5,7 +5,7 @@ import ChatDetailMenu from "./chatDetailMenu";
 import Link from 'next/link'
 
 const ChatProfileSection = () => {
-    return <div style={{flexGrow:1,maxHeight:"10vh",height:"100%"}} className="flex w-full px-2 py-2 justify-between items-center"> 
+    return <div className="flex w-full px-2 py-2 justify-between items-center"> 
             <div className="flex gap-2 items-center">
             <Link  href="/">
                 <Button className="mr-2" isIconOnly color="default" aria-label="Like">

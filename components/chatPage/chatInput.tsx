@@ -8,22 +8,22 @@ const ChatInput = () => {
   const toggleVisibility = () => setIsVisible(!isVisible);
 
   return (
-    <div style={{flexGrow:1,height:"10vh"}} className="flex items-center mt-2 px-2 justify-between">
+    <div className="flex items-center my-4 px-2 justify-between">
         <Button className="mr-1" isIconOnly color="primary" aria-label="Take a photo">
             <PhotoIcon />
         </Button>
 
       <Textarea
-      variant="bordered"
-      placeholder="Enter your message"
-      className="w-full"
-      minRows={1}
-      endContent={
-        <button className="focus:outline-none" type="button" onClick={toggleVisibility} aria-label="toggle password visibility">
-            <SendIcon />
-        </button>
-      }
-    />
+        variant="bordered"
+        placeholder="Enter your message"
+        className="w-full"
+        minRows={1}
+        endContent={
+          <button className="focus:outline-none" type="button" onClick={toggleVisibility} aria-label="toggle password visibility">
+              <SendIcon />
+          </button>
+        }
+      />
 
     </div>
   

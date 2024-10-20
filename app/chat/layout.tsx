@@ -4,8 +4,8 @@ export default function ChatLayout({
   children: React.ReactNode;
 }) {
   return (
-    <section className="flex flex-col items-center justify-center gap-4 h-full w-full">
-      <div style={{height:"100vh"}} className="relative flex flex-col max-w-lg text-center justify-center h-full w-full">
+    <section className="flex flex-col gap-4 w-full">
+      <div className="relative flex flex-col max-w-lg w-full">
         {children}
       </div>
     </section>

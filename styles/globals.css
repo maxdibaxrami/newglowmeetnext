@@ -7,6 +7,10 @@
     font-family: "Lexend", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
+    outline: none !important;
+}
+*:focus {
+    outline: none !important;
 }
 
 .menu-background{
@@ -16,4 +20,11 @@
 
 .app-background {
     background-image: url('/assets/globals.css');
+}
+.buttomchat-div{
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 95%;
+    left: 50%;
+    border-radius: 16px;
 }

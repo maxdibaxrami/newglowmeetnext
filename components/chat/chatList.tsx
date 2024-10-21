@@ -1,9 +1,10 @@
 import React from "react";
 import { Listbox, ListboxItem, Avatar } from "@nextui-org/react";
-
-import {Favorite} from '../icons/chatIcon'
-import {ListboxWrapper} from "./listWapper";
 import Link from "next/link";
+
+import { Favorite } from "../icons/chatIcon";
+
+import { ListboxWrapper } from "./listWapper";
 
 const ChatList = () => {
   return (
@@ -21,9 +22,9 @@ const ChatList = () => {
         {(item) => (
           <ListboxItem
             key={item.id}
-            endContent={<Favorite status={item.id % 2 !== 0}/>} 
-            textValue={item.name}>
-          
+            endContent={<Favorite status={item.id % 2 !== 0} />}
+            textValue={item.name}
+          >
             <Link key={item.id} href="/chat">
               <div className="flex gap-2 items-center">
                 <Avatar

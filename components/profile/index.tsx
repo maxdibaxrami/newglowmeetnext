@@ -66,7 +66,6 @@ const ProfilePage = () => {
           </Link>
 
           <Link href={"/setting"}>
-
             <Button
               isIconOnly
               className="m-1"

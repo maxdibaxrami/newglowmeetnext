@@ -179,12 +179,12 @@ export default function EditProfilePage() {
               <ListboxSection className="relative" title="Intersting">
                 <ListboxItem>
                   <div className="flex flex-wrap">
-                    {humanInterests.map((value,index) => {
+                    {humanInterests.map((value, index) => {
                       return (
                         <Chip
+                          key={index}
                           className="m-1"
                           color="success"
-                          key={index}
                           startContent={<HashtagIcon />}
                           variant="flat"
                         >

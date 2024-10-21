@@ -1,60 +1,55 @@
-import React, { useRef, useState } from 'react';
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/effect-creative";
+import "./style.css";
+import { EffectCreative } from "swiper/modules";
 
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/effect-creative';
-
-import './style.css';
-
-// import required modules
-import { EffectCreative } from 'swiper/modules';
-import ExploreCard from './exploreCart';
+import ExploreCard from "./exploreCart";
 
 const ExplorePage = () => {
-  return <div style={{position:"relative"}}>
-    
+  return (
+    <div style={{ position: "relative" }}>
       <Swiper
-        grabCursor={true}
-        effect={'creative'}
+        className="mySwiper2"
         creativeEffect={{
           prev: {
             shadow: true,
-            translate: ['-120%', 0, -500],
+            translate: ["-120%", 0, -500],
           },
           next: {
             shadow: true,
-            translate: ['120%', 0, -500],
+            translate: ["120%", 0, -500],
           },
         }}
+        effect={"creative"}
+        grabCursor={true}
         modules={[EffectCreative]}
-        className="mySwiper2"
       >
         <SwiperSlide>
-          <ExploreCard/>
+          <ExploreCard />
         </SwiperSlide>
         <SwiperSlide>
-          <ExploreCard/>
+          <ExploreCard />
         </SwiperSlide>
         <SwiperSlide>
-          <ExploreCard/>
+          <ExploreCard />
         </SwiperSlide>
         <SwiperSlide>
-          <ExploreCard/>
+          <ExploreCard />
         </SwiperSlide>
         <SwiperSlide>
-          <ExploreCard/>
+          <ExploreCard />
         </SwiperSlide>
         <SwiperSlide>
-          <ExploreCard/>
+          <ExploreCard />
         </SwiperSlide>
         <SwiperSlide>
-          <ExploreCard/>
+          <ExploreCard />
         </SwiperSlide>
       </Swiper>
-
-  </div>;
+    </div>
+  );
 };
 
 export default ExplorePage;

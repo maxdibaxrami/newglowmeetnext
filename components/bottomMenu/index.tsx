@@ -13,7 +13,7 @@ const BottomMenu = ({ onChangeMenu }) => {
   return (
     <div
       className="flex w-full flex-col fixed bottom-0 items-center justify-center menu-background"
-      style={{ height: "80px" }}
+      style={{ height: "80px",zIndex:"1000"}}
     >
       <Tabs
         aria-label="Options"

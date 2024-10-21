@@ -12,9 +12,6 @@ const TopBar =() =>{
           <p className="font-bold text-inherit">Glow meet</p>
         </NavbarBrand>
       </NavbarContent>
-
-
-
       <NavbarContent justify="end">
         <NavbarItem>
              <Badge size="sm" content="5" color="danger" placement="bottom-left">
@@ -22,7 +19,7 @@ const TopBar =() =>{
                  <BellIcon />
              </Button> 
 
-                </Badge>
+            </Badge>
         </NavbarItem>
       </NavbarContent>
 

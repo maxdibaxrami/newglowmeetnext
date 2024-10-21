@@ -1,6 +1,6 @@
 import {Listbox, ListboxItem, CircularProgress, Chip} from "@nextui-org/react";
 
-import {ProfileIcon, ProfilePlue, FlashIcon, LikeIcon, ViewIcon} from "../icons/profileIcon";
+import {ProfileIcon, FlashIcon, LikeIcon, ViewIcon} from "../icons/profileIcon";
 
 const DataList = () => {
 
@@ -9,7 +9,7 @@ const DataList = () => {
       <Listbox variant="flat" aria-label="Listbox menu with descriptions">
         <ListboxItem
           key="new"
-          description="Create a new file"
+          description="Edit profile"
           showDivider
           startContent={<ProfileIcon />}
           endContent={<CircularProgress
@@ -25,7 +25,7 @@ const DataList = () => {
         <ListboxItem
           key="copy"
           showDivider
-          description="Copy the file link"
+          description="Boost profile"
           startContent={<FlashIcon />}
           endContent={<CircularProgress
             aria-label="Loading..."
@@ -40,7 +40,7 @@ const DataList = () => {
         <ListboxItem
           key="edit"
           showDivider
-          description="Allows you to edit the file"
+          description="You can see who like your profile"
           startContent={<LikeIcon />}
           endContent={
             <Chip>22</Chip>
@@ -50,13 +50,13 @@ const DataList = () => {
         </ListboxItem>
         <ListboxItem
           key="delete"
-          description="Permanently delete the file"
+          description="You can see who see your profile"
           startContent={<ViewIcon />}
           endContent={
             <Chip>33</Chip>
           }
         >
-          Views
+          Who see your profile
         </ListboxItem>
       </Listbox>
     </div>

@@ -1,9 +1,10 @@
 'use client'
 import {Image, User, Divider, Button} from "@nextui-org/react";
-import { ProfileIcon } from "../icons/profileIcon";
-import ProfileProgress from "./profileProgress";
-import ProfileActivity from "./profileActivity";
+import { PenIcon, SettingIcon } from "../icons/profileIcon";
+
 import DataList from "./dataList";
+import Link from 'next/link'
+
 
 const ProfilePage = () => {
     return <div className='w-full h-full px-6 pb-16'>
@@ -57,10 +58,16 @@ const ProfilePage = () => {
                             }}
                             />
 
-                <Button color="primary" variant="solid" startContent={<ProfileIcon/>}>
-                    Edit
-                </Button>
+                <div className="flex">
+                  
+                    <Link href={'/editprofile'}>
+                        <Button className="m-1"isIconOnly color="primary" variant="solid" startContent={<PenIcon/>}/>
+                    </Link>
+
+                <Button className="m-1"isIconOnly color="primary" variant="solid" startContent={<SettingIcon/>}/>
+                    
                 </div>
+                                </div>
                         
 
                     <Divider className="my-2" />

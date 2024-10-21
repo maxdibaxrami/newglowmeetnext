@@ -18,8 +18,8 @@ export default function Home() {
 
   return (
     <section className="flex flex-col items-center justify-center gap-4 md:py-10 app-background">
-
       <TopBar/>
+      
       {selectedTab ==="explore" && <ExplorePage/>}
       {selectedTab ==="chat" && <ChatPage/>}
       {selectedTab ==="profile" && <ProfilePage/>}

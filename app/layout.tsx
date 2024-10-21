@@ -1,15 +1,11 @@
-
 import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
-import { Link } from "@nextui-org/link";
 import clsx from "clsx";
 
 import { Providers } from "./providers";
 
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
-import { Navbar } from "@/components/navbar";
-import BottomMenu from '@/components/bottomMenu/index'
 
 export const metadata: Metadata = {
   title: {
@@ -34,8 +30,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-
-  
   return (
     <html suppressHydrationWarning lang="en">
       <head />
@@ -50,7 +44,6 @@ export default function RootLayout({
             <main className="container mx-auto max-w-7xl flex-grow">
               {children}
             </main>
-           
           </div>
         </Providers>
       </body>

@@ -1,29 +1,33 @@
-"use client"
+"use client";
 
 import { useEffect, useState } from "react";
-import {Tabs, Tab} from "@nextui-org/react";
-import {FireIcon, ChatIcon, ProfileIcon} from '../icons/bottomMenuIcons'
+import { Tabs, Tab } from "@nextui-org/react";
 
-const BottomMenu = ({onChangeMenu}) => {
+import { FireIcon, ChatIcon, ProfileIcon } from "../icons/bottomMenuIcons";
 
-    const [selected, setSelected] = useState("photos");
-    useEffect(()=> onChangeMenu(selected),[selected])
+const BottomMenu = ({ onChangeMenu }) => {
+  const [selected, setSelected] = useState("photos");
+
+  useEffect(() => onChangeMenu(selected), [selected]);
 
   return (
-    <div style={{height:'80px'}} className="flex w-full flex-col fixed bottom-0 items-center justify-center menu-background">
+    <div
+      className="flex w-full flex-col fixed bottom-0 items-center justify-center menu-background"
+      style={{ height: "80px" }}
+    >
       <Tabs
-       size="lg" 
-       aria-label="Options" 
-       color="primary" 
-       variant="bordered"
-       selectedKey={selected}
-       onSelectionChange={setSelected}
-       >
+        aria-label="Options"
+        color="primary"
+        selectedKey={selected}
+        size="lg"
+        variant="bordered"
+        onSelectionChange={setSelected}
+      >
         <Tab
           key="explore"
           title={
             <div className="flex items-center space-x-2">
-              <FireIcon/>
+              <FireIcon />
             </div>
           }
         />
@@ -31,7 +35,7 @@ const BottomMenu = ({onChangeMenu}) => {
           key="chat"
           title={
             <div className="flex items-center space-x-2">
-              <ChatIcon/>
+              <ChatIcon />
             </div>
           }
         />
@@ -39,13 +43,13 @@ const BottomMenu = ({onChangeMenu}) => {
           key="profile"
           title={
             <div className="flex items-center space-x-2">
-              <ProfileIcon/>
+              <ProfileIcon />
             </div>
           }
         />
       </Tabs>
-    </div>  
+    </div>
   );
-}
+};
 
-export default BottomMenu
+export default BottomMenu;

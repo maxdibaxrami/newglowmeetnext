@@ -1,17 +1,17 @@
-'use client'
+"use client";
 
-import { title } from "@/components/primitives";
-import ChatProfileSection from "@/components/chatPage/chatProfileSection";
 import ChatLayout from "./layout";
+
+import ChatProfileSection from "@/components/chatPage/chatProfileSection";
 import MessageSection from "@/components/chatPage/message";
 import ChatInput from "@/components/chatPage/chatInput";
 
 export default function ChatPage() {
   return (
     <ChatLayout>
-      <ChatProfileSection/>
-      <MessageSection/>
-      <ChatInput/>
+      <ChatProfileSection />
+      <MessageSection />
+      <ChatInput />
     </ChatLayout>
   );
 }

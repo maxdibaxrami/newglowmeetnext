@@ -45,7 +45,7 @@ const messages = [
     type: "me",
     text: "",
     time: "11:20",
-    img: "https://via.placeholder.com/300" // Image message
+    img: "https://via.placeholder.com/300", // Image message
   },
   {
     type: "you",
@@ -66,7 +66,7 @@ const messages = [
     type: "me",
     text: "",
     time: "11:30",
-    img: "https://via.placeholder.com/300" // Another image message
+    img: "https://via.placeholder.com/300", // Another image message
   },
   {
     type: "you",
@@ -77,19 +77,22 @@ const messages = [
     type: "me",
     text: "Thanks! Let me know if you need help with anything.",
     time: "11:35",
-  }
+  },
 ];
 
 const MessageSection = () => {
-
-
   return (
-    <div style={{maxHeight:"100vh"}} className="message-container w-full flex flex-col border-small px-1 rounded-small border-default-200 dark:border-default-100">
+    <div
+      className="message-container w-full flex flex-col border-small px-1 rounded-small border-default-200 dark:border-default-100"
+      style={{ maxHeight: "100vh" }}
+    >
       {messages.map((msg, index) => (
         <div key={index} className={`chat-${msg.type} chat-m flex flex-col`}>
           <div className={`chat-bubble chat-${msg.type}`}>
             <p>{msg.text}</p>
-            {msg.img && <img src={msg.img} alt="conversation" className="chat-image" />}
+            {msg.img && (
+              <img alt="conversation" className="chat-image" src={msg.img} />
+            )}
             <small className={`chat${msg.type}--time`}>{msg.time}</small>
           </div>
         </div>

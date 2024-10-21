@@ -1,11 +1,17 @@
-import {Navbar, NavbarBrand, Badge, NavbarMenu, NavbarMenuItem, NavbarContent, NavbarItem, Link, Button} from "@nextui-org/react";
+import {
+  Navbar,
+  NavbarBrand,
+  Badge,
+  NavbarContent,
+  NavbarItem,
+  Button,
+} from "@nextui-org/react";
+
 import { FireIcon, BellIcon } from "../icons/topBar";
 
-const TopBar =() =>{
-
-
+const TopBar = () => {
   return (
-    <Navbar className="" disableAnimation isBordered>
+    <Navbar disableAnimation isBordered className="">
       <NavbarContent className="sm:hidden pr-3" justify="start">
         <NavbarBrand>
           <FireIcon />
@@ -14,17 +20,15 @@ const TopBar =() =>{
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem>
-             <Badge size="sm" content="5" color="danger" placement="bottom-left">
-                <Button isIconOnly color="primary" aria-label="Like">
-                 <BellIcon />
-             </Button> 
-
-            </Badge>
+          <Badge color="danger" content="5" placement="bottom-left" size="sm">
+            <Button isIconOnly aria-label="Like" color="primary">
+              <BellIcon />
+            </Button>
+          </Badge>
         </NavbarItem>
       </NavbarContent>
-
     </Navbar>
   );
-}
+};
 
-export default TopBar
+export default TopBar;

@@ -1,6 +1,7 @@
 import React from "react";
-import {Textarea, Button} from "@nextui-org/react";
-import {SendIcon, PhotoIcon} from "../icons/chatIcon";
+import { Textarea, Button } from "@nextui-org/react";
+
+import { SendIcon, PhotoIcon } from "../icons/chatIcon";
 
 const ChatInput = () => {
   const [isVisible, setIsVisible] = React.useState(false);
@@ -8,31 +9,42 @@ const ChatInput = () => {
   const toggleVisibility = () => setIsVisible(!isVisible);
 
   return (
-    <div style={{width:"95%",left:"50%"}} className="flex absolute bottom-2 buttomchat-div right-0 items-center justify-between bg-black">
-        
-
+    <div
+      className="flex absolute bottom-2 buttomchat-div right-0 items-center justify-between bg-black"
+      style={{ width: "95%", left: "50%" }}
+    >
       <Textarea
-        variant="flat"
-        placeholder="Enter your message"
         className="w-full outline-0	"
+        endContent={
+          <Button
+            isIconOnly
+            aria-label="toggle password visibility"
+            className="focus:outline-none"
+            size="sm"
+            type="button"
+            onClick={toggleVisibility}
+          >
+            <SendIcon />
+          </Button>
+        }
         minRows={1}
+        placeholder="Enter your message"
         size="lg"
         startContent={
-          <Button size="sm" className="mr-1" color="primary" isIconOnly aria-label="Take a photo">
+          <Button
+            isIconOnly
+            aria-label="Take a photo"
+            className="mr-1"
+            color="primary"
+            size="sm"
+          >
             <PhotoIcon />
           </Button>
         }
-        endContent={
-          <Button size="sm"  className="focus:outline-none" isIconOnly type="button" onClick={toggleVisibility} aria-label="toggle password visibility">
-              <SendIcon />
-          </Button>
-        }
+        variant="flat"
       />
-
     </div>
-  
   );
-}
+};
 
-
-export default ChatInput
+export default ChatInput;

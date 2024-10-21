@@ -65,13 +65,16 @@ const ProfilePage = () => {
             />
           </Link>
 
-          <Button
-            isIconOnly
-            className="m-1"
-            color="primary"
-            startContent={<SettingIcon />}
-            variant="solid"
-          />
+          <Link href={"/setting"}>
+
+            <Button
+              isIconOnly
+              className="m-1"
+              color="primary"
+              startContent={<SettingIcon />}
+              variant="solid"
+            />
+          </Link>
         </div>
       </div>
 

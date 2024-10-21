@@ -1,6 +1,9 @@
 'use client'
 import {Image, User, Divider, Button} from "@nextui-org/react";
 import { ProfileIcon } from "../icons/profileIcon";
+import ProfileProgress from "./profileProgress";
+import ProfileActivity from "./profileActivity";
+import DataList from "./dataList";
 
 const ProfilePage = () => {
     return <div className='w-full h-full px-6'>
@@ -61,7 +64,8 @@ const ProfilePage = () => {
                         
 
                     <Divider className="my-2" />
-
+                <DataList/>
+                  
             </div>
 }
 

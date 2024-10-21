@@ -6,7 +6,7 @@ import ProfileActivity from "./profileActivity";
 import DataList from "./dataList";
 
 const ProfilePage = () => {
-    return <div className='w-full h-full px-6'>
+    return <div className='w-full h-full px-6 pb-16'>
                 <div className="flex justify-between items-center">
                     <div className="flex">
                 <div className="w-1/2">

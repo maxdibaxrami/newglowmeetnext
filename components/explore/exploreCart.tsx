@@ -20,22 +20,22 @@ const ExploreCard = () => {
   return (
     <Card style={{ overflow: "scroll", maxHeight: "80vh" }}>
       <CardBody>
-        <div className="flex justify-between items-center">
-          <div className="flex">
-            <div className="w-1/2">
+        <div className="flex mb-4 justify-between items-center">
+          <div className="flex flex-col	">
+            <div className="w-full ">
               <Image
                 alt="NextUI hero Image"
                 className="w-full h-full"
                 src="https://nextui.org/images/hero-card-complete.jpeg"
                 style={{
+                  borderRadius:"14px 14px 0px 0px",
                   objectFit: "cover",
-                  borderRadius: "14px 0px 0px 14px",
                   height: "50vh",
                 }}
               />
             </div>
 
-            <div className="w-1/2 flex flex-col">
+            <div className="flex">
               <div className="w-full">
                 <Image
                   alt="NextUI hero Image"
@@ -44,7 +44,7 @@ const ExploreCard = () => {
                   src="https://nextui.org/images/hero-card-complete.jpeg"
                   style={{
                     objectFit: "cover",
-                    borderRadius: "0px 14px 0px 0px",
+                    borderRadius:"0px 0px 0px 14px",
                     height: "25vh",
                   }}
                 />
@@ -57,8 +57,9 @@ const ExploreCard = () => {
                   src="https://nextui.org/images/hero-card-complete.jpeg"
                   style={{
                     objectFit: "cover",
-                    borderRadius: "0px 0px 14px 0px",
                     height: "25vh",
+                    borderRadius:"0px 0px 14px 0px",
+
                   }}
                 />
               </div>

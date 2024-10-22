@@ -6,41 +6,37 @@ const heart =
 const sad =
   "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0OCA0OCI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiNmZmNlNTI7fS5jbHMtMntmaWxsOiMyNzM5NDE7fS5jbHMtM3tmaWxsOiNmNmZhZmQ7fS5jbHMtNHtmaWxsOiMxNDFlMjE7fS5jbHMtNXtmaWxsOiNmZmUzNjk7fS5jbHMtNntmaWxsOiNmZmIzMmI7fS5jbHMtN3tmaWxsOiNmYmI0MGE7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT4wOC1zYXJjYXN0aWM8L3RpdGxlPjxnIGlkPSJfMDgtc2FyY2FzdGljIiBkYXRhLW5hbWU9IjA4LXNhcmNhc3RpYyI+PGNpcmNsZSBjbGFzcz0iY2xzLTEiIGN4PSIyNCIgY3k9IjI0IiByPSIyMyIvPjxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTIxLDM2LjAxNCwxOSwzNmMwLTMuMTU4LDYuOTE1LTQsMTEtNHYyQzI0LjE0MSwzNCwyMS4xNDcsMzUuNDU5LDIxLDM2LjAxNFoiLz48cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik0zOS4xNCwxNS45MmMtLjA0Mi0uMDc0LS4wOTQtLjE0Mi0uMTQtLjIxNFYxN2EyLDIsMCwwLDEtNCwwVjE1SDI5LjU0QTUuOTMxLDUuOTMxLDAsMCwwLDI4LDE5YTYsNiwwLDAsMCwxMiwwQTUuODcxLDUuODcxLDAsMCwwLDM5LjE0LDE1LjkyWiIvPjxwYXRoIGNsYXNzPSJjbHMtNCIgZD0iTTM3LDE5YTIsMiwwLDAsMCwyLTJWMTUuNzA2QTUuMTMzLDUuMTMzLDAsMCwwLDM4LjQ2LDE1SDM1djJBMiwyLDAsMCwwLDM3LDE5WiIvPjxwYXRoIGNsYXNzPSJjbHMtMyIgZD0iTTE5LjE0LDE1LjkyYy0uMDQyLS4wNzQtLjA5NC0uMTQyLS4xNC0uMjE0VjE3YTIsMiwwLDAsMS00LDBWMTVIOS41NEE1LjkzMSw1LjkzMSwwLDAsMCw4LDE5YTYsNiwwLDAsMCwxMiwwQTUuODcxLDUuODcxLDAsMCwwLDE5LjE0LDE1LjkyWiIvPjxwYXRoIGNsYXNzPSJjbHMtNCIgZD0iTTE3LDE5YTIsMiwwLDAsMCwyLTJWMTUuNzA2QTUuMTMzLDUuMTMzLDAsMCwwLDE4LjQ2LDE1SDE1djJBMiwyLDAsMCwwLDE3LDE5WiIvPjxwYXRoIGNsYXNzPSJjbHMtNSIgZD0iTTI0LDRjMTIuMTUsMCwyMiw4LjUwNywyMiwxOWguOTc1YTIzLDIzLDAsMCwwLTQ1Ljk1LDBIMkMyLDEyLjUwNywxMS44NSw0LDI0LDRaIi8+PHBhdGggY2xhc3M9ImNscy02IiBkPSJNNDYsMjNjMCwxMC40OTMtOS44NSwxOS0yMiwxOVMyLDMzLjQ5MywyLDIzSDEuMDI1Yy0uMDE0LjMzMi0uMDI1LjY2NS0uMDI1LDFhMjMsMjMsMCwwLDAsNDYsMGMwLS4zMzUtLjAxMS0uNjY4LS4wMjUtMVoiLz48ZWxsaXBzZSBjbGFzcz0iY2xzLTMiIGN4PSIzNi41IiBjeT0iOC41IiByeD0iMC44MjUiIHJ5PSIxLjE0OCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNC42ODcgMjguMzEpIHJvdGF0ZSgtNDUuMDIpIi8+PGVsbGlwc2UgY2xhc3M9ImNscy0zIiBjeD0iMzAuMjQ2IiBjeT0iNCIgcng9IjAuNDEzIiByeT0iMC41NzQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDYuMDM3IDIyLjU2Nykgcm90YXRlKC00NS4wMikiLz48ZWxsaXBzZSBjbGFzcz0iY2xzLTMiIGN4PSIzMy41IiBjeT0iNi41IiByeD0iMS42NSIgcnk9IjIuMjk3IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg1LjIyMiAyNS42MDIpIHJvdGF0ZSgtNDUuMDIpIi8+PHBhdGggY2xhc3M9ImNscy03IiBkPSJNMzQsMjVhNiw2LDAsMCwxLTUuOTA4LTQuOTg1LDYsNiwwLDEsMCwxMS44MTctLjAwOUE2LDYsMCwwLDEsMzQsMjVaIi8+PHBhdGggY2xhc3M9ImNscy03IiBkPSJNMTQsMjVhNiw2LDAsMCwxLTUuOTA4LTQuOTg1LDYsNiwwLDEsMCwxMS44MTctLjAwOUE2LDYsMCwwLDEsMTQsMjVaIi8+PHBhdGggY2xhc3M9ImNscy03IiBkPSJNMzUsMTVoMy40NmE1LjEzMyw1LjEzMywwLDAsMSwuNTQuNzA2Yy4wNDYuMDcyLjEuMTQuMTQuMjE0YTUuODUxLDUuODUxLDAsMCwxLC44MzEsMi42NTVjLjAxOC0uMTg5LjAyOS0uMzgxLjAyOS0uNTc1YTUuODcxLDUuODcxLDAsMCwwLS44Ni0zLjA4Yy0uMDQyLS4wNzQtLjA5NC0uMTQyLS4xNC0uMjE0QTUuMTMzLDUuMTMzLDAsMCwwLDM4LjQ2LDE0SDI5LjU0QTUuOTMxLDUuOTMxLDAsMCwwLDI4LDE4YTYuMDMyLDYuMDMyLDAsMCwwLC4wMzQuNjM0QTUuOTI3LDUuOTI3LDAsMCwxLDI5LjU0LDE1WiIvPjxwYXRoIGNsYXNzPSJjbHMtNyIgZD0iTTE1LDE1aDMuNDZhNS4xMzMsNS4xMzMsMCwwLDEsLjU0LjcwNmMuMDQ2LjA3Mi4xLjE0LjE0LjIxNGE1Ljg1MSw1Ljg1MSwwLDAsMSwuODMxLDIuNjU1Yy4wMTgtLjE4OS4wMjktLjM4MS4wMjktLjU3NWE1Ljg3MSw1Ljg3MSwwLDAsMC0uODYtMy4wOGMtLjA0Mi0uMDc0LS4wOTQtLjE0Mi0uMTQtLjIxNEE1LjEzMyw1LjEzMywwLDAsMCwxOC40NiwxNEg5LjU0QTUuOTMxLDUuOTMxLDAsMCwwLDgsMThhNi4wMzIsNi4wMzIsMCwwLDAsLjAzNC42MzRBNS45MjcsNS45MjcsMCwwLDEsOS41NCwxNVoiLz48L2c+PC9zdmc+";
 // Custom confetti for heart
+
+const scalar = 10;
+const pineapple = confetti.shapeFromText({ text: '❤️', scalar });
+
 const heartConfetti = () => {
   if (typeof window !== "undefined") {
     confetti({
-      particleCount: 50,
+      particleCount: 100,
       angle: 90,
       spread: 55,
-      origin: { y: 0.6 },
-      shapes: ["image"],
-      shapeOptions: {
-        image: {
-          src: heart, // Add the heart image here
-          width: 20,
-          height: 20,
-        },
-      },
+      origin: { y: 1 },
+      shapes: [pineapple],
     });
   }
 };
+
+
+
+const scalar2 = 10;
+const pineapple2 = confetti.shapeFromText({ text: '👎', scalar });
+
 
 // Custom confetti for sad emoji
 const sadConfetti = () => {
   if (typeof window !== "undefined") {
     confetti({
-      particleCount: 50,
       angle: 90,
       spread: 55,
-      origin: { y: 0.6 },
-      shapes: ["image"],
-      shapeOptions: {
-        image: {
-          src: sad, // Add the sad emoji image here
-          width: 20,
-          height: 20,
-        },
-      },
+      origin: { y: 1 },
+      shapes: [pineapple2],
+      
     });
   }
 };

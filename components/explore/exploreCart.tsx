@@ -18,7 +18,7 @@ import {
 
 const ExploreCard = () => {
   return (
-    <Card style={{ overflow: "scroll", maxHeight: "80vh" }}>
+    <Card style={{ overflow: "scroll", maxHeight: "100vh", marginTop:"20px" }}>
       <CardBody>
         <div className="flex mb-4 justify-between items-center">
           <div className="flex flex-col	">
@@ -45,7 +45,7 @@ const ExploreCard = () => {
                   style={{
                     objectFit: "cover",
                     borderRadius:"0px 0px 0px 14px",
-                    height: "25vh",
+                    height: "26vh",
                   }}
                 />
               </div>
@@ -57,7 +57,7 @@ const ExploreCard = () => {
                   src="https://nextui.org/images/hero-card-complete.jpeg"
                   style={{
                     objectFit: "cover",
-                    height: "25vh",
+                    height: "26vh",
                     borderRadius:"0px 0px 14px 0px",
 
                   }}
@@ -164,10 +164,10 @@ const ExploreCard = () => {
           </Listbox>
         </div>
       </CardBody>
-      <CardFooter className="backdrop-blur-md justify-center footerswipcard before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
+  {/*<CardFooter className="backdrop-blur-md justify-center footerswipcard before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
         <NotLikeImoji />
         <HeartEyesImoji />
-      </CardFooter>
+      </CardFooter> */}    
     </Card>
   );
 };

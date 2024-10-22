@@ -2,8 +2,8 @@
 .swiper {
     margin: 1px auto;
     width: 90vw;
-    height: 80vh;
-    max-height: 80vh;
+    height: 100vh;
+    max-height: 100vh;
   }
   
   .swiper-slide {

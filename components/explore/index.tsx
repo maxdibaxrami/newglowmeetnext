@@ -29,24 +29,7 @@ const ExplorePage = () => {
         <SwiperSlide>
           <ExploreCard />
         </SwiperSlide>
-        <SwiperSlide>
-          <ExploreCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <ExploreCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <ExploreCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <ExploreCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <ExploreCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <ExploreCard />
-        </SwiperSlide>
+      
       </Swiper>
     </div>
   );

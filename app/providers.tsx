@@ -14,21 +14,25 @@ export interface ProvidersProps {
 
 export function Providers({ children, themeProps }: ProvidersProps) {
   const router = useRouter();
+  const [secondaryBgColor, setSecondaryBgColor] = React.useState('#000'); // default
+
   React.useEffect(() => {
-    const webApp = init(); // Initialize the Telegram WebApp SDK
-    
-    // Telegram WebApp is now ready
-    webApp.ready();
+    if (window?.Telegram?.WebApp) {
+      const webApp = init(); // Initialize the Telegram WebApp SDK
 
-    // Optionally customize the WebApp interface (e.g., setting the app background color)
-    webApp.setBackgroundColor('#000000');
-
-    // Handle other initialization tasks
-    console.log('Telegram Mini App SDK initialized:', webApp);
-
-    // Example: Log the current user
-    if (webApp.initDataUnsafe?.user) {
-      console.log('User Info:', webApp.initDataUnsafe.user);
+      // Make the app ready
+      webApp.ready();
+  
+      // Get theme parameters
+      const themeParams = webApp.themeParams;
+  
+      // Get the secondary background color
+      if (themeParams && themeParams.secondary_bg_color) {
+        setSecondaryBgColor(themeParams.secondary_bg_color);
+      }
+  
+      console.log('Theme Parameters:', themeParams);
+  
     }
 
   }, []);

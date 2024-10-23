@@ -23,7 +23,7 @@ const BottomMenu = ({ onChangeMenu }) => {
   return (
     <div
           className="flex w-full flex-col fixed bottom-0 backdrop-blur-sm items-center"
-          style={{ height: "68px", zIndex: "1000", width:"193px",borderRadius:"14px", bottom:"24px",overflow:"hidden",border:"1px #ffffff87 solid"}}
+          style={{ height: "auto", zIndex: "1000", width:"auto",borderRadius:"14px", bottom:"24px",overflow:"hidden",border:"1px #ffffff87 solid"}}
         >
 
       <Tabs
@@ -31,7 +31,7 @@ const BottomMenu = ({ onChangeMenu }) => {
         color="primary"
         selectedKey={selected}
         classNames={{
-          tab:"px-4 py-4 h-auto",
+          tab:"p-3 h-auto",
           tabList:""
         }}
         size="lg"

@@ -16,7 +16,7 @@ const heartConfetti = () => {
       spread: 70,
       origin: { y: 0.9 },
     };
-    
+
     confetti({
       ...defaults,
       particleCount: 30,
@@ -30,6 +30,7 @@ const heartConfetti = () => {
     confetti({
       ...defaults,
       particleCount: 15,
+      flat: true,
       scalar: scalar / 2,
     });
   }

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Button } from "@nextui-org/react";
+import { HeartEyesImoji, NotLikeImoji } from "../icons/exploreIcons";
 
 import "swiper/css";
 import "swiper/css/effect-creative";
@@ -44,6 +44,12 @@ const ExplorePage = () => {
         </SwiperSlide>
       
       </Swiper>
+
+      <div className="backdrop-blur-md flex justify-center footerswipcard before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
+        <NotLikeImoji />
+        <HeartEyesImoji />
+      </div>    
+
     </div>
   );
 };

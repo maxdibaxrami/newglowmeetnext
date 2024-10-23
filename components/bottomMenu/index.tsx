@@ -17,7 +17,7 @@ const BottomMenu = ({ onChangeMenu }) => {
     <motion.div 
       className="flex w-full flex-col fixed bottom-0 backdrop-blur-sm	items-center"
       style={{ zIndex: "10", width:"170px",borderRadius:"14px", bottom:"24px",overflow:"hidden",border:"1px #ffffff87 solid"}}
-      animate={selected==="explore"?{ width: "58px", right:"20px" }:{ width: "170px" }}
+      animate={selected==="explore"?{ width: "56px", right:"20px" }:{ width: "170px" }}
     >
       <Tabs
         aria-label="Options"

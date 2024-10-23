@@ -1,18 +1,15 @@
-import { useSwiper } from "swiper/react";
 
 import { heartConfetti, sadConfetti } from "../explore/buttonEffect";
 
 const HeartEyesImoji = () => {
-  const swiper = useSwiper();
 
   return (
     <svg
-      style={{ opacity: "0.85" }}
+      style={{ opacity: "0.85",height:"150px",width:"150px" }}
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
       onClick={() => {
         heartConfetti();
-        swiper.slideNext();
       }}
     >
       <defs>
@@ -123,16 +120,14 @@ const HeartEyesImoji = () => {
 };
 
 const NotLikeImoji = () => {
-  const swiper = useSwiper();
 
   return (
     <svg
-      style={{ opacity: "0.85" }}
+      style={{ opacity: "0.85",height:"150px",width:"150px" }}
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
       onClick={() => {
         sadConfetti();
-        swiper.slideNext();
       }}
     >
       <defs>

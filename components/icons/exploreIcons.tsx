@@ -3,7 +3,7 @@ import { heartConfetti } from "../explore/buttonEffect";
 const HeartEyesImoji = () => {
   return (
     <svg
-      style={{ opacity: "0.85", height: "150px", width: "150px" }}
+      style={{ opacity: "0.85", height: "100px", width: "100px" }}
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
       onClick={() => {
@@ -120,7 +120,7 @@ const HeartEyesImoji = () => {
 const NotLikeImoji = () => {
   return (
     <svg
-      style={{ opacity: "0.85", height: "150px", width: "150px" }}
+      style={{ opacity: "0.85", height: "100px", width: "100px" }}
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
       onClick={() => {}}

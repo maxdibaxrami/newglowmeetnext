@@ -1,34 +1,23 @@
-import {
-  Navbar,
-  NavbarBrand,
-  Badge,
-  NavbarContent,
-  NavbarItem,
-  Button,
-} from "@nextui-org/react";
+import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button} from "@nextui-org/react";
+import { FilterButton } from "../icons/chatIcon";
+import ExploreFilter from "../explore/exploreFilter";
 
-import { FireIcon, BellIcon } from "../icons/topBar";
-
-const TopBar = () => {
+const TopBar = ({selectedTab}) => {
   return (
-    <Navbar disableAnimation isBordered className="">
-      <NavbarContent className="sm:hidden pr-3" justify="start">
-        <NavbarBrand>
-          <FireIcon />
-          <p className="font-bold text-inherit">Glow meet</p>
-        </NavbarBrand>
-      </NavbarContent>
+    <Navbar style={{display:"flex",zIndex:1000}}>
+      <NavbarBrand>
+        <p className="font-bold text-inherit">{selectedTab.charAt(0).toUpperCase() + selectedTab.slice(1)}</p>
+      </NavbarBrand>
+
       <NavbarContent justify="end">
+
         <NavbarItem>
-          <Badge color="danger" content="5" placement="bottom-left" size="sm">
-            <Button isIconOnly aria-label="Like" color="primary">
-              <BellIcon />
-            </Button>
-          </Badge>
+          {selectedTab === "explore" && <ExploreFilter/>}
+          
         </NavbarItem>
       </NavbarContent>
     </Navbar>
   );
-};
+}
 
-export default TopBar;
+export default TopBar

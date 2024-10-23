@@ -8,6 +8,8 @@ import {
   Button,
   useDisclosure,
   ModalBody,
+  Slider,
+  ButtonGroup
 } from "@nextui-org/react";
 import { Select, SelectItem } from "@nextui-org/react";
 
@@ -27,7 +29,6 @@ const ExploreFilter = () => {
         aria-label="Like"
         color="primary"
         size="md"
-        style={{ marginBottom: "14px" }}
         onPress={() => handleOpen()}
       >
         <OptionInExplore />
@@ -35,32 +36,38 @@ const ExploreFilter = () => {
       <Modal backdrop="blur" isOpen={isOpen} size={"5xl"} onClose={onClose}>
         <ModalContent>
           <ModalHeader className="flex flex-col gap-1">
-            Edit more about me
+            Set filters
           </ModalHeader>
 
           <ModalBody>
             <form className="flex flex-col gap-4">
+
+              <ButtonGroup className="w-full flex">
+                <Button className="grow">My city</Button>
+                <Button className="grow">My country</Button>
+                <Button className="grow">Globally</Button>
+              </ButtonGroup>
+
+              <Slider 
+                label="Age"
+                step={1} 
+                minValue={18} 
+                maxValue={100} 
+                defaultValue={[18, 28]} 
+                className="w-full"
+              />
               <Select
                 className="w-full"
-                items={RealationStatus}
-                label="Kids"
-                placeholder="Kids"
+                items={LookingForItems}
+                label="Looking for"
+                placeholder="Looking for"
               >
-                {(RealationStatus) => (
-                  <SelectItem>{RealationStatus.label}</SelectItem>
+                {(LookingForItems) => (
+                  <SelectItem>{LookingForItems.label}</SelectItem>
                 )}
               </Select>
 
-              <Input label="height" type="number" />
 
-              <Select
-                className="w-full"
-                items={KidStatus}
-                label="Realation status"
-                placeholder="Realation status"
-              >
-                {(KidStatus) => <SelectItem>{KidStatus.label}</SelectItem>}
-              </Select>
 
               <Select
                 className="w-full"
@@ -73,16 +80,7 @@ const ExploreFilter = () => {
                 ))}
               </Select>
 
-              <Select
-                className="w-full"
-                items={SexualityStatus}
-                label="Sexuality"
-                placeholder="Sexuality"
-              >
-                {(SexualityStatus) => (
-                  <SelectItem>{SexualityStatus.label}</SelectItem>
-                )}
-              </Select>
+
             </form>
           </ModalBody>
 
@@ -167,4 +165,10 @@ const languages = [
   { key: "lt", label: "Lithuanian" },
   { key: "lv", label: "Latvian" },
   { key: "et", label: "Estonian" },
+];
+
+const LookingForItems = [
+  { key: "b", label: "Boys" },
+  { key: "G", label: "Girls" },
+  { key: "b2", label: "Both" },
 ];

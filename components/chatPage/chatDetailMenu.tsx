@@ -15,7 +15,7 @@ const ChatDetailMenu = () => {
           isIconOnly
           aria-label="Like"
           className="m-1"
-          color="primary"
+          color="default"
           size="md"
         >
           <MoreIcon />

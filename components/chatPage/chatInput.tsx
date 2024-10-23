@@ -18,6 +18,7 @@ const ChatInput = () => {
         endContent={
           <Button
             isIconOnly
+            color="primary"
             aria-label="toggle password visibility"
             className="focus:outline-none"
             size="sm"
@@ -35,7 +36,7 @@ const ChatInput = () => {
             isIconOnly
             aria-label="Take a photo"
             className="mr-1"
-            color="primary"
+            color="default"
             size="sm"
           >
             <PhotoIcon />

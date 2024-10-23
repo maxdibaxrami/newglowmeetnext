@@ -14,7 +14,7 @@ const ExploreCardOption = () => {
       <DropdownTrigger>
         <Button
           isIconOnly
-          style={{ position: "absolute", right: "20px", top: "33px" }}
+          style={{ position: "absolute", right: "20px", top: "20px" }}
           variant="flat"
         >
           <MoreIcon />

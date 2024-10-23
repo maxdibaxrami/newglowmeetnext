@@ -13,7 +13,7 @@ import ExploreCardOption from "./exploreCardOption";
 
 const ExploreCard = () => {
   return (
-    <Card style={{ overflow: "scroll", maxHeight: "100vh", marginTop: "10px" }}>
+    <Card style={{ overflow: "scroll", maxHeight: "100vh"}}>
       <CardBody>
         <div className="flex mb-4 justify-between items-center">
           <div className="flex flex-col	">
@@ -28,7 +28,7 @@ const ExploreCard = () => {
                 style={{
                   borderRadius: "14px 14px 0px 0px",
                   objectFit: "cover",
-                  height: "64vh",
+                  height: "57vh",
                 }}
               />
             </div>

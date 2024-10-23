@@ -33,6 +33,7 @@ const getAnimationProps2 =() =>{
     <div style={{ position: "relative" }}>
       <Swiper
         className="mySwiper2"
+        allowSlidePrev={false}
         creativeEffect={{
           prev: {
             shadow: true,
@@ -59,7 +60,7 @@ const getAnimationProps2 =() =>{
 
         <motion.div 
             className="backdrop-blur-md flex justify-center footerswipcard before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large w-[calc(100%_-_8px)] shadow-small ml-1 z-10"
-            animate={{ bottom: "100px" }} 
+            animate={{ bottom: "150px" }} 
             >
           <motion.div className="card" {...getAnimationProps2()}>
              <NotLikeImoji />

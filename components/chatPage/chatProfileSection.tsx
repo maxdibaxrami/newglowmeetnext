@@ -17,7 +17,7 @@ const ChatProfileSection = () => {
                 isIconOnly
                 aria-label="Like"
                 className="mr-2"
-                color="default"
+                color="primary"
               >
                 <BackMenu />
               </Button>

@@ -7,10 +7,12 @@ const heartConfetti = () => {
   if (typeof window !== 'undefined') {
     const scalar = 2;
     const unicorn = confetti.shapeFromText({ text: "😍", scalar });
-  
+    const unicorn2 = confetti.shapeFromText({ text: "❤️", scalar });
+    const unicorn3 = confetti.shapeFromText({ text: "🥰", scalar });
+
+    
     const defaults = {
       startVelocity: 40,
-      shapes: [unicorn],
       scalar,
       particleCount: 100,
       spread: 70,
@@ -20,18 +22,21 @@ const heartConfetti = () => {
     confetti({
       ...defaults,
       particleCount: 30,
+      shapes:[unicorn3]
     });
   
     confetti({
       ...defaults,
-      particleCount: 5,
+      particleCount: 15,
+      shapes:[unicorn2]
     });
   
     confetti({
       ...defaults,
       particleCount: 15,
       flat: true,
-      scalar: scalar / 2,
+      shapes: [unicorn],
+      scalar: scalar * 1.4,
     });
   }
   

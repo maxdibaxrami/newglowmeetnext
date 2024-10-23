@@ -5,7 +5,7 @@ export default function ChatLayout({
 }) {
   return (
     <section className="flex flex-col gap-4 w-full">
-      <div className="relative flex flex-col max-w-lg w-full">{children}</div>
+      <div className="relative flex flex-col max-w-lg w-full ">{children}</div>
     </section>
   );
 }

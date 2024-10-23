@@ -5,7 +5,7 @@ import { useState } from "react";
 import ProfilePage from "../components/profile/index";
 import ChatPage from "../components/chat/index";
 import ExplorePage from "../components/explore/index";
-
+import TopBar from "@/components/tobBar";
 import BottomMenu from "@/components/bottomMenu/index";
 export default function Home() {
   const [selectedTab, setSelectedTab] = useState("");
@@ -15,13 +15,17 @@ export default function Home() {
   };
 
   return (
-    <section className=" flex flex-col items-center justify-center gap-4 md:py-10 app-background">
-      {selectedTab === "explore" && <ExplorePage />}
-      {selectedTab === "chat" && <ChatPage />}
-      {selectedTab === "profile" && <ProfilePage />}
-      {selectedTab === "back" && <ExplorePage />}
+    <main className="container relative mx-auto max-w-7xl flex-grow">
+      <TopBar selectedTab={selectedTab}/>
+      <section className=" flex relative flex-col items-center justify-center gap-4 md:py-10 app-background">
 
-      <BottomMenu onChangeMenu={onChangeMenu} />
-    </section>
+        {selectedTab === "explore" && <ExplorePage />}
+        {selectedTab === "chat" && <ChatPage />}
+        {selectedTab === "profile" && <ProfilePage />}
+        {selectedTab === "back" && <ExplorePage />}
+
+        <BottomMenu onChangeMenu={onChangeMenu} />
+      </section>
+    </main>
   );
 }

@@ -1,41 +1,41 @@
-import {Dropdown, Link, DropdownTrigger, DropdownMenu, DropdownItem, Button} from "@nextui-org/react";
+import {
+  Dropdown,
+  DropdownTrigger,
+  DropdownMenu,
+  DropdownItem,
+  Button,
+} from "@nextui-org/react";
+
 import { BlockAndReport, MoreIcon, ReportIcon } from "../icons/exploreIcons";
 
-const ExploreCardOption =() => {
+const ExploreCardOption = () => {
   return (
     <Dropdown backdrop="blur">
       <DropdownTrigger>
-        <Button 
+        <Button
           isIconOnly
-          variant="flat" 
-          style={{position:"absolute",right:"20px",top:"33px"}}
+          style={{ position: "absolute", right: "20px", top: "33px" }}
+          variant="flat"
         >
-          <MoreIcon/>
+          <MoreIcon />
         </Button>
       </DropdownTrigger>
-      <DropdownMenu variant="faded" aria-label="Static Actions">
-        <DropdownItem 
-            key="delete" 
-            startContent={
-                <ReportIcon/>
-            }
-            >
-            Report
+      <DropdownMenu aria-label="Static Actions" variant="faded">
+        <DropdownItem key="delete" startContent={<ReportIcon />}>
+          Report
         </DropdownItem>
-        
+
         <DropdownItem
-         key="delete"
-         className="text-danger" 
-         color="danger"
-         startContent={
-            <BlockAndReport/>
-          }
-         >
+          key="delete"
+          className="text-danger"
+          color="danger"
+          startContent={<BlockAndReport />}
+        >
           Block and report
         </DropdownItem>
       </DropdownMenu>
     </Dropdown>
   );
-}
+};
 
-export default ExploreCardOption
+export default ExploreCardOption;

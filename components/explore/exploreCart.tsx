@@ -1,13 +1,6 @@
 import { Card, CardBody, Image, User } from "@nextui-org/react";
-import {
-  Listbox,
-  ListboxItem,
-  ListboxSection,
-  Chip,
-  CardFooter,
-} from "@nextui-org/react";
+import { Listbox, ListboxItem, ListboxSection, Chip } from "@nextui-org/react";
 
-import { HeartEyesImoji, NotLikeImoji } from "../icons/exploreIcons";
 import {
   SearchIcon,
   HashtagIcon,
@@ -15,11 +8,12 @@ import {
   WorkAndStudyIcon,
   WhyYouAreHereIcon,
 } from "../../components/icons/profileIcon";
+
 import ExploreCardOption from "./exploreCardOption";
 
 const ExploreCard = () => {
   return (
-    <Card style={{ overflow: "scroll", maxHeight: "100vh", marginTop:"10px" }}>
+    <Card style={{ overflow: "scroll", maxHeight: "100vh", marginTop: "10px" }}>
       <CardBody>
         <div className="flex mb-4 justify-between items-center">
           <div className="flex flex-col	">
@@ -28,11 +22,11 @@ const ExploreCard = () => {
                 alt="NextUI hero Image"
                 className="w-full h-full"
                 classNames={{
-                  wrapper:"w-full"
+                  wrapper: "w-full",
                 }}
                 src="https://nextui.org/images/hero-card-complete.jpeg"
                 style={{
-                  borderRadius:"14px 14px 0px 0px",
+                  borderRadius: "14px 14px 0px 0px",
                   objectFit: "cover",
                   height: "64vh",
                 }}
@@ -48,7 +42,7 @@ const ExploreCard = () => {
                   src="https://nextui.org/images/hero-card-complete.jpeg"
                   style={{
                     objectFit: "cover",
-                    borderRadius:"0px 0px 0px 14px",
+                    borderRadius: "0px 0px 0px 14px",
                     height: "26vh",
                   }}
                 />
@@ -62,8 +56,7 @@ const ExploreCard = () => {
                   style={{
                     objectFit: "cover",
                     height: "26vh",
-                    borderRadius:"0px 0px 14px 0px",
-
+                    borderRadius: "0px 0px 14px 0px",
                   }}
                 />
               </div>
@@ -168,10 +161,7 @@ const ExploreCard = () => {
           </Listbox>
         </div>
       </CardBody>
-      <ExploreCardOption/>
-
-   
-
+      <ExploreCardOption />
     </Card>
   );
 };

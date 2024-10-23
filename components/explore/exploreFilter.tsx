@@ -11,7 +11,6 @@ import {
 } from "@nextui-org/react";
 import { Select, SelectItem } from "@nextui-org/react";
 
-import { PenIcon } from "../icons/profileIcon";
 import { OptionInExplore } from "../icons/exploreIcons";
 
 const ExploreFilter = () => {
@@ -28,7 +27,7 @@ const ExploreFilter = () => {
         aria-label="Like"
         color="primary"
         size="md"
-        style={{marginBottom:"14px"}}
+        style={{ marginBottom: "14px" }}
         onPress={() => handleOpen()}
       >
         <OptionInExplore />

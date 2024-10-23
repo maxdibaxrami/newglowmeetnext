@@ -7,7 +7,6 @@ import ChatPage from "../components/chat/index";
 import ExplorePage from "../components/explore/index";
 
 import BottomMenu from "@/components/bottomMenu/index";
-import TopBar from "@/components/tobBar";
 export default function Home() {
   const [selectedTab, setSelectedTab] = useState("");
 

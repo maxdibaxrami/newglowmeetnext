@@ -14,7 +14,7 @@ const heartConfetti = () => {
       scalar,
       particleCount: 100,
       spread: 70,
-      origin: { y: 0.9 },
+      origin: { y: 0.8 , x:0.6 },
     };
 
     confetti({

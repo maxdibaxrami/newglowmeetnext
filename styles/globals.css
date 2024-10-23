@@ -52,10 +52,10 @@
 
 
 .footerswipcard{
-    bottom: 15vh;
+    bottom: -60px;
     left: 50%;
-    width: 52vw;
+    width: fit-content;
     transform: translate(-50%);
     border-radius: 50vw !important;
-    padding: 5px !important;
+    padding: 0px !important;
 }

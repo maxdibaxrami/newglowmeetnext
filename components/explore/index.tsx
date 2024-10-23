@@ -4,12 +4,13 @@ import "swiper/css";
 import "swiper/css/effect-creative";
 import "./style.css";
 import { EffectCreative } from "swiper/modules";
-
+import ExploreFilter from "./exploreFilter";
 import ExploreCard from "./exploreCart";
 
 const ExplorePage = () => {
   return (
     <div style={{ position: "relative" }}>
+      <ExploreFilter/>
       <Swiper
         className="mySwiper2"
         creativeEffect={{

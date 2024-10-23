@@ -18,7 +18,7 @@ import {
 
 const ExploreCard = () => {
   return (
-    <Card style={{ overflow: "scroll", maxHeight: "100vh", marginTop:"20px" }}>
+    <Card style={{ overflow: "scroll", maxHeight: "100vh", marginTop:"10px" }}>
       <CardBody>
         <div className="flex mb-4 justify-between items-center">
           <div className="flex flex-col	">

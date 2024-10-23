@@ -16,7 +16,7 @@ export default function Home() {
   };
 
   return (
-    <section style={{height:"100vh"}} className=" flex flex-col items-center justify-center gap-4 md:py-10 app-background">
+    <section className=" flex flex-col items-center justify-center gap-4 md:py-10 app-background">
       {selectedTab === "explore" && <ExplorePage />}
       {selectedTab === "chat" && <ChatPage />}
       {selectedTab === "profile" && <ProfilePage />}

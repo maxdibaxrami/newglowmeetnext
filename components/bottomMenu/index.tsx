@@ -12,7 +12,7 @@ import {
 } from "../icons/bottomMenuIcons";
 
 const BottomMenu = ({ onChangeMenu }) => {
-  const [selected, setSelected] = useState("explore");
+  const [selected, setSelected] = useState("chat");
 
   useEffect(() => onChangeMenu(selected), [selected]);
 

@@ -3,29 +3,22 @@
 import { useEffect, useState } from "react";
 import { Tabs, Tab } from "@nextui-org/react";
 
-import { FireIcon, ChatIcon, ProfileIcon } from "../icons/bottomMenuIcons";
+import { FireIcon, ChatIcon, ProfileIcon, ArrowRight } from "../icons/bottomMenuIcons";
+
+import { motion } from "framer-motion"
 
 const BottomMenu = ({ onChangeMenu }) => {
 
-  const [selected, setSelected] = useState("chat");
-  const [active, SetActive ] = useState(selected === "explore" ? true : false)
+  const [selected, setSelected] = useState("explore");
 
-  useEffect(() => {
-    onChangeMenu(selected)
-    if(selected ==="explore"){
-      SetActive(true)
-      return
-    }
-    SetActive(false)
-    
-  }, [selected]);
+  useEffect(() => onChangeMenu(selected),[selected]);      
 
   return (
-    <div
-          className="flex w-full flex-col fixed bottom-0 backdrop-blur-sm items-center"
-          style={{ height: "auto", zIndex: "1000", width:"auto",borderRadius:"14px", bottom:"24px",overflow:"hidden",border:"1px #ffffff87 solid"}}
-        >
-
+    <motion.div 
+      className="flex w-full flex-col fixed bottom-0 backdrop-blur-sm	items-center"
+      style={{ zIndex: "10", width:"170px",borderRadius:"14px", bottom:"24px",overflow:"hidden",border:"1px #ffffff87 solid"}}
+      animate={selected==="explore"?{ width: "58px", right:"20px" }:{ width: "170px" }}
+    >
       <Tabs
         aria-label="Options"
         color="primary"
@@ -39,6 +32,7 @@ const BottomMenu = ({ onChangeMenu }) => {
         onSelectionChange={setSelected}
         
       >
+
         <Tab
           key="explore"
           title={
@@ -50,8 +44,8 @@ const BottomMenu = ({ onChangeMenu }) => {
         <Tab
           key="chat"
           title={
-            <div className="flex items-center space-x-2">
-              <ChatIcon />
+            <div className="flex items-center space-x-2">   
+              {selected === "explore"? <ArrowRight/> : <ChatIcon />}
             </div>
           }
         />
@@ -65,7 +59,7 @@ const BottomMenu = ({ onChangeMenu }) => {
         />
       </Tabs>
 
-        </div>
+    </motion.div >
   );
 };
 

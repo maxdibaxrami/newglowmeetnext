@@ -15,6 +15,7 @@ import {
   WorkAndStudyIcon,
   WhyYouAreHereIcon,
 } from "../../components/icons/profileIcon";
+import ExploreCardOption from "./exploreCardOption";
 
 const ExploreCard = () => {
   return (
@@ -22,10 +23,13 @@ const ExploreCard = () => {
       <CardBody>
         <div className="flex mb-4 justify-between items-center">
           <div className="flex flex-col	">
-            <div className="w-full ">
+            <div className="w-full">
               <Image
                 alt="NextUI hero Image"
                 className="w-full h-full"
+                classNames={{
+                  wrapper:"w-full"
+                }}
                 src="https://nextui.org/images/hero-card-complete.jpeg"
                 style={{
                   borderRadius:"14px 14px 0px 0px",
@@ -164,6 +168,7 @@ const ExploreCard = () => {
           </Listbox>
         </div>
       </CardBody>
+      <ExploreCardOption/>
   {/*<CardFooter className="backdrop-blur-md justify-center footerswipcard before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
         <NotLikeImoji />
         <HeartEyesImoji />

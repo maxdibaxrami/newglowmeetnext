@@ -20,7 +20,8 @@ export default function Home() {
       {selectedTab === "explore" && <ExplorePage />}
       {selectedTab === "chat" && <ChatPage />}
       {selectedTab === "profile" && <ProfilePage />}
-      
+      {selectedTab === "back" && <ExplorePage />}
+
       <BottomMenu onChangeMenu={onChangeMenu} />
     </section>
   );

@@ -12,6 +12,7 @@ import {
 import { Select, SelectItem } from "@nextui-org/react";
 
 import { PenIcon } from "../icons/profileIcon";
+import { OptionInExplore } from "../icons/exploreIcons";
 
 const ExploreFilter = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -25,12 +26,12 @@ const ExploreFilter = () => {
       <Button
         isIconOnly
         aria-label="Like"
-        className="absolute bottom-1 right-2 z-10"
-        color="default"
-        size="sm"
+        color="primary"
+        size="md"
+        style={{marginBottom:"14px"}}
         onPress={() => handleOpen()}
       >
-        <PenIcon />
+        <OptionInExplore />
       </Button>
       <Modal backdrop="blur" isOpen={isOpen} size={"5xl"} onClose={onClose}>
         <ModalContent>

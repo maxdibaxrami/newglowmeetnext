@@ -173,7 +173,7 @@ const EditProfile = () => {
           </ModalBody>
 
           <ModalFooter>
-            <Button color="default" variant="light" onPress={onClose}>
+            <Button color="default" variant="solid" onPress={onClose}>
               Close
             </Button>
             <Button color="success" onPress={onClose}>

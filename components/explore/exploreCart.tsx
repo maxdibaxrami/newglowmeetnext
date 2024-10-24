@@ -75,7 +75,7 @@ const ExploreCard = () => {
         />
 
         <div className="w-full mb-4 mt-2">
-          <Listbox aria-label="Listbox menu with sections" variant="flat">
+          <Listbox aria-label="Listbox menu with sections" variant="solid">
             <ListboxSection showDivider className="relative" title="Profile">
               <ListboxItem
                 key="2"
@@ -139,7 +139,7 @@ const ExploreCard = () => {
                         className="m-1"
                         color="success"
                         startContent={<HashtagIcon />}
-                        variant="flat"
+                        variant="solid"
                       >
                         {value}
                       </Chip>

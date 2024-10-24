@@ -45,7 +45,7 @@ const UserModal = () => {
             <Card
               style={{
                 overflow: "scroll",
-                maxHeight: "99vh",
+                maxHeight: "98vh",
                 position: "relative",
               }}
             >
@@ -112,7 +112,7 @@ const UserModal = () => {
                 <div className="w-full mb-4 mt-2">
                   <Listbox
                     aria-label="Listbox menu with sections"
-                    variant="flat"
+                    variant="solid"
                   >
                     <ListboxSection
                       showDivider
@@ -181,7 +181,7 @@ const UserModal = () => {
                                 className="m-1"
                                 color="success"
                                 startContent={<HashtagIcon />}
-                                variant="flat"
+                                variant="solid"
                               >
                                 {value}
                               </Chip>
@@ -212,7 +212,7 @@ const UserModal = () => {
                   top: "28px",
                   zIndex: 100,
                 }}
-                variant="flat"
+                variant="solid"
                 onPress={onClose}
               >
                 <CloseIcon />

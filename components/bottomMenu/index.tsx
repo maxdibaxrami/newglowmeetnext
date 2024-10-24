@@ -32,6 +32,7 @@ const BottomMenu = ({ onChangeMenu }) => {
         overflow: "hidden",
         border: "1px #ffffff87 solid",
       }}
+      transition={{ type: "tween" }}
     >
       <Tabs
         aria-label="Options"
@@ -42,7 +43,7 @@ const BottomMenu = ({ onChangeMenu }) => {
         color="primary"
         selectedKey={selected}
         size="lg"
-        variant="light"
+        variant="solid"
         onSelectionChange={setSelected}
       >
         <Tab

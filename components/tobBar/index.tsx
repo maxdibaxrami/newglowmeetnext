@@ -6,6 +6,7 @@ import {
 } from "@nextui-org/react";
 
 import ExploreFilter from "../explore/exploreFilter";
+import { ThemeSwitch } from "../theme-switch";
 
 const TopBar = ({ selectedTab }) => {
   return (
@@ -18,6 +19,7 @@ const TopBar = ({ selectedTab }) => {
 
       <NavbarContent justify="end">
         <NavbarItem>
+          <ThemeSwitch />
           {selectedTab === "explore" && <ExploreFilter />}
         </NavbarItem>
       </NavbarContent>

@@ -26,8 +26,10 @@ const ExploreFilter = () => {
       <Button
         isIconOnly
         aria-label="Like"
+        className="ml-2"
         color="primary"
         size="md"
+        variant="solid"
         onPress={() => handleOpen()}
       >
         <OptionInExplore />
@@ -77,7 +79,7 @@ const ExploreFilter = () => {
           </ModalBody>
 
           <ModalFooter>
-            <Button color="default" variant="light" onPress={onClose}>
+            <Button color="default" variant="solid" onPress={onClose}>
               Close
             </Button>
             <Button color="success" onPress={onClose}>
@@ -105,7 +107,6 @@ export const KidStatus = [
   { key: "elephant", label: "I don’t want kids" },
   { key: "lion", label: "I’d rather not say" },
 ];
-
 
 const languages = [
   { key: "en", label: "English" },

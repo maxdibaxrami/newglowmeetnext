@@ -16,7 +16,7 @@ const ChatFiltermenu = () => {
           <FilterButton />
         </Button>
       </DropdownTrigger>
-      <DropdownMenu aria-label="Static Actions" variant="faded">
+      <DropdownMenu aria-label="Static Actions" variant="solid">
         <DropdownItem key="new" startContent={<NewIcon />}>
           New
         </DropdownItem>

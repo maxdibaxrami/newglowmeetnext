@@ -42,7 +42,7 @@ const ChatInput = () => {
             <PhotoIcon />
           </Button>
         }
-        variant="flat"
+        variant="solid"
       />
     </div>
   );

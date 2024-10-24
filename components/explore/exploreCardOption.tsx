@@ -19,12 +19,12 @@ const ExploreCardOption = ({ page }) => {
             right: "20px",
             top: page === "chat" ? "28px" : "20px",
           }}
-          variant="flat"
+          variant="solid"
         >
           <MoreIcon />
         </Button>
       </DropdownTrigger>
-      <DropdownMenu aria-label="Static Actions" variant="faded">
+      <DropdownMenu aria-label="Static Actions" variant="solid">
         <DropdownItem key="delete" startContent={<ReportIcon />}>
           Report
         </DropdownItem>

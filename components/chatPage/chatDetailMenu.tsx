@@ -21,7 +21,7 @@ const ChatDetailMenu = () => {
           <MoreIcon />
         </Button>
       </DropdownTrigger>
-      <DropdownMenu aria-label="Static Actions" variant="faded">
+      <DropdownMenu aria-label="Static Actions" variant="solid">
         <DropdownItem key="new" startContent={<Favorite status={false} />}>
           Add to favorite
         </DropdownItem>

@@ -11,7 +11,7 @@ const ChatLongPress = ({ children }) => {
   return (
     <Dropdown backdrop="blur" trigger="longPress">
       <DropdownTrigger>{children}</DropdownTrigger>
-      <DropdownMenu aria-label="Dropdown menu with icons" variant="faded">
+      <DropdownMenu aria-label="Dropdown menu with icons" variant="solid">
         <DropdownItem key="favorite" startContent={<Favorite status={false} />}>
           Add to favorite
         </DropdownItem>

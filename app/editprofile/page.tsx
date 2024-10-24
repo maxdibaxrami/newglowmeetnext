@@ -88,7 +88,7 @@ export default function EditProfilePage() {
 
         <div className="px-6 w-full mb-4">
           <div className="w-full border-small px-1 py-2 rounded-small border-default-200 dark:border-default-100">
-            <Listbox aria-label="Listbox menu with sections" variant="flat">
+            <Listbox aria-label="Listbox menu with sections" variant="solid">
               <ListboxSection showDivider className="relative" title="Profile">
                 <ListboxItem
                   key="1"
@@ -186,7 +186,7 @@ export default function EditProfilePage() {
                           className="m-1"
                           color="success"
                           startContent={<HashtagIcon />}
-                          variant="flat"
+                          variant="solid"
                         >
                           {value}
                         </Chip>

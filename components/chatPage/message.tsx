@@ -1,5 +1,6 @@
+"use client";
 import "./style.css";
-
+import { useTheme } from "next-themes";
 const messages = [
   {
     type: "me",
@@ -81,10 +82,12 @@ const messages = [
 ];
 
 const MessageSection = () => {
+  const Theme = useTheme();
+
   return (
     <div
-      className="message-container w-full flex flex-col border-small px-1 rounded-small border-default-200 dark:border-default-100"
-      style={{ maxHeight: "100vh" }}
+      className={`${Theme.theme === "light" ? "message-container-light" : "message-container-dark"} w-full flex flex-col border-small px-1 rounded-small border-default-200 dark:border-default-100`}
+      style={{ maxHeight: "100vh", overflow: "scroll" }}
     >
       {messages.map((msg, index) => (
         <div key={index} className={`chat-${msg.type} chat-m flex flex-col`}>

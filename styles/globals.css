@@ -36,9 +36,15 @@
     margin-bottom: 4rem;
 }
 
-.message-container{
+.message-container-dark{
     background-image: url("/assets/chat-background.png");
-    background-color: #080808;
+    background-color: #5d5d5d;
+
+}
+
+.message-container-light{
+    background-image: url("/assets/chat-background.png");
+    background-color: #0000004f;
 
 }
 

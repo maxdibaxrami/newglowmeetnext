@@ -17,7 +17,7 @@ const ChatList = () => {
         defaultSelectedKeys={["1"]}
         items={usersData}
         label="Assigned to"
-        variant="flat"
+        variant="solid"
       >
         {(item) => (
           <ListboxItem

@@ -106,16 +106,7 @@ export const KidStatus = [
   { key: "lion", label: "I’d rather not say" },
 ];
 
-const SexualityStatus = [
-  { key: "straight", label: "Straight" },
-  { key: "gay", label: "Gay" },
-  { key: "lesbian", label: "Lesbian" },
-  { key: "bisexual", label: "Bisexual" },
-  { key: "asexual", label: "Asexual" },
-  { key: "pansexual", label: "Pansexual" },
-  { key: "queer", label: "Queer" },
-  { key: "questioning", label: "Questioning" },
-];
+
 const languages = [
   { key: "en", label: "English" },
   { key: "es", label: "Spanish" },

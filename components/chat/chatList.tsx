@@ -1,12 +1,13 @@
 import React from "react";
 import { Listbox, ListboxItem, Avatar } from "@nextui-org/react";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
+
+import { Favorite } from "../icons/chatIcon";
 
 import ChatLongPress from "./chatLongPress";
 import { ListboxWrapper } from "./listWapper";
-const ChatList = () => {
-  const router = useRouter();
 
+const ChatList = () => {
   return (
     <ListboxWrapper>
       <Listbox
@@ -22,23 +23,24 @@ const ChatList = () => {
         {(item) => (
           <ListboxItem
             key={item.id}
+            endContent={<Favorite status={item.id % 2 !== 0} />}
             textValue={item.name}
           >
-            <ChatLongPress>
-              <div className="flex gap-2 items-center">
-                <Avatar
-                  isBordered
-                  radius="sm"
-                  src="https://i.pravatar.cc/150?u=a04258a2462d826712d"
-                />
-                <div className="flex flex-col">
-                  <span className="text-small">{item.name}</span>
-                  <span className="text-tiny text-default-400">
-                    {item.email}
-                  </span>
+            <Link key={item.id} href="/chat">
+                <div className="flex gap-2 items-center">
+                  <Avatar
+                    isBordered
+                    radius="sm"
+                    src="https://i.pravatar.cc/150?u=a04258a2462d826712d"
+                  />
+                  <div className="flex flex-col">
+                    <span className="text-small text-left">{item.name}</span>
+                    <span className="text-tiny text-default-400 text-left">
+                      {item.email}
+                    </span>
+                  </div>
                 </div>
-              </div>
-            </ChatLongPress>
+            </Link>
           </ListboxItem>
         )}
       </Listbox>

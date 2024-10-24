@@ -1,9 +1,10 @@
-import { Navbar, Avatar, NavbarContent, NavbarItem } from "@nextui-org/react";
+import { Navbar, NavbarContent, NavbarItem } from "@nextui-org/react";
 import { Button } from "@nextui-org/react";
 import Link from "next/link";
 
 import { BackMenu } from "../icons/chatIcon";
 import UserModal from "../profile/userModal";
+
 import ChatDetailMenu from "./chatDetailMenu";
 
 const ChatProfileSection = () => {
@@ -25,7 +26,7 @@ const ChatProfileSection = () => {
           </NavbarItem>
 
           <NavbarItem className="">
-            <UserModal/>
+            <UserModal />
           </NavbarItem>
         </NavbarContent>
         <NavbarContent justify="end">
@@ -34,9 +35,6 @@ const ChatProfileSection = () => {
           </NavbarItem>
         </NavbarContent>
       </Navbar>
-
-
-      
     </div>
   );
 };

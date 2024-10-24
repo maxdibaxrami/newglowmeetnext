@@ -18,9 +18,9 @@ const ChatInput = () => {
         endContent={
           <Button
             isIconOnly
-            color="primary"
             aria-label="toggle password visibility"
             className="focus:outline-none"
+            color="primary"
             size="sm"
             type="button"
             onClick={toggleVisibility}

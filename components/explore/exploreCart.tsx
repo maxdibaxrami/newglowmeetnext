@@ -13,7 +13,7 @@ import ExploreCardOption from "./exploreCardOption";
 
 const ExploreCard = () => {
   return (
-    <Card style={{ overflow: "scroll", maxHeight: "100vh"}}>
+    <Card style={{ overflow: "scroll", maxHeight: "100vh" }}>
       <CardBody>
         <div className="flex mb-4 justify-between items-center">
           <div className="flex flex-col	">
@@ -161,7 +161,7 @@ const ExploreCard = () => {
           </Listbox>
         </div>
       </CardBody>
-      <ExploreCardOption page={"explore"}/>
+      <ExploreCardOption page={"explore"} />
     </Card>
   );
 };

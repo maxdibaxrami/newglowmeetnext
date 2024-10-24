@@ -3,13 +3,12 @@ import {
   Modal,
   ModalContent,
   ModalFooter,
-  Input,
   ModalHeader,
   Button,
   useDisclosure,
   ModalBody,
   Slider,
-  ButtonGroup
+  ButtonGroup,
 } from "@nextui-org/react";
 import { Select, SelectItem } from "@nextui-org/react";
 
@@ -35,26 +34,23 @@ const ExploreFilter = () => {
       </Button>
       <Modal backdrop="blur" isOpen={isOpen} size={"5xl"} onClose={onClose}>
         <ModalContent>
-          <ModalHeader className="flex flex-col gap-1">
-            Set filters
-          </ModalHeader>
+          <ModalHeader className="flex flex-col gap-1">Set filters</ModalHeader>
 
           <ModalBody>
             <form className="flex flex-col gap-4">
-
               <ButtonGroup className="w-full flex">
                 <Button className="grow">My city</Button>
                 <Button className="grow">My country</Button>
                 <Button className="grow">Globally</Button>
               </ButtonGroup>
 
-              <Slider 
-                label="Age"
-                step={1} 
-                minValue={18} 
-                maxValue={100} 
-                defaultValue={[18, 28]} 
+              <Slider
                 className="w-full"
+                defaultValue={[18, 28]}
+                label="Age"
+                maxValue={100}
+                minValue={18}
+                step={1}
               />
               <Select
                 className="w-full"
@@ -67,8 +63,6 @@ const ExploreFilter = () => {
                 )}
               </Select>
 
-
-
               <Select
                 className="w-full"
                 label="Languages"
@@ -79,8 +73,6 @@ const ExploreFilter = () => {
                   <SelectItem key={languages.key}>{languages.label}</SelectItem>
                 ))}
               </Select>
-
-
             </form>
           </ModalBody>
 

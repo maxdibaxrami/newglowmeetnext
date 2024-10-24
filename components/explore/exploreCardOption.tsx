@@ -8,13 +8,17 @@ import {
 
 import { BlockAndReport, MoreIcon, ReportIcon } from "../icons/exploreIcons";
 
-const ExploreCardOption = ({page}) => {
+const ExploreCardOption = ({ page }) => {
   return (
     <Dropdown backdrop="blur">
       <DropdownTrigger>
         <Button
           isIconOnly
-          style={{ position: "absolute", right: "20px", top: page==="chat" ?"28px":"20px" }}
+          style={{
+            position: "absolute",
+            right: "20px",
+            top: page === "chat" ? "28px" : "20px",
+          }}
           variant="flat"
         >
           <MoreIcon />

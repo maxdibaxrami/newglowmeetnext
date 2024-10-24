@@ -1,5 +1,6 @@
+import { useSwiper } from "swiper/react";
+
 import { heartConfetti } from "../explore/buttonEffect";
-import { useSwiper } from 'swiper/react';
 
 const HeartEyesImoji = () => {
   const swiper = useSwiper();
@@ -10,7 +11,7 @@ const HeartEyesImoji = () => {
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
       onClick={() => {
-        swiper.slideNext()
+        swiper.slideNext();
         heartConfetti();
       }}
     >

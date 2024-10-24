@@ -18,14 +18,10 @@ export function Providers({ children, themeProps }: ProvidersProps) {
   
   const initializeTelegramSDK = async () => {
     try {
-      // Попытка инициализировать настоящее окружение Telegram
-      console.log("Инициализация окружения Telegram");
       const [miniApp] = initMiniApp();
       miniApp.setHeaderColor('#000000');
       await miniApp.ready();
     } catch (error) {
-      // В случае ошибки инициализируем фейковое окружение
-      console.error('Ошибка при инициализации Telegram:', error);
   
       const initDataRaw = new URLSearchParams([
         ['user', JSON.stringify({
@@ -47,18 +43,18 @@ export function Providers({ children, themeProps }: ProvidersProps) {
       mockTelegramEnv({
         themeParams: {
           accentTextColor: '#6ab2f2',
-          bgColor: '#17212b',
+          bgColor: '#000000',
           buttonColor: '#5288c1',
           buttonTextColor: '#ffffff',
           destructiveTextColor: '#ec3942',
           headerBgColor: '#fcb69f',
           hintColor: '#708499',
           linkColor: '#6ab3f3',
-          secondaryBgColor: '#232e3c',
-          sectionBgColor: '#17212b',
-          sectionHeaderTextColor: '#6ab3f3',
-          subtitleTextColor: '#708499',
-          textColor: '#f5f5f5',
+          secondaryBgColor: '#000000',
+          sectionBgColor: '#000000',
+          sectionHeaderTextColor: '#FFFFFF',
+          subtitleTextColor: '#FFFFFF',
+          textColor: '#FFFFFF',
         },
         initData: parseInitData(initDataRaw),
         initDataRaw,

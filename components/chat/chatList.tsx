@@ -23,8 +23,6 @@ const ChatList = () => {
           <ListboxItem
             key={item.id}
             textValue={item.name}
-            onClick={(e) => router.push("/chat")}
-            onPress={(e) => router.push("/chat")}
           >
             <ChatLongPress>
               <div className="flex gap-2 items-center">

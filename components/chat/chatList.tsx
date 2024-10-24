@@ -1,12 +1,14 @@
 import React from "react";
 import { Listbox, ListboxItem, Avatar } from "@nextui-org/react";
-import Link from "next/link";
+import { useRouter } from 'next/navigation'
 
 import { Favorite } from "../icons/chatIcon";
-
+import ChatLongPress from "./chatLongPress";
 import { ListboxWrapper } from "./listWapper";
-
+import ChatItemRow from "./chatLongPress";
 const ChatList = () => {
+  const router = useRouter()
+
   return (
     <ListboxWrapper>
       <Listbox
@@ -22,24 +24,29 @@ const ChatList = () => {
         {(item) => (
           <ListboxItem
             key={item.id}
-            endContent={<Favorite status={item.id % 2 !== 0} />}
             textValue={item.name}
+            onPress={e=> router.push('/chat')}
+            onClick={e=> router.push('/chat')}
+
+            
           >
-            <Link key={item.id} href="/chat">
-              <div className="flex gap-2 items-center">
-                <Avatar
-                  isBordered
-                  radius="sm"
-                  src="https://i.pravatar.cc/150?u=a04258a2462d826712d"
-                />
-                <div className="flex flex-col">
-                  <span className="text-small">{item.name}</span>
-                  <span className="text-tiny text-default-400">
-                    {item.email}
-                  </span>
+            <ChatLongPress>
+                <div className="flex gap-2 items-center">
+                  <Avatar
+                    isBordered
+                    radius="sm"
+                    src="https://i.pravatar.cc/150?u=a04258a2462d826712d"
+                  />
+                  <div className="flex flex-col">
+                    <span className="text-small">{item.name}</span>
+                    <span className="text-tiny text-default-400">
+                      {item.email}
+                    </span>
+                  </div>
                 </div>
-              </div>
-            </Link>
+            </ChatLongPress>
+           
+            
           </ListboxItem>
         )}
       </Listbox>

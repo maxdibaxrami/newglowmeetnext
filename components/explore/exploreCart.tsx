@@ -161,7 +161,7 @@ const ExploreCard = () => {
           </Listbox>
         </div>
       </CardBody>
-      <ExploreCardOption />
+      <ExploreCardOption page={"explore"}/>
     </Card>
   );
 };

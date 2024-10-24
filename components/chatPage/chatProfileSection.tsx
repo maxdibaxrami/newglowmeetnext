@@ -3,7 +3,7 @@ import { Button } from "@nextui-org/react";
 import Link from "next/link";
 
 import { BackMenu } from "../icons/chatIcon";
-
+import UserModal from "../profile/userModal";
 import ChatDetailMenu from "./chatDetailMenu";
 
 const ChatProfileSection = () => {
@@ -24,21 +24,8 @@ const ChatProfileSection = () => {
             </Link>
           </NavbarItem>
 
-          <NavbarItem className="lg:flex flex items-center">
-            <Avatar
-              isBordered
-              className="mr-2"
-              color="default"
-              radius="sm"
-              size="md"
-              src="https://i.pravatar.cc/150?u=a04258a2462d826712d"
-            />
-            <div className="flex flex-col ml-2">
-              <span className="text-large bold">{"Mahdi Bahrmai"}</span>
-              <span className="text-small bold" style={{ color: "#22c55e" }}>
-                {"Online"}
-              </span>
-            </div>
+          <NavbarItem className="">
+            <UserModal/>
           </NavbarItem>
         </NavbarContent>
         <NavbarContent justify="end">
@@ -47,6 +34,9 @@ const ChatProfileSection = () => {
           </NavbarItem>
         </NavbarContent>
       </Navbar>
+
+
+      
     </div>
   );
 };

@@ -21,6 +21,8 @@ export function Providers({ children, themeProps }: ProvidersProps) {
       const [miniApp] = initMiniApp();
       miniApp.setHeaderColor('#000000');
       await miniApp.ready();
+      miniApp.setHeaderColor('#000000');
+
     } catch (error) {
   
       const initDataRaw = new URLSearchParams([

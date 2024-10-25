@@ -19,7 +19,6 @@ export default function Home() {
   return (
     <main className="container mx-auto max-w-7xl flex-grow">
       
-      <TopBar selectedTab={selectedTab} />
 
       <section className="flex relative flex-col items-center justify-center gap-4 md:py-10 app-background">
           {selectedTab === "explore" && <ExplorePage />}

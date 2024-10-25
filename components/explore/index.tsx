@@ -31,7 +31,7 @@ const ExplorePage = () => {
     <div style={{ position: "relative" }}>
       <Swiper
         allowSlidePrev={false}
-        className="mySwiper2"
+        className="mySwiper2 mt-4"
         lazy={true}
         creativeEffect={{
           prev: {

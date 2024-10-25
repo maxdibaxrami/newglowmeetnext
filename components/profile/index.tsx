@@ -2,7 +2,12 @@
 import { Image, User, Divider, Button } from "@nextui-org/react";
 import Link from "next/link";
 
-import { PenIcon, SettingIcon, VerifyIcon, PerimumIcon } from "../icons/profileIcon";
+import {
+  PenIcon,
+  SettingIcon,
+  VerifyIcon,
+  PerimumIcon,
+} from "../icons/profileIcon";
 
 import DataList from "./dataList";
 
@@ -44,7 +49,6 @@ const ProfilePage = () => {
         </div>
       </div>
       <div className="flex items-center justify-between mt-2">
-        
         <div className="flex">
           <User
             avatarProps={{
@@ -54,18 +58,16 @@ const ProfilePage = () => {
             className="mt-2"
             description="moscow, russia"
             name={"Mahdi bahrami , 24"}
-          >
-          </User>
-          
-          <div className="flex" style={{marginTop:"7px",marginLeft:"7px"}}>
+          />
+
+          <div className="flex" style={{ marginTop: "7px", marginLeft: "7px" }}>
             <div>
-              <VerifyIcon/>
+              <VerifyIcon />
             </div>
-            <div style={{marginLeft:"4px"}}>
-              <PerimumIcon/>
+            <div style={{ marginLeft: "4px" }}>
+              <PerimumIcon />
             </div>
           </div>
-
         </div>
         <div className="flex">
           <Link href={"/editprofile"}>

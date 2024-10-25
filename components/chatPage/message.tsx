@@ -81,7 +81,7 @@ const messages = [
     type: "time",
     time: "11:05 today",
   },
-  
+
   {
     type: "you",
     text: "That's a great layout! Simple and clean.",
@@ -104,21 +104,25 @@ const MessageSection = () => {
       style={{ maxHeight: "100vh", overflow: "scroll" }}
     >
       {messages.map((msg, index) => {
-
-        if(msg.type==="time"){
-          return <div className="mb-2">
-            <p className="time">{msg.time}</p>
-          </div>
+        if (msg.type === "time") {
+          return (
+            <div key={index} className="mb-2">
+              <p className="time">{msg.time}</p>
+            </div>
+          );
         }
-        return <div key={index} className={`chat-${msg.type} chat-m flex flex-col`}>
-          <div className={`chat-bubble chat-${msg.type}`}>
-            <p>{msg.text}</p>
-            {msg.img && (
-              <img alt="conversation" className="chat-image" src={msg.img} />
-            )}
-            <small className={`chat${msg.type}--time`}>{msg.time}</small>
+
+        return (
+          <div key={index} className={`chat-${msg.type} chat-m flex flex-col`}>
+            <div className={`chat-bubble chat-${msg.type}`}>
+              <p>{msg.text}</p>
+              {msg.img && (
+                <img alt="conversation" className="chat-image" src={msg.img} />
+              )}
+              <small className={`chat${msg.type}--time`}>{msg.time}</small>
+            </div>
           </div>
-        </div>
+        );
       })}
     </div>
   );

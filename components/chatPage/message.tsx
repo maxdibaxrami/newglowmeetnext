@@ -111,6 +111,7 @@ const MessageSection = () => {
             </div>
           );
         }
+        
 
         return (
           <div key={index} className={`chat-${msg.type} chat-m flex flex-col`}>

@@ -11,7 +11,7 @@ import {
 
 import ExploreCardOption from "./exploreCardOption";
 
-const ExploreCard = ({profileData}) => {
+const ExploreCard = ({ profileData }) => {
   return (
     <Card style={{ overflow: "scroll", maxHeight: "100vh" }}>
       <CardBody>
@@ -65,7 +65,6 @@ const ExploreCard = ({profileData}) => {
         </div>
 
         <User
-          
           avatarProps={{
             src: profileData.avatar,
             className: "hidden",
@@ -76,11 +75,11 @@ const ExploreCard = ({profileData}) => {
         />
 
         <div className="w-full mb-4 mt-2">
-          <Listbox  aria-label="Listbox menu with sections" variant="solid">
-            <ListboxSection  showDivider className="relative" title="Profile">
+          <Listbox aria-label="Listbox menu with sections" variant="solid">
+            <ListboxSection showDivider className="relative" title="Profile">
               <ListboxItem
-                isReadOnly
                 key="2"
+                isReadOnly
                 description={profileData.workAndEducation}
                 startContent={<WorkAndStudyIcon />}
               >
@@ -116,26 +115,41 @@ const ExploreCard = ({profileData}) => {
             </ListboxSection>
 
             <ListboxSection className="relative" title="More about me!">
-              <ListboxItem isReadOnly key="7" description={profileData.relationStatus}>
+              <ListboxItem
+                key="7"
+                isReadOnly
+                description={profileData.relationStatus}
+              >
                 Relation status
               </ListboxItem>
-              <ListboxItem isReadOnly key="8" description={profileData.height}>
+              <ListboxItem key="8" isReadOnly description={profileData.height}>
                 Height
               </ListboxItem>
-              <ListboxItem isReadOnly key="9" description={profileData.kids}>
+              <ListboxItem key="9" isReadOnly description={profileData.kids}>
                 Kids
               </ListboxItem>
-              <ListboxItem isReadOnly key="10" description={profileData.language}>
+              <ListboxItem
+                key="10"
+                isReadOnly
+                description={profileData.language}
+              >
                 Language
               </ListboxItem>
-              <ListboxItem isReadOnly key="11" description={profileData.sexuality}>
+              <ListboxItem
+                key="11"
+                isReadOnly
+                description={profileData.sexuality}
+              >
                 Sexuality
               </ListboxItem>
             </ListboxSection>
 
             <ListboxSection className="relative" title="Interesting">
               <ListboxItem isReadOnly>
-                <div className="flex flex-wrap" style={{ paddingBottom: "40px" }}>
+                <div
+                  className="flex flex-wrap"
+                  style={{ paddingBottom: "40px" }}
+                >
                   {profileData.interests.map((value, index) => (
                     <Chip
                       key={index}
@@ -168,6 +182,7 @@ const ExploreCard = ({profileData}) => {
     </Card>
   );
 };
+
 export default ExploreCard;
 
 const humanInterests = [

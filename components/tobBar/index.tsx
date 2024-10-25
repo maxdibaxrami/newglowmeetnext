@@ -7,11 +7,13 @@ import {
 
 import ExploreFilter from "../explore/exploreFilter";
 import { ThemeSwitch } from "../theme-switch";
+import { FireIcon } from "../icons/bottomMenuIcons";
 
 const TopBar = ({ selectedTab }) => {
   return (
     <Navbar style={{ display: "flex", zIndex: 1000 }}>
       <NavbarBrand>
+        <FireIcon/>
         <p className="font-bold text-inherit">
           {selectedTab.charAt(0).toUpperCase() + selectedTab.slice(1)}
         </p>

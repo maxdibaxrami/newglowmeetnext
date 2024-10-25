@@ -11,20 +11,20 @@ import {
 
 import ExploreCardOption from "./exploreCardOption";
 
-const ExploreCard = () => {
+const ExploreCard = ({profileData}) => {
   return (
     <Card style={{ overflow: "scroll", maxHeight: "100vh" }}>
       <CardBody>
         <div className="flex mb-4 justify-between items-center">
-          <div className="flex flex-col	">
+          <div className="flex flex-col">
             <div className="w-full">
               <Image
-                alt="NextUI hero Image"
+                alt="Profile hero Image"
                 className="w-full h-full"
                 classNames={{
                   wrapper: "w-full",
                 }}
-                src="https://nextui.org/images/hero-card-complete.jpeg"
+                src={profileData.mainImage} // dynamic image URL
                 style={{
                   borderRadius: "14px 14px 0px 0px",
                   objectFit: "cover",
@@ -36,10 +36,10 @@ const ExploreCard = () => {
             <div className="flex">
               <div className="w-full">
                 <Image
-                  alt="NextUI hero Image"
+                  alt="Profile hero Image"
                   className="w-full h-full twin-profile"
                   height={156}
-                  src="https://nextui.org/images/hero-card-complete.jpeg"
+                  src={profileData.secondImage} // dynamic image URL
                   style={{
                     objectFit: "cover",
                     borderRadius: "0px 0px 0px 14px",
@@ -47,12 +47,12 @@ const ExploreCard = () => {
                   }}
                 />
               </div>
-              <div className="w-full ">
+              <div className="w-full">
                 <Image
-                  alt="NextUI hero Image"
+                  alt="Profile hero Image"
                   className="w-full h-full twin-profile"
                   height={156}
-                  src="https://nextui.org/images/hero-card-complete.jpeg"
+                  src={profileData.thirdImage} // dynamic image URL
                   style={{
                     objectFit: "cover",
                     height: "26vh",
@@ -65,21 +65,23 @@ const ExploreCard = () => {
         </div>
 
         <User
+          
           avatarProps={{
-            src: "https://i.pravatar.cc/150?u=a04258114e29026702d",
+            src: profileData.avatar,
             className: "hidden",
           }}
-          className="mt-2 justify-start	"
-          description="moscow, russia"
-          name="Mahdi bahrami , 24"
+          className="mt-2 justify-start"
+          description={profileData.location}
+          name={`${profileData.name}, ${profileData.age}`}
         />
 
         <div className="w-full mb-4 mt-2">
-          <Listbox aria-label="Listbox menu with sections" variant="solid">
-            <ListboxSection showDivider className="relative" title="Profile">
+          <Listbox  aria-label="Listbox menu with sections" variant="solid">
+            <ListboxSection  showDivider className="relative" title="Profile">
               <ListboxItem
+                isReadOnly
                 key="2"
-                description="sechinov university , programmer"
+                description={profileData.workAndEducation}
                 startContent={<WorkAndStudyIcon />}
               >
                 Work and education
@@ -87,7 +89,8 @@ const ExploreCard = () => {
 
               <ListboxItem
                 key="3"
-                description="just chat"
+                isReadOnly
+                description={profileData.whyHere}
                 startContent={<WhyYouAreHereIcon />}
               >
                 Why you are here?
@@ -95,7 +98,8 @@ const ExploreCard = () => {
 
               <ListboxItem
                 key="4"
-                description="jfkksd ojjfnsdjf j fjiwe in fwj jfwe jfiwef wef "
+                isReadOnly
+                description={profileData.aboutMe}
                 startContent={<AboutMeIcon />}
               >
                 About me
@@ -103,55 +107,51 @@ const ExploreCard = () => {
 
               <ListboxItem
                 key="5"
-                description="Girl "
+                isReadOnly
+                description={profileData.lookingFor}
                 startContent={<SearchIcon />}
               >
-                Looking for ?
+                Looking for?
               </ListboxItem>
             </ListboxSection>
+
             <ListboxSection className="relative" title="More about me!">
-              <ListboxItem key="7" description="Single ">
+              <ListboxItem isReadOnly key="7" description={profileData.relationStatus}>
                 Relation status
               </ListboxItem>
-
-              <ListboxItem key="8" description="183cm ">
+              <ListboxItem isReadOnly key="8" description={profileData.height}>
                 Height
               </ListboxItem>
-
-              <ListboxItem key="9" description="183cm ">
+              <ListboxItem isReadOnly key="9" description={profileData.kids}>
                 Kids
               </ListboxItem>
-
-              <ListboxItem key="10" description="183cm ">
+              <ListboxItem isReadOnly key="10" description={profileData.language}>
                 Language
               </ListboxItem>
-              <ListboxItem key="11" description="183cm ">
+              <ListboxItem isReadOnly key="11" description={profileData.sexuality}>
                 Sexuality
               </ListboxItem>
             </ListboxSection>
-            <ListboxSection className="relative" title="Intersting">
-              <ListboxItem>
-                <div
-                  className="flex flex-wrap"
-                  style={{ paddingBottom: "40px" }}
-                >
-                  {humanInterests.map((value, index) => {
-                    return (
-                      <Chip
-                        key={index}
-                        className="m-1"
-                        color="success"
-                        startContent={<HashtagIcon />}
-                        variant="solid"
-                      >
-                        {value}
-                      </Chip>
-                    );
-                  })}
+
+            <ListboxSection className="relative" title="Interesting">
+              <ListboxItem isReadOnly>
+                <div className="flex flex-wrap" style={{ paddingBottom: "40px" }}>
+                  {profileData.interests.map((value, index) => (
+                    <Chip
+                      key={index}
+                      className="m-1"
+                      color="success"
+                      startContent={<HashtagIcon />}
+                      variant="solid"
+                    >
+                      {value}
+                    </Chip>
+                  ))}
                 </div>
               </ListboxItem>
               <ListboxItem
                 key="13"
+                isReadOnly
                 className="absolute"
                 style={{
                   top: "-8px",
@@ -168,7 +168,6 @@ const ExploreCard = () => {
     </Card>
   );
 };
-
 export default ExploreCard;
 
 const humanInterests = [

@@ -4,7 +4,6 @@
     width: 90vw;
     height: calc(98vh - 4rem);
     max-height: calc(98vh - 4rem);
-    overflow: hidden;
     border-radius: 14px;
   }
   

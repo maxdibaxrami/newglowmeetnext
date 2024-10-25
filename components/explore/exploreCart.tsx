@@ -14,7 +14,7 @@ import ExploreCardOption from "./exploreCardOption";
 const ExploreCard = ({ profileData }) => {
   const theme = useTheme();
   return (
-    <Card style={theme.theme==="light"?{ overflow: "scroll",boxShadow:"unset", maxHeight: "100vh",backgroundColor:"#ebebeb",marginTop:"4.2rem" }:{ overflow: "scroll", maxHeight: "100vh",marginTop:"4.2rem"}}>
+    <Card style={theme.theme==="light"?{ overflow: "scroll",boxShadow:"unset", maxHeight: "100vh",backgroundColor:"#ebebeb",marginTop:"4.4rem" }:{ overflow: "scroll", maxHeight: "100vh",marginTop:"4.4rem"}}>
       <CardBody>
         <div className="flex mb-4 justify-between items-center">
           <div className="flex flex-col">

@@ -7,7 +7,7 @@ const HeartEyesImoji = () => {
 
   return (
     <svg
-      style={{ height: "100px", width: "100px" }}
+      style={{ height: "90px", width: "90px" }}
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
       onClick={() => {
@@ -127,7 +127,7 @@ const NotLikeImoji = () => {
 
   return (
     <svg
-      style={{ height: "100px", width: "100px" }}
+      style={{ height: "90px", width: "90px" }}
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
       onClick={() => swiper.slideNext()}

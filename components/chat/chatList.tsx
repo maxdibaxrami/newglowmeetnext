@@ -1,13 +1,22 @@
+'use client'
 import React from "react";
-import { Listbox, ListboxItem, Avatar, Badge } from "@nextui-org/react";
+import { Listbox, ListboxItem, Avatar, Badge, Chip } from "@nextui-org/react";
 import Link from "next/link";
-import { Favorite } from "../icons/chatIcon";
-
+import { Favorite, FavoriteSmall } from "../icons/chatIcon";
+import { useRouter } from 'next/navigation'
 import { ListboxWrapper } from "./listWapper";
+import ChatItemMenu from "./chatItemMenu";
 
 const ChatList = () => {
+  const router = useRouter()
+
+  const OnPress = () => {
+    router.push('/chat')
+  }
+
   return (
     <ListboxWrapper>
+
       <Listbox
         classNames={{
           base: "w-full",
@@ -18,36 +27,51 @@ const ChatList = () => {
         label="Assigned to"
         variant="solid"
       >
+
         {(item) => (
           <ListboxItem
             key={item.id}
-            endContent={<Favorite status={item.id % 2 !== 0} />}
+            onPress={OnPress}
+            endContent={<ChatItemMenu/>}
             textValue={item.name}
           >
               <div className="flex gap-2 items-center">
 
               <Badge
                 isOneChar
-                size="sm"
-                color="success"
+                content={<FavoriteSmall/>}
+                size="lg"
+                color="warning"
                 className={item.id % 2 !== 0? "hidden":"visible" }
-                placement="bottom-right"
+                placement="top-right"
               >
-                <Avatar
-                  isBordered
-                  size="lg"
-                  radius="sm"
-                  src="https://i.pravatar.cc/150?u=a04258a2462d826712d"
-                />
+                <Badge
+                  isOneChar
+                  size="sm"
+                  color="success"
+                  className={item.id % 2 !== 0? "hidden":"visible" }
+                  placement="bottom-right"
+                >
+                  <Avatar
+                    isBordered
+                    size="lg"
+                    radius="sm"
+                    color={item.id % 2 !== 0? "default":"primary"}
+                    src="https://i.pravatar.cc/150?u=a04258a2462d826712d"
+                  />
+                </Badge>
               </Badge>
 
                 
                 <div className="flex pl-2 flex-col">
-                  <span className="text-small">{item.name}</span>
-                  <span className="text-tiny text-default-400">
+                  <span className={item.id % 2 !== 0? "text-small":"text-small font-bold"}>{item.name} 
+                    <Chip className={item.id % 2 !== 0? "hidden":"visible ml-1" } size="sm" color="primary">+1 New</Chip>
+                  </span>
+                  <span className={item.id % 2 !== 0? "text-tiny text-default-400":"text-tiny font-bold text-default-400"}>
                     {item.email}
                   </span>
                 </div>
+
               </div>
           </ListboxItem>
         )}

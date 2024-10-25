@@ -18,6 +18,10 @@ const messages = [
     time: "11:05",
   },
   {
+    type: "time",
+    time: "11:05 yesterday",
+  },
+  {
     type: "you",
     text: "Sounds interesting! What's it about?",
     time: "11:07",
@@ -59,6 +63,10 @@ const messages = [
     time: "11:25",
   },
   {
+    type: "time",
+    time: "11:05 yesterday",
+  },
+  {
     type: "you",
     text: "I'm working on a portfolio website for a client.",
     time: "11:27",
@@ -70,10 +78,16 @@ const messages = [
     img: "https://via.placeholder.com/300", // Another image message
   },
   {
+    type: "time",
+    time: "11:05 today",
+  },
+  
+  {
     type: "you",
     text: "That's a great layout! Simple and clean.",
     time: "11:32",
   },
+
   {
     type: "me",
     text: "Thanks! Let me know if you need help with anything.",
@@ -89,8 +103,14 @@ const MessageSection = () => {
       className={`${Theme.theme === "light" ? "message-container-light" : "message-container-dark"} w-full flex flex-col border-small px-1 rounded-small border-default-200 dark:border-default-100`}
       style={{ maxHeight: "100vh", overflow: "scroll" }}
     >
-      {messages.map((msg, index) => (
-        <div key={index} className={`chat-${msg.type} chat-m flex flex-col`}>
+      {messages.map((msg, index) => {
+
+        if(msg.type==="time"){
+          return <div className="mb-2">
+            <p className="time">{msg.time}</p>
+          </div>
+        }
+        return <div key={index} className={`chat-${msg.type} chat-m flex flex-col`}>
           <div className={`chat-bubble chat-${msg.type}`}>
             <p>{msg.text}</p>
             {msg.img && (
@@ -99,7 +119,7 @@ const MessageSection = () => {
             <small className={`chat${msg.type}--time`}>{msg.time}</small>
           </div>
         </div>
-      ))}
+      })}
     </div>
   );
 };

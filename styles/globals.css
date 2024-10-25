@@ -28,7 +28,7 @@
 }
 
 .chat-m:first-child {
-    margin-top: 4rem;
+    margin-top: 5rem;
 }
 .chat-m:last-child {
     margin-bottom: 4rem;
@@ -64,4 +64,14 @@
     transform: translate(-50%);
     border-radius: 50vw !important;
     padding: 0px !important;
+}
+
+.time {
+    font-size: 0.8rem;
+    background: #EEE;
+    padding: 0.25rem 1rem;
+    border-radius: 2rem;
+    width: fit-content;
+    margin: 0 auto;
+    color: #000;
 }

@@ -42,7 +42,7 @@ const ChatList = () => {
                 content={<FavoriteSmall/>}
                 size="lg"
                 color="warning"
-                className={item.id % 2 !== 0? "hidden":"visible" }
+                className={item.id % 3 !== 0? "hidden":"visible" }
                 placement="top-right"
               >
                 <Badge

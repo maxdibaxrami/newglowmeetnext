@@ -27,7 +27,7 @@ const ExploreFilter = () => {
         isIconOnly
         aria-label="Like"
         className="ml-2"
-        color="primary"
+        color="default"
         size="md"
         variant="solid"
         onPress={() => handleOpen()}

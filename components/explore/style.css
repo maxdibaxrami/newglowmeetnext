@@ -2,8 +2,9 @@
 .swiper {
     margin: 1px auto;
     width: 90vw;
-    height: 100vh;
-    max-height: 100vh;
+    height: calc(100vh - 4rem);
+    max-height: calc(100vh - 4rem);
+    overflow: hidden;
   }
   
   .swiper-slide {

@@ -19,7 +19,7 @@ const ExploreCardOption = ({ page }) => {
             right: "20px",
             top: page === "chat" ? "28px" : "20px",
           }}
-          variant="solid"
+          variant="flat"
         >
           <MoreIcon />
         </Button>

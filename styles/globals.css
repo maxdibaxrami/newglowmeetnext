@@ -18,9 +18,7 @@
     background: linear-gradient(180deg, rgba(2,0,36,0) 0%, rgba(0,0,0,1) 65%);
 }
 
-.app-background {
-    background-image: url('/assets/globals.css');
-}
+
 .buttomchat-div{
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);

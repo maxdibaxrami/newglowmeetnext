@@ -12,7 +12,7 @@ const ChatFiltermenu = () => {
   return (
     <Dropdown backdrop="blur">
       <DropdownTrigger>
-        <Button isIconOnly aria-label="Like" color="primary" size="sm">
+        <Button isIconOnly aria-label="Like" color="default" size="sm">
           <FilterButton />
         </Button>
       </DropdownTrigger>

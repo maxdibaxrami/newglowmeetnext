@@ -131,7 +131,7 @@ const ExploreCard = () => {
             </ListboxSection>
             <ListboxSection className="relative" title="Intersting">
               <ListboxItem>
-                <div className="flex flex-wrap">
+                <div style={{paddingBottom:"40px"}} className="flex flex-wrap">
                   {humanInterests.map((value, index) => {
                     return (
                       <Chip

@@ -1,7 +1,6 @@
 import React from "react";
-import { Listbox, ListboxItem, Avatar } from "@nextui-org/react";
+import { Listbox, ListboxItem, Avatar, Badge } from "@nextui-org/react";
 import Link from "next/link";
-
 import { Favorite } from "../icons/chatIcon";
 
 import { ListboxWrapper } from "./listWapper";
@@ -25,21 +24,31 @@ const ChatList = () => {
             endContent={<Favorite status={item.id % 2 !== 0} />}
             textValue={item.name}
           >
-            <Link key={item.id} href="/chat">
               <div className="flex gap-2 items-center">
+
+              <Badge
+                isOneChar
+                size="sm"
+                color="success"
+                className={item.id % 2 !== 0? "hidden":"visible" }
+                placement="bottom-right"
+              >
                 <Avatar
                   isBordered
+                  size="lg"
                   radius="sm"
                   src="https://i.pravatar.cc/150?u=a04258a2462d826712d"
                 />
-                <div className="flex flex-col">
+              </Badge>
+
+                
+                <div className="flex pl-2 flex-col">
                   <span className="text-small">{item.name}</span>
                   <span className="text-tiny text-default-400">
                     {item.email}
                   </span>
                 </div>
               </div>
-            </Link>
           </ListboxItem>
         )}
       </Listbox>

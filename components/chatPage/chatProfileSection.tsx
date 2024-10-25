@@ -10,7 +10,7 @@ import ChatDetailMenu from "./chatDetailMenu";
 const ChatProfileSection = () => {
   return (
     <div>
-      <Navbar disableAnimation className="absolute top-0">
+      <Navbar classNames={{"wrapper":"px-4"}} disableAnimation className="absolute top-0">
         <NavbarContent justify="start">
           <NavbarItem className="lg:flex">
             <Link href="/">
@@ -28,6 +28,7 @@ const ChatProfileSection = () => {
           <NavbarItem className="">
             <UserModal />
           </NavbarItem>
+
         </NavbarContent>
         <NavbarContent justify="end">
           <NavbarItem className="lg:flex">

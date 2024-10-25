@@ -21,6 +21,7 @@ const ExploreCard = ({ profileData }) => {
               <Image
                 alt="Profile hero Image"
                 className="w-full h-full"
+                loading="lazy"
                 classNames={{
                   wrapper: "w-full",
                 }}
@@ -38,7 +39,6 @@ const ExploreCard = ({ profileData }) => {
                 <Image
                   alt="Profile hero Image"
                   className="w-full h-full twin-profile"
-                  height={156}
                   src={profileData.secondImage} // dynamic image URL
                   style={{
                     objectFit: "cover",
@@ -51,7 +51,7 @@ const ExploreCard = ({ profileData }) => {
                 <Image
                   alt="Profile hero Image"
                   className="w-full h-full twin-profile"
-                  height={156}
+                  loading="lazy"
                   src={profileData.thirdImage} // dynamic image URL
                   style={{
                     objectFit: "cover",

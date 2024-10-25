@@ -32,6 +32,7 @@ const ExplorePage = () => {
       <Swiper
         allowSlidePrev={false}
         className="mySwiper2"
+        lazy={true}
         creativeEffect={{
           prev: {
             shadow: true,

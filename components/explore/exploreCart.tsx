@@ -22,6 +22,7 @@ const ExploreCard = ({ profileData }) => {
                 alt="Profile hero Image"
                 className="w-full h-full"
                 loading="lazy"
+                removeWrapper
                 classNames={{
                   wrapper: "w-full",
                 }}

@@ -10,26 +10,26 @@ const heartConfetti = () => {
     const defaults = {
       startVelocity: 40,
       scalar,
-      particleCount: 15,
-      spread: 70,
+      particleCount: 5,
+      spread: 40,
       origin: { y: 0.8, x: 0.6 },
     };
 
     confetti({
       ...defaults,
-      particleCount: 10,
+      particleCount: 5,
       shapes: [unicorn3],
     });
 
     confetti({
       ...defaults,
-      particleCount: 7,
+      particleCount: 5,
       shapes: [unicorn2],
     });
 
     confetti({
       ...defaults,
-      particleCount: 7,
+      particleCount: 5,
       flat: true,
       shapes: [unicorn],
       scalar: scalar * 1.4,

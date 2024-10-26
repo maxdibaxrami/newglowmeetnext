@@ -42,6 +42,7 @@ const ExplorePage = () => {
     <div style={{ position: "relative" }}>
       <Swiper
         allowSlidePrev={false}
+        noSwiping={false}
         className="mySwiper2 mt-4"
         lazy={true}
         onActiveIndexChange={e=> setActiveSlider(e.activeIndex)}

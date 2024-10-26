@@ -48,7 +48,7 @@ const MatchModal = ({ isOpen, onClose, modalData }) => {
                 style={{width:"150px",height:"150px",objectFit:"cover"}}
                 alt="NextUI hero Image"
                 isBlurred
-                src="https://nextui.org/images/hero-card-complete.jpeg"
+                src={modalData.avatar}
               />
 
             </motion.div>

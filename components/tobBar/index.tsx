@@ -11,7 +11,7 @@ import { FireIcon } from "../icons/bottomMenuIcons";
 
 const TopBar = ({ selectedTab }) => {
   return (
-    <Navbar style={{ display: "flex", zIndex: 1000 }}>
+    <Navbar style={{ display: "flex", zIndex: 50 }}>
       <NavbarBrand>
         <FireIcon/>
         <p className="font-bold text-inherit">

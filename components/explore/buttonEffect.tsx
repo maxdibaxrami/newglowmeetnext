@@ -10,26 +10,26 @@ const heartConfetti = () => {
     const defaults = {
       startVelocity: 40,
       scalar,
-      particleCount: 100,
+      particleCount: 15,
       spread: 70,
       origin: { y: 0.8, x: 0.6 },
     };
 
     confetti({
       ...defaults,
-      particleCount: 30,
+      particleCount: 10,
       shapes: [unicorn3],
     });
 
     confetti({
       ...defaults,
-      particleCount: 15,
+      particleCount: 7,
       shapes: [unicorn2],
     });
 
     confetti({
       ...defaults,
-      particleCount: 15,
+      particleCount: 7,
       flat: true,
       shapes: [unicorn],
       scalar: scalar * 1.4,
@@ -37,4 +37,33 @@ const heartConfetti = () => {
   }
 };
 
-export { heartConfetti };
+const MatchConfetti = () => {
+
+  const colors = ['#bb0000', '#ffffff'];
+  const end = Date.now() + (3 * 1000);
+
+  (function frame() {
+    confetti({
+      particleCount: 2,
+      angle: 60,
+      spread: 55,
+      origin: { x: 0 },
+      colors: colors
+    });
+    confetti({
+      particleCount: 2,
+      angle: 120,
+      spread: 55,
+      origin: { x: 1 },
+      colors: colors
+    });
+
+    if (Date.now() < end) {
+      requestAnimationFrame(frame);
+    }
+    
+    
+  }());
+}
+
+export { heartConfetti, MatchConfetti };

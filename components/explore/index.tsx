@@ -5,12 +5,23 @@ import "./style.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCreative } from "swiper/modules";
 import { motion } from "framer-motion";
+import { useSwiperSlide } from 'swiper/react';
 
 import { HeartEyesImoji, NotLikeImoji } from "../icons/exploreIcons";
-
+import MatchModal from "./matchModal";
 import ExploreCard from "./exploreCart";
+import { useEffect, useState } from "react";
 
 const ExplorePage = () => {
+
+  const swiperSlide = useSwiperSlide();
+  const [activeSlider, setActiveSlider] = useState(0)
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   const getAnimationProps = () => {
     return {
       whileTap: {
@@ -33,6 +44,7 @@ const ExplorePage = () => {
         allowSlidePrev={false}
         className="mySwiper2 mt-4"
         lazy={true}
+        onActiveIndexChange={e=> setActiveSlider(e.activeIndex)}
         creativeEffect={{
           prev: {
             shadow: true,
@@ -64,7 +76,7 @@ const ExplorePage = () => {
             transition={{ type: "tween" }}
             {...getAnimationProps2()}
           >
-            <NotLikeImoji />
+            <NotLikeImoji dataId={activeSlider} />
           </motion.div>
 
           <motion.div
@@ -72,10 +84,11 @@ const ExplorePage = () => {
             transition={{ type: "tween" }}
             {...getAnimationProps()}
           >
-            <HeartEyesImoji />
+            <HeartEyesImoji openModal={openModal} closeModal={closeModal} dataId={activeSlider} />
           </motion.div>
         </motion.div>
       </Swiper>
+      <MatchModal modalData={mockProfiles[activeSlider]} isOpen={isModalOpen} onClose={closeModal} />
     </div>
   );
 };

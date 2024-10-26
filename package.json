@@ -9,6 +9,7 @@
 		"lint": "eslint . --ext .ts,.tsx -c .eslintrc.json --fix"
 	},
 	"dependencies": {
+		"@motionone/utils": "^10.18.0",
 		"@nextui-org/button": "2.0.38",
 		"@nextui-org/code": "2.0.33",
 		"@nextui-org/input": "2.2.5",
@@ -35,7 +36,9 @@
 		"react": "18.3.1",
 		"react-canvas-confetti": "^2.0.7",
 		"react-dom": "18.3.1",
+		"react-intersection-observer": "^9.13.1",
 		"react-tinder-card": "^1.6.4",
+		"styled-components": "^6.1.13",
 		"swiper": "^11.1.14",
 		"telegram-web-app": "^0.0.0"
 	},

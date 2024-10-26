@@ -53,7 +53,7 @@ const ChatList = () => {
                   <Avatar
                     isBordered
                     color={item.id % 2 !== 0 ? "default" : "primary"}
-                    radius="sm"
+                    radius="md"
                     size="lg"
                     src={item.avatar}
                   />

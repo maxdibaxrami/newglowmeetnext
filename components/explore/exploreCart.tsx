@@ -10,6 +10,7 @@ import {
 } from "../../components/icons/profileIcon";
 
 import ExploreCardOption from "./exploreCardOption";
+import MatchModal from "./matchModal";
 
 const ExploreCard = ({ profileData }) => {
   const theme = useTheme();

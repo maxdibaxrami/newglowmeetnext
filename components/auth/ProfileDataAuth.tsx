@@ -1,70 +1,27 @@
 import React from "react";
 import {
-  Modal,
-  ModalContent,
   SelectItem,
   Select,
-  ModalFooter,
   DatePicker,
   Input,
   Autocomplete,
-  ModalHeader,
   AutocompleteItem,
-  Avatar,
-  Button,
-  useDisclosure,
-  ModalBody,
-  Textarea,
+  Avatar
 } from "@nextui-org/react";
 
-import { PenIcon } from "../icons/profileIcon";
+const ProfileDataAuth = ({nextPage, prevPage}) => {
+    return <div className="flex  justify-between flex-col px-6 pt-8 pb-4">
+            <form className="flex w-full flex-col gap-4">
 
-const EditProfile = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+            <p className="mb-1 text-left">Fill profile data : </p>
 
-  const handleOpen = () => {
-    onOpen();
-  };
 
-  return (
-    <>
-      <Button
-        isIconOnly
-        aria-label="Like"
-        className="absolute bottom-1 right-2 z-10"
-        color="default"
-        size="sm"
-        onPress={() => handleOpen()}
-      >
-        <PenIcon />
-      </Button>
-      <Modal backdrop="blur" isOpen={isOpen} size={"5xl"} onClose={onClose}>
-        <ModalContent>
-          <ModalHeader className="flex flex-col gap-1">
-            Edit profile
-          </ModalHeader>
-
-          <ModalBody>
-            <form className="flex flex-col gap-4">
               <Input label="Name" type="text" />
-              <DatePicker className="w-full" label="Birth date" />
-              <Textarea
-                label="About me"
-                placeholder="Enter your description"
-                className="w-full"
+              <DatePicker
+                label="Birth Date"
+                className="text-left"
+                showMonthAndYearPickers
               />
-
-              <Select 
-                label="Why you are here" 
-                className="w-full" 
-                >
-                {whyYouAreHere.map((item) => (
-                  <SelectItem key={item.key}>
-                    {item.label}
-                  </SelectItem>
-                ))}
-              </Select>
-
               <Autocomplete className="w-full" label="Select country">
                 <AutocompleteItem
                   key="argentina"
@@ -187,33 +144,15 @@ const EditProfile = () => {
                 )}
               </Select>
             </form>
-          </ModalBody>
+    </div>
+}
 
-          <ModalFooter>
-            <Button color="default" variant="solid" onPress={onClose}>
-              Close
-            </Button>
-            <Button color="success" onPress={onClose}>
-              Save
-            </Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
-    </>
-  );
-};
+export default ProfileDataAuth
 
-export default EditProfile;
 
 const LookingForItems = [
-  { key: "b", label: "Boys" },
-  { key: "G", label: "Girls" },
-  { key: "b2", label: "Both" },
-];
-
-const whyYouAreHere = [
-  {key: "cat", label: "Cat"},
-  {key: "dog", label: "Dog"},
-  {key: "elephant", label: "Elephant"},
-  {key: "lion", label: "Lion"}
-]
+    { key: "b", label: "Boys" },
+    { key: "G", label: "Girls" },
+    { key: "b2", label: "Both" },
+  ];
+  

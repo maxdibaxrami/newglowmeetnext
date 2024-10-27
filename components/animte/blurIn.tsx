@@ -2,18 +2,18 @@
 import { motion, useInView } from 'framer-motion';
 import * as React from 'react';
  
-export const BlurIn = ({ children }: { children: React.ReactNode }) => {
+export const BlurIn = ({ children,data }: { children: React.ReactNode, data:boolean }) => {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true });
   return (
-    <motion.h2
+    <motion.div
       ref={ref}
       initial={{ filter: 'blur(20px)', opacity: 0 }}
-      animate={isInView ? { filter: 'blur(0px)', opacity: 1 } : {}}
-      transition={{ duration: 1.2 }}
-      className="text-xl text-center sm:text-4xl tracking-tighter md:text-6xl md:leading-[4rem]"
+      animate={data ? { filter: 'blur(0px)', opacity: 1 } : {}}
+      transition={{ duration: 0.3 }}
+      className="w-full"
     >
       {children}
-    </motion.h2>
+    </motion.div>
   );
 };

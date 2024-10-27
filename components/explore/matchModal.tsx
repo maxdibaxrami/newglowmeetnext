@@ -1,25 +1,24 @@
 import React, { useEffect } from "react";
-import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button } from "@nextui-org/react";
+import { Modal, ModalContent, ModalBody, Button } from "@nextui-org/react";
+import { motion } from "framer-motion";
+import { Image } from "@nextui-org/react";
+
 import { BlurIn } from "../animte/blurIn";
 import { SendMessage } from "../icons/exploreIcons";
-import { motion } from "framer-motion";
-import {Image} from "@nextui-org/react";
+
 import { MatchConfetti } from "./buttonEffect";
 const MatchModal = ({ isOpen, onClose, modalData }) => {
-
-  useEffect(()=>{
-    if(isOpen)
-    {
-      MatchConfetti()
+  useEffect(() => {
+    if (isOpen) {
+      MatchConfetti();
     }
-      
-  },[isOpen])
+  }, [isOpen]);
 
   return (
-    <Modal 
-      isOpen={isOpen} 
-      placement={"bottom-center"} 
+    <Modal
       hideCloseButton
+      isOpen={isOpen}
+      placement={"bottom-center"}
       size="full"
       onOpenChange={(open) => {
         if (!open) onClose();
@@ -29,46 +28,50 @@ const MatchModal = ({ isOpen, onClose, modalData }) => {
         <>
           <ModalBody className="flex justify-center items-center">
             <motion.div
-              className="box"
               animate={{
                 scale: [1, 1.2, 1.2, 1.2, 1],
                 rotate: [0, 0, 5, -5, 0],
-                borderRadius: ["50%", "50%", "50%", "50%", "50%"]
+                borderRadius: ["50%", "50%", "50%", "50%", "50%"],
               }}
+              className="box"
               transition={{
                 duration: 2,
                 ease: "easeInOut",
                 times: [0, 0.2, 0.5, 0.8, 1],
                 repeat: Infinity,
-                repeatDelay: 1
+                repeatDelay: 1,
               }}
             >
-
               <Image
-                style={{width:"150px",height:"150px",objectFit:"cover"}}
-                alt="NextUI hero Image"
                 isBlurred
+                alt="NextUI hero Image"
                 src={modalData.avatar}
+                style={{ width: "150px", height: "150px", objectFit: "cover" }}
               />
-
             </motion.div>
             <BlurIn>
               <div className="mb-4 mt-4">
                 <p className="text-5xl font-bold">It’s a match!</p>
               </div>
-              <div>{MatchText[Math.floor(Math.random() * MatchText.length)].replaceAll("[Name]",modalData.name)}</div>
+              <div>
+                {MatchText[
+                  Math.floor(Math.random() * MatchText.length)
+                ].replaceAll("[Name]", modalData.name)}
+              </div>
             </BlurIn>
 
             <div className="flex gap-4 items-center">
-
-              <Button onClick={onClose} color="default" variant="bordered">
+              <Button color="default" variant="bordered" onClick={onClose}>
                 keep swipping
               </Button>
 
-              <Button color="primary" variant="solid" endContent={<SendMessage/>}>
+              <Button
+                color="primary"
+                endContent={<SendMessage />}
+                variant="solid"
+              >
                 Send Message
-              </Button>    
-
+              </Button>
             </div>
           </ModalBody>
         </>
@@ -78,7 +81,6 @@ const MatchModal = ({ isOpen, onClose, modalData }) => {
 };
 
 export default MatchModal;
-
 
 const MatchText = [
   "Hey [Name], swipe right for an adventure! What’s the most spontaneous thing you’ve done lately?",
@@ -92,5 +94,5 @@ const MatchText = [
   "Your profile caught my eye, [Name]—what’s something you’re really proud of?",
   "I’m intrigued by your taste in [interest from their profile], [Name]. Want to share more?",
   "Let’s skip the small talk, [Name]—what’s your favorite adventure you've been on?",
-  "What’s the best thing that happened to you this week, [Name]?"
-]
+  "What’s the best thing that happened to you this week, [Name]?",
+];

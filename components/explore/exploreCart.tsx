@@ -1,6 +1,7 @@
 import { Card, CardBody, Image, User } from "@nextui-org/react";
 import { Listbox, ListboxItem, ListboxSection, Chip } from "@nextui-org/react";
 import { useTheme } from "next-themes";
+
 import {
   SearchIcon,
   HashtagIcon,
@@ -10,24 +11,36 @@ import {
 } from "../../components/icons/profileIcon";
 
 import ExploreCardOption from "./exploreCardOption";
-import MatchModal from "./matchModal";
 
 const ExploreCard = ({ profileData }) => {
   const theme = useTheme();
+
   return (
-    <Card style={theme.theme==="light"?{ overflow: "scroll",boxShadow:"unset", maxHeight: "100vh",backgroundColor:"rgb(246 246 246)",marginTop:"4.4rem" }:{ overflow: "scroll", maxHeight: "100vh",marginTop:"4.4rem"}}>
+    <Card
+      style={
+        theme.theme === "light"
+          ? {
+              overflow: "scroll",
+              boxShadow: "unset",
+              maxHeight: "100vh",
+              backgroundColor: "rgb(246 246 246)",
+              marginTop: "4.4rem",
+            }
+          : { overflow: "scroll", maxHeight: "100vh", marginTop: "4.4rem" }
+      }
+    >
       <CardBody>
         <div className="flex mb-4 justify-between items-center">
           <div className="flex flex-col">
             <div className="w-full">
               <Image
+                removeWrapper
                 alt="Profile hero Image"
                 className="w-full h-full"
-                loading="lazy"
-                removeWrapper
                 classNames={{
                   wrapper: "w-full",
                 }}
+                loading="lazy"
                 src={profileData.mainImage} // dynamic image URL
                 style={{
                   borderRadius: "14px 14px 0px 0px",

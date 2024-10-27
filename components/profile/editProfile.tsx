@@ -49,19 +49,14 @@ const EditProfile = () => {
               <Input label="Name" type="text" />
               <DatePicker className="w-full" label="Birth date" />
               <Textarea
+                className="w-full"
                 label="About me"
                 placeholder="Enter your description"
-                className="w-full"
               />
 
-              <Select 
-                label="Why you are here" 
-                className="w-full" 
-                >
+              <Select className="w-full" label="Why you are here">
                 {whyYouAreHere.map((item) => (
-                  <SelectItem key={item.key}>
-                    {item.label}
-                  </SelectItem>
+                  <SelectItem key={item.key}>{item.label}</SelectItem>
                 ))}
               </Select>
 
@@ -212,8 +207,8 @@ const LookingForItems = [
 ];
 
 const whyYouAreHere = [
-  {key: "cat", label: "Cat"},
-  {key: "dog", label: "Dog"},
-  {key: "elephant", label: "Elephant"},
-  {key: "lion", label: "Lion"}
-]
+  { key: "cat", label: "Cat" },
+  { key: "dog", label: "Dog" },
+  { key: "elephant", label: "Elephant" },
+  { key: "lion", label: "Lion" },
+];

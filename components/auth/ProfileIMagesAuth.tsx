@@ -1,13 +1,14 @@
 import React from "react";
 import { Image, Button } from "@nextui-org/react";
+
 import { PenIcon } from "../icons/profileIcon";
 
-const ImageDataAuth = ({nextPage, prevPage}) => {
-    return <div className="flex  justify-between flex-col px-6 pt-8 pb-4">
-            <form className="flex w-full flex-col gap-4">
-
-            <p className="mb-1 text-left">Upload profile Image : </p>
-            <div className="w-full h-full px-2 pb-4">
+const ImageDataAuth = ({ nextPage, prevPage }) => {
+  return (
+    <div className="flex  justify-between flex-col px-6 pt-8 pb-4">
+      <form className="flex w-full flex-col gap-4">
+        <p className="mb-1 text-left">Upload profile Image : </p>
+        <div className="w-full h-full px-2 pb-4">
           <div className="flex justify-between items-center">
             <div className="flex">
               <div className="w-1/2 relative">
@@ -23,15 +24,14 @@ const ImageDataAuth = ({nextPage, prevPage}) => {
                 />
 
                 <Button
-                    isIconOnly
-                    aria-label="Like"
-                    className="absolute bottom-1 right-2 z-10"
-                    color="primary"
-                    size="sm"
-                  >
-                    <PenIcon />
-                  </Button>
-
+                  isIconOnly
+                  aria-label="Like"
+                  className="absolute bottom-1 right-2 z-10"
+                  color="primary"
+                  size="sm"
+                >
+                  <PenIcon />
+                </Button>
               </div>
 
               <div className="w-1/2 flex flex-col">
@@ -53,7 +53,6 @@ const ImageDataAuth = ({nextPage, prevPage}) => {
                     className="absolute bottom-1 right-2 z-10"
                     color="primary"
                     size="sm"
-
                   >
                     <PenIcon />
                   </Button>
@@ -84,10 +83,9 @@ const ImageDataAuth = ({nextPage, prevPage}) => {
             </div>
           </div>
         </div>
-
-            </form>
+      </form>
     </div>
-}
+  );
+};
 
-export default ImageDataAuth
-
+export default ImageDataAuth;

@@ -38,9 +38,8 @@ const heartConfetti = () => {
 };
 
 const MatchConfetti = () => {
-
-  const colors = ['#bb0000', '#ffffff'];
-  const end = Date.now() + (3 * 1000);
+  const colors = ["#bb0000", "#ffffff"];
+  const end = Date.now() + 3 * 1000;
 
   (function frame() {
     confetti({
@@ -48,22 +47,20 @@ const MatchConfetti = () => {
       angle: 60,
       spread: 55,
       origin: { x: 0 },
-      colors: colors
+      colors: colors,
     });
     confetti({
       particleCount: 2,
       angle: 120,
       spread: 55,
       origin: { x: 1 },
-      colors: colors
+      colors: colors,
     });
 
     if (Date.now() < end) {
       requestAnimationFrame(frame);
     }
-    
-    
-  }());
-}
+  })();
+};
 
 export { heartConfetti, MatchConfetti };

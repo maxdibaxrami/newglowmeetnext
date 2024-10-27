@@ -19,15 +19,14 @@ const Character = styled(motion.span)`
   margin-right: -0.05em;
 `;
 
-export default function AnimatedTitle({text}) {
-  
+export default function AnimatedTitle({ text }) {
   const ctrls = useAnimation();
-  
+
   const { ref, inView } = useInView({
     threshold: 0.5,
     triggerOnce: true,
   });
-  
+
   useEffect(() => {
     if (inView) {
       ctrls.start("visible");
@@ -36,12 +35,12 @@ export default function AnimatedTitle({text}) {
       ctrls.start("hidden");
     }
   }, [ctrls, inView]);
-  
+
   const wordAnimation = {
     hidden: {},
     visible: {},
   };
-  
+
   const characterAnimation = {
     hidden: {
       opacity: 0,
@@ -56,28 +55,28 @@ export default function AnimatedTitle({text}) {
       },
     },
   };
-  
+
   return (
     <Title aria-label={text} role="heading">
       {text.split(" ").map((word, index) => {
         return (
           <Word
-            ref={ref}
-            aria-hidden="true"
             key={index}
-            initial="hidden"
+            ref={ref}
             animate={ctrls}
-            variants={wordAnimation}
+            aria-hidden="true"
+            initial="hidden"
             transition={{
               delayChildren: index * 0.25,
               staggerChildren: 0.05,
             }}
+            variants={wordAnimation}
           >
             {word.split("").map((character, index) => {
               return (
                 <Character
-                  aria-hidden="true"
                   key={index}
+                  aria-hidden="true"
                   variants={characterAnimation}
                 >
                   {character}

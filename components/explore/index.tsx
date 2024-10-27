@@ -5,17 +5,17 @@ import "./style.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCreative } from "swiper/modules";
 import { motion } from "framer-motion";
-import { useSwiperSlide } from 'swiper/react';
+import { useSwiperSlide } from "swiper/react";
+import { useState } from "react";
 
 import { HeartEyesImoji, NotLikeImoji } from "../icons/exploreIcons";
+
 import MatchModal from "./matchModal";
 import ExploreCard from "./exploreCart";
-import { useEffect, useState } from "react";
 
 const ExplorePage = () => {
-
   const swiperSlide = useSwiperSlide();
-  const [activeSlider, setActiveSlider] = useState(0)
+  const [activeSlider, setActiveSlider] = useState(0);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -42,10 +42,7 @@ const ExplorePage = () => {
     <div style={{ position: "relative" }}>
       <Swiper
         allowSlidePrev={false}
-        noSwiping={false}
         className="mySwiper2 mt-4"
-        lazy={true}
-        onActiveIndexChange={e=> setActiveSlider(e.activeIndex)}
         creativeEffect={{
           prev: {
             shadow: true,
@@ -58,7 +55,10 @@ const ExplorePage = () => {
         }}
         effect={"creative"}
         grabCursor={true}
+        lazy={true}
         modules={[EffectCreative]}
+        noSwiping={false}
+        onActiveIndexChange={(e) => setActiveSlider(e.activeIndex)}
       >
         {mockProfiles.map((value, index) => {
           return (
@@ -85,11 +85,19 @@ const ExplorePage = () => {
             transition={{ type: "tween" }}
             {...getAnimationProps()}
           >
-            <HeartEyesImoji openModal={openModal} closeModal={closeModal} dataId={activeSlider} />
+            <HeartEyesImoji
+              closeModal={closeModal}
+              dataId={activeSlider}
+              openModal={openModal}
+            />
           </motion.div>
         </motion.div>
       </Swiper>
-      <MatchModal modalData={mockProfiles[activeSlider]} isOpen={isModalOpen} onClose={closeModal} />
+      <MatchModal
+        isOpen={isModalOpen}
+        modalData={mockProfiles[activeSlider]}
+        onClose={closeModal}
+      />
     </div>
   );
 };

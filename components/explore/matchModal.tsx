@@ -49,7 +49,7 @@ const MatchModal = ({ isOpen, onClose, modalData }) => {
                 style={{ width: "150px", height: "150px", objectFit: "cover" }}
               />
             </motion.div>
-            <BlurIn>
+            <BlurIn data={true}>
               <div className="mb-4 mt-4">
                 <p className="text-5xl font-bold">It’s a match!</p>
               </div>

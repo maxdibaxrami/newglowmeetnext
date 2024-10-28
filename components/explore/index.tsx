@@ -7,7 +7,6 @@ import { EffectCreative } from "swiper/modules";
 import { motion } from "framer-motion";
 import { useSwiperSlide } from "swiper/react";
 import { useState } from "react";
-import { AnimateSharedLayout } from "framer-motion";
 
 import { HeartEyesImoji, NotLikeImoji } from "../icons/exploreIcons";
 

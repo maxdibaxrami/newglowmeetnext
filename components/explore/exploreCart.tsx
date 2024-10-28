@@ -94,7 +94,7 @@ const ExploreCard = ({ profileData }) => {
             src: profileData.avatar,
             className: "hidden",
           }}
-          className="mt-2 justify-start"
+          className="mt-2 justify-start px-2"
           description={profileData.location}
           name={`${profileData.name}, ${profileData.age}`}
         />

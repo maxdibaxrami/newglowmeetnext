@@ -50,10 +50,10 @@ const MatchModal = ({ isOpen, onClose, modalData }) => {
               />
             </motion.div>
             <BlurIn data={true}>
-              <div className="mb-4 mt-4">
-                <p className="text-5xl font-bold">It’s a match!</p>
+              <div className="mb-4 text-center mt-4">
+                <p className="text-5xl text-center font-bold">It’s a match!</p>
               </div>
-              <div>
+              <div className="text-center">
                 {MatchText[
                   Math.floor(Math.random() * MatchText.length)
                 ].replaceAll("[Name]", modalData.name)}

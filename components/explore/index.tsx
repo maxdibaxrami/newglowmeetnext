@@ -7,6 +7,7 @@ import { EffectCreative } from "swiper/modules";
 import { motion } from "framer-motion";
 import { useSwiperSlide } from "swiper/react";
 import { useState } from "react";
+import { AnimateSharedLayout } from "framer-motion";
 
 import { HeartEyesImoji, NotLikeImoji } from "../icons/exploreIcons";
 
@@ -39,7 +40,7 @@ const ExplorePage = () => {
   };
 
   return (
-    <div style={{ position: "relative" }}>
+    <div className="relative">
       <Swiper
         allowSlidePrev={false}
         className="mySwiper2 mt-4"
@@ -93,6 +94,7 @@ const ExplorePage = () => {
           </motion.div>
         </motion.div>
       </Swiper>
+
       <MatchModal
         isOpen={isModalOpen}
         modalData={mockProfiles[activeSlider]}

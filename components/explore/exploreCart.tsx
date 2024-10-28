@@ -1,7 +1,7 @@
 import { Card, CardBody, Image, User } from "@nextui-org/react";
 import { Listbox, ListboxItem, ListboxSection, Chip } from "@nextui-org/react";
 import { useTheme } from "next-themes";
-
+import { useState } from "react";
 import {
   SearchIcon,
   HashtagIcon,
@@ -11,9 +11,11 @@ import {
 } from "../../components/icons/profileIcon";
 
 import ExploreCardOption from "./exploreCardOption";
+import { motion, AnimatePresence } from "framer-motion";
 
 const ExploreCard = ({ profileData }) => {
   const theme = useTheme();
+  const [selectedId, setSelectedId] = useState(null)
 
   return (
     <Card
@@ -32,47 +34,54 @@ const ExploreCard = ({ profileData }) => {
       <CardBody>
         <div className="flex mb-4 justify-between items-center">
           <div className="flex flex-col">
-            <div className="w-full">
-              <Image
-                removeWrapper
-                alt="Profile hero Image"
-                className="w-full h-full"
-                classNames={{
-                  wrapper: "w-full",
-                }}
-                loading="lazy"
-                src={profileData.mainImage} // dynamic image URL
-                style={{
-                  borderRadius: "14px 14px 0px 0px",
-                  objectFit: "cover",
-                  height: "57vh",
-                }}
-              />
-            </div>
+              <motion.div className="w-full" style={{height:"calc(61vh - 4rem)"}} layoutId={"1"} onClick={() => setSelectedId("1")}>
+                <Image
+                  removeWrapper
+                  alt="Profile hero Image"
+                  className="w-full h-full"
+                  classNames={{
+                    wrapper: "w-full",
+                  }}
+                  loading="lazy"
+                  src={profileData.mainImage} // dynamic image URL
+                  style={{
+                    borderRadius: "20px",
+                    objectFit: "cover",
+                    height: "100%",
+                    padding:"10px 10px 5px 10px"
+                  }}
+                />
+              
+              </motion.div>
+   
 
             <div className="flex">
-              <div className="w-full">
+              <div  className="w-full">
                 <Image
                   alt="Profile hero Image"
-                  className="w-full h-full twin-profile"
+                  className="w-full h-full"
                   src={profileData.secondImage} // dynamic image URL
                   style={{
                     objectFit: "cover",
-                    borderRadius: "0px 0px 0px 14px",
-                    height: "26vh",
+                    borderRadius: "20px",
+                    padding: "5px 5px 10px 10px",
+                    height: "calc(34vh - 4rem)"
+
                   }}
                 />
               </div>
               <div className="w-full">
                 <Image
                   alt="Profile hero Image"
-                  className="w-full h-full twin-profile"
+                  className="w-full h-full"
                   loading="lazy"
                   src={profileData.thirdImage} // dynamic image URL
                   style={{
                     objectFit: "cover",
-                    height: "26vh",
-                    borderRadius: "0px 0px 14px 0px",
+                    borderRadius: "20px",
+                    padding:"5px 10px 10px 5px",
+                    height: "calc(34vh - 4rem)"
+
                   }}
                 />
               </div>

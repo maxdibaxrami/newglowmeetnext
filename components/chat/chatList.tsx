@@ -19,7 +19,7 @@ const ChatList = () => {
 
     if (value.length > maxLength) {
         // If the text is longer than the maximum length, truncate it
-        return value.slice(0, maxLength) + ' … '; // Concatenate the first 8 chars with {…}
+        return value.slice(0, maxLength) + '… '; // Concatenate the first 8 chars with {…}
     }
     return value
 
@@ -39,7 +39,7 @@ const ChatList = () => {
           <ListboxItem
             key={item.id}
             endContent={<ChatItemMenu />}
-            textValue={truncateText(item.name,15)}
+            textValue={truncateText(item.name,10)}
             onPress={OnPress}
             style={{width:"100%"}}
           >
@@ -75,7 +75,7 @@ const ChatList = () => {
                     item.id % 2 !== 0 ? "text-small" : "text-small font-bold"
                   }
                 >
-                  {item.name}
+                  {truncateText(item.name,10)}
                   <Chip
                     className={item.id % 2 !== 0 ? "hidden" : "visible ml-1"}
                     color="primary"

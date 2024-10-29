@@ -27,9 +27,9 @@ const ExploreCard = ({ profileData }) => {
               boxShadow: "unset",
               maxHeight: "calc(100vh - 4rem)",
               backgroundColor: "rgb(246 246 246)",
-              marginTop: "4.4rem",
+              marginTop: "1.4rem",
             }
-          : { overflow: "scroll", maxHeight: "calc(100vh - 4rem)", marginTop: "4.4rem" }
+          : { overflow: "scroll", maxHeight: "calc(100vh - 4rem)", marginTop: "1.4rem" }
       }
     >
       <CardBody>

@@ -15,14 +15,22 @@ const ChatList = () => {
     router.push("/chat");
   };
 
+  const truncateText = (value,maxLength) => {
+
+    if (value.length > maxLength) {
+        // If the text is longer than the maximum length, truncate it
+        return value.slice(0, maxLength) + ' … '; // Concatenate the first 8 chars with {…}
+    }
+    return value
+
+}
   return (
     <ListboxWrapper>
       <Listbox
         classNames={{
           base: "w-full",
-          list: "max-h-full overflow-scroll",
+          list: "overflow-scroll",
         }}
-        defaultSelectedKeys={["1"]}
         items={usersData}
         label="Assigned to"
         variant="solid"
@@ -31,8 +39,9 @@ const ChatList = () => {
           <ListboxItem
             key={item.id}
             endContent={<ChatItemMenu />}
-            textValue={item.name}
+            textValue={truncateText(item.name,15)}
             onPress={OnPress}
+            style={{width:"100%"}}
           >
             <div className="flex gap-2 items-center">
               <Badge
@@ -76,13 +85,14 @@ const ChatList = () => {
                   </Chip>
                 </span>
                 <span
+                  
                   className={
                     item.id % 2 !== 0
                       ? "text-tiny text-default-400"
                       : "text-tiny font-bold text-default-400"
                   }
                 >
-                  {item.email}
+                  {truncateText(item.email,15)}
                 </span>
               </div>
             </div>

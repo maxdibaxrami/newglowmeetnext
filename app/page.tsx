@@ -62,6 +62,7 @@ export default function Home() {
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -10, opacity: 0 }}
               initial={{ y: 10, opacity: 0 }}
+              style={{width:"100%"}}
               transition={{
                 x: { type: "spring", stiffness: 300, damping: 30 },
                 opacity: { duration: 0.4 },

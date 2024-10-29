@@ -19,7 +19,7 @@ export default function Home() {
   };
 
   return (
-    <main className="container relative w-full flex-grow">
+    <main style={{overflow:"hidden"}} className="container relative w-full flex-grow">
       <TopBar selectedTab={selectedTab} />
 
       <section className="flex flex-col items-center justify-center gap-4 ">

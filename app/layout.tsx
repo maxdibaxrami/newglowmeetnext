@@ -36,7 +36,6 @@ export default function RootLayout({
     <html suppressHydrationWarning lang="en">
       <head />
       <body
-      style={{overflow:"hidden"}}
         className={clsx(
           "bg-background font-sans antialiased",
           fontSans.variable,

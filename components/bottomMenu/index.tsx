@@ -9,11 +9,15 @@ import {
   ChatIcon,
   ProfileIcon,
   ArrowRight,
+  LocationIcon,
+  LikeIcon
 } from "../icons/bottomMenuIcons";
+import { useTheme } from "next-themes";
 
 const BottomMenu = ({ onChangeMenu }) => {
+  
   const [selected, setSelected] = useState("chat");
-
+  const theme = useTheme()
   useEffect(() => onChangeMenu(selected), [selected]);
 
   return (
@@ -21,16 +25,17 @@ const BottomMenu = ({ onChangeMenu }) => {
       animate={
         selected === "explore"
           ? { width: "56px", right: "20px" }
-          : { width: "170px" }
+          : { width: "281px" }
       }
-      className="flex w-full flex-col fixed bottom-0 backdrop-blur-sm	items-center"
+      className="flex w-full flex-col fixed bottom-0 backdrop-blur-2xl items-center"
       style={{
         zIndex: "10",
-        width: "170px",
+        width: "281px",
         borderRadius: "14px",
         bottom: "24px",
         overflow: "hidden",
-        border: "1px #ffffff87 solid",
+        backgroundColor:"transparent",
+        border: theme.theme==="light"? "1px #0000005c solid" : "1px #ffffff87 solid",
       }}
       transition={{ type: "tween" }}
     >
@@ -38,11 +43,12 @@ const BottomMenu = ({ onChangeMenu }) => {
         aria-label="Options"
         classNames={{
           tab: "p-3 h-auto",
-          tabList: "",
+          tabList: "bg-transparent",
         }}
         color="primary"
         selectedKey={selected}
         size="lg"
+        style={{backgroundColor:"transparent"}}
         variant="solid"
         onSelectionChange={setSelected}
       >
@@ -54,14 +60,36 @@ const BottomMenu = ({ onChangeMenu }) => {
             </div>
           }
         />
+
         <Tab
-          key="chat"
+          key="nearby"
           title={
             <div className="flex items-center space-x-2">
+              <LocationIcon />
+            </div>
+          }
+        />
+
+        <Tab
+          key="chat"
+          style={selected === "explore" ? { backgroundColor:"#016fee" } : { backgroundColor:"" }}
+
+          title={
+            <div   className="flex items-center space-x-2">
               {selected === "explore" ? <ArrowRight /> : <ChatIcon />}
             </div>
           }
         />
+
+        <Tab
+          key="likes"
+          title={
+            <div className="flex items-center space-x-2">
+              <LikeIcon />
+            </div>
+          }
+        />
+
         <Tab
           key="profile"
           title={

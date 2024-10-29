@@ -9,18 +9,20 @@ import ExplorePage from "../components/explore/index";
 
 import TopBar from "@/components/tobBar";
 import BottomMenu from "@/components/bottomMenu/index";
+import LikesPage from "./likes/page";
+import NearByPage from "./nearby/page";
 export default function Home() {
-  const [selectedTab, setSelectedTab] = useState("");
+  const [selectedTab, setSelectedTab] = useState("chat");
 
   const onChangeMenu = (value) => {
     setSelectedTab(value);
   };
 
   return (
-    <main className="container mx-auto max-w-7xl flex-grow">
+    <main className="container relative mx-auto max-w-7xl flex-grow">
       <TopBar selectedTab={selectedTab} />
 
-      <section className="flex flex-col items-center justify-center gap-4 md:py-10 app-background">
+      <section className="flex flex-col items-center justify-center gap-4 md:py-10 ">
         {selectedTab === "explore" && (
           <AnimatePresence mode="wait">
             <motion.div
@@ -37,6 +39,23 @@ export default function Home() {
           </AnimatePresence>
         )}
 
+        {selectedTab === "nearby" && (
+          <AnimatePresence mode="wait">
+            <motion.div
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -10, opacity: 0 }}
+              initial={{ y: 10, opacity: 0 }}
+              transition={{
+                x: { type: "spring", stiffness: 300, damping: 30 },
+                opacity: { duration: 0.4 },
+              }}
+            >
+              <NearByPage />
+            </motion.div>
+          </AnimatePresence>
+        )}
+
+
         {selectedTab === "chat" && (
           <AnimatePresence mode="wait">
             <motion.div
@@ -49,6 +68,22 @@ export default function Home() {
               }}
             >
               <ChatPage />
+            </motion.div>
+          </AnimatePresence>
+        )}
+
+        {selectedTab === "likes" && (
+          <AnimatePresence mode="wait">
+            <motion.div
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -10, opacity: 0 }}
+              initial={{ y: 10, opacity: 0 }}
+              transition={{
+                x: { type: "spring", stiffness: 300, damping: 30 },
+                opacity: { duration: 0.4 },
+              }}
+            >
+              <LikesPage />
             </motion.div>
           </AnimatePresence>
         )}

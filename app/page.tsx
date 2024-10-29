@@ -19,10 +19,10 @@ export default function Home() {
   };
 
   return (
-    <main style={{overflow:"hidden"}} className="container relative w-full flex-grow">
+    <main  className="container relative w-full flex-grow">
       <TopBar selectedTab={selectedTab} />
 
-      <section className="flex flex-col items-center justify-center gap-4 ">
+      <section style={{overflow:"scroll"}} className="flex flex-col items-center justify-center gap-4 ">
         {selectedTab === "explore" && (
           <AnimatePresence mode="wait">
             <motion.div

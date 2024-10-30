@@ -21,15 +21,10 @@ export default function NearByPage() {
 
   return (
     <div
-      className="gap-2 grid grid-cols-2 sm:grid-cols-4 px-6 py-2"
+      className="gap-2 grid grid-cols-2 sm:grid-cols-2 px-6 py-2"
       style={{ paddingBottom: "6rem" }}
     >
-      {mockProfiles.map((value, index) => {
-        return (
-          <NearByCard key={index} data={value} onCardClick={onCardClick} />
-        );
-      })}
-
+      {mockProfiles.map((value, index) => <NearByCard num={index} key={index} data={value} onCardClick={onCardClick} />)}
       <NearByUserModal ref={childRef} profileData={SelectedCard} />
     </div>
   );

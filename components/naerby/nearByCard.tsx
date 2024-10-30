@@ -1,18 +1,21 @@
 import { Card, CardFooter, Image, CardBody } from "@nextui-org/react";
 
-const NearByCard = ({ data, onCardClick }) => {
+const NearByCard = ({ data, onCardClick, num }) => {
   return (
     <Card
       key={data.id}
       isPressable
+      style={num % 2 ===0?{transform:"translate(0px, -4rem)"}:{}}
       shadow="sm"
+      className="m-1"
       onPress={() => onCardClick(data)}
     >
       <CardBody className="overflow-visible p-0">
         <Image
           alt={data.avatar}
-          className="w-full object-cover h-[140px]"
+          className="object-cover "
           radius="lg"
+          style={{height:"100%", width:"100%"}}          
           shadow="sm"
           src={data.avatar}
           width="100%"

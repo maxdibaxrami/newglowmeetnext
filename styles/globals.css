@@ -66,6 +66,17 @@
     padding: 0px !important;
 }
 
+.footerswipcard--nearbypage{
+    position: absolute;
+    left: 50%;
+    width: fit-content;
+    height: fit-content;
+    bottom: 120px;
+    transform: translate(-50%);
+    border-radius: 50vw !important;
+    padding: 0px !important;
+}
+
 .time {
     font-size: 0.8rem;
     background: #EEE;
@@ -74,4 +85,11 @@
     width: fit-content;
     margin: 0 auto;
     color: #000;
+}
+
+.text-handller{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
 }

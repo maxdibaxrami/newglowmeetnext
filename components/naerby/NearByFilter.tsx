@@ -14,7 +14,7 @@ import { Select, SelectItem } from "@nextui-org/react";
 
 import { OptionInExplore } from "../icons/exploreIcons";
 
-const ExploreFilter = () => {
+const NearByFilter = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const handleOpen = () => {
@@ -34,7 +34,6 @@ const ExploreFilter = () => {
       >
         <OptionInExplore />
       </Button>
-      
       <Modal
         backdrop="blur"
         isOpen={isOpen}
@@ -45,7 +44,7 @@ const ExploreFilter = () => {
           base:"absolute z-50	"
         }}
       >
-        <ModalContent >
+        <ModalContent className="absolute">
           <ModalHeader className="flex flex-col gap-1">Set filters</ModalHeader>
 
           <ModalBody>
@@ -102,7 +101,7 @@ const ExploreFilter = () => {
   );
 };
 
-export default ExploreFilter;
+export default NearByFilter;
 
 export const RealationStatus = [
   { key: "cat", label: "Single" },

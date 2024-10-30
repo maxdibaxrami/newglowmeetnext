@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Tabs, Tab } from "@nextui-org/react";
 import { motion } from "framer-motion";
+import { useTheme } from "next-themes";
 
 import {
   FireIcon,
@@ -10,14 +11,13 @@ import {
   ProfileIcon,
   ArrowRight,
   LocationIcon,
-  LikeIcon
+  LikeIcon,
 } from "../icons/bottomMenuIcons";
-import { useTheme } from "next-themes";
 
 const BottomMenu = ({ onChangeMenu }) => {
-  
   const [selected, setSelected] = useState("chat");
-  const theme = useTheme()
+  const theme = useTheme();
+
   useEffect(() => onChangeMenu(selected), [selected]);
 
   return (
@@ -34,8 +34,11 @@ const BottomMenu = ({ onChangeMenu }) => {
         borderRadius: "14px",
         bottom: "24px",
         overflow: "hidden",
-        backgroundColor:"transparent",
-        border: theme.theme==="light"? "1px #0000005c solid" : "1px #ffffff87 solid",
+        backgroundColor: "transparent",
+        border:
+          theme.theme === "light"
+            ? "1px #0000005c solid"
+            : "1px #ffffff87 solid",
       }}
       transition={{ type: "tween" }}
     >
@@ -48,7 +51,7 @@ const BottomMenu = ({ onChangeMenu }) => {
         color="primary"
         selectedKey={selected}
         size="lg"
-        style={{backgroundColor:"transparent"}}
+        style={{ backgroundColor: "transparent" }}
         variant="solid"
         onSelectionChange={setSelected}
       >
@@ -72,10 +75,13 @@ const BottomMenu = ({ onChangeMenu }) => {
 
         <Tab
           key="chat"
-          style={selected === "explore" ? { backgroundColor:"#016fee" } : { backgroundColor:"" }}
-
+          style={
+            selected === "explore"
+              ? { backgroundColor: "#016fee" }
+              : { backgroundColor: "" }
+          }
           title={
-            <div   className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2">
               {selected === "explore" ? <ArrowRight /> : <ChatIcon />}
             </div>
           }

@@ -1,16 +1,13 @@
-import { title } from "@/components/primitives";
 import LikeCard from "@/components/like/likeCard";
 export default function LikesPage() {
   return (
     <div className="gap-2 grid grid-cols-2 sm:grid-cols-4 px-6 py-2">
-      {mockProfiles.map((value,index)=> {
-        return <LikeCard data ={value}/>
+      {mockProfiles.map((value, index) => {
+        return <LikeCard key={index} data={value} />;
       })}
-    
     </div>
   );
 }
-
 
 const mockProfiles = [
   {

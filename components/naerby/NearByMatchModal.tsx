@@ -6,9 +6,9 @@ import { Image } from "@nextui-org/react";
 import { BlurIn } from "../animte/blurIn";
 import { SendMessage } from "../icons/exploreIcons";
 
-import { MatchConfetti } from "./buttonEffect";
+import { MatchConfetti } from "@/components/explore/buttonEffect";
 
-const MatchModal = ({ isOpen, onClose, modalData }) => {
+const NearByMatchModal = ({ isOpen, onClose, modalData }) => {
   useEffect(() => {
     if (isOpen) {
       MatchConfetti();
@@ -81,7 +81,7 @@ const MatchModal = ({ isOpen, onClose, modalData }) => {
   );
 };
 
-export default MatchModal;
+export default NearByMatchModal;
 
 const MatchText = [
   "Hey [Name], swipe right for an adventure! What’s the most spontaneous thing you’ve done lately?",

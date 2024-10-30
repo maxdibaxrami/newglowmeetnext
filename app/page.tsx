@@ -7,10 +7,11 @@ import ProfilePage from "../components/profile/index";
 import ChatPage from "../components/chat/index";
 import ExplorePage from "../components/explore/index";
 
-import TopBar from "@/components/tobBar";
-import BottomMenu from "@/components/bottomMenu/index";
 import LikesPage from "./likes/page";
 import NearByPage from "./nearby/page";
+
+import TopBar from "@/components/tobBar";
+import BottomMenu from "@/components/bottomMenu/index";
 export default function Home() {
   const [selectedTab, setSelectedTab] = useState("chat");
 
@@ -55,14 +56,13 @@ export default function Home() {
           </AnimatePresence>
         )}
 
-
         {selectedTab === "chat" && (
           <AnimatePresence mode="wait">
             <motion.div
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -10, opacity: 0 }}
               initial={{ y: 10, opacity: 0 }}
-              style={{width:"100%"}}
+              style={{ width: "100%" }}
               transition={{
                 x: { type: "spring", stiffness: 300, damping: 30 },
                 opacity: { duration: 0.4 },

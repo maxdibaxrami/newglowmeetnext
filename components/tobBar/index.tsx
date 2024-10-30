@@ -8,6 +8,7 @@ import {
 import ExploreFilter from "../explore/exploreFilter";
 import { ThemeSwitch } from "../theme-switch";
 import { FireIcon } from "../icons/bottomMenuIcons";
+import NearByFilter from "../naerby/NearByFilter";
 
 const TopBar = ({ selectedTab }) => {
   return (
@@ -23,6 +24,8 @@ const TopBar = ({ selectedTab }) => {
         <NavbarItem>
           <ThemeSwitch />
           {selectedTab === "explore" && <ExploreFilter />}
+          {selectedTab === "nearby" && <NearByFilter />}
+
         </NavbarItem>
       </NavbarContent>
     </Navbar>

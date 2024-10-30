@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import {
   Modal,
   ModalContent,
@@ -9,13 +9,15 @@ import {
   ModalBody,
   Slider,
   ButtonGroup,
+  Switch
 } from "@nextui-org/react";
 import { Select, SelectItem } from "@nextui-org/react";
-
 import { OptionInExplore } from "../icons/exploreIcons";
+import { LocationIcon } from "../icons/NearByMeIcons";
 
 const NearByFilter = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [isSelected, setIsSelected] = useState(true);
 
   const handleOpen = () => {
     onOpen();
@@ -49,11 +51,38 @@ const NearByFilter = () => {
 
           <ModalBody>
             <form className="flex flex-col gap-4">
-              <ButtonGroup className="w-full flex">
+            <Switch
+              defaultSelected
+              isSelected={isSelected} 
+              onValueChange={setIsSelected}
+              size="md"
+              color="primary"
+              thumbIcon={()=> <LocationIcon />}
+            >
+              Search by distance
+            </Switch>
+            {isSelected? (
+              <ButtonGroup style={{height:"4rem"}} className="w-full flex py-4">
                 <Button className="grow">My city</Button>
                 <Button className="grow">My country</Button>
                 <Button className="grow">Globally</Button>
               </ButtonGroup>
+            ) :(
+              <Slider   
+                  size="md"
+                  step={50}
+                  color="secondary"
+                  label="Distance (km)"
+                  showSteps={true} 
+                  style={{height:"4rem"}}
+                  maxValue={500} 
+                  minValue={50} 
+                  defaultValue={150}
+                  className="max-w-md" 
+                />
+              
+            )}
+              
 
               <Slider
                 className="w-full"

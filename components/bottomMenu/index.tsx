@@ -27,7 +27,7 @@ const BottomMenu = ({ onChangeMenu }) => {
           ? { width: "56px", right: "20px" }
           : { width: "281px" }
       }
-      className="flex w-full flex-col fixed bottom-0 backdrop-blur-2xl items-center"
+      className={"flex w-full flex-col fixed bottom-0 backdrop-blur-2xl items-center	"}
       style={{
         zIndex: "10",
         width: "281px",

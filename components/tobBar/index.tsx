@@ -3,11 +3,12 @@ import {
   NavbarBrand,
   NavbarContent,
   NavbarItem,
+  Chip
 } from "@nextui-org/react";
 
 import ExploreFilter from "../explore/exploreFilter";
 import { ThemeSwitch } from "../theme-switch";
-import { FireIcon } from "../icons/bottomMenuIcons";
+import { FireIcon, ChatIconSm } from "../icons/bottomMenuIcons";
 import NearByFilter from "../naerby/NearByFilter";
 
 const TopBar = ({ selectedTab }) => {
@@ -21,7 +22,19 @@ const TopBar = ({ selectedTab }) => {
       </NavbarBrand>
 
       <NavbarContent justify="end">
-        <NavbarItem>
+        <NavbarItem className="flex items-center">
+        {selectedTab === "nearby" && (
+           <Chip
+            startContent={<ChatIconSm />}
+            variant="faded"
+            color="default"
+            className="mx-2 text-center"
+          >
+            5
+          </Chip>
+        )}
+
+         
           <ThemeSwitch />
           {selectedTab === "explore" && <ExploreFilter />}
           {selectedTab === "nearby" && <NearByFilter />}

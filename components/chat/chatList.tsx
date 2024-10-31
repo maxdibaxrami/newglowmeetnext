@@ -72,10 +72,10 @@ const ChatList = () => {
               <div className="flex pl-2 flex-col">
                 <span
                   className={
-                    item.id % 2 !== 0 ? "text-small" : "text-small font-bold"
+                    item.id % 2 !== 0 ? "text-small text-handller" : "text-small text-handllerfont-bold"
                   }
                 >
-                  {truncateText(item.name, 10)}
+                  {item.name}
                   <Chip
                     className={item.id % 2 !== 0 ? "hidden" : "visible ml-1"}
                     color="primary"
@@ -87,11 +87,11 @@ const ChatList = () => {
                 <span
                   className={
                     item.id % 2 !== 0
-                      ? "text-tiny text-default-400"
-                      : "text-tiny font-bold text-default-400"
+                      ? "text-tiny text-handller text-default-400"
+                      : "text-tiny text-handller font-bold text-default-400"
                   }
                 >
-                  {truncateText(item.email, 15)}
+                  {item.email}
                 </span>
               </div>
             </div>

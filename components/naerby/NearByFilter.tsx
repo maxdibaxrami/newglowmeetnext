@@ -61,7 +61,7 @@ const NearByFilter = () => {
             >
               Search by distance
             </Switch>
-            {isSelected? (
+            {!isSelected? (
               <ButtonGroup style={{height:"4rem"}} className="w-full flex py-4">
                 <Button className="grow">My city</Button>
                 <Button className="grow">My country</Button>
@@ -88,6 +88,7 @@ const NearByFilter = () => {
                 className="w-full"
                 defaultValue={[18, 28]}
                 label="Age"
+                color="secondary"
                 maxValue={100}
                 minValue={18}
                 step={1}
@@ -99,7 +100,7 @@ const NearByFilter = () => {
                 placeholder="Looking for"
               >
                 {(LookingForItems) => (
-                  <SelectItem>{LookingForItems.label}</SelectItem>
+                  <SelectItem key={LookingForItems.label}>{LookingForItems.label}</SelectItem>
                 )}
               </Select>
 

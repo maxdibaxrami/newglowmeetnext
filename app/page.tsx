@@ -9,10 +9,11 @@ import ExplorePage from "../components/explore/index";
 
 import LikesPage from "./likes/page";
 import NearByPage from "./nearby/page";
-
 import TopBar from "@/components/tobBar";
 import BottomMenu from "@/components/bottomMenu/index";
+
 export default function Home() {
+
   const [selectedTab, setSelectedTab] = useState("chat");
 
   const onChangeMenu = (value) => {

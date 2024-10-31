@@ -79,7 +79,7 @@ const ProfilePage = () => {
               variant="solid"
             />
           </Link>
-          <Link href={"/signup"}>sign up</Link>
+
           <Link href={"/setting"}>
             <Button
               isIconOnly

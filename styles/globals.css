@@ -93,3 +93,8 @@
     overflow: hidden;
     width: 100%;
 }
+
+.nearme-div--background{
+    background: rgb(58,152,180);
+    background: linear-gradient(90deg, rgba(58,152,180,1) 0%, rgba(29,212,253,1) 50%, rgba(147,206,255,1) 100%);
+}

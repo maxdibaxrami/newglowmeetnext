@@ -3,38 +3,24 @@ import { Card, CardFooter, Image, CardBody } from "@nextui-org/react";
 const NearByCard = ({ data, onCardClick, num }) => {
   return (
     <Card
-      key={data.id}
-      isPressable
-      style={num % 2 ===0?{transform:"translate(0px, -4rem)"}:{}}
-      shadow="sm"
-      className="m-1"
-      onPress={() => onCardClick(data)}
-    >
-      <CardBody className="overflow-visible p-0">
-        <Image
-          alt={data.avatar}
-          className="object-cover "
-          radius="lg"
-          style={{height:"100%", width:"100%"}}          
-          shadow="sm"
-          src={data.avatar}
-          width="100%"
-        />
-      </CardBody>
-      <CardFooter className="text-small backdrop-blur-2xl	 justify-between flex flex-col	items-start	justify-start	">
-        <b
-          className="text-handller text-start	"
-          style={{ whiteSpace: "nowrap" }}
-        >{`${data.name} ${data.age}`}</b>
-        <p
-          className="text-default-500 text-handller text-start	"
-          style={{ whiteSpace: "nowrap" }}
+        isFooterBlurred
+        radius="lg"
+        className="border-none"
+        onPress={() => onCardClick(data)}
+        isPressable
         >
-          {data.location}
-        </p>
-      </CardFooter>
+        <Image
+          alt="Woman listing to music"
+          className="object-cover"
+          src={data.avatar}
+          style={{height:"100%", width:"100%"}}  
+        />
+        <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
+          <p className="text-tiny text-white/80 text-handller">{`${data.name} ${data.age}`}</p>
+        </CardFooter>
     </Card>
   );
 };
 
 export default NearByCard;
+

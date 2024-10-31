@@ -5,6 +5,7 @@ import * as React from "react";
 export const BlurIn = ({
   children,
   data,
+  selectedTab
 }: {
   children: React.ReactNode;
   data: boolean;

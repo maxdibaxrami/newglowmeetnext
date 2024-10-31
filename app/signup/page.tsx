@@ -22,12 +22,21 @@ export default function SignupPage() {
 
   const setLanguage = () => setLanguageSelected(true);
 
+  const setAnimate = () => {
+    if(selectedTab === 0){
+      return { marginTop: "4rem" }
+    }
+    if(selectedTab != 0 && selectedTab != 6){
+      return { marginTop: "1.5rem" }
+    }
+    if(selectedTab === 6){
+      return { marginTop: "8rem" }
+    }
+  }
   return (
     <div className="flex flex-col items-center h-screen justify-between">
       <motion.div
-        animate={
-          selectedTab === 0 ? { marginTop: "4rem" } : { marginTop: "1.5rem" }
-        }
+        animate={setAnimate}
         className="flex items-baseline mb-2"
         style={{ marginTop: "4rem" }}
       >
@@ -127,14 +136,16 @@ export default function SignupPage() {
           </AnimatePresence>
         )}
       </div>
-
-      <BlurIn data={languageSelected}>
-        <BottomController
-          nextPage={NextPage}
-          prevPage={prevPage}
-          selectedTab={selectedTab}
-        />
-      </BlurIn>
+        {selectedTab !== 6 && (
+          <BlurIn data={languageSelected}>
+            <BottomController
+              nextPage={NextPage}
+              prevPage={prevPage}
+              selectedTab={selectedTab}
+            />
+          </BlurIn>
+        )}
+      
     </div>
   );
 }

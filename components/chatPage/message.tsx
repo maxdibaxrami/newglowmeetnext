@@ -100,8 +100,8 @@ const MessageSection = () => {
 
   return (
     <div
-      className={`${Theme.theme === "light" ? "message-container-light" : "message-container-dark"} w-full flex flex-col border-small px-1 rounded-small border-default-200 dark:border-default-100`}
-      style={{ maxHeight: "calc(100vh - 4rem)", overflow: "scroll" }}
+      className={`${Theme.theme === "light" ? "message-container-light" : "message-container-dark"} w-full flex flex-col border-small px-1 gradient--telegram rounded-small border-default-200 dark:border-default-100`}
+      style={{ maxHeight: "calc(100vh)", overflow: "scroll" }}
     >
       {messages.map((msg, index) => {
         if (msg.type === "time") {

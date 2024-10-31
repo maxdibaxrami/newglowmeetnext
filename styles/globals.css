@@ -35,15 +35,11 @@
 }
 
 .message-container-dark{
-    background-image: url("/assets/chat-background.png");
-    background-color: #5d5d5d;
-
+    background-image: url("/assets/chat-background.png"), linear-gradient(to top,#1c92d2, #262626); /* W3C */
 }
 
 .message-container-light{
-    background-image: url("/assets/chat-background.png");
-    background-color: #0000004f;
-
+    background-image: url("/assets/chat-background.png"), linear-gradient(to top,#1c92d2, #c9c9c9); /* W3C */
 }
 
 .twin-profile{
@@ -98,3 +94,5 @@
     background: rgb(58,152,180);
     background: linear-gradient(90deg, rgba(58,152,180,1) 0%, rgba(29,212,253,1) 50%, rgba(147,206,255,1) 100%);
 }
+
+

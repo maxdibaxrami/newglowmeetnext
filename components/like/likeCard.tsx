@@ -1,5 +1,5 @@
 import { Card, CardFooter, Image } from "@nextui-org/react";
-import {HeartEyesImoji, NotLikeImoji} from '../icons/likedIcon'
+import {HeartEyesImoji, NotLikeImoji, ChatIconImoji} from '../icons/likedIcon'
 
 const LikeCard = ({ data, onCardClick }) => {
   return (
@@ -9,14 +9,12 @@ const LikeCard = ({ data, onCardClick }) => {
         className="object-cover"
         src={data.mainImage}
       />
-        <div style={{zIndex:10}} className="absolute bottom-1 left-1">
-          <HeartEyesImoji/>
-        </div>
 
-        <div style={{zIndex:10}} className="absolute bottom-1 right-1">
+        <CardFooter style={{height:"55px"}} className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
+          <HeartEyesImoji/>
+          <ChatIconImoji/>
           <NotLikeImoji/>
-        </div>
-  
+        </CardFooter>
     </Card>
   );
 };

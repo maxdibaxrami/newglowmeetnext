@@ -1,10 +1,28 @@
+"use client"
 import LikeCard from "@/components/like/likeCard";
+import { useState, useRef } from "react";
+import LikedUserModal from "@/components/like/likeUserModal";
 export default function LikesPage() {
+
+  const [SelectedCard, setSelectedCard] = useState({});
+  const childRef = useRef();
+
+  const handleClick = () => {
+    if (childRef.current) {
+      childRef.current.callChildFunction(); // Call the function in the child
+    }
+  };
+  const onCardClick = (data) => {
+    console.log(data)
+    setSelectedCard(data);
+    handleClick();
+  };
   return (
     <div className="gap-2 grid grid-cols-2 sm:grid-cols-4 px-6 py-2">
       {mockProfiles.map((value, index) => {
-        return <LikeCard key={index} data={value} />;
+        return <LikeCard onCardClick={onCardClick} key={index} data={value} />;
       })}
+          <LikedUserModal ref={childRef} profileData={SelectedCard} />
     </div>
   );
 }

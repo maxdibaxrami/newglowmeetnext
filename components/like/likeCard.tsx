@@ -1,9 +1,11 @@
 import { Card, CardFooter, Image } from "@nextui-org/react";
 import {HeartEyesImoji, NotLikeImoji, ChatIconImoji} from '../icons/likedIcon'
+import { useTheme } from "next-themes";
 
 const LikeCard = ({ data, onCardClick }) => {
+
   return (
-    <div className="relative mb-8">
+    <div className={"relative mb-8"}>
       <Card style={{backgroundColor:"transparent"}} onPress={() => onCardClick(data)} isPressable isFooterBlurred className="border-none relative" radius="lg">
         <Image
           alt="Woman listing to music"

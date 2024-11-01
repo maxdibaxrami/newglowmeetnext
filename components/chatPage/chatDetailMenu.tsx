@@ -17,6 +17,7 @@ const ChatDetailMenu = () => {
           className="m-1"
           color="default"
           size="md"
+          variant="flat"
         >
           <MoreIcon />
         </Button>

@@ -13,6 +13,7 @@
     outline: none !important;
 }
 
+
 .menu-background{
     background: rgb(2,0,36);
     background: linear-gradient(180deg, rgba(2,0,36,0) 0%, rgba(0,0,0,1) 65%);
@@ -91,21 +92,40 @@
 }
 
 .nearme-div--background{
-    background: rgb(58,152,180);
-    background: linear-gradient(90deg, rgba(58,152,180,1) 0%, rgba(29,212,253,1) 50%, rgba(147,206,255,1) 100%);
+
+    background: rgba(26, 189, 192, 0.44);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3.5px);
+    -webkit-backdrop-filter: blur(3.5px);
+    border: 1px solid rgba(26, 189, 192, 0.33);
 }
 
 
 .background-drop--bluebase{
-    background: rgb(58,152,180);
-    background: linear-gradient(90deg, #016fee8f 0% 50%, #016fee9c 100%);
-    backdrop-filter: blur(4px);
+    background: rgba(26, 189, 192, 0.44);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3.5px);
+    -webkit-backdrop-filter: blur(3.5px);
+    border: 1px solid rgba(26, 189, 192, 0.33);
 }
 
 
 .background-drop--bluebase---navbar{
-    background: linear-gradient(90deg, #a0cdff96 0% 50%, #c9e2ffde 100%);
-    backdrop-filter: blur(8px);
+    background: rgba(26, 189, 192, 0.44);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3.5px);
+    -webkit-backdrop-filter: blur(3.5px);
+    border: 1px solid rgba(26, 189, 192, 0.33);
 }
 
+.background-drop--bluebase---darker{
+    background: #1abdc0;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px #0000001a;
+    backdrop-filter: blur(3.5px);
+    -webkit-backdrop-filter: blur(3.5px);
+}
 

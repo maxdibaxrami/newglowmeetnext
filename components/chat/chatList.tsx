@@ -77,9 +77,10 @@ const ChatList = () => {
                 >
                   {item.name}
                   <Chip
-                    className={item.id % 2 !== 0 ? "hidden" : "visible ml-1"}
+                    className={item.id % 2 !== 0 ? "hidden" : "visible ml-1 background-drop--bluebase---darker"}
                     color="primary"
                     size="sm"
+                    
                   >
                     +1 New
                   </Chip>

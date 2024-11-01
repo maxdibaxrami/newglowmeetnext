@@ -36,7 +36,7 @@ const ExploreCard = ({ profileData }) => {
             }
       }
     >
-      <CardBody>
+      <CardBody className="mb-4">
         <div className="flex mb-4 justify-between items-center">
           <div className="flex flex-col">
             <motion.div

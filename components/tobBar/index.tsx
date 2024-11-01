@@ -15,7 +15,7 @@ const TopBar = ({ selectedTab }) => {
   return (
     <Navbar style={{height:"4rem"}} className="top-0 fixed top-0 backdrop-blur-lg	">
       <NavbarBrand>
-        <FireIcon />
+
         <p className="font-bold text-inherit">
           {selectedTab.charAt(0).toUpperCase() + selectedTab.slice(1)}
         </p>
@@ -27,9 +27,9 @@ const TopBar = ({ selectedTab }) => {
         {selectedTab === "nearby" && (
            <Chip
             startContent={<ChatIconSm />}
-            variant="faded"
+            variant="flat"
             color="default"
-            className="mx-2 text-center"
+            className="mx-2 text-center background-drop--bluebase---darker"
           >
             5
           </Chip>

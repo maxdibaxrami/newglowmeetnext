@@ -16,10 +16,10 @@ const ExploreCardOption = ({ page }) => {
           isIconOnly
           style={{
             position: "absolute",
-            right: "20px",
-            top: page === "chat" ? "28px" : "20px",
+            right: "32px",
+            top: "33px"
           }}
-          variant="flat"
+          variant="shadow"
         >
           <MoreIcon />
         </Button>

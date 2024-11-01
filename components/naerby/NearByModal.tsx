@@ -56,21 +56,21 @@ const NearByUserModal = forwardRef((props, ref) => {
   return (
     <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
       <ModalContent>
-        <ModalBody className="p-1">
+        <ModalBody className="px-3">
           <Card
             style={
               theme.theme === "light"
                 ? {
                     overflow: "scroll",
                     boxShadow: "unset",
-                    maxHeight: "calc(100vh-4rem)",
+                    maxHeight: "calc(90vh)",
                     backgroundColor: "rgb(246 246 246)",
-                    marginTop: "4.5rem",
+                    marginTop: "2rem",
                   }
                 : {
                     overflow: "scroll",
-                    maxHeight: "calc(100vh-4rem)",
-                    marginTop: "4.5rem",
+                    maxHeight: "calc(90vh)",
+                    marginTop: "2rem",
                   }
             }
           >

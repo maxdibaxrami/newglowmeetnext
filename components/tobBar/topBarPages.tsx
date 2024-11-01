@@ -16,7 +16,6 @@ const TopBarPages = () => {
         </NavbarItem>
 
         <NavbarItem className="flex items-center justify-center">
-          <FireIcon />
           <p className="font-bold text-inherit">Glow meet</p>
         </NavbarItem>
       </NavbarContent>

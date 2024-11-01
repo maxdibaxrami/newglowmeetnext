@@ -33,7 +33,7 @@ module.exports = {
             // More layout properties
           },
           colors: {
-            primary: "#006FEE",
+            primary: "#1abdc0",
             secondary: "#7828c8",
             success: "#17c964",
             danger: "#dc3545",
@@ -83,7 +83,7 @@ module.exports = {
             // Dark theme layout properties
           },
           colors: {
-            primary: "#006FEE",
+            primary: "#1abdc0",
             secondary: "#7828c8",
             success: "#17c964",
             danger: "#dc3545",

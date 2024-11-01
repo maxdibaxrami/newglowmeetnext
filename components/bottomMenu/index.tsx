@@ -27,7 +27,7 @@ const BottomMenu = ({ onChangeMenu }) => {
           ? { width: "56px", right: "20px" }
           : { width: "281px" }
       }
-      className={"flex w-full flex-col fixed bottom-0 background-drop--bluebase---navbar items-center	"}
+      className={"flex w-full flex-col fixed bottom-0 items-center	"}
       style={{
         zIndex: "10",
         width: "281px",
@@ -45,13 +45,13 @@ const BottomMenu = ({ onChangeMenu }) => {
       <Tabs
         aria-label="Options"
         classNames={{
-          tab: "p-3 h-auto",
+          tab: "p-3 h-auto ",
           tabList: "bg-transparent",
+          base:"background-drop--bluebase"
         }}
         color="primary"
         selectedKey={selected}
         size="lg"
-        style={{ backgroundColor: "transparent" }}
         variant="solid"
         onSelectionChange={setSelected}
       >

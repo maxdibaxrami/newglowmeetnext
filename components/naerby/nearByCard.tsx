@@ -2,7 +2,7 @@ import { Card, CardFooter, Image, CardBody, Badge } from "@nextui-org/react";
 
 const NearByCard = ({ data, onCardClick, num }) => {
   return (
-    <Badge className="background-drop--bluebase" isInvisible={num%2 === 0? true :false} style={{top:"14%",right:"20%"}} disableOutline variant="shadow" content="New" color="primary" size="sm">
+    <Badge className="background-drop--bluebase text-white" isInvisible={num%2 === 0? true :false} style={{top:"14%",right:"20%"}} disableOutline variant="shadow" content="New" color="primary" size="sm">
       <Card
           isFooterBlurred
           radius="lg"

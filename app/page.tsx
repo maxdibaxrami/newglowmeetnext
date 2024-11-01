@@ -24,7 +24,7 @@ export default function Home() {
     <main className="container relative w-full flex-grow">
       <TopBar selectedTab={selectedTab} />
 
-      <section className="flex flex-col items-center justify-center gap-4 ">
+      <section  className="flex flex-col items-center justify-center gap-4 ">
         {selectedTab === "explore" && (
           <AnimatePresence mode="wait">
             <motion.div

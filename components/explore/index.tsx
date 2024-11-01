@@ -70,7 +70,7 @@ const ExplorePage = () => {
 
         <motion.div
           animate={{ bottom: "50px" }}
-          className="backdrop-blur-md flex justify-center footerswipcard before:bg-white/10 border-white/20 border-1 py-1 absolute before:rounded-xl rounded-large w-[calc(100%_-_8px)] shadow-small ml-1 z-10"
+          className="background-drop--bluebase flex justify-center footerswipcard before:bg-white/10 border-white/20 border-1 py-1 absolute before:rounded-xl rounded-large w-[calc(100%_-_8px)] shadow-small ml-1 z-10"
         >
           <motion.div
             className="card"

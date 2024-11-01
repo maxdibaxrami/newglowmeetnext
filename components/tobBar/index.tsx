@@ -13,7 +13,7 @@ import NearByFilter from "../naerby/NearByFilter";
 
 const TopBar = ({ selectedTab }) => {
   return (
-    <Navbar className="top-0">
+    <Navbar style={{height:"4rem"}} className="top-0 fixed top-0 backdrop-blur-lg	">
       <NavbarBrand>
         <FireIcon />
         <p className="font-bold text-inherit">

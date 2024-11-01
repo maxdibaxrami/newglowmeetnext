@@ -2,8 +2,8 @@
 .swiper {
     margin: 1px auto;
     width: 90vw;
-    height: calc(98vh - 4rem);
-    max-height: calc(98vh - 4rem);
+    height: calc(100vh - 1rem);
+    max-height: calc(100vh - 1rem);
     border-radius: 14px;
     position: block !important;
   }

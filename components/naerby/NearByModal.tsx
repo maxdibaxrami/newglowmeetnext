@@ -63,14 +63,14 @@ const NearByUserModal = forwardRef((props, ref) => {
                 ? {
                     overflow: "scroll",
                     boxShadow: "unset",
-                    maxHeight: "calc(100vh - 4rem)",
+                    maxHeight: "calc(100vh-4rem)",
                     backgroundColor: "rgb(246 246 246)",
-                    marginTop: "1.4rem",
+                    marginTop: "4.5rem",
                   }
                 : {
                     overflow: "scroll",
-                    maxHeight: "calc(100vh - 4rem)",
-                    marginTop: "1.4rem",
+                    maxHeight: "calc(100vh-4rem)",
+                    marginTop: "4.5rem",
                   }
             }
           >
@@ -269,7 +269,7 @@ const NearByUserModal = forwardRef((props, ref) => {
         </ModalBody>
         <motion.div
           animate={{ bottom: "120px", zIndex: "1000" }}
-          className="backdrop-blur-md flex justify-center footerswipcard--nearbypage before:bg-white/10 border-white/20 border-1 py-1 absolute before:rounded-xl rounded-large w-[calc(100%_-_8px)] shadow-small ml-1 z-10"
+          className="background-drop--bluebase flex justify-center footerswipcard--nearbypage before:bg-white/10 border-white/20 border-1 py-1 absolute before:rounded-xl rounded-large w-[calc(100%_-_8px)] shadow-small ml-1 z-10"
         >
           <motion.div
             className="card"

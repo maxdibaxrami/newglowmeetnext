@@ -96,3 +96,16 @@
 }
 
 
+.background-drop--bluebase{
+    background: rgb(58,152,180);
+    background: linear-gradient(90deg, #016fee8f 0% 50%, #016fee9c 100%);
+    backdrop-filter: blur(4px);
+}
+
+
+.background-drop--bluebase---navbar{
+    background: linear-gradient(90deg, #a0cdff96 0% 50%, #c9e2ffde 100%);
+    backdrop-filter: blur(8px);
+}
+
+

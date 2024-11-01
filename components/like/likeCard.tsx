@@ -3,19 +3,22 @@ import {HeartEyesImoji, NotLikeImoji, ChatIconImoji} from '../icons/likedIcon'
 
 const LikeCard = ({ data, onCardClick }) => {
   return (
-    <Card onPress={() => onCardClick(data)} isPressable isFooterBlurred className="border-none" radius="lg">
-      <Image
-        alt="Woman listing to music"
-        className="object-cover"
-        src={data.mainImage}
-      />
+    <div className="relative mb-8">
+      <Card style={{backgroundColor:"transparent"}} onPress={() => onCardClick(data)} isPressable isFooterBlurred className="border-none relative" radius="lg">
+        <Image
+          alt="Woman listing to music"
+          className="object-cover"
+          style={{width:"100%",height:"100%"}}
+          src={data.mainImage}
+        />
+      </Card>
 
-        <CardFooter style={{height:"55px"}} className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
-          <HeartEyesImoji/>
-          <ChatIconImoji/>
-          <NotLikeImoji/>
-        </CardFooter>
-    </Card>
+      <div style={{height:"50px",bottom:"-25px",borderRadius:"54px",paddingLeft:"2px",paddingRight:"2px",justifyContent:"space-between",width:"calc(100% - 5%)"}} className="flex items-center background-drop--bluebase border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large shadow-small ml-1 z-10">
+        <HeartEyesImoji/>
+        <ChatIconImoji/>
+        <NotLikeImoji/>
+      </div>
+    </div>
   );
 };
 

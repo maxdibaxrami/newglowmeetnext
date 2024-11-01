@@ -60,14 +60,14 @@ const LikedUserModal = forwardRef((props, ref) => {
                 ? {
                     overflow: "scroll",
                     boxShadow: "unset",
-                    maxHeight: "calc(100vh - 4rem)",
+                    maxHeight: "calc(100vh)",
                     backgroundColor: "rgb(246 246 246)",
-                    marginTop: "1.4rem",
+                    marginTop: "4.5rem",
                   }
                 : {
                     overflow: "scroll",
-                    maxHeight: "calc(100vh - 4rem)",
-                    marginTop: "1.4rem",
+                    maxHeight: "calc(100vh)",
+                    marginTop: "4.5rem",
                   }
             }
           >

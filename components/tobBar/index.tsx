@@ -20,6 +20,7 @@ const TopBar = ({ selectedTab }) => {
           {selectedTab.charAt(0).toUpperCase() + selectedTab.slice(1)}
         </p>
       </NavbarBrand>
+      
 
       <NavbarContent justify="end">
         <NavbarItem className="flex items-center">

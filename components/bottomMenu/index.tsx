@@ -77,7 +77,7 @@ const BottomMenu = ({ onChangeMenu }) => {
           key="chat"
           style={
             selected === "explore"
-              ? { backgroundColor: "rgb(28 189 192)" }
+              ? { backgroundColor: "#a594f9" }
               : { backgroundColor: "" }
           }
           title={

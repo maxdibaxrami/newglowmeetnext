@@ -33,12 +33,12 @@ module.exports = {
             // More layout properties
           },
           colors: {
-            primary: "#1abdc0",
-            secondary: "#f384d5",
-            success: "#9ca6ec",
-            danger: "#dc3545",
-            warning: "#f5a524",
-            info: "#17a2b8",
+            primary: "#A594F9",
+            secondary: "#f78ce2",
+            success: "#00ba96",
+            danger: "#be4541",
+            warning: "#ffd16b",
+            info: "#4596f2",
             light: "#f4f4f4",
             dark: "#343a40",
             background: "#FFFFFF", 
@@ -83,12 +83,12 @@ module.exports = {
             // Dark theme layout properties
           },
           colors: {
-            primary: "#1abdc0",
-            secondary: "#f384d5",
-            success: "#9ca6ec",
-            danger: "#dc3545",
-            warning: "#f5a524",
-            info: "#17a2b8",
+            primary: "#A594F9",
+            secondary: "#f78ce2",
+            success: "#00ba96",
+            danger: "#be4541",
+            warning: "#ffd16b",
+            info: "#4596f2",
             light: "#f4f4f4",
             dark: "#343a40",
             background: "#000000", // or DEFAULT

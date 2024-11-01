@@ -35,7 +35,7 @@ module.exports = {
           colors: {
             primary: "#1abdc0",
             secondary: "#f384d5",
-            success: "#1e884b",
+            success: "#9ca6ec",
             danger: "#dc3545",
             warning: "#f5a524",
             info: "#17a2b8",
@@ -85,7 +85,7 @@ module.exports = {
           colors: {
             primary: "#1abdc0",
             secondary: "#f384d5",
-            success: "#1e884b",
+            success: "#9ca6ec",
             danger: "#dc3545",
             warning: "#f5a524",
             info: "#17a2b8",

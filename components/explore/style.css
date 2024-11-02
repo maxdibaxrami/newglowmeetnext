@@ -5,7 +5,7 @@
     height: calc(100vh - 1rem);
     max-height: calc(100vh - 1rem);
     border-radius: 14px;
-    position: block !important;
+    background-color: transparent;
   }
   
   .swiper-slide {
@@ -15,8 +15,9 @@
     font-size: 22px;
     font-weight: bold;
     color: #fff;
-    position: block !important;
     width: 100%;
+    background-color: transparent;
+
   }
   
 

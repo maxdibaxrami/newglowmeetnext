@@ -13,41 +13,62 @@ import DataList from "./dataList";
 
 const ProfilePage = () => {
   return (
-    <div style={{marginTop:"4.5rem"}} className="w-full h-full px-6 pb-16">
-      <div className="flex mt-4 justify-between items-center">
-        <div style={{width:"100%"}} className="flex">
-          <div className="w-1/2">
-            <Image
-              alt="NextUI hero Image"
-              className="w-full h-full"
-              height={312}
-              src="https://nextui.org/images/hero-card-complete.jpeg"
-              style={{ objectFit: "cover", borderRadius: "14px 0px 0px 14px" }}
-            />
-          </div>
-
-          <div className="w-1/2 flex flex-col">
-            <div className="w-full">
+    <div style={{overflow:"scroll",maxHeight:"calc(100vh)",paddingTop:"4rem"}} className="w-full h-full px-6 pb-16">
+      <div className="flex mb-4 justify-between items-center">
+          <div className="flex flex-col">
+            <div
+              className="w-full"
+              style={{ height: "calc(61vh - 4rem)" }}
+            >
               <Image
-                alt="NextUI hero Image"
-                className="w-full h-full twin-profile"
-                height={156}
-                src="https://nextui.org/images/hero-card-complete.jpeg"
-                style={{ objectFit: "cover", borderRadius: "0px 14px 0px 0px" }}
+                removeWrapper
+                alt="Profile hero Image"
+                className="w-full h-full"
+                classNames={{
+                  wrapper: "w-full",
+                }}
+                loading="lazy"
+                src={"https://nextui.org/images/hero-card.jpeg"} // dynamic image URL
+                style={{
+                  borderRadius: "20px",
+                  objectFit: "cover",
+                  height: "100%",
+                  padding: "10px 10px 5px 10px",
+                }}
               />
             </div>
-            <div className="w-full ">
-              <Image
-                alt="NextUI hero Image"
-                className="w-full h-full twin-profile"
-                height={156}
-                src="https://nextui.org/images/hero-card-complete.jpeg"
-                style={{ objectFit: "cover", borderRadius: "0px 0px 14px 0px" }}
-              />
+
+            <div className="flex">
+              <div className="w-full">
+                <Image
+                  alt="Profile hero Image"
+                  className="w-full h-full"
+                  src={"https://nextui.org/images/hero-card.jpeg"} // dynamic image URL
+                  style={{
+                    objectFit: "cover",
+                    borderRadius: "20px",
+                    padding: "5px 5px 10px 10px",
+                    height: "calc(34vh - 4rem)",
+                  }}
+                />
+              </div>
+              <div className="w-full">
+                <Image
+                  alt="Profile hero Image"
+                  className="w-full h-full"
+                  loading="lazy"
+                  src={"https://nextui.org/images/hero-card.jpeg"} // dynamic image URL
+                  style={{
+                    objectFit: "cover",
+                    borderRadius: "20px",
+                    padding: "5px 10px 10px 5px",
+                    height: "calc(34vh - 4rem)",
+                  }}
+                />
+              </div>
             </div>
           </div>
         </div>
-      </div>
       <div className="flex items-center justify-between mt-2">
         <div className="flex">
           <User

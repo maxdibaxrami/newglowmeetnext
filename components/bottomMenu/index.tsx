@@ -24,7 +24,7 @@ const BottomMenu = ({ onChangeMenu }) => {
     <motion.div
       animate={
         selected === "explore"
-          ? { width: "72px", right: "20px" }
+          ? { width: "57px", right: "20px" }
           : { width: "345px" }
       }
       className={"flex w-full flex-col fixed bottom-0 items-center	"}
@@ -42,8 +42,8 @@ const BottomMenu = ({ onChangeMenu }) => {
         aria-label="Options"
         style={{color:"#FFF"}}
         classNames={{
-          tab: "p-4 h-auto color-white",
-          tabList: "bg-transparent p-2",
+          tab: "p-3 h-auto color-white",
+          tabList: "bg-transparent p-1",
           tabContent: "text-[#FFF] group-data-[selected=false]:text-[#ffffffbf]",
           base:"background-drop--bluebase---navbar"
         }}

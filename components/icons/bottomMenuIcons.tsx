@@ -1,7 +1,7 @@
 const FireIcon = () => {
   return (
     <svg
-      className="size-7"
+      className="size-6"
       fill="none"
       stroke="currentColor"
       strokeWidth={1.5}
@@ -25,7 +25,7 @@ const FireIcon = () => {
 const LocationIcon = () => {
   return (
     <svg
-    className="size-7"
+    className="size-6"
     fill="none"
       stroke="currentColor"
       strokeWidth={1.5}
@@ -56,8 +56,8 @@ const ChatIconSm = () => {
 const ChatIcon = () => {
   return (
     <svg
-      className="size-7"
-      fill="none"
+    className="size-6"
+    fill="none"
       stroke="currentColor"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
@@ -75,8 +75,8 @@ const ChatIcon = () => {
 const ProfileIcon = () => {
   return (
     <svg
-      className="size-7"
-      fill="none"
+    className="size-6"
+    fill="none"
       stroke="currentColor"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
@@ -113,8 +113,8 @@ const CloseIcon = () => {
 const ArrowRight = () => {
   return (
     <svg
-      className="size-7"
-      fill="none"
+    className="size-6"
+    fill="none"
       stroke="#FFF"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
@@ -132,8 +132,8 @@ const ArrowRight = () => {
 const LikeIcon = () => {
   return (
     <svg
-      className="size-7"
-      fill="none"
+    className="size-6"
+    fill="none"
       stroke="currentColor"
       strokeWidth={1.5}
       viewBox="0 0 24 24"

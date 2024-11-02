@@ -1,9 +1,9 @@
-"use client"
-import LikeCard from "@/components/like/likeCard";
+"use client";
 import { useState, useRef } from "react";
+
+import LikeCard from "@/components/like/likeCard";
 import LikedUserModal from "@/components/like/likeUserModal";
 export default function LikesPage() {
-
   const [SelectedCard, setSelectedCard] = useState({});
   const childRef = useRef();
 
@@ -13,16 +13,25 @@ export default function LikesPage() {
     }
   };
   const onCardClick = (data) => {
-    console.log(data)
+    console.log(data);
     setSelectedCard(data);
     handleClick();
   };
+
   return (
-    <div style={{overflow:"scroll", maxHeight:"calc(100vh)",paddingBottom:"6rem",paddingTop:"4.5rem"}} className="gap-2 grid grid-cols-2 sm:grid-cols-4 px-6 py-2">
+    <div
+      className="gap-2 grid grid-cols-2 sm:grid-cols-4 px-6 py-2"
+      style={{
+        overflow: "scroll",
+        maxHeight: "calc(100vh)",
+        paddingBottom: "6rem",
+        paddingTop: "4.5rem",
+      }}
+    >
       {mockProfiles.map((value, index) => {
-        return <LikeCard onCardClick={onCardClick} key={index} data={value} />;
+        return <LikeCard key={index} data={value} onCardClick={onCardClick} />;
       })}
-          <LikedUserModal ref={childRef} profileData={SelectedCard} />
+      <LikedUserModal ref={childRef} profileData={SelectedCard} />
     </div>
   );
 }

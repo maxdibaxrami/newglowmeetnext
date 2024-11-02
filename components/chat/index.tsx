@@ -4,7 +4,15 @@ import ChatFiltermenu from "./chatFilterMenu";
 
 const ChatPage = () => {
   return (
-    <div style={{overflow:"scroll", maxHeight:"100vh",paddingTop:"4.5rem",paddingBottom:"6rem"}} className="w-full h-full px-6">
+    <div
+      className="w-full h-full px-6"
+      style={{
+        overflow: "scroll",
+        maxHeight: "100vh",
+        paddingTop: "4.5rem",
+        paddingBottom: "6rem",
+      }}
+    >
       <div className="flex justify-between py-2 items-center">
         <span className="text-large">Matches</span>
       </div>

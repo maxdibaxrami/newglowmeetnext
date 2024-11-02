@@ -40,7 +40,7 @@ export default function RootLayout({
           "bg-background font-sans antialiased",
           fontSans.variable,
         )}
-        style={{overflow:'hidden'}}
+        style={{ overflow: "hidden" }}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <div className="flex flex-col">{children}</div>

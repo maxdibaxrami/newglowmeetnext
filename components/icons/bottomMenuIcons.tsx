@@ -33,7 +33,6 @@ const LocationIcon = (props) => {
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
-
     >
       <path
         d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
@@ -46,26 +45,33 @@ const LocationIcon = (props) => {
         strokeLinecap="round"
         strokeLinejoin="round"
         {...props}
-
       />
     </svg>
   );
 };
 
 const ChatIconSm = () => {
-  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="size-4">
-  <path fillRule="evenodd" d="M8 2C4.262 2 1 4.57 1 8c0 1.86.98 3.486 2.455 4.566a3.472 3.472 0 0 1-.469 1.26.75.75 0 0 0 .713 1.14 6.961 6.961 0 0 0 3.06-1.06c.403.062.818.094 1.241.094 3.738 0 7-2.57 7-6s-3.262-6-7-6ZM5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm7-1a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM8 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" clipRule="evenodd" />
-</svg>
-
-}
+  return (
+    <svg
+      className="size-4"
+      fill="currentColor"
+      viewBox="0 0 16 16"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        clipRule="evenodd"
+        d="M8 2C4.262 2 1 4.57 1 8c0 1.86.98 3.486 2.455 4.566a3.472 3.472 0 0 1-.469 1.26.75.75 0 0 0 .713 1.14 6.961 6.961 0 0 0 3.06-1.06c.403.062.818.094 1.241.094 3.738 0 7-2.57 7-6s-3.262-6-7-6ZM5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm7-1a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM8 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"
+        fillRule="evenodd"
+      />
+    </svg>
+  );
+};
 
 const ChatIcon = (props) => {
   return (
     <svg
-    
-
-    className="size-6"
-    fill="none"
+      className="size-6"
+      fill="none"
       stroke="currentColor"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
@@ -84,15 +90,13 @@ const ChatIcon = (props) => {
 const ProfileIcon = (props) => {
   return (
     <svg
-    className="size-6"
-
-    fill="none"
+      className="size-6"
+      fill="none"
       stroke="currentColor"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
-
     >
       <path
         d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
@@ -125,8 +129,8 @@ const CloseIcon = () => {
 const ArrowRight = () => {
   return (
     <svg
-    className="size-6"
-    fill="none"
+      className="size-6"
+      fill="none"
       stroke="#FFF"
       strokeWidth={1.5}
       viewBox="0 0 24 24"
@@ -144,11 +148,10 @@ const ArrowRight = () => {
 const LikeIcon = (props) => {
   return (
     <svg
-    className="size-6"
-    fill="none"
+      className="size-6"
+      fill="none"
       stroke="currentColor"
       {...props}
-
       strokeWidth={1.5}
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
@@ -170,5 +173,5 @@ export {
   ArrowRight,
   LocationIcon,
   LikeIcon,
-  ChatIconSm
+  ChatIconSm,
 };

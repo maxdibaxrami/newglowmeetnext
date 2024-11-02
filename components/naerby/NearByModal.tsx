@@ -20,7 +20,11 @@ import {
   WhyYouAreHereIcon,
 } from "../icons/profileIcon";
 
-import { HeartEyesImoji, NotLikeImoji, ChatIconImoji } from "./NearByMotionIcons";
+import {
+  HeartEyesImoji,
+  NotLikeImoji,
+  ChatIconImoji,
+} from "./NearByMotionIcons";
 import NearByMatchModal from "./NearByMatchModal";
 
 import ExploreCardOption from "@/components/explore/exploreCardOption";
@@ -285,7 +289,7 @@ const NearByUserModal = forwardRef((props, ref) => {
             transition={{ type: "tween" }}
             {...getAnimationProps()}
           >
-            <ChatIconImoji/>
+            <ChatIconImoji />
           </motion.div>
 
           <motion.div
@@ -299,7 +303,6 @@ const NearByUserModal = forwardRef((props, ref) => {
               openModal={openModal}
             />
           </motion.div>
-          
         </motion.div>
       </ModalContent>
       <NearByMatchModal

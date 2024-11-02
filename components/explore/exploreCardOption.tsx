@@ -18,7 +18,7 @@ const ExploreCardOption = ({ page }) => {
           style={{
             position: "absolute",
             right: "32px",
-            top: "33px"
+            top: "33px",
           }}
           variant="flat"
         >

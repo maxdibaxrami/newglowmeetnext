@@ -1,7 +1,7 @@
 import { Navbar, NavbarContent, NavbarItem, Button } from "@nextui-org/react";
 import Link from "next/link";
 
-import { FireIcon, BackMenu } from "../icons/topBar";
+import { BackMenu } from "../icons/topBar";
 
 const TopBarPages = () => {
   return (

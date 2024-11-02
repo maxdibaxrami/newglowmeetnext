@@ -19,10 +19,16 @@ import EditMoreAboutMe from "@/components/profile/editMoreAboutMe";
 import EditIntersting from "@/components/profile/editIntersting";
 export default function EditProfilePage() {
   return (
-    <div style={{overflow:"scroll", maxHeight:"calc(100vh)"}} className="container mx-auto max-w-7xl flex-grow">
-              <TopBarPages />
-      <section style={{marginTop:"2rem"}} className="flex flex-col items-center justify-center gap-4 app-background">
-        <div  className="w-full h-full px-6 pb-4">
+    <div
+      className="container mx-auto max-w-7xl flex-grow"
+      style={{ overflow: "scroll", maxHeight: "calc(100vh)" }}
+    >
+      <TopBarPages />
+      <section
+        className="flex flex-col items-center justify-center gap-4 app-background"
+        style={{ marginTop: "2rem" }}
+      >
+        <div className="w-full h-full px-6 pb-4">
           <div className="flex justify-between items-center">
             <div className="flex">
               <div className="w-1/2 relative">

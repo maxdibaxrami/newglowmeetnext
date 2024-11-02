@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import {
   Modal,
   ModalContent,
@@ -9,9 +9,10 @@ import {
   ModalBody,
   Slider,
   ButtonGroup,
-  Switch
+  Switch,
 } from "@nextui-org/react";
 import { Select, SelectItem } from "@nextui-org/react";
+
 import { OptionInExplore } from "../icons/exploreIcons";
 import { LocationIcon } from "../icons/NearByMeIcons";
 
@@ -38,57 +39,58 @@ const NearByFilter = () => {
       </Button>
       <Modal
         backdrop="blur"
+        classNames={{
+          base: "absolute z-50	",
+        }}
         isOpen={isOpen}
         size={"5xl"}
         style={{ zIndex: "1000" }}
         onClose={onClose}
-        classNames={{
-          base:"absolute z-50	"
-        }}
       >
         <ModalContent className="absolute">
           <ModalHeader className="flex flex-col gap-1">Set filters</ModalHeader>
 
           <ModalBody>
             <form className="flex flex-col gap-4">
-            <Switch
-              defaultSelected
-              isSelected={isSelected} 
-              onValueChange={setIsSelected}
-              size="md"
-              color="primary"
-              thumbIcon={()=> <LocationIcon />}
-            >
-              Search by distance
-            </Switch>
-            {!isSelected? (
-              <ButtonGroup style={{height:"4rem"}} className="w-full flex py-4">
-                <Button className="grow">My city</Button>
-                <Button className="grow">My country</Button>
-                <Button className="grow">Globally</Button>
-              </ButtonGroup>
-            ) :(
-              <Slider   
+              <Switch
+                defaultSelected
+                color="primary"
+                isSelected={isSelected}
+                size="md"
+                thumbIcon={() => <LocationIcon />}
+                onValueChange={setIsSelected}
+              >
+                Search by distance
+              </Switch>
+              {!isSelected ? (
+                <ButtonGroup
+                  className="w-full flex py-4"
+                  style={{ height: "4rem" }}
+                >
+                  <Button className="grow">My city</Button>
+                  <Button className="grow">My country</Button>
+                  <Button className="grow">Globally</Button>
+                </ButtonGroup>
+              ) : (
+                <Slider
+                  className="max-w-md"
+                  color="secondary"
+                  defaultValue={150}
+                  label="Distance (km)"
+                  maxValue={500}
+                  minValue={50}
+                  showSteps={true}
                   size="md"
                   step={50}
-                  color="secondary"
-                  label="Distance (km)"
-                  showSteps={true} 
-                  style={{height:"4rem"}}
-                  maxValue={500} 
-                  minValue={50} 
-                  defaultValue={150}
-                  className="max-w-md" 
+                  style={{ height: "4rem" }}
                 />
-              
-            )}
-              
+              )}
 
               <Slider
                 className="w-full"
+                color="secondary"
                 defaultValue={[18, 28]}
                 label="Age"
-                color="secondary"
                 maxValue={100}
                 minValue={18}
                 step={1}
@@ -100,7 +102,9 @@ const NearByFilter = () => {
                 placeholder="Looking for"
               >
                 {(LookingForItems) => (
-                  <SelectItem key={LookingForItems.label}>{LookingForItems.label}</SelectItem>
+                  <SelectItem key={LookingForItems.label}>
+                    {LookingForItems.label}
+                  </SelectItem>
                 )}
               </Select>
 

@@ -62,27 +62,30 @@ const ChatList = () => {
                     size="lg"
                     src={item.avatar}
                   />
+                </Badge>
               </Badge>
-            </Badge>
-
             }
-            
             textValue={truncateText(item.name, 10)}
             onPress={OnPress}
           >
-            <div style={{ width: "100%" }} className="flex gap-2 items-center">
+            <div className="flex gap-2 items-center" style={{ width: "100%" }}>
               <div className="flex pl-2 flex-col">
                 <span
                   className={
-                    item.id % 2 !== 0 ? "text-small text-handller-chat" : "text-small text-handller-chat font-bold"
+                    item.id % 2 !== 0
+                      ? "text-small text-handller-chat"
+                      : "text-small text-handller-chat font-bold"
                   }
                 >
                   {item.name}
                   <Chip
-                    className={item.id % 2 !== 0 ? "hidden" : "visible ml-1 background-drop--bluebase---darker"}
+                    className={
+                      item.id % 2 !== 0
+                        ? "hidden"
+                        : "visible ml-1 background-drop--bluebase---darker"
+                    }
                     color="primary"
                     size="sm"
-                    
                   >
                     +1 New
                   </Chip>
@@ -106,7 +109,6 @@ const ChatList = () => {
 };
 
 export default ChatList;
-
 
 export const usersData = [
   {

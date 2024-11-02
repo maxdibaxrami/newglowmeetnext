@@ -24,34 +24,52 @@ const BottomMenu = ({ onChangeMenu }) => {
     <motion.div
       animate={
         selected === "explore"
-          ? { width: "57px", right: "20px" }
-          : { width: "345px" }
+          ? { height: "57px", right: "10px",top:"calc(100% - 80px )", opacity:"1" }
+          : { width: "57px", height: "293px", right:"10px", top: "194px", opacity:"1" }
       }
-      className={"flex w-full flex-col fixed bottom-0 items-center	"}
+      className={"flex w-full flex-col fixed items-center	background-drop--bluebase---navbar"}
       style={{
         zIndex: "10",
-        width: "326px",
+        width: "57px",
         borderRadius: "14px",
-        bottom: "24px",
         overflow: "hidden",
-        backgroundColor: "transparent",
+        justifyContent:"center",
+        height:"284px",
+        right:"10px",
+        opacity:0,
+        top:"-40px"
+        
       }}
       transition={{ type: "tween" }}
     >
       <Tabs
         aria-label="Options"
-        style={{color:"#FFF"}}
         classNames={{
           tab: "p-3 h-auto color-white",
-          tabList: "bg-transparent p-1",
-          tabContent: "text-[#FFF] group-data-[selected=false]:text-[#ffffffbf]",
-          base:"background-drop--bluebase---navbar"
+          tabList: "bg-transparent p-1 ",
+          tabContent:
+            "text-[#FFF] group-data-[selected=false]:text-[#ffffffbf]",
+          base: "background-drop--bluebase---navbar flex items-center",
         }}
+        isVertical={true}
         color="primary"
         selectedKey={selected}
+        isSelected={true}
         size="lg"
+        style={{
+          zIndex: "10",
+          width: "57px",
+          borderRadius: "14px",
+          top: "194px",
+          overflow: "hidden",
+          backgroundColor: "transparent",
+          height:"300px",
+          right:"10px",
+          color:"#FFF"
+        }}
         variant="light"
         onSelectionChange={setSelected}
+        
       >
         <Tab
           key="explore"

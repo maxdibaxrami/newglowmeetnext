@@ -34,18 +34,18 @@ const ExploreFilter = () => {
       >
         <OptionInExplore />
       </Button>
-      
+
       <Modal
         backdrop="blur"
+        classNames={{
+          base: "absolute z-50	",
+        }}
         isOpen={isOpen}
         size={"5xl"}
         style={{ zIndex: "1000" }}
         onClose={onClose}
-        classNames={{
-          base:"absolute z-50	"
-        }}
       >
-        <ModalContent >
+        <ModalContent>
           <ModalHeader className="flex flex-col gap-1">Set filters</ModalHeader>
 
           <ModalBody>

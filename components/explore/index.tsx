@@ -39,7 +39,7 @@ const ExplorePage = () => {
   };
 
   return (
-    <div className="relative" >
+    <div className="relative">
       <Swiper
         allowSlidePrev={false}
         className="mySwiper2 mt-4"

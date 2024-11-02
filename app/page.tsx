@@ -9,11 +9,11 @@ import ExplorePage from "../components/explore/index";
 
 import LikesPage from "./likes/page";
 import NearByPage from "./nearby/page";
+
 import TopBar from "@/components/tobBar";
 import BottomMenu from "@/components/bottomMenu/index";
 
 export default function Home() {
-
   const [selectedTab, setSelectedTab] = useState("chat");
 
   const onChangeMenu = (value) => {
@@ -24,14 +24,14 @@ export default function Home() {
     <main className="container relative w-full flex-grow">
       <TopBar selectedTab={selectedTab} />
 
-      <section  className="flex flex-col items-center justify-center gap-4 ">
+      <section className="flex flex-col items-center justify-center gap-4 ">
         {selectedTab === "explore" && (
           <AnimatePresence mode="wait">
             <motion.div
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -10, opacity: 0 }}
-              style={{marginTop:"2rem"}}
               initial={{ y: 10, opacity: 0 }}
+              style={{ marginTop: "2rem" }}
               transition={{
                 x: { type: "spring", stiffness: 300, damping: 30 },
                 opacity: { duration: 0.4 },

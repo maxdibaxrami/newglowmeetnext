@@ -39,8 +39,8 @@ const BottomController = ({ nextPage, prevPage, selectedTab }) => {
       <div className="flex flex-col gap-6 w-full max-w-md">
         <Progress
           aria-label="Loading..."
-          size="lg"
           radius="none"
+          size="lg"
           value={16.66 * selectedTab}
         />
       </div>

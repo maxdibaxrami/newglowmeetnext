@@ -36,11 +36,11 @@
 }
 
 .message-container-dark{
-    background-image: url("/assets/chat-background.png"), linear-gradient(to top,#1c92d2, #262626); /* W3C */
+    background-image: url("/assets/chat-background.png"), linear-gradient(to top,#a594f9a8, #262626); /* W3C */
 }
 
 .message-container-light{
-    background-image: url("/assets/chat-background.png"), linear-gradient(to top,#1c92d2, #c9c9c9); /* W3C */
+    background-image: url("/assets/chat-background.png"), linear-gradient(to top,#a594f9a8, #c9c9c9); /* W3C */
 }
 
 .twin-profile{

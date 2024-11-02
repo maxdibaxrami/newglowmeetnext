@@ -30,6 +30,7 @@ export default function Home() {
             <motion.div
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -10, opacity: 0 }}
+              style={{marginTop:"2rem"}}
               initial={{ y: 10, opacity: 0 }}
               transition={{
                 x: { type: "spring", stiffness: 300, damping: 30 },

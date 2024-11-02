@@ -6,8 +6,11 @@ const NearByCard = ({ data, onCardClick, num }) => {
       <Card
         isFooterBlurred
         isPressable
-        className="border-none"
+        className="border-none relative"
         radius="lg"
+        classNames={{
+          base:"w-fit"
+        }}
         onPress={() => onCardClick(data)}
       >
         <Image

@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
+import { Button } from "@nextui-org/button";
 import ProfilePage from "../components/profile/index";
 import ChatPage from "../components/chat/index";
 import ExplorePage from "../components/explore/index";
@@ -12,13 +12,27 @@ import NearByPage from "./nearby/page";
 
 import TopBar from "@/components/tobBar";
 import BottomMenu from "@/components/bottomMenu/index";
+import { FitlerIcon } from "@/components/icons/NearByMeIcons";
+import NearByFilter from "@/components/naerby/NearByFilter";
 
 export default function Home() {
+  const childRef = useRef();
+
   const [selectedTab, setSelectedTab] = useState("chat");
+  const [activeNearMeFilter , setActiveNearMeFilter] = useState(false)
+  const [openNearMeFilterModal,setOpenNearMeFilterModal] = useState(false)
 
   const onChangeMenu = (value) => {
     setSelectedTab(value);
+    setActiveNearMeFilter(value === "nearby" ? true : false)
   };
+  const closeNearMeFilterModal = () => setOpenNearMeFilterModal(false)
+
+  const handleOpenModal = () => {
+    if (childRef.current) {
+        childRef.current.openModal();
+    }
+};
 
   return (
     <main className="container relative w-full flex-grow">
@@ -124,6 +138,25 @@ export default function Home() {
           </AnimatePresence>
         )}
         <BottomMenu onChangeMenu={onChangeMenu} />
+
+        <AnimatePresence>
+          {activeNearMeFilter && (
+              <motion.div
+                style={{zIndex:30, marginRight:"51px"}}
+                className="fixed background-drop--bluebase p-2"
+                initial={{ opacity: 0 , bottom:"-80px", scale: 0.5 }}
+                animate={{ opacity: 1 , bottom:"43px", scale: 1.1 }}
+                exit={{ opacity: 0 , bottom:"-80px", scale: 0.5 }}
+                
+              >
+                <Button className="color-white" onPress={handleOpenModal} isIconOnly color="primary" style={{borderRadius:"20%"}} size="lg" aria-label="Like">
+                  <FitlerIcon stroke="#FFF"/>
+                </Button>  
+              </motion.div>
+          )}
+        </AnimatePresence>
+        <NearByFilter ref={childRef} />
+
       </section>
     </main>
   );

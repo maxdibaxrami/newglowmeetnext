@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, forwardRef, useImperativeHandle  } from "react";
+
 import {
   Modal,
   ModalContent,
@@ -16,27 +17,23 @@ import { Select, SelectItem } from "@nextui-org/react";
 import { OptionInExplore } from "../icons/exploreIcons";
 import { LocationIcon } from "../icons/NearByMeIcons";
 
-const NearByFilter = () => {
+const NearByFilter = forwardRef((props, ref) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [isSelected, setIsSelected] = useState(true);
+
+  useImperativeHandle(ref, () => ({
+    openModal: onOpen,
+    closeModal: onClose
+  }));
 
   const handleOpen = () => {
     onOpen();
   };
+  const handleClose = () => {
+    
+  }
 
   return (
-    <>
-      <Button
-        isIconOnly
-        aria-label="Like"
-        className="ml-2"
-        color="default"
-        size="md"
-        variant="light"
-        onPress={() => handleOpen()}
-      >
-        <OptionInExplore />
-      </Button>
       <Modal
         backdrop="blur"
         classNames={{
@@ -131,9 +128,10 @@ const NearByFilter = () => {
           </ModalFooter>
         </ModalContent>
       </Modal>
-    </>
   );
-};
+});
+
+NearByFilter.displayName = "NearByFilter";
 
 export default NearByFilter;
 

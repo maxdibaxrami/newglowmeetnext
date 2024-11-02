@@ -24,35 +24,33 @@ const BottomMenu = ({ onChangeMenu }) => {
     <motion.div
       animate={
         selected === "explore"
-          ? { width: "56px", right: "20px" }
-          : { width: "281px" }
+          ? { width: "72px", right: "20px" }
+          : { width: "345px" }
       }
       className={"flex w-full flex-col fixed bottom-0 items-center	"}
       style={{
         zIndex: "10",
-        width: "281px",
+        width: "326px",
         borderRadius: "14px",
         bottom: "24px",
         overflow: "hidden",
         backgroundColor: "transparent",
-        border:
-          theme.theme === "light"
-            ? "1px #0000005c solid"
-            : "1px #ffffff87 solid",
       }}
       transition={{ type: "tween" }}
     >
       <Tabs
         aria-label="Options"
+        style={{color:"#FFF"}}
         classNames={{
-          tab: "p-3 h-auto ",
-          tabList: "bg-transparent",
-          base:"background-drop--bluebase"
+          tab: "p-4 h-auto color-white",
+          tabList: "bg-transparent p-2",
+          tabContent: "text-[#FFF] group-data-[selected=false]:text-[#ffffffbf]",
+          base:"background-drop--bluebase---navbar"
         }}
         color="primary"
         selectedKey={selected}
         size="lg"
-        variant="solid"
+        variant="light"
         onSelectionChange={setSelected}
       >
         <Tab

@@ -14,19 +14,16 @@ import TopBar from "@/components/tobBar";
 import BottomMenu from "@/components/bottomMenu/index";
 import { FitlerIcon } from "@/components/icons/NearByMeIcons";
 import NearByFilter from "@/components/naerby/NearByFilter";
+import { EditProfileIcon, SettingIcon } from "@/components/icons/profileIcon";
 
 export default function Home() {
   const childRef = useRef();
 
   const [selectedTab, setSelectedTab] = useState("chat");
-  const [activeNearMeFilter , setActiveNearMeFilter] = useState(false)
-  const [openNearMeFilterModal,setOpenNearMeFilterModal] = useState(false)
 
   const onChangeMenu = (value) => {
     setSelectedTab(value);
-    setActiveNearMeFilter(value === "nearby" ? true : false)
   };
-  const closeNearMeFilterModal = () => setOpenNearMeFilterModal(false)
 
   const handleOpenModal = () => {
     if (childRef.current) {
@@ -140,7 +137,7 @@ export default function Home() {
         <BottomMenu onChangeMenu={onChangeMenu} />
 
         <AnimatePresence>
-          {activeNearMeFilter && (
+          {selectedTab === "nearby"  && (
               <motion.div
                 style={{zIndex:30, marginRight:"51px"}}
                 className="fixed background-drop--bluebase p-2"
@@ -154,6 +151,37 @@ export default function Home() {
                 </Button>  
               </motion.div>
           )}
+
+          {selectedTab === "profile"  && (<>
+              <motion.div
+                style={{zIndex:30,marginRight:"80px"}}
+                className="fixed background-drop--bluebase p-2"
+                initial={{ opacity: 0 , bottom:"-80px", scale: 0.5 }}
+                animate={{ opacity: 1 , bottom:"43px", scale: 1.1 }}
+                exit={{ opacity: 0 , bottom:"-80px", scale: 0.5 }}
+                
+              >
+                <Button className="color-white" onPress={handleOpenModal} isIconOnly color="primary" style={{borderRadius:"20%"}} size="lg" aria-label="Like">
+                  <EditProfileIcon stroke="#FFF"/>
+                </Button> 
+              </motion.div>
+         
+             <motion.div
+                style={{zIndex:30,marginLeft:"80px"}}
+                className="fixed background-drop--bluebase p-2"
+                initial={{ opacity: 0 , bottom:"-80px", scale: 0.5 }}
+                animate={{ opacity: 1 , bottom:"43px", scale: 1.1 }}
+                exit={{ opacity: 0 , bottom:"-80px", scale: 0.5 }}
+                
+              >
+                <Button className="color-white" onPress={handleOpenModal} isIconOnly color="primary" style={{borderRadius:"20%"}} size="lg" aria-label="Like">
+                  <SettingIcon stroke="#FFF"/>
+                </Button> 
+              </motion.div>
+         
+         </>)}
+
+   
         </AnimatePresence>
         <NearByFilter ref={childRef} />
 

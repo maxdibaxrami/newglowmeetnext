@@ -94,27 +94,6 @@ const ProfilePage = () => {
             </div>
           </div>
         </div>
-        <div className="flex">
-          <Link href={"/editprofile"}>
-            <Button
-              isIconOnly
-              className="m-1"
-              color="default"
-              startContent={<PenIcon />}
-              variant="solid"
-            />
-          </Link>
-
-          <Link href={"/setting"}>
-            <Button
-              isIconOnly
-              className="m-1"
-              color="default"
-              startContent={<SettingIcon />}
-              variant="solid"
-            />
-          </Link>
-        </div>
       </div>
 
       <Divider className="my-2" />

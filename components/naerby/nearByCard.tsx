@@ -1,17 +1,8 @@
 import { Card, CardFooter, Image, Badge } from "@nextui-org/react";
-
+import { VerifyIcon } from "../icons/profileIcon";
+import { CircleSvg } from "../icons/NearByMeIcons";
 const NearByCard = ({ data, onCardClick, num }) => {
   return (
-    <Badge
-      disableOutline
-      className="background-drop--bluebase text-white"
-      color="primary"
-      content="New"
-      isInvisible={num % 2 === 0 ? true : false}
-      size="sm"
-      style={{ top: "14%", right: "20%" }}
-      variant="shadow"
-    >
       <Card
         isFooterBlurred
         isPressable
@@ -26,12 +17,22 @@ const NearByCard = ({ data, onCardClick, num }) => {
           src={data.avatar}
           style={{ height: "100%", width: "100%" }}
         />
+          <CardFooter className=" background-drop--bluebase border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
+              <div className=" w-full">
+                <div className="flex justify-between items-center">
+                  <p style={{textAlign:"start"}} className="flex items-center text-tiny text-white text-handller">
+                    {`${data.name.split(" ")[0]} ${data.age}`}
+                   {num % 2 ===0 && <CircleSvg/>} 
 
-        <CardFooter className="justify-between background-drop--bluebase border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
-          <p className="text-tiny text-white text-handller">{`${data.name} ${data.age}`}</p>
-        </CardFooter>
+                  </p>
+                  <VerifyIcon stroke="#FFF"/>
+                </div>
+              </div>
+          </CardFooter>
+       
+
       </Card>
-    </Badge>
+ 
   );
 };
 

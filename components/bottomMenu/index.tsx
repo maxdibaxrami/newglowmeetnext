@@ -25,7 +25,7 @@ const BottomMenu = ({ onChangeMenu }) => {
       animate={
         selected === "explore"
           ? { height: "57px", right: "10px",top:"calc(100% - 80px )", opacity:"1" }
-          : { width: "57px", height: "293px", right:"10px", top: "194px", opacity:"1" }
+          : { width: "57px", height: "293px", right:"10px", top: "150px", opacity:"1" }
       }
       className={"flex w-full flex-col fixed items-center	background-drop--bluebase---navbar"}
       style={{

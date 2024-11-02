@@ -15,4 +15,9 @@ const LocationIcon = () => {
   );
 };
 
-export { LocationIcon };
+const CircleSvg = () => {
+  return <svg className="mx-1" height="4" width="4" xmlns="http://www.w3.org/2000/svg">
+  <circle r="2" cx="2" cy="2" fill="#00ba96" />
+</svg>
+}
+export { LocationIcon, CircleSvg };

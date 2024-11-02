@@ -13,6 +13,7 @@ const NearByCard = ({ data, onCardClick, num }) => {
           <Image
             alt="Woman listing to music"
             className="object-cover"
+            loading="lazy"
             src={data.avatar}
             style={{height:"100%", width:"100%"}}  
           />

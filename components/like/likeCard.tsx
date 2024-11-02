@@ -11,6 +11,7 @@ const LikeCard = ({ data, onCardClick }) => {
           alt="Woman listing to music"
           className="object-cover"
           style={{width:"100%",height:"100%"}}
+          loading="lazy"
           src={data.mainImage}
         />
       </Card>

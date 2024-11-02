@@ -23,9 +23,10 @@
 .buttomchat-div{
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
-    width: 95%;
+    width: 100%;
     left: 50%;
-    border-radius: 16px;
+    bottom: 0;
+    padding-bottom: env(safe-area-inset-bottom);
 }
 
 .chat-m:first-child {

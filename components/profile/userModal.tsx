@@ -50,13 +50,14 @@ const UserModal = () => {
                 ? {
                     overflow: "scroll",
                     boxShadow: "unset",
-                    backgroundColor: "rgb(246 246 246)",
+                    backgroundColor: "rgb(165 148 249 / 9%)",
                     maxHeight: "calc(90vh)",
                     marginTop: "2rem",
                   }
                 : {
                     overflow: "scroll",
                     maxHeight: "calc(90vh)",
+                    backgroundColor: "rgb(165 148 249 / 15%)",
                     marginTop: "2rem",
                   }
             }

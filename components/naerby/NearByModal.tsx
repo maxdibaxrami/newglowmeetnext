@@ -70,7 +70,7 @@ const NearByUserModal = forwardRef((props, ref) => {
                 : {
                     overflow: "scroll",
                     maxHeight: "calc(90vh)",
-                    backgroundColor: "rgb(165 148 249 / 22%)",
+                    backgroundColor: "rgb(165 148 249 / 15%)",
                     marginTop: "2rem",
                   }
             }

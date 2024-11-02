@@ -32,7 +32,7 @@ const ExploreCard = ({ profileData }) => {
           : {
               overflow: "scroll",
               maxHeight: "calc(100vh)",
-              backgroundColor: "rgb(165 148 249 / 22%)",
+              backgroundColor: "rgb(165 148 249 / 15%)",
               marginTop: "4.5rem",
             }
       }

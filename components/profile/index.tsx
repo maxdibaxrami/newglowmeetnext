@@ -13,9 +13,9 @@ import DataList from "./dataList";
 
 const ProfilePage = () => {
   return (
-    <div style={{marginTop:"4.5rem"}} className="w-full  h-full px-6 pb-16">
+    <div style={{marginTop:"4.5rem"}} className="w-full h-full px-6 pb-16">
       <div className="flex mt-4 justify-between items-center">
-        <div className="flex">
+        <div style={{width:"100%"}} className="flex">
           <div className="w-1/2">
             <Image
               alt="NextUI hero Image"

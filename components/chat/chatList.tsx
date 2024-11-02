@@ -39,11 +39,7 @@ const ChatList = () => {
           <ListboxItem
             key={item.id}
             endContent={<ChatItemMenu />}
-            style={{ width: "100%" }}
-            textValue={truncateText(item.name, 10)}
-            onPress={OnPress}
-          >
-            <div className="flex gap-2 items-center">
+            startContent={
               <Badge
                 isOneChar
                 className={item.id % 3 !== 0 ? "hidden" : "visible"}
@@ -66,13 +62,19 @@ const ChatList = () => {
                     size="lg"
                     src={item.avatar}
                   />
-                </Badge>
               </Badge>
+            </Badge>
 
+            }
+            
+            textValue={truncateText(item.name, 10)}
+            onPress={OnPress}
+          >
+            <div style={{ width: "100%" }} className="flex gap-2 items-center">
               <div className="flex pl-2 flex-col">
                 <span
                   className={
-                    item.id % 2 !== 0 ? "text-small text-handller" : "text-small text-handllerfont-bold"
+                    item.id % 2 !== 0 ? "text-small text-handller-chat" : "text-small text-handller-chat font-bold"
                   }
                 >
                   {item.name}
@@ -88,8 +90,8 @@ const ChatList = () => {
                 <span
                   className={
                     item.id % 2 !== 0
-                      ? "text-tiny text-handller text-default-400"
-                      : "text-tiny text-handller font-bold text-default-400"
+                      ? "text-tiny text-handller-chat text-default-400"
+                      : "text-tiny text-handller-chat font-bold text-default-400"
                   }
                 >
                   {item.email}
@@ -105,10 +107,11 @@ const ChatList = () => {
 
 export default ChatList;
 
+
 export const usersData = [
   {
     id: 1,
-    name: "Tony Reichert",
+    name: "Tony",
     role: "CEO",
     team: "Management",
     status: "active",
@@ -118,7 +121,7 @@ export const usersData = [
   },
   {
     id: 2,
-    name: "Olivia Bennett",
+    name: "Olivia",
     role: "CFO",
     team: "Finance",
     status: "active",
@@ -128,7 +131,7 @@ export const usersData = [
   },
   {
     id: 3,
-    name: "Liam Johnson",
+    name: "Liam",
     role: "CTO",
     team: "Technology",
     status: "active",
@@ -138,7 +141,7 @@ export const usersData = [
   },
   {
     id: 4,
-    name: "Sophia Garcia",
+    name: "Sophia",
     role: "CMO",
     team: "Marketing",
     status: "active",
@@ -148,7 +151,7 @@ export const usersData = [
   },
   {
     id: 5,
-    name: "Noah Wilson",
+    name: "Noah",
     role: "Head of Sales",
     team: "Sales",
     status: "active",
@@ -158,7 +161,7 @@ export const usersData = [
   },
   {
     id: 6,
-    name: "Emma Smith",
+    name: "Emma",
     role: "HR Manager",
     team: "Human Resources",
     status: "active",
@@ -168,7 +171,7 @@ export const usersData = [
   },
   {
     id: 7,
-    name: "James Brown",
+    name: "James",
     role: "Product Manager",
     team: "Product",
     status: "active",
@@ -178,7 +181,7 @@ export const usersData = [
   },
   {
     id: 8,
-    name: "Mia Davis",
+    name: "Mia",
     role: "UX Designer",
     team: "Design",
     status: "active",
@@ -188,7 +191,7 @@ export const usersData = [
   },
   {
     id: 9,
-    name: "Ethan Miller",
+    name: "Ethan",
     role: "Software Engineer",
     team: "Engineering",
     status: "active",
@@ -198,7 +201,7 @@ export const usersData = [
   },
   {
     id: 10,
-    name: "Harper Martinez",
+    name: "Harper",
     role: "Data Analyst",
     team: "Analytics",
     status: "active",
@@ -208,7 +211,7 @@ export const usersData = [
   },
   {
     id: 11,
-    name: "Logan Garcia",
+    name: "Logan",
     role: "DevOps Engineer",
     team: "Engineering",
     status: "active",
@@ -218,7 +221,7 @@ export const usersData = [
   },
   {
     id: 12,
-    name: "Ava Lopez",
+    name: "Ava",
     role: "Content Strategist",
     team: "Content",
     status: "active",
@@ -228,7 +231,7 @@ export const usersData = [
   },
   {
     id: 13,
-    name: "Jackson Martinez",
+    name: "Jackson",
     role: "Marketing Specialist",
     team: "Marketing",
     status: "active",
@@ -238,7 +241,7 @@ export const usersData = [
   },
   {
     id: 14,
-    name: "Isabella Hernandez",
+    name: "Isabella",
     role: "Business Analyst",
     team: "Analysis",
     status: "active",
@@ -248,7 +251,7 @@ export const usersData = [
   },
   {
     id: 15,
-    name: "Aiden Robinson",
+    name: "Aiden",
     role: "Web Developer",
     team: "Development",
     status: "active",
@@ -258,7 +261,7 @@ export const usersData = [
   },
   {
     id: 16,
-    name: "Ella Walker",
+    name: "Ella",
     role: "SEO Specialist",
     team: "SEO",
     status: "active",
@@ -268,7 +271,7 @@ export const usersData = [
   },
   {
     id: 17,
-    name: "Lucas Anderson",
+    name: "Lucas",
     role: "Sales Executive",
     team: "Sales",
     status: "active",
@@ -278,7 +281,7 @@ export const usersData = [
   },
   {
     id: 18,
-    name: "Zoe Thomas",
+    name: "Zoe",
     role: "Customer Support",
     team: "Support",
     status: "active",
@@ -288,7 +291,7 @@ export const usersData = [
   },
   {
     id: 19,
-    name: "Mason White",
+    name: "Mason",
     role: "Network Administrator",
     team: "IT",
     status: "active",
@@ -298,7 +301,7 @@ export const usersData = [
   },
   {
     id: 20,
-    name: "Chloe Thompson",
+    name: "Chloe",
     role: "Graphic Designer",
     team: "Design",
     status: "active",

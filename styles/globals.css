@@ -91,6 +91,14 @@
     width: 100%;
 }
 
+
+.text-handller-chat{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 150px;
+}
+
 .nearme-div--background{
 
     background: #a594f957;

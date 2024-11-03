@@ -152,7 +152,7 @@ const handleOpenModalExplore = () => {
         <AnimatePresence>
           {pathname.get('page') === "nearby"  && (
               <motion.div
-                style={{zIndex:30, marginRight:"51px"}}
+                style={{zIndex:30}}
                 className="fixed background-drop--bluebase p-2"
                 initial={{ opacity: 0 , bottom:"-80px", scale: 0.5 }}
                 animate={{ opacity: 1 , bottom:"43px", scale: 1.1 }}

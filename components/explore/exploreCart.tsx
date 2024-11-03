@@ -45,9 +45,9 @@ const ExploreCard = ({ profileData }) => {
             <Swiper
               className="mySwiper w-full relative"
               loop={true}            
-              style={{height:"70vh"}}  
+              style={{height:"68vh"}}  
             >
-              <SwiperSlide >
+              <SwiperSlide className="hightdisable">
                 <Image       
                     alt="Profile hero Image"
                     className="w-full h-full"
@@ -67,7 +67,7 @@ const ExploreCard = ({ profileData }) => {
                       
               </SwiperSlide>
 
-              <SwiperSlide >
+              <SwiperSlide className="hightdisable">
                 <Image       
                     alt="Profile hero Image"
                     className="w-full h-full"
@@ -86,7 +86,7 @@ const ExploreCard = ({ profileData }) => {
                   />
               </SwiperSlide>
 
-              <SwiperSlide >
+              <SwiperSlide className="hightdisable">
                 <Image       
                     alt="Profile hero Image"
                     className="w-full h-full"
@@ -107,7 +107,7 @@ const ExploreCard = ({ profileData }) => {
 
               
 
-               <div style={{left:"18px", bottom:"121px",width:"calc(100% - 71px)", borderRadius:"13px",height:"61px"}} className=" background-drop--bluebase border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_16px)] shadow-small ml-1 z-10">
+               <div style={{left:"18px", bottom:"16px",width:"calc(100% - 71px)", borderRadius:"13px",height:"61px"}} className=" background-drop--bluebase border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_16px)] shadow-small ml-1 z-10">
                   <div className=" w-full">
                     <div className="flex  justify-between items-center">
                       <User
@@ -130,15 +130,15 @@ const ExploreCard = ({ profileData }) => {
 
         </div>
 
-        <div>
-                <div className="flex gap-2 items-center">
+         <div>
+                <div style={{padding:"14px 24px"}} className="flex gap-2 items-center">
                   <Avatar className="flex-shrink-0" />
                   <div className="flex flex-col">
                     <span className="text-small">{profileData.whyHere}</span>
                     <span className="text-tiny text-default-400">{profileData.whyHere}</span>
                   </div>
                 </div>
-            </div>
+          </div>
             
 
         <div className="w-full mb-4 mt-2">

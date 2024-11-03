@@ -131,7 +131,7 @@ const ExploreCard = ({ profileData }) => {
         </div>
 
          <div>
-                <div style={{padding:"14px 24px"}} className="flex gap-2 items-center">
+                <div style={{padding:"14px 12px"}} className="flex gap-2 items-center">
                   <Avatar className="flex-shrink-0" />
                   <div className="flex flex-col">
                     <span className="text-small">{profileData.whyHere}</span>

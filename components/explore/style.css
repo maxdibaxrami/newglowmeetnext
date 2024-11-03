@@ -17,7 +17,9 @@
     color: #fff;
     width: 100%;
     background-color: transparent;
-    height: 90% !important;
+    height: 85% !important;
+    margin-top: 8%;
+    margin-bottom: 7%;
     overflow-x: hidden;
   }
   

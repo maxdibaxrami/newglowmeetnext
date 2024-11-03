@@ -44,7 +44,7 @@ const ExplorePage = () => {
     <div className="relative">
       <Swiper
         allowSlidePrev={false}
-        className="mySwiper2 mt-4"
+        className="mt-8"
         creativeEffect={{
           prev: {
             shadow: true,

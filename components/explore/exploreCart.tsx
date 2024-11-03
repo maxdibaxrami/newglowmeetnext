@@ -16,6 +16,7 @@ import ExploreCardOption from "./exploreCardOption";
 
 const ExploreCard = ({ profileData }) => {
   const theme = useTheme();
+  const [selectedId, setSelectedId] = useState(null);
 
   return (
     <Card
@@ -24,10 +25,12 @@ const ExploreCard = ({ profileData }) => {
           ? {
               overflow: "scroll",
               boxShadow: "unset",
+              maxHeight: "calc(100vh)",
               backgroundColor: "rgb(165 148 249 / 6%)",
             }
           : {
               overflow: "scroll",
+              maxHeight: "calc(100vh)",
               backgroundColor: "rgb(165 148 249 / 15%)",
             }
       }
@@ -37,7 +40,9 @@ const ExploreCard = ({ profileData }) => {
           <div className="flex flex-col">
             <motion.div
               className="w-full"
+              layoutId={"1"}
               style={{ height: "calc(61vh - 4rem)" }}
+              onClick={() => setSelectedId("1")}
             >
               <Image
                 removeWrapper

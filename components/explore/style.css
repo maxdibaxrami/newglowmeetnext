@@ -2,6 +2,8 @@
 .swiper {
     margin: 1px auto;
     width: 90vw;
+    height: calc(100vh - 1rem);
+    max-height: calc(100vh - 1rem);
     border-radius: 14px;
     background-color: transparent;
   }
@@ -15,9 +17,7 @@
     color: #fff;
     width: 100%;
     background-color: transparent;
-    height: 85% !important;
-    margin-bottom: 7%;
-    overflow-x: hidden;
+
   }
   
 

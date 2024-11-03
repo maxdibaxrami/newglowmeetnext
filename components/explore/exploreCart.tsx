@@ -39,8 +39,7 @@ const ExploreCard = ({ profileData }) => {
       }
     >
       <CardBody className="mb-4">
-
-        <div style={{height:"calc(90vh)"}} className="flex items-center">
+        <div style={{height:"calc(90vh)"}}>
           <Swiper
               className="w-full relative"
               loop={true}            
@@ -119,7 +118,6 @@ const ExploreCard = ({ profileData }) => {
           </Swiper>
         </div>
 
-         <div>
                 <div style={{padding:"14px 12px"}} className="flex gap-2 items-center">
                   <Avatar className="flex-shrink-0" />
                   <div className="flex flex-col">
@@ -127,7 +125,6 @@ const ExploreCard = ({ profileData }) => {
                     <span className="text-tiny text-default-400">{profileData.whyHere}</span>
                   </div>
                 </div>
-          </div>
             
 
         <div className="w-full mb-4 mt-2">

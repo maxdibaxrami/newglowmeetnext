@@ -55,7 +55,7 @@ const BottomMenu = () => {
            }}
            isVertical={true}
            color="primary"
-           selectedKey={pathname.get('page') || "chat"}
+           selectedKey={!pathname.get('page')? "chat": pathname.get('page') }
            size="lg"
            style={{
              zIndex: "10",

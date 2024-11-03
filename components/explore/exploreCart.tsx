@@ -40,9 +40,9 @@ const ExploreCard = ({ profileData }) => {
     >
       <CardBody className="mb-4">
 
-        <div style={{height:"calc(90vh)"}} className="flexitems-center">
+        <div style={{height:"calc(90vh)"}} className="flex items-center">
           <Swiper
-              className="mySwiper w-full relative"
+              className="w-full relative"
               loop={true}            
               style={{width:"100%",height:"100%"}}  
             >

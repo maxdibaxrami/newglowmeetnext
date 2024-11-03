@@ -1,5 +1,5 @@
 import { Card, CardBody, Image, User } from "@nextui-org/react";
-import { Listbox, ListboxItem, ListboxSection, Chip } from "@nextui-org/react";
+import { Listbox, ListboxItem, ListboxSection, Chip, Avatar } from "@nextui-org/react";
 import { useTheme } from "next-themes";
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -39,14 +39,15 @@ const ExploreCard = ({ profileData }) => {
       }
     >
       <CardBody className="mb-4">
-        <div className="flex mb-4 justify-between items-center">
+
+        <div style={{height:"calc(90vh)"}} className="flexitems-center">
           <div className="flex flex-col">
             <Swiper
               className="mySwiper w-full relative"
-              style={{ height: "calc(90vh - 4rem)" }}
-              loop={true}
+              loop={true}            
+              style={{height:"70vh"}}  
             >
-              <SwiperSlide style={{width:"calc(100%)"}}>
+              <SwiperSlide >
                 <Image       
                     alt="Profile hero Image"
                     className="w-full h-full"
@@ -66,7 +67,7 @@ const ExploreCard = ({ profileData }) => {
                       
               </SwiperSlide>
 
-              <SwiperSlide>
+              <SwiperSlide >
                 <Image       
                     alt="Profile hero Image"
                     className="w-full h-full"
@@ -85,7 +86,7 @@ const ExploreCard = ({ profileData }) => {
                   />
               </SwiperSlide>
 
-              <SwiperSlide>
+              <SwiperSlide >
                 <Image       
                     alt="Profile hero Image"
                     className="w-full h-full"
@@ -104,6 +105,8 @@ const ExploreCard = ({ profileData }) => {
                   />
               </SwiperSlide>
 
+              
+
                <div style={{left:"18px", bottom:"121px",width:"calc(100% - 71px)", borderRadius:"13px",height:"61px"}} className=" background-drop--bluebase border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_16px)] shadow-small ml-1 z-10">
                   <div className=" w-full">
                     <div className="flex  justify-between items-center">
@@ -121,9 +124,22 @@ const ExploreCard = ({ profileData }) => {
                     </div>
                   </div>
               </div>
+
             </Swiper>
           </div>
+
         </div>
+
+        <div>
+                <div className="flex gap-2 items-center">
+                  <Avatar className="flex-shrink-0" />
+                  <div className="flex flex-col">
+                    <span className="text-small">{profileData.whyHere}</span>
+                    <span className="text-tiny text-default-400">{profileData.whyHere}</span>
+                  </div>
+                </div>
+            </div>
+            
 
         <div className="w-full mb-4 mt-2">
           <Listbox aria-label="Listbox menu with sections" variant="solid">

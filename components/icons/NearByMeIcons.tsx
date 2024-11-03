@@ -1,10 +1,11 @@
-const LocationIcon = () => {
+const LocationIcon = (props) => {
   return (
     <svg
       className="size-4"
       fill="#000"
       viewBox="0 0 16 16"
       xmlns="http://www.w3.org/2000/svg"
+      {...props}
     >
       <path
         clipRule="evenodd"

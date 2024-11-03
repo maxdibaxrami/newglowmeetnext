@@ -3,7 +3,7 @@ import { Listbox, ListboxItem, ListboxSection, Chip } from "@nextui-org/react";
 import { useTheme } from "next-themes";
 import { useState } from "react";
 import { motion } from "framer-motion";
-
+import { VerifyIcon } from "../../components/icons/profileIcon";
 import {
   SearchIcon,
   HashtagIcon,
@@ -13,6 +13,7 @@ import {
 } from "../../components/icons/profileIcon";
 
 import ExploreCardOption from "./exploreCardOption";
+import { LocationIcon } from "../icons/NearByMeIcons";
 
 const ExploreCard = ({ profileData }) => {
   const theme = useTheme();
@@ -38,18 +39,15 @@ const ExploreCard = ({ profileData }) => {
       <CardBody className="mb-4">
         <div className="flex mb-4 justify-between items-center">
           <div className="flex flex-col">
-            <motion.div
-              className="w-full"
-              layoutId={"1"}
+            <div
+              className="w-full relative"
               style={{ height: "calc(61vh - 4rem)" }}
-              onClick={() => setSelectedId("1")}
             >
-              <Image
-                removeWrapper
+              <Image       
                 alt="Profile hero Image"
                 className="w-full h-full"
                 classNames={{
-                  wrapper: "w-full",
+                  wrapper: "w-full h-full",
                 }}
                 loading="lazy"
                 src={profileData.mainImage} // dynamic image URL
@@ -60,7 +58,25 @@ const ExploreCard = ({ profileData }) => {
                   padding: "10px 10px 5px 10px",
                 }}
               />
-            </motion.div>
+
+               <div style={{left:"20px", bottom:"18px",width:"calc(100% - 48px)", borderRadius:"13px",height:"61px"}} className=" background-drop--bluebase border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_16px)] shadow-small ml-1 z-10">
+                  <div className=" w-full">
+                    <div className="flex  justify-between items-center">
+                      <User
+                        avatarProps={{
+                          src: profileData.avatar,
+                          className: "hidden",
+                        }}
+                        classNames={{"name":"text-white","description":"text-white text-tiny","base":"pl-2"}}
+                        className="mt-2 justify-start px-2"
+                        description={<span className="flex items-center" style={{fontWeight:"400"}}><LocationIcon fill="#FFF"/> {profileData.location}</span>}
+                        name={<span className="flex items-center">{profileData.name} {profileData.age} <VerifyIcon stroke="#FFF"/> </span>}
+                      />
+                      
+                    </div>
+                  </div>
+              </div>
+            </div>
 
             <div className="flex">
               <div className="w-full">
@@ -103,6 +119,7 @@ const ExploreCard = ({ profileData }) => {
           description={profileData.location}
           name={`${profileData.name}, ${profileData.age}`}
         />
+        <VerifyIcon stroke="#FFF"/>
 
         <div className="w-full mb-4 mt-2">
           <Listbox aria-label="Listbox menu with sections" variant="solid">

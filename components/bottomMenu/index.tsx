@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Tabs, Tab } from "@nextui-org/react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "next-themes";
+import {useSearchParams} from "next/navigation";
 
 import {
   FireIcon,
@@ -14,15 +15,14 @@ import {
   LikeIcon,
 } from "../icons/bottomMenuIcons";
 
-const BottomMenu = ({ onChangeMenu }) => {
-  const [selected, setSelected] = useState("chat");
-  const theme = useTheme();
+const BottomMenu = () => {
 
-  useEffect(() => onChangeMenu(selected), [selected]);
+  const pathname = useSearchParams();
+
 
   return (
     <AnimatePresence>
-      {selected!=="explore" && (
+      {pathname.get('page')!=="explore" && (
          <motion.div
 
          initial={{ top:"-40px", opacity:0  }}
@@ -55,8 +55,7 @@ const BottomMenu = ({ onChangeMenu }) => {
            }}
            isVertical={true}
            color="primary"
-           selectedKey={selected}
-           isSelected={true}
+           selectedKey={pathname.get('page')}
            size="lg"
            style={{
              zIndex: "10",
@@ -70,11 +69,13 @@ const BottomMenu = ({ onChangeMenu }) => {
              color:"#FFF"
            }}
            variant="light"
-           onSelectionChange={setSelected}
+           
            
          >
            <Tab
              key="explore"
+             href="/?page=explore"
+
              title={
                <div className="flex items-center space-x-2">
                  <FireIcon />
@@ -84,6 +85,8 @@ const BottomMenu = ({ onChangeMenu }) => {
  
            <Tab
              key="nearby"
+             href="/?page=nearby"
+
              title={
                <div className="flex items-center space-x-2">
                  <LocationIcon />
@@ -93,6 +96,9 @@ const BottomMenu = ({ onChangeMenu }) => {
  
            <Tab
              key="chat"
+             href="/?page=chat"
+
+
              title={
                <div className="flex items-center space-x-2">
                  <ChatIcon />
@@ -102,6 +108,8 @@ const BottomMenu = ({ onChangeMenu }) => {
  
            <Tab
              key="likes"
+             href="/?page=likes"
+
              title={
                <div className="flex items-center space-x-2">
                  <LikeIcon />
@@ -111,6 +119,7 @@ const BottomMenu = ({ onChangeMenu }) => {
  
            <Tab
              key="profile"
+             href="/?page=profile"
              title={
                <div className="flex items-center space-x-2">
                  <ProfileIcon />

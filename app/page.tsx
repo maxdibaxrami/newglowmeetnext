@@ -20,15 +20,16 @@ import ChatFiltermenu from "@/components/chat/chatFilterMenu";
 import ExploreFilter from "@/components/explore/exploreFilter";
 import { ArrowRight } from "@/components/icons/bottomMenuIcons";
 
+import {useSearchParams} from "next/navigation";
+import { useRouter } from 'next/navigation'
+
 export default function Home() {
   const childRef = useRef();
   const childRefExplore = useRef();
 
-  const [selectedTab, setSelectedTab] = useState("chat");
+  const pathname = useSearchParams();
+  const router = useRouter()
 
-  const onChangeMenu = (value) => {
-    setSelectedTab(value);
-  };
 
   const handleOpenModal = () => {
     if (childRef.current) {
@@ -44,10 +45,10 @@ const handleOpenModalExplore = () => {
 
   return (
     <main className="container relative w-full flex-grow">
-      <TopBar selectedTab={selectedTab} />
+      <TopBar selectedTab={pathname.get('page')} />
 
       <section className="flex flex-col items-center justify-center gap-4 ">
-        {selectedTab === "explore" && (
+        {pathname.get('page') === "explore" && (
           <AnimatePresence mode="wait">
             <motion.div
               animate={{ y: 0, opacity: 1 }}
@@ -64,7 +65,7 @@ const handleOpenModalExplore = () => {
           </AnimatePresence>
         )}
 
-        {selectedTab === "nearby" && (
+        {pathname.get('page') === "nearby" && (
           <AnimatePresence mode="wait">
             <motion.div
               animate={{ y: 0, opacity: 1 }}
@@ -81,7 +82,7 @@ const handleOpenModalExplore = () => {
           </AnimatePresence>
         )}
 
-        {selectedTab === "chat" && (
+        {pathname.get('page') === "chat" && (
           <AnimatePresence mode="wait">
             <motion.div
               animate={{ y: 0, opacity: 1 }}
@@ -98,7 +99,7 @@ const handleOpenModalExplore = () => {
           </AnimatePresence>
         )}
 
-        {selectedTab === "likes" && (
+        {pathname.get('page') === "likes" && (
           <AnimatePresence mode="wait">
             <motion.div
               animate={{ y: 0, opacity: 1 }}
@@ -116,7 +117,7 @@ const handleOpenModalExplore = () => {
           </AnimatePresence>
         )}
 
-        {selectedTab === "profile" && (
+        {pathname.get('page') === "profile" && (
           <AnimatePresence mode="wait">
             <motion.div
               animate={{ y: 0, opacity: 1 }}
@@ -132,7 +133,7 @@ const handleOpenModalExplore = () => {
           </AnimatePresence>
         )}
 
-        {selectedTab === "back" && (
+        {pathname.get('page') === "back" && (
           <AnimatePresence mode="wait">
             <motion.div
               animate={{ y: 0, opacity: 1 }}
@@ -149,7 +150,7 @@ const handleOpenModalExplore = () => {
         )}
 
         <AnimatePresence>
-          {selectedTab === "nearby"  && (
+          {pathname.get('page') === "nearby"  && (
               <motion.div
                 style={{zIndex:30, marginRight:"51px"}}
                 className="fixed background-drop--bluebase p-2"
@@ -166,7 +167,7 @@ const handleOpenModalExplore = () => {
         </AnimatePresence>
 
         <AnimatePresence>
-          {selectedTab === "profile"  && (<>
+          {pathname.get('page') === "profile"  && (<>
                 <motion.div
                   style={{zIndex:30,marginRight:"80px"}}
                   className="fixed background-drop--bluebase p-2"
@@ -197,7 +198,7 @@ const handleOpenModalExplore = () => {
         </AnimatePresence>
 
         <AnimatePresence>
-          {selectedTab === "chat"  && (<>
+          {pathname.get('page') === "chat"  && (<>
                 <motion.div
                   style={{zIndex:30, marginLeft:"17px"}}
                   className="fixed background-drop--bluebase p-2"
@@ -214,7 +215,7 @@ const handleOpenModalExplore = () => {
         </AnimatePresence>
 
         <AnimatePresence>
-          {selectedTab === "explore"  && (
+          {pathname.get('page') === "explore"  && (
               <motion.div
                 style={{zIndex:30}}
                 className="fixed background-drop--bluebase p-2"
@@ -231,16 +232,16 @@ const handleOpenModalExplore = () => {
         </AnimatePresence>
 
         <AnimatePresence>
-          {selectedTab === "explore"  && (
+          {pathname.get('page') === "explore"  && (
               <motion.div
                 style={{zIndex:30}}
                 className="fixed background-drop--bluebase p-2"
                 initial={{ opacity: 0 , right:"-80px", bottom:"-80px", scale: 0.5 }}
                 animate={{ opacity: 1 , right:"20px" , bottom:"20px", scale: 1.1 }}
-                exit={{ opacity: 0 , left:"-80px", bottom:"-80px", scale: 0.5 }}
+                exit={{ opacity: 0 , right:"-80px", bottom:"-80px", scale: 0.5 }}
                 
               >
-                <Button className="color-white" onPress={handleOpenModalExplore} isIconOnly color="primary" style={{borderRadius:"20%"}} size="lg" aria-label="Like">
+                <Button className="color-white" onPress={e=> router.back()} isIconOnly color="primary" style={{borderRadius:"20%"}} size="lg" aria-label="Like">
                   <ArrowRight stroke="#FFF"/>
                 </Button>  
               </motion.div>
@@ -251,7 +252,7 @@ const handleOpenModalExplore = () => {
 
         <NearByFilter ref={childRef} />
         <ExploreFilter ref={childRefExplore}/>
-        <BottomMenu onChangeMenu={onChangeMenu} />
+        <BottomMenu />
 
       </section>
     </main>

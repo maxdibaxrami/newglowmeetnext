@@ -117,7 +117,7 @@ const mockProfiles = [
     avatar: "https://i.pravatar.cc/150?u=a04258114e29026702d",
     workAndEducation: "Sechinov University, Programmer",
     whyHere: "Just chat",
-    aboutMe: "Aspiring programmer and coffee enthusiast.",
+    aboutMe: "Aspiring programmer and coffee.",
     lookingFor: "Friendship",
     relationStatus: "Single",
     height: "183 cm",

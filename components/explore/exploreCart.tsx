@@ -12,6 +12,8 @@ import {
   WhyYouAreHereIcon,
 } from "../../components/icons/profileIcon";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+
 import ExploreCardOption from "./exploreCardOption";
 import { LocationIcon } from "../icons/NearByMeIcons";
 
@@ -39,27 +41,70 @@ const ExploreCard = ({ profileData }) => {
       <CardBody className="mb-4">
         <div className="flex mb-4 justify-between items-center">
           <div className="flex flex-col">
-            <div
-              className="w-full relative"
-              style={{ height: "calc(75vh - 4rem)" }}
+            <Swiper
+              className="mySwiper w-full relative"
+              style={{ height: "calc(90vh - 4rem)" }}
+              loop={true}
             >
-              <Image       
-                alt="Profile hero Image"
-                className="w-full h-full"
-                classNames={{
-                  wrapper: "w-full h-full",
-                }}
-                loading="lazy"
-                src={profileData.mainImage} // dynamic image URL
-                style={{
-                  borderRadius: "20px",
-                  objectFit: "cover",
-                  height: "100%",
-                  padding: "10px 10px 5px 10px",
-                }}
-              />
+              <SwiperSlide style={{width:"calc(100)"}}>
+                <Image       
+                    alt="Profile hero Image"
+                    className="w-full h-full"
+                    classNames={{
+                      wrapper: "w-full h-full",
+                    }}
+                    loading="lazy"
+                    src={profileData.mainImage} // dynamic image URL
+                    style={{
+                      borderRadius: "20px",
+                      objectFit: "cover",
+                      height: "100%",
+                      margin: "0px 10px 10px 10px",
+                      width: "calc(100% - 45px)"
+                    }}
+                  />
+                      
+              </SwiperSlide>
 
-               <div style={{left:"20px", bottom:"18px",width:"calc(100% - 48px)", borderRadius:"13px",height:"61px"}} className=" background-drop--bluebase border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_16px)] shadow-small ml-1 z-10">
+              <SwiperSlide>
+                <Image       
+                    alt="Profile hero Image"
+                    className="w-full h-full"
+                    classNames={{
+                      wrapper: "w-full h-full",
+                    }}
+                    loading="lazy"
+                    src={profileData.secondImage} // dynamic image URL
+                    style={{
+                      borderRadius: "20px",
+                      objectFit: "cover",
+                      height: "100%",
+                      margin: "0px 10px 10px 10px",
+                      width: "calc(100% - 45px)"
+                    }}
+                  />
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <Image       
+                    alt="Profile hero Image"
+                    className="w-full h-full"
+                    classNames={{
+                      wrapper: "w-full h-full",
+                    }}
+                    loading="lazy"
+                    src={profileData.thirdImage} // dynamic image URL
+                    style={{
+                      borderRadius: "20px",
+                      objectFit: "cover",
+                      height: "100%",
+                      margin: "0px 10px 10px 10px",
+                      width: "calc(100% - 45px)"
+                    }}
+                  />
+              </SwiperSlide>
+
+               <div style={{left:"18px", bottom:"121px",width:"calc(100% - 71px)", borderRadius:"13px",height:"61px"}} className=" background-drop--bluebase border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_16px)] shadow-small ml-1 z-10">
                   <div className=" w-full">
                     <div className="flex  justify-between items-center">
                       <User
@@ -68,7 +113,7 @@ const ExploreCard = ({ profileData }) => {
                           className: "hidden",
                         }}
                         classNames={{"name":"text-white","description":"text-white text-tiny","base":"pl-2"}}
-                        className="mt-2 justify-start px-2"
+                        className="mt-1 justify-start px-2"
                         description={<span className="flex items-center" style={{fontWeight:"400"}}><LocationIcon fill="#FFF"/> {profileData.location}</span>}
                         name={<span className="flex items-center">{profileData.name} {profileData.age} <VerifyIcon stroke="#FFF"/> </span>}
                       />
@@ -76,37 +121,7 @@ const ExploreCard = ({ profileData }) => {
                     </div>
                   </div>
               </div>
-            </div>
-
-            <div className="flex">
-              <div className="w-full">
-                <Image
-                  alt="Profile hero Image"
-                  className="w-full h-full"
-                  src={profileData.secondImage} // dynamic image URL
-                  style={{
-                    objectFit: "cover",
-                    borderRadius: "20px",
-                    padding: "5px 5px 10px 10px",
-                    height: "calc(34vh - 4rem)",
-                  }}
-                />
-              </div>
-              <div className="w-full">
-                <Image
-                  alt="Profile hero Image"
-                  className="w-full h-full"
-                  loading="lazy"
-                  src={profileData.thirdImage} // dynamic image URL
-                  style={{
-                    objectFit: "cover",
-                    borderRadius: "20px",
-                    padding: "5px 10px 10px 5px",
-                    height: "calc(34vh - 4rem)",
-                  }}
-                />
-              </div>
-            </div>
+            </Swiper>
           </div>
         </div>
 

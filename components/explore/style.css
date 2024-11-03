@@ -18,6 +18,7 @@
     width: 100%;
     background-color: transparent;
     height: 90% !important;
+    overflow-x: hidden;
   }
   
 

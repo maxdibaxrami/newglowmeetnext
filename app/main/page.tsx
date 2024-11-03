@@ -121,7 +121,7 @@ const handleOpenModalExplore = () => {
           </AnimatePresence>
         )}
 
-        {pathname.get('page') === "profile" && (
+        {pathname.get('page') === "profilepage" && (
           <AnimatePresence mode="wait">
             <motion.div
               animate={{ y: 0, opacity: 1 }}
@@ -171,7 +171,7 @@ const handleOpenModalExplore = () => {
         </AnimatePresence>
 
         <AnimatePresence>
-          {pathname.get('page') === "profile"  && (<>
+          {pathname.get('page') === "profilepage"  && (<>
                 <motion.div
                   style={{zIndex:30,marginRight:"80px"}}
                   className="fixed background-drop--bluebase p-2"

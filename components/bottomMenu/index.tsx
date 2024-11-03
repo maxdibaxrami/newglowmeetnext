@@ -117,8 +117,8 @@ const BottomMenu = () => {
            />
  
            <Tab
-             key="profile"
-             href="/main?page=profile"
+             key="profilepage"
+             href="/main?page=profilepage"
              title={
                <div className="flex items-center space-x-2">
                  <ProfileIcon />

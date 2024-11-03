@@ -41,73 +41,64 @@ const ExploreCard = ({ profileData }) => {
       <CardBody className="mb-4">
 
         <div style={{height:"calc(90vh)"}} className="flexitems-center">
-          <div className="flex flex-col">
-            <Swiper
+          <Swiper
               className="mySwiper w-full relative"
               loop={true}            
-              style={{height:"68vh"}}  
+              style={{width:"100%",height:"100%"}}  
             >
               <SwiperSlide className="hightdisable">
-                <Image       
-                    alt="Profile hero Image"
-                    className="w-full h-full"
-                    classNames={{
-                      wrapper: "w-full h-full",
-                    }}
-                    loading="lazy"
-                    src={profileData.mainImage} // dynamic image URL
-                    style={{
-                      borderRadius: "20px",
-                      objectFit: "cover",
-                      height: "100%",
-                      margin: "0px 10px 10px 10px",
-                      width: "calc(100% - 45px)"
-                    }}
-                  />
-                      
+                <div>
+                  <Image       
+                      alt="Profile hero Image"
+                      loading="lazy"
+                      classNames={{"wrapper":"hightdisable profileWapper"}}
+                      src={profileData.mainImage} // dynamic image URL
+                      style={{
+                        borderRadius: "20px",
+                        objectFit: "cover",
+                        height: "70vh",
+                        width:"100%",
+                      }}
+                    />
+                        
+                  </div>
               </SwiperSlide>
 
               <SwiperSlide className="hightdisable">
-                <Image       
-                    alt="Profile hero Image"
-                    className="w-full h-full"
-                    classNames={{
-                      wrapper: "w-full h-full",
-                    }}
-                    loading="lazy"
-                    src={profileData.secondImage} // dynamic image URL
-                    style={{
-                      borderRadius: "20px",
-                      objectFit: "cover",
-                      height: "100%",
-                      margin: "0px 10px 10px 10px",
-                      width: "calc(100% - 45px)"
-                    }}
-                  />
+                <div>
+                  <Image       
+                      alt="Profile hero Image"
+                      loading="lazy"
+                      classNames={{"wrapper":"hightdisable profileWapper"}}
+                      src={profileData.secondImage} // dynamic image URL
+                      style={{
+                        borderRadius: "20px",
+                        objectFit: "cover",
+                        height: "70vh",
+                        width:"100%",
+                      }}
+                    />
+                  </div>
               </SwiperSlide>
 
               <SwiperSlide className="hightdisable">
-                <Image       
-                    alt="Profile hero Image"
-                    className="w-full h-full"
-                    classNames={{
-                      wrapper: "w-full h-full",
-                    }}
-                    loading="lazy"
-                    src={profileData.thirdImage} // dynamic image URL
-                    style={{
-                      borderRadius: "20px",
-                      objectFit: "cover",
-                      height: "100%",
-                      margin: "0px 10px 10px 10px",
-                      width: "calc(100% - 45px)"
-                    }}
-                  />
+                  <div>
+
+                   <Image       
+                        alt="Profile hero Image"
+                        loading="lazy"
+                        classNames={{"wrapper":"hightdisable profileWapper"}}
+                        src={profileData.thirdImage} // dynamic image URL
+                        style={{
+                          borderRadius: "20px",
+                          objectFit: "cover",
+                          height: "70vh",
+                          width:"100%",
+                        }}
+                      />
+                  </div>
               </SwiperSlide>
-
-              
-
-               <div style={{left:"18px", bottom:"16px",width:"calc(100% - 71px)", borderRadius:"13px",height:"61px"}} className=" background-drop--bluebase border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_16px)] shadow-small ml-1 z-10">
+               <div style={{left:"18px", bottom:"25px",width:"calc(100% - 44px)", borderRadius:"13px",height:"61px"}} className=" background-drop--bluebase border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_16px)] shadow-small ml-1 z-10">
                   <div className=" w-full">
                     <div className="flex  justify-between items-center">
                       <User
@@ -125,9 +116,7 @@ const ExploreCard = ({ profileData }) => {
                   </div>
               </div>
 
-            </Swiper>
-          </div>
-
+          </Swiper>
         </div>
 
          <div>

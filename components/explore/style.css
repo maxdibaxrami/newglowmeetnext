@@ -24,6 +24,10 @@
   
   .hightdisable{
     height: unset !important;
+    max-width: unset !important;
   }
 
+  .profileWapper{
+    
+  }
   

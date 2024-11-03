@@ -5,7 +5,6 @@ import { Tabs, Tab } from "@nextui-org/react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "next-themes";
 import {useSearchParams} from "next/navigation";
-import { useRouter } from 'next/navigation'
 
 import {
   FireIcon,
@@ -19,12 +18,7 @@ import {
 const BottomMenu = () => {
 
   const pathname = useSearchParams();
-  const router = useRouter()
-  useEffect(()=>{
-      if(pathname.get('page')===null){
-          router.push("/main?page=chat")
-      }   
-  },[])
+
   return (
     <AnimatePresence>
       {pathname.get('page')!=="explore" && (

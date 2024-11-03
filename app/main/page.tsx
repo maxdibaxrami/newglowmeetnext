@@ -131,6 +131,7 @@ const handleOpenModalExplore = () => {
                 x: { type: "spring", stiffness: 300, damping: 30 },
                 opacity: { duration: 0.4 },
               }}
+              
             >
               <ProfilePage />
             </motion.div>
@@ -145,7 +146,10 @@ const handleOpenModalExplore = () => {
                 initial={{ opacity: 0 , bottom:"-80px", scale: 0.5 }}
                 animate={{ opacity: 1 , bottom:"43px", scale: 1.1 }}
                 exit={{ opacity: 0 , bottom:"-80px", scale: 0.5 }}
-                
+                transition={{
+                  ease: "linear",
+                  duration: 0.5,
+                }}
               >
                 <Button className="color-white" onPress={handleOpenModal} isIconOnly color="primary" style={{borderRadius:"20%"}} size="lg" aria-label="Like">
                   <FitlerIcon stroke="#FFF"/>
@@ -162,7 +166,10 @@ const handleOpenModalExplore = () => {
                   initial={{ opacity: 0 , bottom:"-80px", scale: 0.5 }}
                   animate={{ opacity: 1 , bottom:"43px", scale: 1.1 }}
                   exit={{ opacity: 0 , bottom:"-80px", scale: 0.5 }}
-                  
+                  transition={{
+                    ease: "linear",
+                    duration: 0.25,
+                  }}
                 >
                   <Button as={Link} href="/editprofile" className="color-white" isIconOnly color="primary" style={{borderRadius:"20%"}} size="lg">
                     <EditProfileIcon stroke="#FFF"/>
@@ -175,7 +182,10 @@ const handleOpenModalExplore = () => {
                   initial={{ opacity: 0 , bottom:"-80px", scale: 0.5 }}
                   animate={{ opacity: 1 , bottom:"43px", scale: 1.1 }}
                   exit={{ opacity: 0 , bottom:"-80px", scale: 0.5 }}
-                  
+                  transition={{
+                    ease: "linear",
+                    duration: 0.25,
+                  }}
                 >
                   <Button as={Link} href="/setting" className="color-white" isIconOnly color="primary" style={{borderRadius:"20%"}} size="lg">
                     <SettingIcon stroke="#FFF"/>
@@ -193,6 +203,10 @@ const handleOpenModalExplore = () => {
                   initial={{ opacity: 0 , bottom:"-80px", scale: 0.5 }}
                   animate={{ opacity: 1 , bottom:"43px", scale: 1.1 }}
                   exit={{ opacity: 0 , bottom:"-80px", scale: 0.5 }}
+                  transition={{
+                    ease: "linear",
+                    duration: 0.25,
+                  }}
                   
                 >
                   <ChatFiltermenu />
@@ -210,7 +224,10 @@ const handleOpenModalExplore = () => {
                 initial={{ opacity: 0 , left:"-80px", bottom:"-80px", scale: 0.5 }}
                 animate={{ opacity: 1 , left:"20px" , bottom:"20px", scale: 1.1 }}
                 exit={{ opacity: 0 , left:"-80px", bottom:"-80px", scale: 0.5 }}
-                
+                transition={{
+                  ease: "linear",
+                  duration: 0.25,
+                }}
               >
                 <Button  className="color-white" onPress={handleOpenModalExplore} isIconOnly color="primary" style={{borderRadius:"20%"}} size="lg" aria-label="Like">
                   <FitlerIcon stroke="#FFF"/>
@@ -227,7 +244,10 @@ const handleOpenModalExplore = () => {
                 initial={{ opacity: 0 , right:"-80px", bottom:"-80px", scale: 0.5 }}
                 animate={{ opacity: 1 , right:"20px" , bottom:"20px", scale: 1.1 }}
                 exit={{ opacity: 0 , right:"-80px", bottom:"-80px", scale: 0.5 }}
-                
+                transition={{
+                  ease: "linear",
+                  duration: 0.25,
+                }}
               >
                 <Button className="color-white" onPress={e=> router.back()} isIconOnly color="primary" style={{borderRadius:"20%"}} size="lg" aria-label="Like">
                   <ArrowRight stroke="#FFF"/>

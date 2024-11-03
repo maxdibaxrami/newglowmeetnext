@@ -20,10 +20,13 @@ const BottomMenu = () => {
   const pathname = useSearchParams();
 
   return (
-    <AnimatePresence>
+    <AnimatePresence >
       {pathname.get('page')!=="explore" && (
          <motion.div
-
+         transition={{
+          ease: "anticipate",
+          duration: 0.5,
+        }}
          initial={{ right:"-40px", opacity:0  }}
          animate={{ right: "10px", opacity:1 }}
          exit={{ right:"-40px", opacity:0}}
@@ -41,7 +44,6 @@ const BottomMenu = () => {
            top:"150px"
            
          }}
-         transition={{ type: "tween" }}
        >
          <Tabs
            aria-label="Options"
@@ -134,3 +136,5 @@ const BottomMenu = () => {
 };
 
 export default BottomMenu;
+
+

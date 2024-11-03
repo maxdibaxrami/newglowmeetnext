@@ -56,7 +56,6 @@ const ExploreCard = ({ profileData }) => {
                       style={{
                         borderRadius: "20px",
                         objectFit: "cover",
-                        height: "70vh",
                         width:"100%",
                       }}
                     />
@@ -92,7 +91,6 @@ const ExploreCard = ({ profileData }) => {
                         style={{
                           borderRadius: "20px",
                           objectFit: "cover",
-                          height: "70vh",
                           width:"100%",
                         }}
                       />

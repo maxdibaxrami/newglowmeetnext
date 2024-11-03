@@ -46,7 +46,7 @@ const ExploreCard = ({ profileData }) => {
               style={{ height: "calc(90vh - 4rem)" }}
               loop={true}
             >
-              <SwiperSlide style={{width:"calc(100)"}}>
+              <SwiperSlide style={{width:"calc(100%)"}}>
                 <Image       
                     alt="Profile hero Image"
                     className="w-full h-full"

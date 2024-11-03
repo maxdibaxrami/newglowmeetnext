@@ -57,7 +57,6 @@ const ExplorePage = () => {
         }}
         effect={"creative"}
         grabCursor={true}
-        lazy={true}
         modules={[EffectCreative]}
         noSwiping={false}
         onActiveIndexChange={(e) => setActiveSlider(e.activeIndex)}

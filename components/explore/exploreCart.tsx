@@ -41,7 +41,7 @@ const ExploreCard = ({ profileData }) => {
           <div className="flex flex-col">
             <div
               className="w-full relative"
-              style={{ height: "calc(61vh - 4rem)" }}
+              style={{ height: "calc(75vh - 4rem)" }}
             >
               <Image       
                 alt="Profile hero Image"
@@ -109,17 +109,6 @@ const ExploreCard = ({ profileData }) => {
             </div>
           </div>
         </div>
-
-        <User
-          avatarProps={{
-            src: profileData.avatar,
-            className: "hidden",
-          }}
-          className="mt-2 justify-start px-2"
-          description={profileData.location}
-          name={`${profileData.name}, ${profileData.age}`}
-        />
-        <VerifyIcon stroke="#FFF"/>
 
         <div className="w-full mb-4 mt-2">
           <Listbox aria-label="Listbox menu with sections" variant="solid">

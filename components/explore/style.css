@@ -18,7 +18,7 @@
     width: 100%;
     background-color: transparent;
     height: calc(100% - 120px) !important;
-    top: 60px !important;
+    margin-top: 60px !important;
 
   }
   

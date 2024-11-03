@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@nextui-org/button";
 import ProfilePage from "../components/profile/index";
@@ -30,6 +30,13 @@ export default function Home() {
   const pathname = useSearchParams();
   const router = useRouter()
 
+  useEffect(() => {
+    // Check if the current route is the root
+    if (!pathname.get('page')) {
+      // Redirect to /?page=chat
+      router.replace('/?page=chat');
+    }
+  }, [pathname]);
 
   const handleOpenModal = () => {
     if (childRef.current) {
@@ -45,7 +52,7 @@ const handleOpenModalExplore = () => {
 
   return (
     <main className="container relative w-full flex-grow">
-      <TopBar selectedTab={pathname.get('page')} />
+      <TopBar selectedTab={pathname.get('page') || "chat"} />
 
       <section className="flex flex-col items-center justify-center gap-4 ">
         {pathname.get('page') === "explore" && (

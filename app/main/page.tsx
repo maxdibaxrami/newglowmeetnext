@@ -3,12 +3,12 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@nextui-org/button";
-import ProfilePage from "../components/profile/index";
-import ChatPage from "../components/chat/index";
-import ExplorePage from "../components/explore/index";
+import ProfilePage from "../../components/profile/index";
+import ChatPage from "../../components/chat/index";
+import ExplorePage from "../../components/explore/index";
 
-import LikesPage from "./likes/page";
-import NearByPage from "./nearby/page";
+import LikesPage from "../likes/page";
+import NearByPage from "../nearby/page";
 
 import TopBar from "@/components/tobBar";
 import BottomMenu from "@/components/bottomMenu/index";
@@ -29,14 +29,6 @@ export default function Home() {
 
   const pathname = useSearchParams();
   const router = useRouter()
-
-  useEffect(() => {
-    // Check if the current route is the root
-    if (!pathname.get('page')) {
-      // Redirect to /?page=chat
-      router.replace('/?page=chat');
-    }
-  }, [pathname]);
 
   const handleOpenModal = () => {
     if (childRef.current) {
@@ -265,3 +257,4 @@ const handleOpenModalExplore = () => {
     </main>
   );
 }
+

@@ -5,6 +5,7 @@ import { Tabs, Tab } from "@nextui-org/react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "next-themes";
 import {useSearchParams} from "next/navigation";
+import { useRouter } from 'next/navigation'
 
 import {
   FireIcon,
@@ -18,8 +19,12 @@ import {
 const BottomMenu = () => {
 
   const pathname = useSearchParams();
-
-
+  const router = useRouter()
+  useEffect(()=>{
+      if(pathname.get('page')===null){
+          router.push("/main?page=chat")
+      }   
+  },[])
   return (
     <AnimatePresence>
       {pathname.get('page')!=="explore" && (
@@ -55,7 +60,7 @@ const BottomMenu = () => {
            }}
            isVertical={true}
            color="primary"
-           selectedKey={!pathname.get('page')? "chat": pathname.get('page') }
+           selectedKey={pathname.get('page') }
            size="lg"
            style={{
              zIndex: "10",
@@ -74,7 +79,7 @@ const BottomMenu = () => {
          >
            <Tab
              key="explore"
-             href="/?page=explore"
+             href="/main?page=explore"
 
              title={
                <div className="flex items-center space-x-2">
@@ -85,7 +90,7 @@ const BottomMenu = () => {
  
            <Tab
              key="nearby"
-             href="/?page=nearby"
+             href="/main?page=nearby"
 
              title={
                <div className="flex items-center space-x-2">
@@ -96,7 +101,7 @@ const BottomMenu = () => {
  
            <Tab
              key="chat"
-             href="/?page=chat"
+             href="/main?page=chat"
 
 
              title={
@@ -108,7 +113,7 @@ const BottomMenu = () => {
  
            <Tab
              key="likes"
-             href="/?page=likes"
+             href="/main?page=likes"
 
              title={
                <div className="flex items-center space-x-2">
@@ -119,7 +124,7 @@ const BottomMenu = () => {
  
            <Tab
              key="profile"
-             href="/?page=profile"
+             href="/main?page=profile"
              title={
                <div className="flex items-center space-x-2">
                  <ProfileIcon />

@@ -1,18 +1,18 @@
 import { Navbar, NavbarContent, NavbarItem, Button } from "@nextui-org/react";
-import Link from "next/link";
+import { useRouter } from 'next/navigation'
 
 import { BackMenu } from "../icons/topBar";
 
 const TopBarPages = () => {
+  const router = useRouter()
+
   return (
     <Navbar disableAnimation isBordered className="">
       <NavbarContent justify="start">
         <NavbarItem>
-          <Link href={"/"}>
-            <Button isIconOnly aria-label="Like" color="default">
+            <Button onPress={e=> router.back()} isIconOnly aria-label="Like" color="default">
               <BackMenu />
             </Button>
-          </Link>
         </NavbarItem>
 
         <NavbarItem className="flex items-center justify-center">

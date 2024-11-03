@@ -5,7 +5,7 @@ import "./style.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCreative } from "swiper/modules";
 import { motion } from "framer-motion";
-import { useSwiperSlide } from "swiper/react";
+import { useSwiper } from "swiper/react";
 import { useState } from "react";
 
 import { HeartEyesImoji, NotLikeImoji } from "../icons/exploreIcons";
@@ -14,7 +14,9 @@ import MatchModal from "./matchModal";
 import ExploreCard from "./exploreCart";
 
 const ExplorePage = () => {
-  const swiperSlide = useSwiperSlide();
+
+  const swiper = useSwiper();
+
   const [activeSlider, setActiveSlider] = useState(0);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -68,21 +70,23 @@ const ExplorePage = () => {
           );
         })}
 
-        <motion.div
-          animate={{ bottom: "50px" }}
-          className="background-drop--bluebase flex justify-center footerswipcard before:bg-white/10 border-white/20 border-1 py-1 absolute before:rounded-xl rounded-large w-[calc(100%_-_8px)] shadow-small ml-1 z-10"
-        >
           <motion.div
-            className="card"
+            className="card background-drop--bluebase p-1 footerswipcard border-1 fixed"
+            animate={{ bottom: "70px", zIndex:50, right:"52%",scale:1 }}
+            style={{right:"52%",scale:0.7}}
             transition={{ type: "tween" }}
             {...getAnimationProps2()}
           >
             <NotLikeImoji dataId={activeSlider} />
           </motion.div>
 
+
           <motion.div
-            className="card"
+            className="card background-drop--bluebase p-1 footerswipcard border-1 fixed"
             transition={{ type: "tween" }}
+            style={{left:"55%",scale:0.7}}
+            animate={{ bottom: "70px", zIndex:50 ,left:"52%",scale:1 }}
+
             {...getAnimationProps()}
           >
             <HeartEyesImoji
@@ -91,7 +95,7 @@ const ExplorePage = () => {
               openModal={openModal}
             />
           </motion.div>
-        </motion.div>
+
       </Swiper>
 
       <MatchModal

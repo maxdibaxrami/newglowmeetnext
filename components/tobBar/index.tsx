@@ -59,7 +59,6 @@ const TopBar = ({ selectedTab }) => {
 
           <ThemeSwitch />
           {selectedTab === "explore" && <ExploreFilter />}
-          {selectedTab === "nearby" && <NearByFilter />}
         </NavbarItem>
       </NavbarContent>
     </Navbar>

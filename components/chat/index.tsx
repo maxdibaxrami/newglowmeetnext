@@ -19,9 +19,6 @@ const ChatPage = () => {
       <MatchList />
       <div className="flex justify-between py-2 items-center">
         <span className="text-large">Chat</span>
-        <span className="text-tiny text-default-400">
-          <ChatFiltermenu />
-        </span>
       </div>
 
       <ChatList />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, forwardRef, useImperativeHandle  } from "react";
 import {
   Modal,
   ModalContent,
@@ -14,27 +14,15 @@ import { Select, SelectItem } from "@nextui-org/react";
 
 import { OptionInExplore } from "../icons/exploreIcons";
 
-const ExploreFilter = () => {
+const ExploreFilter = forwardRef((props, ref) => { {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const handleOpen = () => {
-    onOpen();
-  };
+  useImperativeHandle(ref, () => ({
+    openModal: onOpen,
+    closeModal: onClose
+  }));
 
   return (
-    <>
-      <Button
-        isIconOnly
-        aria-label="Like"
-        className="ml-2"
-        color="default"
-        size="md"
-        variant="light"
-        onPress={() => handleOpen()}
-      >
-        <OptionInExplore />
-      </Button>
-
       <Modal
         backdrop="blur"
         classNames={{
@@ -98,9 +86,11 @@ const ExploreFilter = () => {
           </ModalFooter>
         </ModalContent>
       </Modal>
-    </>
   );
-};
+}});
+
+ExploreFilter.displayName = "ExploreFilter";
+
 
 export default ExploreFilter;
 

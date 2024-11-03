@@ -8,12 +8,13 @@ import {
 
 import { FilterButton } from "../icons/chatIcon";
 import { NewIcon, Favorite } from "../icons/chatIcon";
+
 const ChatFiltermenu = () => {
   return (
-    <Dropdown backdrop="blur">
+    <Dropdown showArrow backdrop="blur">
       <DropdownTrigger>
-        <Button isIconOnly aria-label="Like" color="default" size="sm">
-          <FilterButton />
+        <Button  isIconOnly aria-label="Like" color="primary" size="lg">
+          <FilterButton stroke='#fff' />
         </Button>
       </DropdownTrigger>
       <DropdownMenu aria-label="Static Actions" variant="solid">

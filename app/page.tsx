@@ -16,9 +16,13 @@ import { FitlerIcon } from "@/components/icons/NearByMeIcons";
 import NearByFilter from "@/components/naerby/NearByFilter";
 import { EditProfileIcon, SettingIcon } from "@/components/icons/profileIcon";
 import Link from "next/link";
+import ChatFiltermenu from "@/components/chat/chatFilterMenu";
+import ExploreFilter from "@/components/explore/exploreFilter";
+import { ArrowRight } from "@/components/icons/bottomMenuIcons";
 
 export default function Home() {
   const childRef = useRef();
+  const childRefExplore = useRef();
 
   const [selectedTab, setSelectedTab] = useState("chat");
 
@@ -30,6 +34,12 @@ export default function Home() {
     if (childRef.current) {
         childRef.current.openModal();
     }
+};
+
+const handleOpenModalExplore = () => {
+  if (childRefExplore.current) {
+      childRefExplore.current.openModal();
+  }
 };
 
   return (
@@ -137,7 +147,6 @@ export default function Home() {
             </motion.div>
           </AnimatePresence>
         )}
-        <BottomMenu onChangeMenu={onChangeMenu} />
 
         <AnimatePresence>
           {selectedTab === "nearby"  && (
@@ -186,7 +195,63 @@ export default function Home() {
           
           </>)}
         </AnimatePresence>
+
+        <AnimatePresence>
+          {selectedTab === "chat"  && (<>
+                <motion.div
+                  style={{zIndex:30, marginLeft:"17px"}}
+                  className="fixed background-drop--bluebase p-2"
+                  initial={{ opacity: 0 , bottom:"-80px", scale: 0.5 }}
+                  animate={{ opacity: 1 , bottom:"43px", scale: 1.1 }}
+                  exit={{ opacity: 0 , bottom:"-80px", scale: 0.5 }}
+                  
+                >
+                  <ChatFiltermenu />
+                </motion.div>
+        
+          
+          </>)}
+        </AnimatePresence>
+
+        <AnimatePresence>
+          {selectedTab === "explore"  && (
+              <motion.div
+                style={{zIndex:30}}
+                className="fixed background-drop--bluebase p-2"
+                initial={{ opacity: 0 , left:"-80px", bottom:"-80px", scale: 0.5 }}
+                animate={{ opacity: 1 , left:"20px" , bottom:"20px", scale: 1.1 }}
+                exit={{ opacity: 0 , left:"-80px", bottom:"-80px", scale: 0.5 }}
+                
+              >
+                <Button  className="color-white" onPress={handleOpenModalExplore} isIconOnly color="primary" style={{borderRadius:"20%"}} size="lg" aria-label="Like">
+                  <FitlerIcon stroke="#FFF"/>
+                </Button>  
+              </motion.div>
+          )}
+        </AnimatePresence>
+
+        <AnimatePresence>
+          {selectedTab === "explore"  && (
+              <motion.div
+                style={{zIndex:30}}
+                className="fixed background-drop--bluebase p-2"
+                initial={{ opacity: 0 , right:"-80px", bottom:"-80px", scale: 0.5 }}
+                animate={{ opacity: 1 , right:"20px" , bottom:"20px", scale: 1.1 }}
+                exit={{ opacity: 0 , left:"-80px", bottom:"-80px", scale: 0.5 }}
+                
+              >
+                <Button className="color-white" onPress={handleOpenModalExplore} isIconOnly color="primary" style={{borderRadius:"20%"}} size="lg" aria-label="Like">
+                  <ArrowRight stroke="#FFF"/>
+                </Button>  
+              </motion.div>
+          )}
+        </AnimatePresence>
+
+
+
         <NearByFilter ref={childRef} />
+        <ExploreFilter ref={childRefExplore}/>
+        <BottomMenu onChangeMenu={onChangeMenu} />
 
       </section>
     </main>

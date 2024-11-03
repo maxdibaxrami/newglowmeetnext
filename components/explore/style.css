@@ -17,6 +17,7 @@
     color: #fff;
     width: 100%;
     background-color: transparent;
+    height: calc(100% - 120px) !important;
 
   }
   

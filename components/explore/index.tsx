@@ -42,33 +42,42 @@ const ExplorePage = () => {
 
   return (
     <div className="relative">
-      <Swiper
-        allowSlidePrev={false}
-        className="mt-8"
-        creativeEffect={{
-          prev: {
-            shadow: true,
-            translate: ["-120%", 0, -500],
-          },
-          next: {
-            shadow: true,
-            translate: ["120%", 0, -500],
-          },
-        }}
-        effect={"creative"}
-        grabCursor={true}
-        modules={[EffectCreative]}
-        noSwiping={false}
-        onActiveIndexChange={(e) => setActiveSlider(e.activeIndex)}
-      >
-        {mockProfiles.map((value, index) => {
-          return (
-            <SwiperSlide key={index}>
-              <ExploreCard profileData={value} />
-            </SwiperSlide>
-          );
-        })}
+      <div style={{marginTop:"68px"}} className="flex items-center justify-center">
+        <Swiper
+          allowSlidePrev={false}
+          className="mt-8"
+          creativeEffect={{
+            prev: {
+              shadow: true,
+              translate: ["-120%", 0, -500],
+            },
+            next: {
+              shadow: true,
+              translate: ["120%", 0, -500],
+            },
+          }}
+          effect={"creative"}
+          grabCursor={true}
+          modules={[EffectCreative]}
+          noSwiping={false}
+          onActiveIndexChange={(e) => setActiveSlider(e.activeIndex)}
+        >
 
+          {mockProfiles.map((value, index) => {
+            return (
+              <SwiperSlide key={index}>
+                <ExploreCard profileData={value} />
+              </SwiperSlide>
+            );
+          })}
+          
+        </Swiper>
+      </div>
+
+
+
+
+      <div>
           <motion.div
             className="card background-drop--bluebase p-1 footerswipcard border-1 fixed"
             animate={{ bottom: "70px", zIndex:50, right:"52%",scale:1 }}
@@ -78,7 +87,6 @@ const ExplorePage = () => {
           >
             <NotLikeImoji dataId={activeSlider} />
           </motion.div>
-
 
           <motion.div
             className="card background-drop--bluebase p-1 footerswipcard border-1 fixed"
@@ -94,8 +102,7 @@ const ExplorePage = () => {
               openModal={openModal}
             />
           </motion.div>
-
-      </Swiper>
+      </div>
 
       <MatchModal
         isOpen={isModalOpen}

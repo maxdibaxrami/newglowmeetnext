@@ -58,7 +58,6 @@ const handleOpenModalExplore = () => {
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -10, opacity: 0 }}
               initial={{ y: 10, opacity: 0 }}
-              style={{ marginTop: "2rem" }}
               transition={{
                 x: { type: "spring", stiffness: 300, damping: 30 },
                 opacity: { duration: 0.4 },

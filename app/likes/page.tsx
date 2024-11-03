@@ -20,13 +20,16 @@ export default function LikesPage() {
 
   return (
     <div
-      className="gap-2 grid grid-cols-2 sm:grid-cols-4 px-6 py-2"
-      style={{
-        overflow: "scroll",
-        maxHeight: "calc(100vh)",
-        paddingBottom: "6rem",
-        paddingTop: "4.5rem",
-      }}
+    className="gap-2 grid grid-cols-2 sm:grid-cols-2 py-2"
+    style={{
+      overflow: "scroll",
+      maxHeight: "100vh",
+      paddingTop: "4.5rem",
+      paddingBottom: "6rem",
+      paddingLeft:"30px",
+      paddingRight:"10px",
+      width: "calc(100vw - 71px)",
+    }}
     >
       {mockProfiles.map((value, index) => {
         return <LikeCard key={index} data={value} onCardClick={onCardClick} />;

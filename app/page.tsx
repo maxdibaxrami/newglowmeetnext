@@ -15,6 +15,7 @@ import BottomMenu from "@/components/bottomMenu/index";
 import { FitlerIcon } from "@/components/icons/NearByMeIcons";
 import NearByFilter from "@/components/naerby/NearByFilter";
 import { EditProfileIcon, SettingIcon } from "@/components/icons/profileIcon";
+import Link from "next/link";
 
 export default function Home() {
   const childRef = useRef();
@@ -97,6 +98,8 @@ export default function Home() {
                 x: { type: "spring", stiffness: 300, damping: 30 },
                 opacity: { duration: 0.4 },
               }}
+              style={{width:"100%"}}
+
             >
               <LikesPage />
             </motion.div>
@@ -151,37 +154,37 @@ export default function Home() {
                 </Button>  
               </motion.div>
           )}
+        </AnimatePresence>
 
+        <AnimatePresence>
           {selectedTab === "profile"  && (<>
+                <motion.div
+                  style={{zIndex:30,marginRight:"80px"}}
+                  className="fixed background-drop--bluebase p-2"
+                  initial={{ opacity: 0 , bottom:"-80px", scale: 0.5 }}
+                  animate={{ opacity: 1 , bottom:"43px", scale: 1.1 }}
+                  exit={{ opacity: 0 , bottom:"-80px", scale: 0.5 }}
+                  
+                >
+                  <Button as={Link} href="/editprofile" className="color-white" isIconOnly color="primary" style={{borderRadius:"20%"}} size="lg">
+                    <EditProfileIcon stroke="#FFF"/>
+                  </Button> 
+                </motion.div>
+          
               <motion.div
-                style={{zIndex:30,marginRight:"80px"}}
-                className="fixed background-drop--bluebase p-2"
-                initial={{ opacity: 0 , bottom:"-80px", scale: 0.5 }}
-                animate={{ opacity: 1 , bottom:"43px", scale: 1.1 }}
-                exit={{ opacity: 0 , bottom:"-80px", scale: 0.5 }}
-                
-              >
-                <Button className="color-white" onPress={handleOpenModal} isIconOnly color="primary" style={{borderRadius:"20%"}} size="lg" aria-label="Like">
-                  <EditProfileIcon stroke="#FFF"/>
-                </Button> 
-              </motion.div>
-         
-             <motion.div
-                style={{zIndex:30,marginLeft:"80px"}}
-                className="fixed background-drop--bluebase p-2"
-                initial={{ opacity: 0 , bottom:"-80px", scale: 0.5 }}
-                animate={{ opacity: 1 , bottom:"43px", scale: 1.1 }}
-                exit={{ opacity: 0 , bottom:"-80px", scale: 0.5 }}
-                
-              >
-                <Button className="color-white" onPress={handleOpenModal} isIconOnly color="primary" style={{borderRadius:"20%"}} size="lg" aria-label="Like">
-                  <SettingIcon stroke="#FFF"/>
-                </Button> 
-              </motion.div>
-         
-         </>)}
-
-   
+                  style={{zIndex:30,marginLeft:"80px"}}
+                  className="fixed background-drop--bluebase p-2"
+                  initial={{ opacity: 0 , bottom:"-80px", scale: 0.5 }}
+                  animate={{ opacity: 1 , bottom:"43px", scale: 1.1 }}
+                  exit={{ opacity: 0 , bottom:"-80px", scale: 0.5 }}
+                  
+                >
+                  <Button as={Link} href="/setting" className="color-white" isIconOnly color="primary" style={{borderRadius:"20%"}} size="lg">
+                    <SettingIcon stroke="#FFF"/>
+                  </Button> 
+                </motion.div>
+          
+          </>)}
         </AnimatePresence>
         <NearByFilter ref={childRef} />
 

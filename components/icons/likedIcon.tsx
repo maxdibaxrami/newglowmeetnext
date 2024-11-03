@@ -1,7 +1,7 @@
 const HeartEyesImoji = () => {
   return (
     <svg
-      style={{ height: "50px", width: "50px" }}
+      style={{ height: "75px", width: "75px" }}
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -138,7 +138,7 @@ const HeartEyesImoji = () => {
 const NotLikeImoji = () => {
   return (
     <svg
-      style={{ height: "50px", width: "50px" }}
+      style={{ height: "75px", width: "75px" }}
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -216,7 +216,7 @@ const NotLikeImoji = () => {
 const ChatIconImoji = () => {
   return (
     <svg
-      style={{ height: "90px", width: "90px" }}
+      style={{ height: "75px", width: "75px" ,transform:"scale(1.65)"}}
       viewBox="0 0 1000 1000"
       xmlSpace="preserve"
       xmlns="http://www.w3.org/2000/svg"

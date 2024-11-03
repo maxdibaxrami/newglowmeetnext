@@ -27,75 +27,33 @@ const ExploreCard = ({ profileData }) => {
         theme.theme === "light"
           ? {
               overflow: "scroll",
-              boxShadow: "unset",
               maxHeight: "100%",
+              marginTop:"4rem",
               backgroundColor: "rgb(165 148 249 / 6%)",
             }
           : {
               overflow: "scroll",
               maxHeight: "100%",
+              marginTop:"4rem",
               backgroundColor: "rgb(165 148 249 / 15%)",
             }
       }
     >
       <CardBody className="mb-4">
-
-        <div>
-          <Swiper
-              className="mySwiper w-full relative"
-              loop={true}            
-              style={{width:"100%",height:"100%"}}  
-            >
-              <SwiperSlide className="hightdisable">
-                <div>
                   <Image       
                       alt="Profile hero Image"
                       loading="lazy"
                       classNames={{"wrapper":"hightdisable profileWapper"}}
                       src={profileData.mainImage} // dynamic image URL
                       style={{
-                        borderRadius: "20px",
+                        borderRadius: "14px",
                         objectFit: "cover",
                         width:"100%",
+                        height:"60vh"
                       }}
                     />
                         
-                  </div>
-              </SwiperSlide>
 
-              <SwiperSlide className="hightdisable">
-                <div>
-                  <Image       
-                      alt="Profile hero Image"
-                      loading="lazy"
-                      classNames={{"wrapper":"hightdisable profileWapper"}}
-                      src={profileData.secondImage} // dynamic image URL
-                      style={{
-                        borderRadius: "20px",
-                        objectFit: "cover",
-                        height: "70vh",
-                        width:"100%",
-                      }}
-                    />
-                  </div>
-              </SwiperSlide>
-
-              <SwiperSlide className="hightdisable">
-                  <div>
-
-                   <Image       
-                        alt="Profile hero Image"
-                        loading="lazy"
-                        classNames={{"wrapper":"hightdisable profileWapper"}}
-                        src={profileData.thirdImage} // dynamic image URL
-                        style={{
-                          borderRadius: "20px",
-                          objectFit: "cover",
-                          width:"100%",
-                        }}
-                      />
-                  </div>
-              </SwiperSlide>
                <div style={{left:"18px", bottom:"25px",width:"calc(100% - 44px)", borderRadius:"13px",height:"61px"}} className=" background-drop--bluebase border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_16px)] shadow-small ml-1 z-10">
                   <div className=" w-full">
                     <div className="flex  justify-between items-center">
@@ -113,11 +71,6 @@ const ExploreCard = ({ profileData }) => {
                     </div>
                   </div>
               </div>
-
-          </Swiper>
-        </div>
-
-         <div>
                 <div style={{padding:"14px 12px"}} className="flex gap-2 items-center">
                   <Avatar className="flex-shrink-0" />
                   <div className="flex flex-col">
@@ -125,7 +78,6 @@ const ExploreCard = ({ profileData }) => {
                     <span className="text-tiny text-default-400">{profileData.whyHere}</span>
                   </div>
                 </div>
-          </div>
             
 
         <div className="w-full mb-4 mt-2">

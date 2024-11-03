@@ -16,11 +16,9 @@ import {
 } from "../icons/bottomMenuIcons";
 
 const BottomMenu = () => {
-  const [selectedKey,setSelectedKey] = useState("chat")
+
   const pathname = useSearchParams();
-  useEffect(()=>{
-    setSelectedKey(pathname.get("page") || "chat")
-  },[pathname])
+
   return (
     <AnimatePresence>
       {pathname.get('page')!=="explore" && (
@@ -56,7 +54,8 @@ const BottomMenu = () => {
            }}
            isVertical={true}
            color="primary"
-           selectedKey={selectedKey}
+           defaultSelectedKey={"chat"}
+           selectedKey={pathname.get("page")}
            size="lg"
            style={{
              zIndex: "10",

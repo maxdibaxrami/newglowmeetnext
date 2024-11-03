@@ -24,9 +24,9 @@ const BottomMenu = () => {
       {pathname.get('page')!=="explore" && (
          <motion.div
 
-         initial={{ top:"-40px", opacity:0  }}
-         animate={{ top: "150px", opacity:1 }}
-         exit={{ top:"-40px", opacity:0}}
+         initial={{ right:"-40px", opacity:0  }}
+         animate={{ right: "10px", opacity:1 }}
+         exit={{ right:"-40px", opacity:0}}
  
          className={"flex w-full flex-col fixed items-center	background-drop--bluebase---navbar"}
          style={{
@@ -34,11 +34,11 @@ const BottomMenu = () => {
            width: "57px",
            borderRadius: "14px",
            overflow: "hidden",
+           right:"-40px",
            justifyContent:"center",
            height:"284px",
-           right:"10px",
            opacity:0,
-           top:"-40px"
+           top:"150px"
            
          }}
          transition={{ type: "tween" }}

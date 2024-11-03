@@ -137,22 +137,6 @@ const handleOpenModalExplore = () => {
           </AnimatePresence>
         )}
 
-        {pathname.get('page') === "back" && (
-          <AnimatePresence mode="wait">
-            <motion.div
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: -10, opacity: 0 }}
-              initial={{ y: 10, opacity: 0 }}
-              transition={{
-                x: { type: "spring", stiffness: 300, damping: 30 },
-                opacity: { duration: 0.4 },
-              }}
-            >
-              <ExplorePage />
-            </motion.div>
-          </AnimatePresence>
-        )}
-
         <AnimatePresence>
           {pathname.get('page') === "nearby"  && (
               <motion.div

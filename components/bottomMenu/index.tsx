@@ -54,7 +54,6 @@ const BottomMenu = () => {
            }}
            isVertical={true}
            color="primary"
-           defaultSelectedKey={"chat"}
            selectedKey={pathname.get("page")}
            size="lg"
            style={{

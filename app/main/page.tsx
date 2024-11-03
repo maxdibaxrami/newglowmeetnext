@@ -30,6 +30,11 @@ export default function Home() {
   const pathname = useSearchParams();
   const router = useRouter()
 
+  useEffect(()=>{
+    if(!pathname.has("page")){
+      router.push("/main?page=chat")
+    }
+  },[pathname])
   const handleOpenModal = () => {
     if (childRef.current) {
         childRef.current.openModal();

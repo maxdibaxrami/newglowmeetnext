@@ -99,6 +99,7 @@ const ExploreCard = (props) => {
                     left:0,
                     right:0,
                     margin:"auto",
+                    marginTop:"4.5rem",
                     scale,
                     
                     

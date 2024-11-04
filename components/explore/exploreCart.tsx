@@ -93,7 +93,6 @@ const ExploreCard = (props) => {
                 style={{
                     width: "calc(100vw - 26px)",
                     maxHeight: "calc(100vh - 100px)",
-                    backgroundColor: "#fff",
                     borderRadius: 16,
                     padding:"12px",
                     left:0,
@@ -102,7 +101,9 @@ const ExploreCard = (props) => {
                     scale,
                     overflow:"scroll"
                     
+                    
                 }}
+                className="background-drop--bluebase---card"
             >
               
               <div className="relative">
@@ -116,12 +117,12 @@ const ExploreCard = (props) => {
                   loop
                   modules={[Autoplay, Pagination, Navigation]}
                   className="mySwiper"
-                  noSwiping
+                  allowTouchMove={false}
+                  
                 >
                   <SwiperSlide >
                     <ExploreCardImage
-                      
-                      classNames={{wrapper:"max-w-none w-full h-full"}}
+                      classNames={{wrapper:"max-w-none w-full h-full bg-transparent"}}
                       className="w-full"
                       alt="NextUI hero Image"
                       src={props.profile.mainImage}
@@ -132,7 +133,7 @@ const ExploreCard = (props) => {
                   <SwiperSlide>    
                     <ExploreCardImage
                         className="w-full"
-                        classNames={{wrapper:"max-w-none w-full h-full"}}
+                        classNames={{wrapper:"max-w-none w-full h-full bg-transparent"}}
                         alt="NextUI hero Image"
                         src={props.profile.secondImage}
                         style={{height:"100%",width:"100%"}}
@@ -143,7 +144,7 @@ const ExploreCard = (props) => {
                     <ExploreCardImage
                         className="w-full"
                         alt="NextUI hero Image"
-                        classNames={{wrapper:"max-w-none w-full h-full"}}
+                        classNames={{wrapper:"max-w-none w-full h-full bg-transparent"}}
                         src={props.profile.thirdImage}
                         style={{height:"100%",width:"100%"}}
                       />    

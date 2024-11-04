@@ -123,6 +123,13 @@
     backdrop-filter: blur(8px);
 }
 
+.background-drop--bluebase---card{
+    background: #a594f952;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px #0000001a;
+    backdrop-filter: blur(16px);
+}
+
 .background-drop--bluebase---darker{
     background: #a594f957;
     border-radius: 16px;

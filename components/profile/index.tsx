@@ -23,9 +23,8 @@ const ProfilePage = () => {
     >
       <div className="flex mb-4 justify-between items-center">
         <div className="flex flex-col">
-          <div className="w-full" style={{ height: "calc(61vh - 4rem)" }}>
+          <div className="w-full" >
             <Image
-              removeWrapper
               alt="Profile hero Image"
               className="w-full h-full"
               classNames={{

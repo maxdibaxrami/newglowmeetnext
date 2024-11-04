@@ -1,9 +1,8 @@
 
 .swiper {
-    margin: 1px auto;
-    width: 90vw;
-    height: calc(100vh - 1rem);
+    width: 100vw;
     max-height: calc(100vh - 1rem);
+    height: 100vh;
     border-radius: 14px;
     background-color: transparent;
   }
@@ -18,7 +17,6 @@
     width: 100%;
     background-color: transparent;
     height: calc(100% - 120px) !important;
-    margin-top: 15px !important;
 
   }
   
@@ -28,6 +26,6 @@
   }
 
   .profileWapper{
-    
+
   }
   

@@ -45,7 +45,7 @@ const ExplorePage = () => {
       <div>
         <Swiper
           allowSlidePrev={false}
-          className="mt-8"
+          style={{paddingTop:"74px"}}
           creativeEffect={{
             prev: {
               shadow: true,
@@ -65,7 +65,7 @@ const ExplorePage = () => {
 
           {mockProfiles.map((value, index) => {
             return (
-              <SwiperSlide key={index}>
+              <SwiperSlide  key={index}>
                 <ExploreCard profileData={value} />
               </SwiperSlide>
             );

@@ -154,3 +154,29 @@
     backdrop-filter: blur(22px);
 }
 
+
+
+
+/* Skeleton CSS */
+.skeleton {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .skeleton::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: shimmer 1.5s infinite;
+  }
+  
+  @keyframes shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  

@@ -88,9 +88,9 @@ const handleOpenModalExplore = () => {
         {pathname.get('page') === "chat" && (
           <AnimatePresence mode="wait">
             <motion.div
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: -10, opacity: 0 }}
-              initial={{ y: 10, opacity: 0 }}
+              animate={{ y: 0,}}
+              exit={{ y: -80 }}
+              initial={{ y: 10 }}
               style={{ width: "100%" }}
               transition={{
                 x: { type: "spring", stiffness: 300, damping: 30 },

@@ -7,10 +7,12 @@ import {
 } from "framer-motion";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-import { User} from "@nextui-org/react";
+import {Image, User} from "@nextui-org/react";
 import { HeartIcon, VerifyIcon } from "../icons/profileIcon";
 import { LocationIcon } from "../icons/exploreIcons";
+
 import ExploreCardImage from './exploreCardImage'
+import { useSwiper } from "swiper/react";
 import { Listbox, ListboxItem, ListboxSection, Chip } from "@nextui-org/react";
 
 import {

@@ -40,37 +40,41 @@ const ExploreCard = ({ profileData }) => {
       }
     >
       <CardBody className="mb-4">
-                  <Image       
-                      alt="Profile hero Image"
-                      loading="lazy"
-                      classNames={{"wrapper":"hightdisable profileWapper"}}
-                      src={profileData.mainImage} // dynamic image URL
-                      style={{
-                        borderRadius: "14px",
-                        objectFit: "cover",
-                        width:"100%",
-                        height:"60vh"
-                      }}
-                    />
+                  <div className="relative">
+                    <Image       
+                        alt="Profile hero Image"
+                        loading="lazy"
+                        classNames={{"wrapper":"hightdisable profileWapper"}}
+                        src={profileData.mainImage} // dynamic image URL
+                        style={{
+                          borderRadius: "14px",
+                          objectFit: "cover",
+                          width:"100%",
+                          height:"60vh"
+                        }}
+                      />
+                           <div style={{left:"18px", bottom:"25px",width:"calc(100% - 44px)", borderRadius:"13px",height:"61px"}} className=" background-drop--bluebase border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_16px)] shadow-small ml-1 z-10">
+                              <div className=" w-full">
+                                  <div className="flex  justify-between items-center">
+                                    <User
+                                      avatarProps={{
+                                        src: profileData.avatar,
+                                        className: "hidden",
+                                      }}
+                                      classNames={{"name":"text-white","description":"text-white text-tiny","base":"pl-2"}}
+                                      className="mt-1 justify-start px-2"
+                                      description={<span className="flex items-center" style={{fontWeight:"400"}}><LocationIcon fill="#FFF"/> {profileData.location}</span>}
+                                      name={<span className="flex items-center">{profileData.name} {profileData.age} <VerifyIcon stroke="#FFF"/> </span>}
+                                    />
+                                    
+                                  </div>
+                                </div>
+                            </div>
+
+                  </div>
                         
 
-               <div style={{left:"18px", bottom:"25px",width:"calc(100% - 44px)", borderRadius:"13px",height:"61px"}} className=" background-drop--bluebase border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_16px)] shadow-small ml-1 z-10">
-                  <div className=" w-full">
-                    <div className="flex  justify-between items-center">
-                      <User
-                        avatarProps={{
-                          src: profileData.avatar,
-                          className: "hidden",
-                        }}
-                        classNames={{"name":"text-white","description":"text-white text-tiny","base":"pl-2"}}
-                        className="mt-1 justify-start px-2"
-                        description={<span className="flex items-center" style={{fontWeight:"400"}}><LocationIcon fill="#FFF"/> {profileData.location}</span>}
-                        name={<span className="flex items-center">{profileData.name} {profileData.age} <VerifyIcon stroke="#FFF"/> </span>}
-                      />
-                      
-                    </div>
-                  </div>
-              </div>
+          
                 <div style={{padding:"14px 12px"}} className="flex gap-2 items-center">
                   <Avatar className="flex-shrink-0" />
                   <div className="flex flex-col">

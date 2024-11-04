@@ -99,7 +99,7 @@
 
 .nearme-div--background{
 
-    background: #a594f957;
+    background: rgba(165, 148, 249, 0.341);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(3.5px);
@@ -108,7 +108,7 @@
 
 
 .background-drop--bluebase{
-    background: #a594f957;
+    background: rgba(165, 148, 249, 0.341);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(3.5px);
@@ -118,7 +118,7 @@
 
 
 .background-drop--whitebase{
-    background: #ffffff57;
+    background: rgba(255, 255, 255, 0.341);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(3.5px);
@@ -127,42 +127,30 @@
 
 
 .background-drop--bluebase---navbar{
-    background: #a594f952;
+    background: rgba(165, 148, 249, 0.322);
     border-radius: 16px;
-    box-shadow: 0 4px 30px #0000001a;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.102);
     backdrop-filter: blur(8px);
 }
 
 .background-drop--bluebase---card{
-    background: #a594f952;
+    background: rgba(165, 148, 249, 0.322);
     border-radius: 16px;
-    box-shadow: 0 4px 30px #0000001a;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.102);
     backdrop-filter: blur(16px);
 }
 
 .background-drop--bluebase---darker{
-    background: #a594f957;
+    background: rgba(165, 148, 249, 0.341);
     border-radius: 16px;
-    box-shadow: 0 4px 30px #0000001a;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.102);
     backdrop-filter: blur(3.5px);
     -webkit-backdrop-filter: blur(3.5px);
 }
 
 .background-drop--bluebase---card-----dark{
-    background: #a594f96d;
+    background: rgba(165, 148, 249, 0.427);
     border-radius: 16px;
     backdrop-filter: blur(22px);
 }
 
-
-
-
-
-.app-container {
-    height: calc(var(--vh, 1vh) * 100);
-    transition: padding-bottom 0.3s ease, height 0.3s ease;
-}
-
-.keyboard-open .app-container {
-    padding-bottom: 200px; /* Adjust this to match the keyboard height */
-}

@@ -42,7 +42,7 @@ const ExplorePage = () => {
 
   return (
     <div className="relative">
-      <div  className="flex items-center justify-center">
+      <div>
         <Swiper
           allowSlidePrev={false}
           className="mt-8"

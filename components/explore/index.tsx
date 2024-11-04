@@ -2,22 +2,20 @@ import "swiper/css";
 import "swiper/css/effect-creative";
 import "./style.css";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCreative } from "swiper/modules";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useSwiper } from "swiper/react";
 import { useState } from "react";
-
+import ExploreCard from "./exploreCart";
 import { HeartEyesImoji, NotLikeImoji } from "../icons/exploreIcons";
 
 import MatchModal from "./matchModal";
-import ExploreCard from "./exploreCart";
 
 const ExplorePage = () => {
 
   const swiper = useSwiper();
 
   const [activeSlider, setActiveSlider] = useState(0);
+  const [index, setIndex] = useState(0);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -41,38 +39,20 @@ const ExplorePage = () => {
   };
 
   return (
-    <div className="relative">
-      <div>
-        <Swiper
-          allowSlidePrev={false}
-          style={{paddingTop:"74px"}}
-          creativeEffect={{
-            prev: {
-              shadow: true,
-              translate: ["-120%", 0, -500],
-            },
-            next: {
-              shadow: true,
-              translate: ["120%", 0, -500],
-            },
-          }}
-          effect={"creative"}
-          grabCursor={true}
-          modules={[EffectCreative]}
-          noSwiping={false}
-          onActiveIndexChange={(e) => setActiveSlider(e.activeIndex)}
-        >
-
-          {mockProfiles.map((value, index) => {
-            return (
-              <SwiperSlide  key={index}>
-                <ExploreCard profileData={value} />
-              </SwiperSlide>
-            );
-          })}
-          
-        </Swiper>
-      </div>
+    <div style={{marginTop:"5rem"}} className="relative">
+        <motion.div style={{ width: "100vw", height: "100vh", position: "relative", overflow:"hidden" }}>
+            <AnimatePresence initial={false}>
+                <ExploreCard profile={mockProfiles[index+1]} key={index + 1} frontCard={false} />
+                <ExploreCard
+                    key={index}
+                    frontCard={true}
+                    index={index}
+                    profile={mockProfiles[index]}
+                    setIndex={setIndex}
+                    drag="x"
+                />
+            </AnimatePresence>
+        </motion.div>
 
 
 

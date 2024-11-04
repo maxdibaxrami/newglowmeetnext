@@ -382,7 +382,7 @@ const NearByUserModal = forwardRef((props, ref) => {
                 }}
               >
                 <Button className="color-white" onPress={onClose} isIconOnly color="primary" style={{borderRadius:"20%"}} size="lg" aria-label="Like">
-                  <ExploreChat stroke="#FFF"/>
+                  <ExploreChat fill="#FFF"/>
                 </Button>  
               </motion.div>
           )}

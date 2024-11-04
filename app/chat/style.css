@@ -1,0 +1,32 @@
+
+.swiper {
+  width: 100%;
+}
+.mySwiper{
+  position: relative;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 70vh !important;
+  object-fit: cover;
+}
+
+.swiper-slide div {
+  max-width: none !important;
+  background-color: transparent;
+}

@@ -1,137 +1,167 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import {
   Modal,
   ModalContent,
   ModalBody,
   useDisclosure,
 } from "@nextui-org/react";
-import { Card, CardBody, Image, User, Avatar } from "@nextui-org/react";
-import { Listbox, ListboxItem, ListboxSection, Chip } from "@nextui-org/react";
-import { motion } from "framer-motion";
+import { Card, CardBody, Image, User } from "@nextui-org/react";
+import { Listbox, ListboxItem, ListboxSection, Chip, Button } from "@nextui-org/react";
+import { motion, AnimatePresence } from "framer-motion";
+import { forwardRef, useImperativeHandle } from "react";
 import { useTheme } from "next-themes";
-
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { HeartIcon, VerifyIcon } from "../icons/profileIcon";
+import { LocationIcon } from "../icons/exploreIcons";
 import {
   SearchIcon,
   HashtagIcon,
   AboutMeIcon,
   WorkAndStudyIcon,
   WhyYouAreHereIcon,
-} from "../../components/icons/profileIcon";
-import ExploreCardOption from "../explore/exploreCardOption";
+} from "../icons/profileIcon";
 
-const UserModal = () => {
+import { ArrowRight } from "@/components/icons/bottomMenuIcons";
+
+import NearByModalImage from "./UserModalImage";
+
+
+const UserModal = forwardRef((props, ref) => {
   const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
-  const theme = useTheme();
+
+  useImperativeHandle(ref, () => ({
+    callChildFunction: onOpen,
+  }));
 
   return (
     <>
-      <button className="lg:flex flex items-center" onClick={onOpen}>
-        <Avatar
-          isBordered
-          className="mr-2"
-          color="default"
-          radius="sm"
-          size="md"
-          src="https://i.pravatar.cc/150?u=a04258a2462d826712d"
-        />
-        <div className="flex flex-col ml-2 text-left">
-          <span className="text-large bold">{"Mahdi Bahrmai"}</span>
-          <span className="text-small bold" style={{ color: "#22c55e" }}>
-            {"Online"}
-          </span>
-        </div>
-      </button>
-      <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
-        <ModalContent>
-          <ModalBody className="p-1">
-            <Card
-              style={
-                theme.theme === "light"
-                  ? {
-                      overflow: "scroll",
-                      boxShadow: "unset",
-                      maxHeight: "calc(90vh)",
-                      marginTop: "2rem",
-                      backgroundColor: "rgb(165 148 249 / 6%)",
-                    }
-                  : {
-                      overflow: "scroll",
-                      maxHeight: "calc(90vh)",
-                      backgroundColor: "rgb(165 148 249 / 15%)",
-                      marginTop: "2rem",
-                    }
-              }
-            >
-              <CardBody>
-                <div className="flex mb-4 justify-between items-center">
-                  <div className="flex flex-col">
-                    <motion.div
-                      className="w-full"
-                      layoutId={"1"}
-                      style={{ height: "calc(61vh - 4rem)" }}
-                    >
-                      <Image
-                        removeWrapper
-                        alt="Profile hero Image"
-                        className="w-full h-full"
-                        classNames={{
-                          wrapper: "w-full",
-                        }}
-                        loading="lazy"
-                        src={profileData.mainImage} // dynamic image URL
-                        style={{
-                          borderRadius: "20px",
-                          objectFit: "cover",
-                          height: "100%",
-                          padding: "10px 10px 5px 10px",
-                        }}
-                      />
-                    </motion.div>
+    <Modal classNames={{"closeButton":"z-50 text-white"}} backdrop="opaque" isOpen={isOpen} onOpenChange={onOpenChange}>
+      <ModalContent style={{height:"90vh"}} className="background-drop--bluebase---card-----dark">
+        <ModalBody style={{
+                        width: "100%",
+                        height: "100%",
+                        maxHeight: "100%",
+                        overflow:"scroll",
+                        position: "absolute",
+                        top: 0,
+                        cursor: "grab"
+                      }}>
+              <div
+                  style={{
+                      width: "100%",
+                      borderRadius: 16,
+                      left:0,
+                      right:0,
+                      margin:"auto",
+                      marginTop:"2rem",                    
+                      
+                  }}
+                  
+              >
+                
+                <div className="relative">
+                  <Swiper
+                    spaceBetween={30}
+                    centeredSlides={true}
+                    autoplay={{
+                      delay: 4000,
+                      disableOnInteraction: false,
+                    }}
+                    loop
+                    modules={[Autoplay, Pagination, Navigation]}
+                    className="mySwiper"
+                    allowTouchMove={false}
+                    
+                  >
+                    <SwiperSlide >
+                      <NearByModalImage
+                        classNames={{wrapper:"max-w-none w-full h-full bg-transparent"}}
+                        className="w-full"
+                        alt="NextUI hero Image"
+                        src={profileData.mainImage}
+                        style={{height:"100%",width:"100%"}}
 
-                    <div className="flex">
-                      <div className="w-full">
-                        <Image
-                          alt="Profile hero Image"
-                          className="w-full h-full"
-                          src={profileData.secondImage} // dynamic image URL
-                          style={{
-                            objectFit: "cover",
-                            borderRadius: "20px",
-                            padding: "5px 5px 10px 10px",
-                            height: "calc(34vh - 4rem)",
-                          }}
+                      />
+                    </SwiperSlide>
+                    <SwiperSlide>    
+                      <NearByModalImage
+                          className="w-full"
+                          classNames={{wrapper:"max-w-none w-full h-full bg-transparent"}}
+                          alt="NextUI hero Image"
+                          src={profileData.secondImage}
+                          style={{height:"100%",width:"100%"}}
+
                         />
-                      </div>
-                      <div className="w-full">
-                        <Image
-                          alt="Profile hero Image"
-                          className="w-full h-full"
-                          loading="lazy"
-                          src={profileData.thirdImage} // dynamic image URL
-                          style={{
-                            objectFit: "cover",
-                            borderRadius: "20px",
-                            padding: "5px 10px 10px 5px",
-                            height: "calc(34vh - 4rem)",
-                          }}
-                        />
-                      </div>
-                    </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <NearByModalImage
+                          className="w-full"
+                          alt="NextUI hero Image"
+                          classNames={{wrapper:"max-w-none w-full h-full bg-transparent"}}
+                          src={profileData.thirdImage}
+                          style={{height:"100%",width:"100%"}}
+                        />    
+                    </SwiperSlide>
+                  </Swiper>
+
+                  <div style={{zIndex:10,marginLeft:"8px",padding:"8px",marginBottom:"6px"}} className="w-[calc(100%_-_16px)] flex flex-col justify-cente items-start gap-1 absolute background-drop--bluebase border-white/20 border-1 overflow-hidden py-1 before:rounded-xl rounded-large bottom-1  shadow-small z-10">
+                    <h4 className="flex items-center text-small text-white font-semibold leading-none text-default-600">{profileData.name} {profileData.age} <VerifyIcon stroke="#fff"/></h4>
+                    <h5 className="flex items-center text-small text-white tracking-tight text-default-400"><LocationIcon fill="#fff"/> {profileData.location} </h5>
                   </div>
                 </div>
 
-                <User
-                  avatarProps={{
-                    src: profileData.avatar,
-                    className: "hidden",
-                  }}
-                  className="mt-2 justify-start px-2"
-                  description={profileData.location}
-                  name={`${profileData.name}, ${profileData.age}`}
-                />
+                <div>
+                  <User   
+                    name="Ready for relationship"
+                    classNames={{"wrapper":"pt-4 pb-2","base":"px-1"}}
+                    description={
+                        "@jrgarciadev"
+                    }
+                    className="text-white"
+                    avatarProps={{
+                      color:"secondary",
+                      icon:<HeartIcon stroke="#fff" fill="#FFF"/>
+                    }}
+                  />
+                </div>
+                
+              {/*
+                <div>
+                  <User   
+                    name="Here to date"
+                    classNames={{"wrapper":"py-3","base":"px-1"}}
+                    description={
+                        "@jrgarciadev"
+                    }
+                    avatarProps={{
+                      color:"success",
+                      icon:<DatingIcon fill="#FFF" stroke="#fff"/>
+                    }}
+                  />
+                </div>
+
+                <div>
+                  <User   
+                    name="Open to chat"
+                    classNames={{"wrapper":"py-3","base":"px-1"}}
+                    description={
+                        "@jrgarciadev"
+                    }
+                    avatarProps={{
+                      color:"warning",
+                      icon:<ExploreChat fill="#fff"/>
+                    }}
+                  />
+                </div>
+              
+              
+              */}
 
                 <div className="w-full mb-4 mt-2">
                   <Listbox
+                    className="text-white"
                     aria-label="Listbox menu with sections"
                     variant="solid"
                   >
@@ -251,35 +281,62 @@ const UserModal = () => {
                     </ListboxSection>
                   </Listbox>
                 </div>
-              </CardBody>
-              <ExploreCardOption page={"explore"} />
-            </Card>
-          </ModalBody>
-        </ModalContent>
-      </Modal>
-    </>
+
+              </div>
+        </ModalBody>
+      </ModalContent>
+
+    </Modal>
+
+        <AnimatePresence>
+          {isOpen && (
+              <motion.div
+                style={{zIndex:999}}
+                className="fixed background-drop--whitebase p-2"
+                initial={{ opacity: 0 , right:"-80px", bottom:"-80px", scale: 0.5 }}
+                animate={{ opacity: 1 , right:"20px" , bottom:"20px", scale: 1.1 }}
+                exit={{ opacity: 0 , right:"-80px", bottom:"-80px", scale: 0.5 }}
+                transition={{
+                  ease: "linear",
+                  duration: 0.25,
+                }}
+              >
+                <Button className="color-white" onPress={onClose} isIconOnly color="primary" style={{borderRadius:"20%"}} size="lg" aria-label="Like">
+                  <ArrowRight stroke="#FFF"/>
+                </Button>  
+              </motion.div>
+          )}
+        </AnimatePresence>
+
+
+
+
+      </>  
   );
-};
+});
+
+UserModal.displayName = "NearByUserModal";
 
 export default UserModal;
 
+
 const profileData = {
-  id: 1,
-  name: "Mahdi Bahrami",
-  age: 24,
-  location: "Moscow, Russia",
-  avatar: "https://i.pravatar.cc/150?u=a04258114e29026702d",
-  workAndEducation: "Sechinov University, Programmer",
-  whyHere: "Just chat",
-  aboutMe: "Aspiring programmer and coffee enthusiast.",
+  id: 6,
+  name: "Yulia Petrova",
+  age: 21,
+  location: "Yekaterinburg, Russia",
+  avatar: "https://i.pravatar.cc/150?u=a04258119e29026702d",
+  workAndEducation: "UrFU, Biologist",
+  whyHere: "Looking for new friends",
+  aboutMe: "Nature enthusiast and curious mind.",
   lookingFor: "Friendship",
   relationStatus: "Single",
-  height: "183 cm",
+  height: "160 cm",
   kids: "None",
   language: "Russian, English",
   sexuality: "Straight",
-  interests: ["Coding", "Photography", "Hiking", "Gaming"],
-  mainImage: "https://i.pravatar.cc/300?u=1",
-  secondImage: "https://i.pravatar.cc/300?u=2",
-  thirdImage: "https://i.pravatar.cc/300?u=3",
-};
+  interests: ["Biology", "Hiking", "Gardening"],
+  mainImage: "https://i.pravatar.cc/300?u=16",
+  secondImage: "https://i.pravatar.cc/300?u=17",
+  thirdImage: "https://i.pravatar.cc/300?u=18",
+}

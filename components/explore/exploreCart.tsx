@@ -66,6 +66,8 @@ const ExploreCard = (props) => {
             style={{
                 width: "100%",
                 height: "100%",
+                maxHeight: "100%",
+                overflow:"scroll",
                 position: "absolute",
                 top: 0,
                 x,
@@ -92,14 +94,12 @@ const ExploreCard = (props) => {
             <motion.div
                 style={{
                     width: "calc(100vw - 26px)",
-                    maxHeight: "calc(100vh - 100px)",
                     borderRadius: 16,
                     padding:"12px",
                     left:0,
                     right:0,
                     margin:"auto",
                     scale,
-                    overflow:"scroll"
                     
                     
                 }}

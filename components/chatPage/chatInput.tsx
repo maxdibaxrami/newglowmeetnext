@@ -10,7 +10,7 @@ const ChatInput = () => {
 
   return (
     <div
-      className="flex fixed bot buttomchat-div right-0 items-center justify-between"
+      className="flex fixed botton-0 buttomchat-div right-0 items-center justify-between"
       style={{ width: "100%", left: "50%", backgroundColor: "#f4f4f5" }}
     >
       <Textarea

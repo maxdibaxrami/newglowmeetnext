@@ -153,3 +153,16 @@
     border-radius: 16px;
     backdrop-filter: blur(22px);
 }
+
+
+
+
+
+.app-container {
+    height: calc(var(--vh, 1vh) * 100);
+    transition: padding-bottom 0.3s ease, height 0.3s ease;
+}
+
+.keyboard-open .app-container {
+    padding-bottom: 200px; /* Adjust this to match the keyboard height */
+}

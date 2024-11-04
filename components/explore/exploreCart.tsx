@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import {
     motion,
     useMotionValue,
@@ -12,11 +12,16 @@ import { HeartIcon, VerifyIcon } from "../icons/profileIcon";
 import { LocationIcon } from "../icons/exploreIcons";
 import { height, width } from "@telegram-apps/sdk/dist/dts/scopes/components/viewport/signals";
 import { DatingIcon,ExploreChat } from "../icons/exploreIcons";
+import ExploreCardImage from './exploreCardImage'
+import { useSwiper } from "swiper/react";
 
 const ExploreCard = (props) => {
     const [exitX, setExitX] = useState(0);
 
+    const swiper = useSwiper()
+
     const x = useMotionValue(0);
+
     const scale = useTransform(x, [-150, 0, 150], [0.5, 1, 0.5]);
     const rotate = useTransform(x, [-150, 0, 150], [-45, 0, 45], {
         clamp: false
@@ -77,7 +82,7 @@ const ExploreCard = (props) => {
         >
             <motion.div
                 style={{
-                    width: "calc(100vw - 64px)",
+                    width: "calc(100vw - 26px)",
                     height: "calc(100vh - 100px)",
                     backgroundColor: "#fff",
                     borderRadius: 16,
@@ -85,7 +90,8 @@ const ExploreCard = (props) => {
                     left:0,
                     right:0,
                     margin:"auto",
-                    scale
+                    scale,
+                    
                 }}
             >
               
@@ -94,16 +100,19 @@ const ExploreCard = (props) => {
                   spaceBetween={30}
                   centeredSlides={true}
                   autoplay={{
-                    delay: 2500,
+                    delay: 4000,
                     disableOnInteraction: false,
                   }}
+                  loop
                   modules={[Autoplay, Pagination, Navigation]}
                   className="mySwiper"
+                  noSwiping
                 >
-                  <SwiperSlide>
-                    <Image
-                        classNames={{wrapper:"max-w-none w-full h-full"}}
-                        className="w-full"
+                  <SwiperSlide >
+                    <ExploreCardImage
+                      
+                      classNames={{wrapper:"max-w-none w-full h-full"}}
+                      className="w-full"
                       alt="NextUI hero Image"
                       src={props.profile.mainImage}
                       style={{height:"100%",width:"100%"}}
@@ -111,7 +120,7 @@ const ExploreCard = (props) => {
                     />
                   </SwiperSlide>
                   <SwiperSlide>    
-                    <Image
+                    <ExploreCardImage
                         className="w-full"
                         classNames={{wrapper:"max-w-none w-full h-full"}}
                         alt="NextUI hero Image"
@@ -121,11 +130,11 @@ const ExploreCard = (props) => {
                       />
                   </SwiperSlide>
                   <SwiperSlide>
-                    <Image
+                    <ExploreCardImage
                         className="w-full"
                         alt="NextUI hero Image"
                         classNames={{wrapper:"max-w-none w-full h-full"}}
-                        src={props.profile.secondImage}
+                        src={props.profile.thirdImage}
                         style={{height:"100%",width:"100%"}}
                       />    
                   </SwiperSlide>

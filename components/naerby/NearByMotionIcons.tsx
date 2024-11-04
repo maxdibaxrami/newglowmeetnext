@@ -1,13 +1,13 @@
 import { heartConfetti } from "../explore/buttonEffect";
 
-const HeartEyesImoji = ({ dataId, openModal, closeModal }) => {
+const HeartEyesImoji = ({ dataId, openModal }) => {
   return (
     <svg
       style={{ height: "90px", width: "90px" }}
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
       onClick={() => {
-        if (dataId === 4 || dataId === 8) {
+        if (dataId.id === 4 || dataId.id === 8) {
           openModal();
         } else {
           heartConfetti();

@@ -15,7 +15,6 @@ export default function NearByPage() {
     }
   };
   const onCardClick = (data) => {
-    console.log(data);
     setSelectedCard(data);
     handleClick();
   };
@@ -42,6 +41,8 @@ export default function NearByPage() {
         />
       ))}
       <NearByUserModal ref={childRef} profileData={SelectedCard} />
+
+
     </div>
   );
 }

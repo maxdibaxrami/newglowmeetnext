@@ -148,3 +148,8 @@
     -webkit-backdrop-filter: blur(3.5px);
 }
 
+.background-drop--bluebase---card-----dark{
+    background: #a594f96d;
+    border-radius: 16px;
+    backdrop-filter: blur(22px);
+}

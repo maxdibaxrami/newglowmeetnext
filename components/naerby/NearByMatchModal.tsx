@@ -9,6 +9,7 @@ import { SendMessage } from "../icons/exploreIcons";
 import { MatchConfetti } from "@/components/explore/buttonEffect";
 
 const NearByMatchModal = ({ isOpen, onClose, modalData }) => {
+  
   useEffect(() => {
     if (isOpen) {
       MatchConfetti();
@@ -20,6 +21,7 @@ const NearByMatchModal = ({ isOpen, onClose, modalData }) => {
       hideCloseButton
       isOpen={isOpen}
       placement={"bottom-center"}
+      className="z-100"
       size="full"
       onOpenChange={(open) => {
         if (!open) onClose();

@@ -13,7 +13,6 @@ export default function LikesPage() {
     }
   };
   const onCardClick = (data) => {
-    console.log(data);
     setSelectedCard(data);
     handleClick();
   };

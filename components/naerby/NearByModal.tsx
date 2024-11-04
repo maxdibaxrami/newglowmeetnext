@@ -7,8 +7,8 @@ import {
   useDisclosure,
 } from "@nextui-org/react";
 import { Card, CardBody, Image, User } from "@nextui-org/react";
-import { Listbox, ListboxItem, ListboxSection, Chip } from "@nextui-org/react";
-import { motion } from "framer-motion";
+import { Listbox, ListboxItem, ListboxSection, Chip, Button } from "@nextui-org/react";
+import { motion, AnimatePresence } from "framer-motion";
 import { forwardRef, useImperativeHandle } from "react";
 import { useTheme } from "next-themes";
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -24,8 +24,12 @@ import {
   WhyYouAreHereIcon,
 } from "../icons/profileIcon";
 
-import NearByMatchModal from "./nearByModalImage";
+import { ArrowRight } from "@/components/icons/bottomMenuIcons";
+import { ExploreChat } from "../icons/exploreIcons";
 
+import NearByMatchModal from "./NearByMatchModal";
+import NearByModalImage from "./nearByModalImage";
+import {NotLikeImoji, HeartEyesImoji} from './NearByMotionIcons'
 import ExploreCardOption from "@/components/explore/exploreCardOption";
 
 const getAnimationProps = () => {
@@ -57,8 +61,9 @@ const NearByUserModal = forwardRef((props, ref) => {
   }));
 
   return (
-    <Modal backdrop="transparent" isOpen={isOpen} onOpenChange={onOpenChange}>
-      <ModalContent style={{height:"90vh"}} className="bg-white">
+    <>
+    <Modal classNames={{"closeButton":"z-50 text-white"}} backdrop="opaque" isOpen={isOpen} onOpenChange={onOpenChange}>
+      <ModalContent style={{height:"90vh"}} className="background-drop--bluebase---card-----dark">
         <ModalBody style={{
                         width: "100%",
                         height: "100%",
@@ -78,7 +83,7 @@ const NearByUserModal = forwardRef((props, ref) => {
                       marginTop:"2rem",                    
                       
                   }}
-                  className="background-drop--bluebase---card"
+                  
               >
                 
                 <div className="relative">
@@ -96,7 +101,7 @@ const NearByUserModal = forwardRef((props, ref) => {
                     
                   >
                     <SwiperSlide >
-                      <NearByMatchModal
+                      <NearByModalImage
                         classNames={{wrapper:"max-w-none w-full h-full bg-transparent"}}
                         className="w-full"
                         alt="NextUI hero Image"
@@ -106,7 +111,7 @@ const NearByUserModal = forwardRef((props, ref) => {
                       />
                     </SwiperSlide>
                     <SwiperSlide>    
-                      <NearByMatchModal
+                      <NearByModalImage
                           className="w-full"
                           classNames={{wrapper:"max-w-none w-full h-full bg-transparent"}}
                           alt="NextUI hero Image"
@@ -116,7 +121,7 @@ const NearByUserModal = forwardRef((props, ref) => {
                         />
                     </SwiperSlide>
                     <SwiperSlide>
-                      <NearByMatchModal
+                      <NearByModalImage
                           className="w-full"
                           alt="NextUI hero Image"
                           classNames={{wrapper:"max-w-none w-full h-full bg-transparent"}}
@@ -135,10 +140,11 @@ const NearByUserModal = forwardRef((props, ref) => {
                 <div>
                   <User   
                     name="Ready for relationship"
-                    classNames={{"wrapper":"py-3","base":"px-1"}}
+                    classNames={{"wrapper":"pt-4 pb-2","base":"px-1"}}
                     description={
                         "@jrgarciadev"
                     }
+                    className="text-white"
                     avatarProps={{
                       color:"secondary",
                       icon:<HeartIcon stroke="#fff" fill="#FFF"/>
@@ -180,6 +186,7 @@ const NearByUserModal = forwardRef((props, ref) => {
 
                 <div className="w-full mb-4 mt-2">
                   <Listbox
+                    className="text-white"
                     aria-label="Listbox menu with sections"
                     variant="solid"
                   >
@@ -303,12 +310,86 @@ const NearByUserModal = forwardRef((props, ref) => {
               </div>
         </ModalBody>
       </ModalContent>
-      <NearByMatchModal
-        isOpen={isModalOpen}
-        modalData={props}
-        onClose={closeModal}
-      />
+
+      <div>
+          <motion.div
+            className="card background-drop--whitebase p-1 footerswipcard border-1 fixed"
+            animate={{ bottom: "70px", zIndex:50, right:"51%",scale:1 }}
+            initial={{right:"51%",scale:0.7}}
+            exit={{right:"51%",scale:0.7,bottom:"-50px",opacity:0}}
+            transition={{ type: "tween" }}
+            {...getAnimationProps2()}
+          >
+            <NotLikeImoji dataId={props.profileData} />
+          </motion.div>
+
+          <motion.div
+            className="card background-drop--whitebase p-1 footerswipcard border-1 fixed"
+            transition={{ type: "tween" }}
+            initial={{left:"51%",scale:0.7}}
+            exit={{left:"51%",scale:0.7,bottom:"-50px",opacity:0}}
+            animate={{ bottom: "70px", zIndex:50 ,left:"51%",scale:1 }}
+
+            {...getAnimationProps()}
+          >
+            <HeartEyesImoji
+              closeModal={closeModal}
+              dataId={props.profileData}
+              openModal={openModal}
+            />
+          </motion.div>
+
+      </div>
     </Modal>
+          <NearByMatchModal
+            isOpen={isModalOpen}
+            modalData={props.profileData}
+            onClose={closeModal}
+          />
+
+        <AnimatePresence>
+          {isOpen && (
+              <motion.div
+                style={{zIndex:999}}
+                className="fixed background-drop--whitebase p-2"
+                initial={{ opacity: 0 , right:"-80px", bottom:"-80px", scale: 0.5 }}
+                animate={{ opacity: 1 , right:"20px" , bottom:"20px", scale: 1.1 }}
+                exit={{ opacity: 0 , right:"-80px", bottom:"-80px", scale: 0.5 }}
+                transition={{
+                  ease: "linear",
+                  duration: 0.25,
+                }}
+              >
+                <Button className="color-white" onPress={onClose} isIconOnly color="primary" style={{borderRadius:"20%"}} size="lg" aria-label="Like">
+                  <ArrowRight stroke="#FFF"/>
+                </Button>  
+              </motion.div>
+          )}
+        </AnimatePresence>
+
+
+        <AnimatePresence>
+          {isOpen && (
+              <motion.div
+                style={{zIndex:999}}
+                className="fixed background-drop--whitebase p-2"
+                initial={{ opacity: 0 , left:"-80px", bottom:"-80px", scale: 0.5 }}
+                animate={{ opacity: 1 , left:"20px" , bottom:"20px", scale: 1.1 }}
+                exit={{ opacity: 0 , left:"-80px", bottom:"-80px", scale: 0.5 }}
+                transition={{
+                  ease: "linear",
+                  duration: 0.25,
+                }}
+              >
+                <Button className="color-white" onPress={onClose} isIconOnly color="primary" style={{borderRadius:"20%"}} size="lg" aria-label="Like">
+                  <ExploreChat stroke="#FFF"/>
+                </Button>  
+              </motion.div>
+          )}
+        </AnimatePresence>
+
+
+      </>  
   );
 });
 

@@ -2,7 +2,8 @@
 import { useState, useRef } from "react";
 
 import LikeCard from "@/components/like/likeCard";
-import LikedUserModal from "@/components/like/likeUserModal";
+import UserModal from "@/components/profile/userModal";
+
 export default function LikesPage() {
   const [SelectedCard, setSelectedCard] = useState({});
   const childRef = useRef();
@@ -33,7 +34,7 @@ export default function LikesPage() {
       {mockProfiles.map((value, index) => {
         return <LikeCard key={index} data={value} onCardClick={onCardClick} />;
       })}
-      <LikedUserModal ref={childRef} profileData={SelectedCard} />
+      <UserModal ref={childRef} profileData={SelectedCard} />
     </div>
   );
 }

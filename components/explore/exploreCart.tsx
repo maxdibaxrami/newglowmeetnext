@@ -7,7 +7,11 @@ import {
 } from "framer-motion";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-import {Image} from "@nextui-org/react";
+import {Image, User} from "@nextui-org/react";
+import { HeartIcon, VerifyIcon } from "../icons/profileIcon";
+import { LocationIcon } from "../icons/exploreIcons";
+import { height, width } from "@telegram-apps/sdk/dist/dts/scopes/components/viewport/signals";
+import { DatingIcon,ExploreChat } from "../icons/exploreIcons";
 
 const ExploreCard = (props) => {
     const [exitX, setExitX] = useState(0);
@@ -85,40 +89,99 @@ const ExploreCard = (props) => {
                 }}
             >
               
-              <Swiper
-                spaceBetween={30}
-                centeredSlides={true}
-                autoplay={{
-                  delay: 2500,
-                  disableOnInteraction: false,
-                }}
-                modules={[Autoplay, Pagination, Navigation]}
-                className="mySwiper"
-              >
-                <SwiperSlide>
-                  <Image
-                    width={300}
-                    alt="NextUI hero Image"
-                    src={props.profile.mainImage}
-                  />
-                </SwiperSlide>
-                <SwiperSlide>    
-                  <Image
-                      width={300}
+              <div className="relative">
+                <Swiper
+                  spaceBetween={30}
+                  centeredSlides={true}
+                  autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                  }}
+                  modules={[Autoplay, Pagination, Navigation]}
+                  className="mySwiper"
+                >
+                  <SwiperSlide>
+                    <Image
+                        classNames={{wrapper:"max-w-none w-full h-full"}}
+                        className="w-full"
                       alt="NextUI hero Image"
-                      src={props.profile.secondImage}
-                    />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <Image
-                      width={300}
-                      alt="NextUI hero Image"
-                      src={props.profile.secondImage}
-                    />    
-                </SwiperSlide>
-              </Swiper>
+                      src={props.profile.mainImage}
+                      style={{height:"100%",width:"100%"}}
 
-              <p>dsads</p>
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide>    
+                    <Image
+                        className="w-full"
+                        classNames={{wrapper:"max-w-none w-full h-full"}}
+                        alt="NextUI hero Image"
+                        src={props.profile.secondImage}
+                        style={{height:"100%",width:"100%"}}
+
+                      />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <Image
+                        className="w-full"
+                        alt="NextUI hero Image"
+                        classNames={{wrapper:"max-w-none w-full h-full"}}
+                        src={props.profile.secondImage}
+                        style={{height:"100%",width:"100%"}}
+                      />    
+                  </SwiperSlide>
+                </Swiper>
+
+                <div style={{zIndex:10,marginLeft:"8px",padding:"8px",marginBottom:"6px"}} className="w-[calc(100%_-_16px)] flex flex-col justify-cente items-start gap-1 absolute background-drop--bluebase border-white/20 border-1 overflow-hidden py-1 before:rounded-xl rounded-large bottom-1  shadow-small z-10">
+                  <h4 className="flex items-center text-small text-white font-semibold leading-none text-default-600">{props.profile.name} {props.profile.age} <VerifyIcon stroke="#fff"/></h4>
+                  <h5 className="flex items-center text-small text-white tracking-tight text-default-400"><LocationIcon fill="#fff"/> {props.profile.location} </h5>
+                </div>
+              </div>
+
+              <div>
+                <User   
+                  name="Ready for relationship"
+                  classNames={{"wrapper":"py-3","base":"px-1"}}
+                  description={
+                      "@jrgarciadev"
+                  }
+                  avatarProps={{
+                    color:"secondary",
+                    icon:<HeartIcon stroke="#fff" fill="#FFF"/>
+                  }}
+                />
+              </div>
+              
+            {/*
+              <div>
+                <User   
+                  name="Here to date"
+                  classNames={{"wrapper":"py-3","base":"px-1"}}
+                  description={
+                      "@jrgarciadev"
+                  }
+                  avatarProps={{
+                    color:"success",
+                    icon:<DatingIcon fill="#FFF" stroke="#fff"/>
+                  }}
+                />
+              </div>
+
+              <div>
+                <User   
+                  name="Open to chat"
+                  classNames={{"wrapper":"py-3","base":"px-1"}}
+                  description={
+                      "@jrgarciadev"
+                  }
+                  avatarProps={{
+                    color:"warning",
+                    icon:<ExploreChat fill="#fff"/>
+                  }}
+                />
+              </div>
+            
+            
+            */}
             </motion.div>
         </motion.div>
     );

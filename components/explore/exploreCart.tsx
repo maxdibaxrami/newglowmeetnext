@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import {
     motion,
     useMotionValue,
     useTransform,
     AnimatePresence
 } from "framer-motion";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import {Image} from "@nextui-org/react";
 
 const ExploreCard = (props) => {
     const [exitX, setExitX] = useState(0);
@@ -73,17 +76,53 @@ const ExploreCard = (props) => {
                     width: "calc(100vw - 64px)",
                     height: "calc(100vh - 100px)",
                     backgroundColor: "#fff",
-                    borderRadius: 30,
+                    borderRadius: 16,
+                    padding:"12px",
                     left:0,
                     right:0,
                     margin:"auto",
                     scale
                 }}
             >
-              {props.profile.name}
+              
+              <Swiper
+                spaceBetween={30}
+                centeredSlides={true}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+                modules={[Autoplay, Pagination, Navigation]}
+                className="mySwiper"
+              >
+                <SwiperSlide>
+                  <Image
+                    width={300}
+                    alt="NextUI hero Image"
+                    src={props.profile.mainImage}
+                  />
+                </SwiperSlide>
+                <SwiperSlide>    
+                  <Image
+                      width={300}
+                      alt="NextUI hero Image"
+                      src={props.profile.secondImage}
+                    />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <Image
+                      width={300}
+                      alt="NextUI hero Image"
+                      src={props.profile.secondImage}
+                    />    
+                </SwiperSlide>
+              </Swiper>
+
+              <p>dsads</p>
             </motion.div>
         </motion.div>
     );
 }
+
 
 export default ExploreCard

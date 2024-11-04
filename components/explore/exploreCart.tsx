@@ -7,13 +7,10 @@ import {
 } from "framer-motion";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-import {Image, User} from "@nextui-org/react";
+import { User} from "@nextui-org/react";
 import { HeartIcon, VerifyIcon } from "../icons/profileIcon";
 import { LocationIcon } from "../icons/exploreIcons";
-import { height, width } from "@telegram-apps/sdk/dist/dts/scopes/components/viewport/signals";
-import { DatingIcon,ExploreChat } from "../icons/exploreIcons";
 import ExploreCardImage from './exploreCardImage'
-import { useSwiper } from "swiper/react";
 import { Listbox, ListboxItem, ListboxSection, Chip } from "@nextui-org/react";
 
 import {
@@ -26,8 +23,6 @@ import {
 
 const ExploreCard = (props) => {
     const [exitX, setExitX] = useState(0);
-
-    const swiper = useSwiper()
 
     const x = useMotionValue(0);
 

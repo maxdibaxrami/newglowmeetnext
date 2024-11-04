@@ -2,8 +2,7 @@ import { useSwiper } from "swiper/react";
 
 import { heartConfetti } from "../explore/buttonEffect";
 
-const HeartEyesImoji = ({ dataId, openModal, closeModal }) => {
-  const swiper = useSwiper();
+const HeartEyesImoji = ({ dataId, openModal, closeModal,NextSlide }) => {
 
   return (
     <svg
@@ -11,11 +10,12 @@ const HeartEyesImoji = ({ dataId, openModal, closeModal }) => {
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
       onClick={() => {
-        if (dataId === 4 || dataId === 8) {
+        if (dataId.id === 4 || dataId.id === 8) {
           openModal();
-          swiper.slideNext();
+          NextSlide()
+
         } else {
-          swiper.slideNext();
+          NextSlide()
           heartConfetti();
         }
       }}
@@ -127,8 +127,7 @@ const HeartEyesImoji = ({ dataId, openModal, closeModal }) => {
   );
 };
 
-const NotLikeImoji = ({ dataId }) => {
-  const swiper = useSwiper();
+const NotLikeImoji = ({ dataId,NextSlide }) => {
 
   return (
     <svg
@@ -136,9 +135,7 @@ const NotLikeImoji = ({ dataId }) => {
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
       onClick={() => {
-        if (swiper) {
-          swiper.slideNext();
-        }
+        NextSlide()
       }}
     >
       <defs>

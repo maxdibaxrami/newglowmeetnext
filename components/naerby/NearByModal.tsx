@@ -11,6 +11,10 @@ import { Listbox, ListboxItem, ListboxSection, Chip } from "@nextui-org/react";
 import { motion } from "framer-motion";
 import { forwardRef, useImperativeHandle } from "react";
 import { useTheme } from "next-themes";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { HeartIcon, VerifyIcon } from "../icons/profileIcon";
+import { LocationIcon } from "../icons/exploreIcons";
 
 import {
   SearchIcon,
@@ -20,12 +24,7 @@ import {
   WhyYouAreHereIcon,
 } from "../icons/profileIcon";
 
-import {
-  HeartEyesImoji,
-  NotLikeImoji,
-  ChatIconImoji,
-} from "./NearByMotionIcons";
-import NearByMatchModal from "./NearByMatchModal";
+import NearByMatchModal from "./nearByModalImage";
 
 import ExploreCardOption from "@/components/explore/exploreCardOption";
 
@@ -58,256 +57,255 @@ const NearByUserModal = forwardRef((props, ref) => {
   }));
 
   return (
-    <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
-      <ModalContent>
-        <ModalBody className="px-3">
-          <Card
-            style={
-              theme.theme === "light"
-                ? {
-                    overflow: "scroll",
-                    boxShadow: "unset",
-                    maxHeight: "calc(90vh)",
-                    backgroundColor: "rgb(165 148 249 / 6%)",
-                    marginTop: "2rem",
-                  }
-                : {
-                    overflow: "scroll",
-                    maxHeight: "calc(90vh)",
-                    backgroundColor: "rgb(165 148 249 / 15%)",
-                    marginTop: "2rem",
-                  }
-            }
-          >
-            <CardBody>
-              <div className="flex mb-4 justify-between items-center">
-                <div className="flex flex-col">
-                  <motion.div
-                    className="w-full"
-                    layoutId={"1"}
-                    style={{ height: "calc(61vh - 4rem)" }}
-                  >
-                    <Image
-                      removeWrapper
-                      alt="Profile hero Image"
-                      className="w-full h-full"
-                      classNames={{
-                        wrapper: "w-full",
-                      }}
-                      loading="lazy"
-                      src={props.profileData.mainImage} // dynamic image URL
-                      style={{
-                        borderRadius: "20px",
-                        objectFit: "cover",
+    <Modal backdrop="transparent" isOpen={isOpen} onOpenChange={onOpenChange}>
+      <ModalContent style={{height:"90vh"}} className="bg-white">
+        <ModalBody style={{
+                        width: "100%",
                         height: "100%",
-                        padding: "10px 10px 5px 10px",
-                      }}
-                    />
-                  </motion.div>
+                        maxHeight: "100%",
+                        overflow:"scroll",
+                        position: "absolute",
+                        top: 0,
+                        cursor: "grab"
+                      }}>
+              <div
+                  style={{
+                      width: "100%",
+                      borderRadius: 16,
+                      left:0,
+                      right:0,
+                      margin:"auto",
+                      marginTop:"2rem",                    
+                      
+                  }}
+                  className="background-drop--bluebase---card"
+              >
+                
+                <div className="relative">
+                  <Swiper
+                    spaceBetween={30}
+                    centeredSlides={true}
+                    autoplay={{
+                      delay: 4000,
+                      disableOnInteraction: false,
+                    }}
+                    loop
+                    modules={[Autoplay, Pagination, Navigation]}
+                    className="mySwiper"
+                    allowTouchMove={false}
+                    
+                  >
+                    <SwiperSlide >
+                      <NearByMatchModal
+                        classNames={{wrapper:"max-w-none w-full h-full bg-transparent"}}
+                        className="w-full"
+                        alt="NextUI hero Image"
+                        src={props.profileData.mainImage}
+                        style={{height:"100%",width:"100%"}}
 
-                  <div className="flex">
-                    <div className="w-full">
-                      <Image
-                        alt="Profile hero Image"
-                        className="w-full h-full"
-                        src={props.profileData.secondImage} // dynamic image URL
-                        style={{
-                          objectFit: "cover",
-                          borderRadius: "20px",
-                          padding: "5px 5px 10px 10px",
-                          height: "calc(34vh - 4rem)",
-                        }}
                       />
-                    </div>
-                    <div className="w-full">
-                      <Image
-                        alt="Profile hero Image"
-                        className="w-full h-full"
-                        loading="lazy"
-                        src={props.profileData.thirdImage} // dynamic image URL
-                        style={{
-                          objectFit: "cover",
-                          borderRadius: "20px",
-                          padding: "5px 10px 10px 5px",
-                          height: "calc(34vh - 4rem)",
-                        }}
-                      />
-                    </div>
+                    </SwiperSlide>
+                    <SwiperSlide>    
+                      <NearByMatchModal
+                          className="w-full"
+                          classNames={{wrapper:"max-w-none w-full h-full bg-transparent"}}
+                          alt="NextUI hero Image"
+                          src={props.profileData.secondImage}
+                          style={{height:"100%",width:"100%"}}
+
+                        />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <NearByMatchModal
+                          className="w-full"
+                          alt="NextUI hero Image"
+                          classNames={{wrapper:"max-w-none w-full h-full bg-transparent"}}
+                          src={props.profileData.thirdImage}
+                          style={{height:"100%",width:"100%"}}
+                        />    
+                    </SwiperSlide>
+                  </Swiper>
+
+                  <div style={{zIndex:10,marginLeft:"8px",padding:"8px",marginBottom:"6px"}} className="w-[calc(100%_-_16px)] flex flex-col justify-cente items-start gap-1 absolute background-drop--bluebase border-white/20 border-1 overflow-hidden py-1 before:rounded-xl rounded-large bottom-1  shadow-small z-10">
+                    <h4 className="flex items-center text-small text-white font-semibold leading-none text-default-600">{props.profileData.name} {props.profileData.age} <VerifyIcon stroke="#fff"/></h4>
+                    <h5 className="flex items-center text-small text-white tracking-tight text-default-400"><LocationIcon fill="#fff"/> {props.profileData.location} </h5>
                   </div>
                 </div>
-              </div>
 
-              <User
-                avatarProps={{
-                  src: props.profileData.avatar,
-                  className: "hidden",
-                }}
-                className="mt-2 justify-start px-2"
-                description={props.profileData.location}
-                name={`${props.profileData.name}, ${props.profileData.age}`}
-              />
+                <div>
+                  <User   
+                    name="Ready for relationship"
+                    classNames={{"wrapper":"py-3","base":"px-1"}}
+                    description={
+                        "@jrgarciadev"
+                    }
+                    avatarProps={{
+                      color:"secondary",
+                      icon:<HeartIcon stroke="#fff" fill="#FFF"/>
+                    }}
+                  />
+                </div>
+                
+              {/*
+                <div>
+                  <User   
+                    name="Here to date"
+                    classNames={{"wrapper":"py-3","base":"px-1"}}
+                    description={
+                        "@jrgarciadev"
+                    }
+                    avatarProps={{
+                      color:"success",
+                      icon:<DatingIcon fill="#FFF" stroke="#fff"/>
+                    }}
+                  />
+                </div>
 
-              <div className="w-full mb-4 mt-2">
-                <Listbox
-                  aria-label="Listbox menu with sections"
-                  variant="solid"
-                >
-                  <ListboxSection
-                    showDivider
-                    className="relative"
-                    title="Profile"
+                <div>
+                  <User   
+                    name="Open to chat"
+                    classNames={{"wrapper":"py-3","base":"px-1"}}
+                    description={
+                        "@jrgarciadev"
+                    }
+                    avatarProps={{
+                      color:"warning",
+                      icon:<ExploreChat fill="#fff"/>
+                    }}
+                  />
+                </div>
+              
+              
+              */}
+
+                <div className="w-full mb-4 mt-2">
+                  <Listbox
+                    aria-label="Listbox menu with sections"
+                    variant="solid"
                   >
-                    <ListboxItem
-                      key="2"
-                      isReadOnly
-                      description={props.profileData.workAndEducation}
-                      startContent={<WorkAndStudyIcon />}
+                    <ListboxSection
+                      showDivider
+                      className="relative"
+                      title="Profile"
                     >
-                      Work and education
-                    </ListboxItem>
-
-                    <ListboxItem
-                      key="3"
-                      isReadOnly
-                      description={props.profileData.whyHere}
-                      startContent={<WhyYouAreHereIcon />}
-                    >
-                      Why you are here?
-                    </ListboxItem>
-
-                    <ListboxItem
-                      key="4"
-                      isReadOnly
-                      description={props.profileData.aboutMe}
-                      startContent={<AboutMeIcon />}
-                    >
-                      About me
-                    </ListboxItem>
-
-                    <ListboxItem
-                      key="5"
-                      isReadOnly
-                      description={props.profileData.lookingFor}
-                      startContent={<SearchIcon />}
-                    >
-                      Looking for?
-                    </ListboxItem>
-                  </ListboxSection>
-
-                  <ListboxSection className="relative" title="More about me!">
-                    <ListboxItem
-                      key="7"
-                      isReadOnly
-                      description={props.profileData.relationStatus}
-                    >
-                      Relation status
-                    </ListboxItem>
-                    <ListboxItem
-                      key="8"
-                      isReadOnly
-                      description={props.profileData.height}
-                    >
-                      Height
-                    </ListboxItem>
-                    <ListboxItem
-                      key="9"
-                      isReadOnly
-                      description={props.profileData.kids}
-                    >
-                      Kids
-                    </ListboxItem>
-                    <ListboxItem
-                      key="10"
-                      isReadOnly
-                      description={props.profileData.language}
-                    >
-                      Language
-                    </ListboxItem>
-                    <ListboxItem
-                      key="11"
-                      isReadOnly
-                      description={props.profileData.sexuality}
-                    >
-                      Sexuality
-                    </ListboxItem>
-                  </ListboxSection>
-
-                  <ListboxSection className="relative" title="Interesting">
-                    <ListboxItem key={"1"} isReadOnly>
-                      <div
-                        className="flex flex-wrap"
-                        style={{ paddingBottom: "40px" }}
+                      <ListboxItem
+                        key="2"
+                        isReadOnly
+                        description={props.profileData.workAndEducation}
+                        startContent={<WorkAndStudyIcon />}
                       >
-                        {Array.isArray(props.profileData.interests) &&
-                        props.profileData.interests.length > 0
-                          ? props.profileData.interests.map((value, index) => (
-                              <Chip
-                                key={index}
-                                className="m-1"
-                                color="success"
-                                startContent={<HashtagIcon />}
-                                variant="solid"
-                              >
-                                {value}
-                              </Chip>
-                            ))
-                          : null}
-                      </div>
-                    </ListboxItem>
-                    <ListboxItem
-                      key="13"
-                      isReadOnly
-                      className="absolute"
-                      style={{
-                        top: "-8px",
-                        right: "0px",
-                        width: "45px",
-                        height: "45px",
-                      }}
-                    />
-                  </ListboxSection>
-                </Listbox>
+                        Work and education
+                      </ListboxItem>
+
+                      <ListboxItem
+                        key="3"
+                        isReadOnly
+                        description={props.profileData.whyHere}
+                        startContent={<WhyYouAreHereIcon />}
+                      >
+                        Why you are here?
+                      </ListboxItem>
+
+                      <ListboxItem
+                        key="4"
+                        isReadOnly
+                        description={props.profileData.aboutMe}
+                        startContent={<AboutMeIcon />}
+                      >
+                        About me
+                      </ListboxItem>
+
+                      <ListboxItem
+                        key="5"
+                        isReadOnly
+                        description={props.profileData.lookingFor}
+                        startContent={<SearchIcon />}
+                      >
+                        Looking for?
+                      </ListboxItem>
+                    </ListboxSection>
+
+                    <ListboxSection className="relative" title="More about me!">
+                      <ListboxItem
+                        key="7"
+                        isReadOnly
+                        description={props.profileData.relationStatus}
+                      >
+                        Relation status
+                      </ListboxItem>
+                      <ListboxItem
+                        key="8"
+                        isReadOnly
+                        description={props.profileData.height}
+                      >
+                        Height
+                      </ListboxItem>
+                      <ListboxItem
+                        key="9"
+                        isReadOnly
+                        description={props.profileData.kids}
+                      >
+                        Kids
+                      </ListboxItem>
+                      <ListboxItem
+                        key="10"
+                        isReadOnly
+                        description={props.profileData.language}
+                      >
+                        Language
+                      </ListboxItem>
+                      <ListboxItem
+                        key="11"
+                        isReadOnly
+                        description={props.profileData.sexuality}
+                      >
+                        Sexuality
+                      </ListboxItem>
+                    </ListboxSection>
+
+                    <ListboxSection className="relative" title="Interesting">
+                      <ListboxItem key={"1"} isReadOnly>
+                        <div
+                          className="flex flex-wrap"
+                          style={{ paddingBottom: "40px" }}
+                        >
+                          {Array.isArray(props.profileData.interests) &&
+                          props.profileData.interests.length > 0
+                            ? props.profileData.interests.map((value, index) => (
+                                <Chip
+                                  key={index}
+                                  className="m-1"
+                                  color="success"
+                                  startContent={<HashtagIcon />}
+                                  variant="solid"
+                                >
+                                  {value}
+                                </Chip>
+                              ))
+                            : null}
+                        </div>
+                      </ListboxItem>
+                      <ListboxItem
+                        key="13"
+                        isReadOnly
+                        className="absolute"
+                        style={{
+                          top: "-8px",
+                          right: "0px",
+                          width: "45px",
+                          height: "45px",
+                        }}
+                      />
+                    </ListboxSection>
+                  </Listbox>
+                </div>
+
               </div>
-            </CardBody>
-            <ExploreCardOption page={"explore"} />
-          </Card>
         </ModalBody>
-        <motion.div
-          animate={{ bottom: "70px", zIndex: "1000" }}
-          className="background-drop--bluebase flex justify-center footerswipcard--nearbypage before:bg-white/10 border-white/20 border-1 py-1 absolute before:rounded-xl rounded-large w-[calc(100%_-_8px)] shadow-small ml-1 z-10"
-        >
-          <motion.div
-            className="card"
-            transition={{ type: "tween" }}
-            {...getAnimationProps2()}
-          >
-            <NotLikeImoji dataId={props.profileData.id} />
-          </motion.div>
-
-          <motion.div
-            className="card"
-            transition={{ type: "tween" }}
-            {...getAnimationProps()}
-          >
-            <ChatIconImoji />
-          </motion.div>
-
-          <motion.div
-            className="card"
-            transition={{ type: "tween" }}
-            {...getAnimationProps()}
-          >
-            <HeartEyesImoji
-              closeModal={onClose}
-              dataId={props.profileData.id}
-              openModal={openModal}
-            />
-          </motion.div>
-        </motion.div>
       </ModalContent>
       <NearByMatchModal
         isOpen={isModalOpen}
-        modalData={props.profileData}
+        modalData={props}
         onClose={closeModal}
       />
     </Modal>

@@ -14,13 +14,14 @@ const ExplorePage = () => {
 
   const swiper = useSwiper();
 
-  const [activeSlider, setActiveSlider] = useState(0);
   const [index, setIndex] = useState(0);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
+
+  const NextSlide = () => setIndex(index+1)
 
   const getAnimationProps = () => {
     return {
@@ -65,7 +66,7 @@ const ExplorePage = () => {
             transition={{ type: "tween" }}
             {...getAnimationProps2()}
           >
-            <NotLikeImoji dataId={activeSlider} />
+            <NotLikeImoji NextSlide={NextSlide} dataId={mockProfiles[index]} />
           </motion.div>
 
           <motion.div
@@ -78,15 +79,16 @@ const ExplorePage = () => {
           >
             <HeartEyesImoji
               closeModal={closeModal}
-              dataId={activeSlider}
+              dataId={mockProfiles[index]}
               openModal={openModal}
+              NextSlide={NextSlide}
             />
           </motion.div>
       </div>
 
       <MatchModal
         isOpen={isModalOpen}
-        modalData={mockProfiles[activeSlider]}
+        modalData={mockProfiles[index]}
         onClose={closeModal}
       />
     </div>

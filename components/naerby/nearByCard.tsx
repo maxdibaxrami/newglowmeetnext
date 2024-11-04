@@ -1,6 +1,7 @@
 import { Card, CardFooter, Image, Badge } from "@nextui-org/react";
 import { VerifyIcon } from "../icons/profileIcon";
 import { CircleSvg } from "../icons/NearByMeIcons";
+
 const NearByCard = ({ data, onCardClick, num }) => {
   return (
       <Card

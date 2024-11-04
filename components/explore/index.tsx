@@ -59,7 +59,7 @@ const ExplorePage = () => {
 
       <div>
           <motion.div
-            className="card background-drop--bluebase p-1 footerswipcard border-1 fixed"
+            className="card background-drop--whitebase p-1 footerswipcard border-1 fixed"
             animate={{ bottom: "70px", zIndex:50, right:"52%",scale:1 }}
             style={{right:"52%",scale:0.7}}
             transition={{ type: "tween" }}
@@ -69,7 +69,7 @@ const ExplorePage = () => {
           </motion.div>
 
           <motion.div
-            className="card background-drop--bluebase p-1 footerswipcard border-1 fixed"
+            className="card background-drop--whitebase p-1 footerswipcard border-1 fixed"
             transition={{ type: "tween" }}
             style={{left:"55%",scale:0.7}}
             animate={{ bottom: "70px", zIndex:50 ,left:"52%",scale:1 }}

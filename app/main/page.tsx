@@ -219,7 +219,7 @@ const handleOpenModalExplore = () => {
           {pathname.get('page') === "explore"  && (
               <motion.div
                 style={{zIndex:30}}
-                className="fixed background-drop--bluebase p-2"
+                className="fixed background-drop--whitebase p-2"
                 initial={{ opacity: 0 , left:"-80px", bottom:"-80px", scale: 0.5 }}
                 animate={{ opacity: 1 , left:"20px" , bottom:"20px", scale: 1.1 }}
                 exit={{ opacity: 0 , left:"-80px", bottom:"-80px", scale: 0.5 }}
@@ -239,7 +239,7 @@ const handleOpenModalExplore = () => {
           {pathname.get('page') === "explore"  && (
               <motion.div
                 style={{zIndex:30}}
-                className="fixed background-drop--bluebase p-2"
+                className="fixed background-drop--whitebase p-2"
                 initial={{ opacity: 0 , right:"-80px", bottom:"-80px", scale: 0.5 }}
                 animate={{ opacity: 1 , right:"20px" , bottom:"20px", scale: 1.1 }}
                 exit={{ opacity: 0 , right:"-80px", bottom:"-80px", scale: 0.5 }}

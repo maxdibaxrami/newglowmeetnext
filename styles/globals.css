@@ -115,6 +115,14 @@
     -webkit-backdrop-filter: blur(3.5px);
 }
 
+.background-drop--whitebase{
+    background: #ffffff57;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3.5px);
+    -webkit-backdrop-filter: blur(3.5px);
+}
+
 
 .background-drop--bluebase---navbar{
     background: #a594f952;

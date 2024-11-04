@@ -204,7 +204,7 @@ const ExploreCard = (props) => {
             
             */}
 
-<div className="w-full mb-4 mt-2">
+              <div className="w-full mb-4 mt-2">
                 <Listbox
                   aria-label="Listbox menu with sections"
                   variant="solid"

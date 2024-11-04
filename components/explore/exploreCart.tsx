@@ -14,6 +14,15 @@ import { height, width } from "@telegram-apps/sdk/dist/dts/scopes/components/vie
 import { DatingIcon,ExploreChat } from "../icons/exploreIcons";
 import ExploreCardImage from './exploreCardImage'
 import { useSwiper } from "swiper/react";
+import { Listbox, ListboxItem, ListboxSection, Chip } from "@nextui-org/react";
+
+import {
+  SearchIcon,
+  HashtagIcon,
+  AboutMeIcon,
+  WorkAndStudyIcon,
+  WhyYouAreHereIcon,
+} from "../icons/profileIcon";
 
 const ExploreCard = (props) => {
     const [exitX, setExitX] = useState(0);
@@ -83,7 +92,7 @@ const ExploreCard = (props) => {
             <motion.div
                 style={{
                     width: "calc(100vw - 26px)",
-                    height: "calc(100vh - 100px)",
+                    maxHeight: "calc(100vh - 100px)",
                     backgroundColor: "#fff",
                     borderRadius: 16,
                     padding:"12px",
@@ -91,6 +100,7 @@ const ExploreCard = (props) => {
                     right:0,
                     margin:"auto",
                     scale,
+                    overflow:"scroll"
                     
                 }}
             >
@@ -191,6 +201,129 @@ const ExploreCard = (props) => {
             
             
             */}
+
+<div className="w-full mb-4 mt-2">
+                <Listbox
+                  aria-label="Listbox menu with sections"
+                  variant="solid"
+                >
+                  <ListboxSection
+                    showDivider
+                    className="relative"
+                    title="Profile"
+                  >
+                    <ListboxItem
+                      key="2"
+                      isReadOnly
+                      description={props.profile.workAndEducation}
+                      startContent={<WorkAndStudyIcon />}
+                    >
+                      Work and education
+                    </ListboxItem>
+
+                    <ListboxItem
+                      key="3"
+                      isReadOnly
+                      description={props.profile.whyHere}
+                      startContent={<WhyYouAreHereIcon />}
+                    >
+                      Why you are here?
+                    </ListboxItem>
+
+                    <ListboxItem
+                      key="4"
+                      isReadOnly
+                      description={props.profile.aboutMe}
+                      startContent={<AboutMeIcon />}
+                    >
+                      About me
+                    </ListboxItem>
+
+                    <ListboxItem
+                      key="5"
+                      isReadOnly
+                      description={props.profile.lookingFor}
+                      startContent={<SearchIcon />}
+                    >
+                      Looking for?
+                    </ListboxItem>
+                  </ListboxSection>
+
+                  <ListboxSection className="relative" title="More about me!">
+                    <ListboxItem
+                      key="7"
+                      isReadOnly
+                      description={props.profile.relationStatus}
+                    >
+                      Relation status
+                    </ListboxItem>
+                    <ListboxItem
+                      key="8"
+                      isReadOnly
+                      description={props.profile.height}
+                    >
+                      Height
+                    </ListboxItem>
+                    <ListboxItem
+                      key="9"
+                      isReadOnly
+                      description={props.profile.kids}
+                    >
+                      Kids
+                    </ListboxItem>
+                    <ListboxItem
+                      key="10"
+                      isReadOnly
+                      description={props.profile.language}
+                    >
+                      Language
+                    </ListboxItem>
+                    <ListboxItem
+                      key="11"
+                      isReadOnly
+                      description={props.profile.sexuality}
+                    >
+                      Sexuality
+                    </ListboxItem>
+                  </ListboxSection>
+
+                  <ListboxSection className="relative" title="Interesting">
+                    <ListboxItem key={"1"} isReadOnly>
+                      <div
+                        className="flex flex-wrap"
+                        style={{ paddingBottom: "40px" }}
+                      >
+                        {Array.isArray(props.profile.interests) &&
+                        props.profile.interests.length > 0
+                          ? props.profile.interests.map((value, index) => (
+                              <Chip
+                                key={index}
+                                className="m-1"
+                                color="success"
+                                startContent={<HashtagIcon />}
+                                variant="solid"
+                              >
+                                {value}
+                              </Chip>
+                            ))
+                          : null}
+                      </div>
+                    </ListboxItem>
+                    <ListboxItem
+                      key="13"
+                      isReadOnly
+                      className="absolute"
+                      style={{
+                        top: "-8px",
+                        right: "0px",
+                        width: "45px",
+                        height: "45px",
+                      }}
+                    />
+                  </ListboxSection>
+                </Listbox>
+              </div>
+
             </motion.div>
         </motion.div>
     );

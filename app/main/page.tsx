@@ -60,7 +60,7 @@ const handleOpenModalExplore = () => {
               initial={{ y: 10, opacity: 0 }}
               transition={{
                 x: { type: "spring", stiffness: 300, damping: 30 },
-                opacity: { duration: 0.4 },
+                opacity: { duration: 0.6 },
               }}
             >
               <ExplorePage />
@@ -77,7 +77,7 @@ const handleOpenModalExplore = () => {
               style={{width:"100%"}}
               transition={{
                 x: { type: "spring", stiffness: 300, damping: 30 },
-                opacity: { duration: 0.4 },
+                opacity: { duration: 0.6 },
               }}
             >
               <NearByPage />
@@ -94,7 +94,7 @@ const handleOpenModalExplore = () => {
               style={{ width: "100%" }}
               transition={{
                 x: { type: "spring", stiffness: 300, damping: 30 },
-                opacity: { duration: 0.4 },
+                opacity: { duration: 0.6},
               }}
             >
               <ChatPage />
@@ -110,7 +110,7 @@ const handleOpenModalExplore = () => {
               initial={{ y: 10, opacity: 0 }}
               transition={{
                 x: { type: "spring", stiffness: 300, damping: 30 },
-                opacity: { duration: 0.4 },
+                opacity: { duration: 0.6 },
               }}
               style={{width:"100%"}}
 
@@ -128,7 +128,7 @@ const handleOpenModalExplore = () => {
               initial={{ y: 10, opacity: 0 }}
               transition={{
                 x: { type: "spring", stiffness: 300, damping: 30 },
-                opacity: { duration: 0.4 },
+                opacity: { duration: 0.6 },
               }}
               
             >

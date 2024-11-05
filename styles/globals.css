@@ -108,6 +108,7 @@
     background: rgba(165, 148, 249, 0.341);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    transition: backdrop-filter 0.3s ease;
     will-change: transform;
 }
 
@@ -118,7 +119,7 @@
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     will-change: transform;
-
+    transition: backdrop-filter 0.3s ease;
 }
 
 
@@ -127,6 +128,8 @@
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.102);
     will-change: transform;
+    transition: backdrop-filter 0.3s ease;
+
 
 }
 
@@ -135,6 +138,8 @@
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.102);
     will-change: transform;
+    transition: backdrop-filter 0.3s ease;
+
 
 }
 
@@ -143,6 +148,8 @@
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.102);
     will-change: transform;
+    transition: backdrop-filter 0.3s ease;
+
 
 }
 
@@ -150,6 +157,8 @@
     background: rgba(165, 148, 249, 0.427);
     border-radius: 16px;
     will-change: transform;
+    transition: backdrop-filter 0.3s ease;
+
 }
 
 

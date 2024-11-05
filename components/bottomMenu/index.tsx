@@ -52,7 +52,7 @@ const BottomMenu = () => {
              tabList: "bg-transparent p-1 ",
              tabContent:
                "text-[#FFF] group-data-[selected=false]:text-[#ffffffbf]",
-             base: "background-drop--bluebase---navbar backdrop-blur	 flex items-center",
+            /* base: "background-drop--bluebase---navbar backdrop-blur	flex items-center",*/
            }}
            isVertical={true}
            color="primary"

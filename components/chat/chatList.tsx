@@ -82,7 +82,7 @@ const ChatList = () => {
                     className={
                       item.id % 2 !== 0
                         ? "hidden"
-                        : "visible ml-1 background-drop--bluebase---darker"
+                        : "visible ml-1 background-drop--bluebase---darker backdrop-blur-sm	"
                     }
                     color="primary"
                     size="sm"

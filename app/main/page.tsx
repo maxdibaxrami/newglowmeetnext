@@ -141,7 +141,7 @@ const handleOpenModalExplore = () => {
           {pathname.get('page') === "nearby"  && (
               <motion.div
                 style={{zIndex:30}}
-                className="fixed background-drop--bluebase p-2"
+                className="fixed background-drop--bluebase p-2 backdrop-blur-sm	"
                 initial={{ opacity: 0 , bottom:"-80px", scale: 0.5 }}
                 animate={{ opacity: 1 , bottom:"43px", scale: 1.1 }}
                 exit={{ opacity: 0 , bottom:"-80px", scale: 0.5 }}
@@ -161,7 +161,7 @@ const handleOpenModalExplore = () => {
           {pathname.get('page') === "profile"  && (<>
                 <motion.div
                   style={{zIndex:30,marginRight:"80px"}}
-                  className="fixed background-drop--bluebase p-2"
+                  className="fixed background-drop--bluebase p-2 backdrop-blur-sm	"
                   initial={{ opacity: 0 , bottom:"-80px", scale: 0.5 }}
                   animate={{ opacity: 1 , bottom:"43px", scale: 1.1 }}
                   exit={{ opacity: 0 , bottom:"-80px", scale: 0.5 }}
@@ -177,7 +177,7 @@ const handleOpenModalExplore = () => {
           
               <motion.div
                   style={{zIndex:30,marginLeft:"80px"}}
-                  className="fixed background-drop--bluebase p-2"
+                  className="fixed background-drop--bluebase p-2 backdrop-blur-sm	"
                   initial={{ opacity: 0 , bottom:"-80px", scale: 0.5 }}
                   animate={{ opacity: 1 , bottom:"43px", scale: 1.1 }}
                   exit={{ opacity: 0 , bottom:"-80px", scale: 0.5 }}
@@ -198,7 +198,7 @@ const handleOpenModalExplore = () => {
           {pathname.get('page') === "chat"  && (<>
                 <motion.div
                   style={{zIndex:30, marginLeft:"17px"}}
-                  className="fixed background-drop--bluebase p-2"
+                  className="fixed background-drop--bluebase p-2 backdrop-blur-sm	"
                   initial={{ opacity: 0 , bottom:"-80px", scale: 0.5 }}
                   animate={{ opacity: 1 , bottom:"43px", scale: 1.1 }}
                   exit={{ opacity: 0 , bottom:"-80px", scale: 0.5 }}
@@ -219,7 +219,7 @@ const handleOpenModalExplore = () => {
           {pathname.get('page') === "explore"  && (
               <motion.div
                 style={{zIndex:30}}
-                className="fixed background-drop--whitebase p-2"
+                className="fixed background-drop--whitebase backdrop-blur-sm	 p-2"
                 initial={{ opacity: 0 , left:"-80px", bottom:"-80px", scale: 0.5 }}
                 animate={{ opacity: 1 , left:"20px" , bottom:"20px", scale: 1.1 }}
                 exit={{ opacity: 0 , left:"-80px", bottom:"-80px", scale: 0.5 }}
@@ -239,7 +239,7 @@ const handleOpenModalExplore = () => {
           {pathname.get('page') === "explore"  && (
               <motion.div
                 style={{zIndex:30}}
-                className="fixed background-drop--whitebase p-2"
+                className="fixed background-drop--whitebase backdrop-blur-sm	 p-2"
                 initial={{ opacity: 0 , right:"-80px", bottom:"-80px", scale: 0.5 }}
                 animate={{ opacity: 1 , right:"20px" , bottom:"20px", scale: 1.1 }}
                 exit={{ opacity: 0 , right:"-80px", bottom:"-80px", scale: 0.5 }}

@@ -63,7 +63,7 @@ const NearByUserModal = forwardRef((props, ref) => {
   return (
     <>
     <Modal classNames={{"closeButton":"z-50 text-white"}} backdrop="opaque" isOpen={isOpen} onOpenChange={onOpenChange}>
-      <ModalContent style={{height:"90vh"}} className="background-drop--bluebase---card-----dark">
+      <ModalContent style={{height:"90vh"}} className="background-drop--bluebase---card-----dark backdrop-blur-xl	">
         <ModalBody style={{
                         width: "100%",
                         height: "100%",
@@ -313,7 +313,7 @@ const NearByUserModal = forwardRef((props, ref) => {
 
       <div>
           <motion.div
-            className="card background-drop--whitebase p-1 footerswipcard border-1 fixed"
+            className="card background-drop--whitebase p-1 footerswipcard border-1 fixed backdrop-blur-sm	"
             animate={{ bottom: "70px", zIndex:50, right:"51%",scale:1 }}
             initial={{right:"51%",scale:0.7}}
             exit={{right:"51%",scale:0.7,bottom:"-50px",opacity:0}}
@@ -324,7 +324,7 @@ const NearByUserModal = forwardRef((props, ref) => {
           </motion.div>
 
           <motion.div
-            className="card background-drop--whitebase p-1 footerswipcard border-1 fixed"
+            className="card background-drop--whitebase p-1 footerswipcard border-1 fixed backdrop-blur-sm	"
             transition={{ type: "tween" }}
             initial={{left:"51%",scale:0.7}}
             exit={{left:"51%",scale:0.7,bottom:"-50px",opacity:0}}
@@ -351,7 +351,7 @@ const NearByUserModal = forwardRef((props, ref) => {
           {isOpen && (
               <motion.div
                 style={{zIndex:999}}
-                className="fixed background-drop--whitebase p-2"
+                className="fixed background-drop--whitebase backdrop-blur-sm	 p-2"
                 initial={{ opacity: 0 , right:"-80px", bottom:"-80px", scale: 0.5 }}
                 animate={{ opacity: 1 , right:"20px" , bottom:"20px", scale: 1.1 }}
                 exit={{ opacity: 0 , right:"-80px", bottom:"-80px", scale: 0.5 }}
@@ -372,7 +372,7 @@ const NearByUserModal = forwardRef((props, ref) => {
           {isOpen && (
               <motion.div
                 style={{zIndex:999}}
-                className="fixed background-drop--whitebase p-2"
+                className="fixed background-drop--whitebase p-2 backdrop-blur-sm	"
                 initial={{ opacity: 0 , left:"-80px", bottom:"-80px", scale: 0.5 }}
                 animate={{ opacity: 1 , left:"20px" , bottom:"20px", scale: 1.1 }}
                 exit={{ opacity: 0 , left:"-80px", bottom:"-80px", scale: 0.5 }}

@@ -31,7 +31,7 @@ const BottomMenu = () => {
          animate={{ right: "10px", opacity:1 }}
          exit={{ right:"-40px", opacity:0}}
  
-         className={"flex w-full flex-col fixed items-center	background-drop--bluebase---navbar"}
+         className={"flex w-full flex-col fixed items-center backdrop-blur		background-drop--bluebase---navbar"}
          style={{
            zIndex: "10",
            width: "57px",
@@ -52,7 +52,7 @@ const BottomMenu = () => {
              tabList: "bg-transparent p-1 ",
              tabContent:
                "text-[#FFF] group-data-[selected=false]:text-[#ffffffbf]",
-             base: "background-drop--bluebase---navbar flex items-center",
+             base: "background-drop--bluebase---navbar backdrop-blur	 flex items-center",
            }}
            isVertical={true}
            color="primary"

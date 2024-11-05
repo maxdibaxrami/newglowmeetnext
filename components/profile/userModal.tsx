@@ -38,7 +38,7 @@ const UserModal = forwardRef((props, ref) => {
   return (
     <>
     <Modal classNames={{"closeButton":"z-50 text-white"}} backdrop="opaque" isOpen={isOpen} onOpenChange={onOpenChange}>
-      <ModalContent style={{height:"90vh"}} className="background-drop--bluebase---card-----dark">
+      <ModalContent style={{height:"90vh"}} className="background-drop--bluebase---card-----dark backdrop-blur-xl	">
         <ModalBody style={{
                         width: "100%",
                         height: "100%",
@@ -106,7 +106,7 @@ const UserModal = forwardRef((props, ref) => {
                     </SwiperSlide>
                   </Swiper>
 
-                  <div style={{zIndex:10,marginLeft:"8px",padding:"8px",marginBottom:"6px"}} className="w-[calc(100%_-_16px)] flex flex-col justify-cente items-start gap-1 absolute background-drop--bluebase border-white/20 border-1 overflow-hidden py-1 before:rounded-xl rounded-large bottom-1  shadow-small z-10">
+                  <div style={{zIndex:10,marginLeft:"8px",padding:"8px",marginBottom:"6px"}} className="w-[calc(100%_-_16px)] flex flex-col justify-center backdrop-blur-sm items-start gap-1 absolute background-drop--bluebase border-white/20 border-1 overflow-hidden py-1 before:rounded-xl rounded-large bottom-1  shadow-small z-10">
                     <h4 className="flex items-center text-small text-white font-semibold leading-none text-default-600">{profileData.name} {profileData.age} <VerifyIcon stroke="#fff"/></h4>
                     <h5 className="flex items-center text-small text-white tracking-tight text-default-400"><LocationIcon fill="#fff"/> {profileData.location} </h5>
                   </div>
@@ -292,7 +292,7 @@ const UserModal = forwardRef((props, ref) => {
           {isOpen && (
               <motion.div
                 style={{zIndex:999}}
-                className="fixed background-drop--whitebase p-2"
+                className="fixed background-drop--whitebase backdrop-blur-sm	 p-2"
                 initial={{ opacity: 0 , right:"-80px", bottom:"-80px", scale: 0.5 }}
                 animate={{ opacity: 1 , right:"20px" , bottom:"20px", scale: 1.1 }}
                 exit={{ opacity: 0 , right:"-80px", bottom:"-80px", scale: 0.5 }}

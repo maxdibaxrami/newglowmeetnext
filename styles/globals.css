@@ -59,6 +59,8 @@
     height: fit-content;
     bottom: -80px;
     border-radius: 50vw !important;
+    will-change: transform;
+
 }
 
 .footerswipcard--nearbypage{
@@ -70,6 +72,8 @@
     transform: translate(-50%);
     border-radius: 50vw !important;
     padding: 0px !important;
+    will-change: transform;
+
 }
 
 .time {
@@ -80,12 +84,15 @@
     width: fit-content;
     margin: 0 auto;
     color: #000;
+    will-change: transform;
+
 }
 
 .text-handller{
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+    
     width: 100%;
 }
 
@@ -97,22 +104,11 @@
     width: 150px;
 }
 
-.nearme-div--background{
-
-    background: rgba(165, 148, 249, 0.341);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(3.5px);
-    -webkit-backdrop-filter: blur(3.5px);
-}
-
-
 .background-drop--bluebase{
     background: rgba(165, 148, 249, 0.341);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(3.5px);
-    -webkit-backdrop-filter: blur(3.5px);
+    will-change: transform;
 }
 
 
@@ -121,8 +117,8 @@
     background: rgba(255, 255, 255, 0.341);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(3.5px);
-    -webkit-backdrop-filter: blur(3.5px);
+    will-change: transform;
+
 }
 
 
@@ -130,53 +126,31 @@
     background: rgba(165, 148, 249, 0.322);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.102);
-    backdrop-filter: blur(8px);
+    will-change: transform;
+
 }
 
 .background-drop--bluebase---card{
     background: rgba(165, 148, 249, 0.322);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.102);
-    backdrop-filter: blur(16px);
+    will-change: transform;
+
 }
 
 .background-drop--bluebase---darker{
     background: rgba(165, 148, 249, 0.341);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.102);
-    backdrop-filter: blur(3.5px);
-    -webkit-backdrop-filter: blur(3.5px);
+    will-change: transform;
+
 }
 
 .background-drop--bluebase---card-----dark{
     background: rgba(165, 148, 249, 0.427);
     border-radius: 16px;
-    backdrop-filter: blur(22px);
+    will-change: transform;
 }
 
 
 
-
-/* Skeleton CSS */
-.skeleton {
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .skeleton::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 200%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    animation: shimmer 1.5s infinite;
-  }
-  
-  @keyframes shimmer {
-    100% {
-      transform: translateX(100%);
-    }
-  }
-  

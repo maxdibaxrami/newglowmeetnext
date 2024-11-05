@@ -48,7 +48,7 @@ const TopBar = ({ selectedTab }) => {
         <NavbarItem className="flex items-center">
           {selectedTab === "nearby" && (
             <Chip
-              className="mx-2 text-center background-drop--bluebase---darker"
+              className="mx-2 text-center background-drop--bluebase---darker backdrop-blur-sm	"
               color="default"
               startContent={<ChatIconSm />}
               variant="flat"

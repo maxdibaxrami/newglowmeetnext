@@ -101,7 +101,7 @@ const ExploreCard = (props) => {
                     
                     
                 }}
-                className="background-drop--bluebase---card"
+                className="background-drop--bluebase---card backdrop-blur-lg	"
             >
               
               <div className="relative">
@@ -149,7 +149,7 @@ const ExploreCard = (props) => {
                   </SwiperSlide>
                 </Swiper>
 
-                <div style={{zIndex:10,marginLeft:"8px",padding:"8px",marginBottom:"6px"}} className="w-[calc(100%_-_16px)] flex flex-col justify-cente items-start gap-1 absolute background-drop--bluebase border-white/20 border-1 overflow-hidden py-1 before:rounded-xl rounded-large bottom-1  shadow-small z-10">
+                <div style={{zIndex:10,marginLeft:"8px",padding:"8px",marginBottom:"6px"}} className="w-[calc(100%_-_16px)] flex flex-col justify-cente items-start gap-1 absolute background-drop--bluebase backdrop-blur-sm	 border-white/20 border-1 overflow-hidden py-1 before:rounded-xl rounded-large bottom-1  shadow-small z-10">
                   <h4 className="flex items-center text-small text-white font-semibold leading-none text-default-600">{props.profile.name} {props.profile.age} <VerifyIcon stroke="#fff"/></h4>
                   <h5 className="flex items-center text-small text-white tracking-tight text-default-400"><LocationIcon fill="#fff"/> {props.profile.location} </h5>
                 </div>

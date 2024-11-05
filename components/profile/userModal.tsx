@@ -38,7 +38,7 @@ const UserModal = forwardRef((props, ref) => {
   return (
     <>
     <Modal classNames={{"closeButton":"z-50 text-white"}} backdrop="opaque" isOpen={isOpen} onOpenChange={onOpenChange}>
-      <ModalContent style={{height:"90vh"}} className="background-drop--bluebase---card-----dark backdrop-blur-xl	">
+      <ModalContent style={{height:"90vh"}} className="background-drop--bluebase---card-----dark backdrop-blur	">
         <ModalBody style={{
                         width: "100%",
                         height: "100%",

@@ -101,7 +101,7 @@ const ExploreCard = (props) => {
                     
                     
                 }}
-                className="background-drop--bluebase---card backdrop-blur-lg	"
+                className="background-drop--bluebase---card backdrop-blur	"
             >
               
               <div className="relative">

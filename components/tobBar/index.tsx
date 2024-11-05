@@ -24,7 +24,7 @@ const TopBar = ({ selectedTab }) => {
 
   return (
     <Navbar
-      className="top-0 fixed top-0 backdrop-blur-lg	"
+      className="top-0 fixed top-0 backdrop-blur	"
       style={{ height: "4rem" }}
     >
       <NavbarBrand>

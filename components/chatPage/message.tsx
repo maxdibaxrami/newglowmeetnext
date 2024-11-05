@@ -50,7 +50,7 @@ const messages = [
     type: "me",
     text: "",
     time: "11:20",
-    img: "https://via.placeholder.com/300", // Image message
+    img: "https://via.placeholder.com/", // Image message
   },
   {
     type: "you",
@@ -75,7 +75,7 @@ const messages = [
     type: "me",
     text: "",
     time: "11:30",
-    img: "https://via.placeholder.com/300", // Another image message
+    img: "https://via.placeholder.com/", // Another image message
   },
   {
     type: "time",

@@ -159,7 +159,6 @@ const ExploreCard = (props) => {
                 <User   
                   name="Ready for relationship"
                   classNames={{"wrapper":"py-3","base":"px-1"}}
-                  className="text-white"
                   description={
                       "@jrgarciadev"
                   }
@@ -204,7 +203,7 @@ const ExploreCard = (props) => {
 
               <div className="w-full mb-4 mt-2">
                 <Listbox
-                  className="text-white"
+                
                   aria-label="Listbox menu with sections"
                   variant="solid"
                 >

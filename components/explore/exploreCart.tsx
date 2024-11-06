@@ -23,10 +23,14 @@ import {
   WorkAndStudyIcon,
   WhyYouAreHereIcon,
 } from "../icons/profileIcon";
+import { useTheme } from "next-themes";
 
 const ExploreCard = (props) => {
     const [exitX, setExitX] = useState(0);
     const [ActiveSlide, setActiveSlide] = useState(1); // Starting from slide 1
+
+    const theme = useTheme()
+
     const x = useMotionValue(0);
 
     const scale = useTransform(x, [-80, 0, 80], [0.8, 1, 0.8],{
@@ -92,7 +96,7 @@ const ExploreCard = (props) => {
                     : { scale: { duration: 0.2 }, opacity: { duration: 0.4 } }
             }
         >
-            <motion.div
+              <motion.div
                 style={{
                     width: "calc(100vw - 26px)",
                     borderRadius: 16,
@@ -102,10 +106,9 @@ const ExploreCard = (props) => {
                     margin:"auto",
                     marginTop:"4.5rem",
                     scale,
-                    
-                    
+                    backgroundColor:theme.theme==="dark" ? "#090031":"#e8e3ff"        
                 }}
-                className="background-drop--bluebase---card backdrop-blur	"
+                className="backdrop-blur"
             >
               
               <div className="relative">

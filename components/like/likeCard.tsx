@@ -14,8 +14,7 @@ const LikeCard = ({ data, onCardClick }) => {
         isPressable
         className="border-none relative"
         radius="lg"
-        style={{ width: "100%", height: "100%" }}
-        style={{ backgroundColor: "transparent" }}
+        style={{ width: "100%", height: "100%",backgroundColor: "transparent" }}
         onPress={() => onCardClick(data)}
       >
         <Image

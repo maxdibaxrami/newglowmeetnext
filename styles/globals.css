@@ -26,7 +26,6 @@
     width: 100%;
     left: 50%;
     bottom: 0;
-    padding-bottom: calc(2rem + env(safe-area-inset-bottom));
 }
 
 .chat-m:first-child {

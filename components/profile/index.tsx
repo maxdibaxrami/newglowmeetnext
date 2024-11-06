@@ -33,7 +33,7 @@ const ProfilePage = () => {
               }}
               
               loading="lazy"
-              src={"https://app.requestly.io/delay/5000/https://nextui.org/images/hero-card-complete.jpeg"} // dynamic image URL
+              src={"https://nextui.org/images/hero-card-complete.jpeg"} // dynamic image URL
               style={{
                 borderRadius: "20px",
                 objectFit: "cover",
@@ -52,7 +52,7 @@ const ProfilePage = () => {
                 classNames={{
                   wrapper: "w-full maxcontentimportant",
                 }}
-                src={"https://app.requestly.io/delay/5000/https://nextui.org/images/hero-card-complete.jpeg"} // dynamic image URL
+                src={"https://nextui.org/images/hero-card-complete.jpeg"} // dynamic image URL
                 style={{
                   objectFit: "cover",
                   borderRadius: "20px",
@@ -69,7 +69,7 @@ const ProfilePage = () => {
                 classNames={{
                   wrapper: "w-full maxcontentimportant",
                 }}
-                src={"https://app.requestly.io/delay/5000/https://nextui.org/images/hero-card-complete.jpeg"} // dynamic image URL
+                src={"https://nextui.org/images/hero-card-complete.jpeg"} // dynamic image URL
                 style={{
                   objectFit: "cover",
                   borderRadius: "20px",

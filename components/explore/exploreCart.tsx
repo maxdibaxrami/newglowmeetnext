@@ -28,8 +28,8 @@ const ExploreCard = (props) => {
 
     const x = useMotionValue(0);
 
-    const scale = useTransform(x, [-150, 0, 150], [0.5, 1, 0.5]);
-    const rotate = useTransform(x, [-150, 0, 150], [-45, 0, 45], {
+    const scale = useTransform(x, [-80, 0, 80], [0.5, 1, 0.5]);
+    const rotate = useTransform(x, [-20, 0, 20], [-15, 0, 15], {
         clamp: false
     });
 
@@ -38,22 +38,22 @@ const ExploreCard = (props) => {
         exit: (custom) => ({
             x: custom,
             opacity: 0,
-            scale: 0.5,
+            scale: 0.8,
             transition: { duration: 0.2 }
         })
     };
     const variantsBackCard = {
-        initial: { scale: 0, y: 105, opacity: 0 },
-        animate: { scale: 0.75, y: 30, opacity: 0.5 }
+        initial: { scale: 0, y: 55, opacity: 0 },
+        animate: { scale: 0.9, y: 30, opacity: 0.5 }
     };
 
     function handleDragEnd(_, info) {
-        if (info.offset.x < -100) {
-            setExitX(-250);
+        if (info.offset.x < -50) {
+            setExitX(-60);
             props.setIndex(props.index + 1);
         }
-        if (info.offset.x > 100) {
-            setExitX(250);
+        if (info.offset.x > 50) {
+            setExitX(60);
             props.setIndex(props.index + 1);
         }
     }

@@ -8,21 +8,25 @@ import {
 
 const LikeCard = ({ data, onCardClick }) => {
   return (
-    <div className={"relative mb-8"}>
+    <div className={"relative w-full mb-8"}>
       <Card
         isFooterBlurred
         isPressable
-        className="border-none relative"
+        className="border-none w-full relative"
         radius="lg"
-        style={{ width: "100%", height: "100%",backgroundColor: "transparent" }}
+        style={{backgroundColor: "transparent" }}
         onPress={() => onCardClick(data)}
       >
         <Image
           alt="Woman listing to music"
-          className="object-cover"
+          className="object-cover w-full h-full"
+          classNames={{
+            wrapper:"w-full h-full maxcontentimportant",
+            img : "w-full h-full "
+          }}
           loading="lazy"
           src={data.mainImage}
-          style={{ width: "100%", height: "100%" }}
+          style={{ width: "100%", height: "100%",maxWidth:"unset" }}
         />
       </Card>
 

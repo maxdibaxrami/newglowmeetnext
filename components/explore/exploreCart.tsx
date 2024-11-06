@@ -6,14 +6,15 @@ import {
     AnimatePresence
 } from "framer-motion";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-import {Image, User} from "@nextui-org/react";
+import { Autoplay, Navigation } from 'swiper/modules';
+import {Pagination, User} from "@nextui-org/react";
 import { HeartIcon, VerifyIcon } from "../icons/profileIcon";
 import { LocationIcon } from "../icons/exploreIcons";
 
 import ExploreCardImage from './exploreCardImage'
 import { useSwiper } from "swiper/react";
 import { Listbox, ListboxItem, ListboxSection, Chip } from "@nextui-org/react";
+import ExploreCardOption from "./exploreCardOption";
 
 import {
   SearchIcon,
@@ -25,12 +26,15 @@ import {
 
 const ExploreCard = (props) => {
     const [exitX, setExitX] = useState(0);
-
+    const [ActiveSlide, setActiveSlide] = useState(1); // Starting from slide 1
     const x = useMotionValue(0);
 
-    const scale = useTransform(x, [-80, 0, 80], [0.5, 1, 0.5]);
+    const scale = useTransform(x, [-80, 0, 80], [0.8, 1, 0.8],{
+      clamp:true
+    });
+
     const rotate = useTransform(x, [-20, 0, 20], [-15, 0, 15], {
-        clamp: false
+        clamp: true
     });
 
     const variantsFrontCard = {
@@ -105,17 +109,31 @@ const ExploreCard = (props) => {
             >
               
               <div className="relative">
+                <ExploreCardOption/>
+              <Pagination
+                  disableAnimation
+                  classNames={{ wrapper: "flex-col flex", item: "exploreSipwePagination" }}
+                  className="absolute z-50 right-2"
+                  style={{ top: "40%" }}
+                  total={3}
+                  page={ActiveSlide + 1}
+                  initialPage={1}
+                  size={"sm"}
+                />
+
                 <Swiper
                   spaceBetween={30}
                   centeredSlides={true}
                   autoplay={{
-                    delay: 4000,
+                    delay: 3000,
                     disableOnInteraction: false,
                   }}
                   loop
-                  modules={[Autoplay, Pagination, Navigation]}
+                  modules={[Autoplay, Navigation]}
                   className="mySwiper"
                   allowTouchMove={false}
+                  onSlideChange={(swiper) => setActiveSlide(swiper.realIndex)} // Update ActiveSlide on slide change
+
                   
                 >
                   <SwiperSlide >

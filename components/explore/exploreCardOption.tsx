@@ -14,11 +14,10 @@ const ExploreCardOption = ({ page }) => {
       <DropdownTrigger>
         <Button
           isIconOnly
+          className="right-2 top-2"
           color="primary"
           style={{
             position: "absolute",
-            right: "32px",
-            top: "33px",
           }}
           variant="flat"
         >

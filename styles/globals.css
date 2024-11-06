@@ -161,5 +161,9 @@
 
 }
 
+.maxcontentimportant {
+    max-width: unset !important;
+}
+
 
 

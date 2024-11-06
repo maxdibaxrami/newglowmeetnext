@@ -14,29 +14,32 @@ import DataList from "./dataList";
 const ProfilePage = () => {
   return (
     <div
-      className="w-full h-full px-6 pb-16"
+      className="w-full h-full pb-16"
       style={{
         overflow: "scroll",
-        maxHeight: "calc(100vh)",
+        maxHeight: "100vh",
         paddingTop: "4rem",
+        width:"calc( 100vw - 3rem )"
       }}
     >
-      <div className="flex mb-4 justify-between items-center">
-        <div className="flex flex-col">
+      <div className="flex mb-4 w-full justify-between items-center">
+        <div className="flex w-full flex-col">
           <div className="w-full" >
             <Image
               alt="Profile hero Image"
               className="w-full h-full"
               classNames={{
-                wrapper: "w-full",
+                wrapper: "w-full maxcontentimportant",
               }}
+              
               loading="lazy"
-              src={"https://nextui.org/images/hero-card.jpeg"} // dynamic image URL
+              src={"https://app.requestly.io/delay/5000/https://nextui.org/images/hero-card-complete.jpeg"} // dynamic image URL
               style={{
                 borderRadius: "20px",
                 objectFit: "cover",
-                height: "100%",
                 padding: "10px 10px 5px 10px",
+                height: "calc(50vh - 4rem)",
+
               }}
             />
           </div>
@@ -46,7 +49,10 @@ const ProfilePage = () => {
               <Image
                 alt="Profile hero Image"
                 className="w-full h-full"
-                src={"https://nextui.org/images/hero-card.jpeg"} // dynamic image URL
+                classNames={{
+                  wrapper: "w-full maxcontentimportant",
+                }}
+                src={"https://app.requestly.io/delay/5000/https://nextui.org/images/hero-card-complete.jpeg"} // dynamic image URL
                 style={{
                   objectFit: "cover",
                   borderRadius: "20px",
@@ -60,12 +66,16 @@ const ProfilePage = () => {
                 alt="Profile hero Image"
                 className="w-full h-full"
                 loading="lazy"
-                src={"https://nextui.org/images/hero-card.jpeg"} // dynamic image URL
+                classNames={{
+                  wrapper: "w-full maxcontentimportant",
+                }}
+                src={"https://app.requestly.io/delay/5000/https://nextui.org/images/hero-card-complete.jpeg"} // dynamic image URL
                 style={{
                   objectFit: "cover",
                   borderRadius: "20px",
                   padding: "5px 10px 10px 5px",
                   height: "calc(34vh - 4rem)",
+                  width:"100%"
                 }}
               />
             </div>

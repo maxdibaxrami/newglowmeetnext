@@ -126,7 +126,7 @@ const ExploreCard = (props) => {
                     overflow:"scroll",
                     backgroundColor:theme.theme==="dark" ? "#090031":"#e8e3ff"        
                 }}
-                animate={openCard?{height:"calc(100vh - 30px)"}:{height:"calc(100vh - 145px)"}}
+                animate={openCard?{height:"calc(100vh - 30px)"}:{height:"calc(100vh - 125px)"}}
                 ref={divRef}
                 className="backdrop-blur"
             >

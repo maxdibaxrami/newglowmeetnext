@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import {
     motion,
     useMotionValue,
     useTransform,
-    AnimatePresence
+    useScroll,
+    useMotionValueEvent
 } from "framer-motion";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper/modules';
@@ -28,6 +29,21 @@ import { useTheme } from "next-themes";
 const ExploreCard = (props) => {
     const [exitX, setExitX] = useState(0);
     const [ActiveSlide, setActiveSlide] = useState(1); // Starting from slide 1
+    const [openCard , setOpenCard] = useState(false)
+    const divRef = useRef(null);
+
+    // Set up scroll tracking on the ref
+    const { scrollYProgress } = useScroll({ container: divRef });
+
+    // Use an event listener to detect scrolling
+    useMotionValueEvent(scrollYProgress, "change", (latest) => {
+      setOpenCard(false)
+
+      if (latest > 0) {
+        setOpenCard(true)
+      }
+    });
+
 
     const theme = useTheme()
 
@@ -106,8 +122,12 @@ const ExploreCard = (props) => {
                     margin:"auto",
                     marginTop:"1.5rem",
                     scale,
+                    height:"calc(100vh - 145px)",
+                    overflow:"scroll",
                     backgroundColor:theme.theme==="dark" ? "#090031":"#e8e3ff"        
                 }}
+                animate={openCard?{height:"calc(100vh - 30px)"}:{height:"calc(100vh - 145px)"}}
+                ref={divRef}
                 className="backdrop-blur"
             >
               
@@ -179,6 +199,7 @@ const ExploreCard = (props) => {
               <div>
                 <User   
                   name="Ready for relationship"
+                  style={{marginTop:"1rem"}}
                   classNames={{"wrapper":"py-3","base":"px-1"}}
                   description={
                       "@jrgarciadev"
@@ -345,7 +366,7 @@ const ExploreCard = (props) => {
                 </Listbox>
               </div>
 
-            </motion.div>
+              </motion.div>
         </motion.div>
     );
 }

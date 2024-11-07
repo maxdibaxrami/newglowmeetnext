@@ -49,7 +49,12 @@ const handleOpenModalExplore = () => {
 
   return (
     <main className="container relative w-full flex-grow">
-      <TopBar selectedTab={pathname.get('page') || "chat"} />
+
+      <motion.div
+        animate={pathname.get('page') === "explore"? { y: -10, opacity: 0 }:{ y: 0, opacity: 1 }}
+      >
+        <TopBar selectedTab={pathname.get('page') || "chat"} />
+      </motion.div>
 
       <section className="flex flex-col items-center justify-center gap-4 ">
         {pathname.get('page') === "explore" && (

@@ -104,7 +104,7 @@ const ExploreCard = (props) => {
                     left:0,
                     right:0,
                     margin:"auto",
-                    marginTop:"4.5rem",
+                    marginTop:"1.5rem",
                     scale,
                     backgroundColor:theme.theme==="dark" ? "#090031":"#e8e3ff"        
                 }}

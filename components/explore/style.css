@@ -22,7 +22,7 @@
 .swiper-slide img {
   display: block;
   width: 100%;
-  height: 70vh !important;
+  height: calc(100vh - 175px) !important;
   object-fit: cover;
 }
 

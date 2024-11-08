@@ -33,8 +33,8 @@ const LikeCard = ({ data, onCardClick }) => {
       <div
         className="flex items-center background-drop--bluebase backdrop-blur-sm	 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large shadow-small z-10"
         style={{
-          height: "50px",
-          bottom: "-25px",
+          height: "77px",
+          bottom: "-39px",
           borderRadius: "54px",
           justifyContent: "space-between",
           width: "calc(100% - 5%)",

@@ -3,8 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
+
 *{
-    font-family: "Lexend", sans-serif;
+    font-family: "Josefin Sans", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
     outline: none !important;

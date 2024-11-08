@@ -37,13 +37,13 @@ export default function Home() {
   },[pathname])
   const handleOpenModal = () => {
     if (childRef.current) {
-        childRef.current.openModal();
+        childRef.current?.openModal();
     }
 };
 
 const handleOpenModalExplore = () => {
   if (childRefExplore.current) {
-      childRefExplore.current.openModal();
+      childRefExplore.current?.openModal();
   }
 };
 
